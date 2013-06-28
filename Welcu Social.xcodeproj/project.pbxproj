@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC11177E0BC30006D75C /* Foundation.framework */; };
+		CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */; };
+		CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC15177E0BC30006D75C /* UIKit.framework */; };
+		CE7BEC1C177E0BC30006D75C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7BEC1A177E0BC30006D75C /* InfoPlist.strings */; };
+		CE7BEC1E177E0BC30006D75C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC1D177E0BC30006D75C /* main.m */; };
+		CE7BEC22177E0BC30006D75C /* WelcuAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC21177E0BC30006D75C /* WelcuAppDelegate.m */; };
+		CE7BEC24177E0BC30006D75C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7BEC23177E0BC30006D75C /* Images.xcassets */; };
+		CE7BEC2B177E0BC30006D75C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC2A177E0BC30006D75C /* XCTest.framework */; };
+		CE7BEC2C177E0BC30006D75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC11177E0BC30006D75C /* Foundation.framework */; };
+		CE7BEC2D177E0BC30006D75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC15177E0BC30006D75C /* UIKit.framework */; };
+		CE7BEC35177E0BC30006D75C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7BEC33177E0BC30006D75C /* InfoPlist.strings */; };
+		CE7BEC37177E0BC30006D75C /* Welcu_SocialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC36177E0BC30006D75C /* Welcu_SocialTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE7BEC2E177E0BC30006D75C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE7BEC06177E0BC30006D75C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE7BEC0D177E0BC30006D75C;
+			remoteInfo = "Welcu Social";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CE7BEC0E177E0BC30006D75C /* Welcu Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Welcu Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7BEC11177E0BC30006D75C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE7BEC15177E0BC30006D75C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CE7BEC19177E0BC30006D75C /* Welcu Social-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Welcu Social-Info.plist"; sourceTree = "<group>"; };
+		CE7BEC1B177E0BC30006D75C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE7BEC1D177E0BC30006D75C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE7BEC1F177E0BC30006D75C /* Welcu Social-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Welcu Social-Prefix.pch"; sourceTree = "<group>"; };
+		CE7BEC20177E0BC30006D75C /* WelcuAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcuAppDelegate.h; sourceTree = "<group>"; };
+		CE7BEC21177E0BC30006D75C /* WelcuAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcuAppDelegate.m; sourceTree = "<group>"; };
+		CE7BEC23177E0BC30006D75C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CE7BEC29177E0BC30006D75C /* Welcu SocialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Welcu SocialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7BEC2A177E0BC30006D75C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CE7BEC32177E0BC30006D75C /* Welcu SocialTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Welcu SocialTests-Info.plist"; sourceTree = "<group>"; };
+		CE7BEC34177E0BC30006D75C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE7BEC36177E0BC30006D75C /* Welcu_SocialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Welcu_SocialTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE7BEC0B177E0BC30006D75C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */,
+				CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */,
+				CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE7BEC26177E0BC30006D75C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7BEC2B177E0BC30006D75C /* XCTest.framework in Frameworks */,
+				CE7BEC2D177E0BC30006D75C /* UIKit.framework in Frameworks */,
+				CE7BEC2C177E0BC30006D75C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE7BEC05177E0BC30006D75C = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC17177E0BC30006D75C /* Welcu Social */,
+				CE7BEC30177E0BC30006D75C /* Welcu SocialTests */,
+				CE7BEC10177E0BC30006D75C /* Frameworks */,
+				CE7BEC0F177E0BC30006D75C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE7BEC0F177E0BC30006D75C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC0E177E0BC30006D75C /* Welcu Social.app */,
+				CE7BEC29177E0BC30006D75C /* Welcu SocialTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE7BEC10177E0BC30006D75C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC11177E0BC30006D75C /* Foundation.framework */,
+				CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */,
+				CE7BEC15177E0BC30006D75C /* UIKit.framework */,
+				CE7BEC2A177E0BC30006D75C /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE7BEC17177E0BC30006D75C /* Welcu Social */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC20177E0BC30006D75C /* WelcuAppDelegate.h */,
+				CE7BEC21177E0BC30006D75C /* WelcuAppDelegate.m */,
+				CE7BEC23177E0BC30006D75C /* Images.xcassets */,
+				CE7BEC18177E0BC30006D75C /* Supporting Files */,
+			);
+			path = "Welcu Social";
+			sourceTree = "<group>";
+		};
+		CE7BEC18177E0BC30006D75C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC19177E0BC30006D75C /* Welcu Social-Info.plist */,
+				CE7BEC1A177E0BC30006D75C /* InfoPlist.strings */,
+				CE7BEC1D177E0BC30006D75C /* main.m */,
+				CE7BEC1F177E0BC30006D75C /* Welcu Social-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE7BEC30177E0BC30006D75C /* Welcu SocialTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC36177E0BC30006D75C /* Welcu_SocialTests.m */,
+				CE7BEC31177E0BC30006D75C /* Supporting Files */,
+			);
+			path = "Welcu SocialTests";
+			sourceTree = "<group>";
+		};
+		CE7BEC31177E0BC30006D75C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC32177E0BC30006D75C /* Welcu SocialTests-Info.plist */,
+				CE7BEC33177E0BC30006D75C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE7BEC0D177E0BC30006D75C /* Welcu Social */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE7BEC3A177E0BC30006D75C /* Build configuration list for PBXNativeTarget "Welcu Social" */;
+			buildPhases = (
+				CE7BEC0A177E0BC30006D75C /* Sources */,
+				CE7BEC0B177E0BC30006D75C /* Frameworks */,
+				CE7BEC0C177E0BC30006D75C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Welcu Social";
+			productName = "Welcu Social";
+			productReference = CE7BEC0E177E0BC30006D75C /* Welcu Social.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE7BEC28177E0BC30006D75C /* Welcu SocialTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE7BEC3D177E0BC30006D75C /* Build configuration list for PBXNativeTarget "Welcu SocialTests" */;
+			buildPhases = (
+				CE7BEC25177E0BC30006D75C /* Sources */,
+				CE7BEC26177E0BC30006D75C /* Frameworks */,
+				CE7BEC27177E0BC30006D75C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE7BEC2F177E0BC30006D75C /* PBXTargetDependency */,
+			);
+			name = "Welcu SocialTests";
+			productName = "Welcu SocialTests";
+			productReference = CE7BEC29177E0BC30006D75C /* Welcu SocialTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE7BEC06177E0BC30006D75C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Welcu;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Welcu;
+				TargetAttributes = {
+					CE7BEC28177E0BC30006D75C = {
+						TestTargetID = CE7BEC0D177E0BC30006D75C;
+					};
+				};
+			};
+			buildConfigurationList = CE7BEC09177E0BC30006D75C /* Build configuration list for PBXProject "Welcu Social" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CE7BEC05177E0BC30006D75C;
+			productRefGroup = CE7BEC0F177E0BC30006D75C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE7BEC0D177E0BC30006D75C /* Welcu Social */,
+				CE7BEC28177E0BC30006D75C /* Welcu SocialTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE7BEC0C177E0BC30006D75C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7BEC1C177E0BC30006D75C /* InfoPlist.strings in Resources */,
+				CE7BEC24177E0BC30006D75C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE7BEC27177E0BC30006D75C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7BEC35177E0BC30006D75C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE7BEC0A177E0BC30006D75C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7BEC1E177E0BC30006D75C /* main.m in Sources */,
+				CE7BEC22177E0BC30006D75C /* WelcuAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE7BEC25177E0BC30006D75C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7BEC37177E0BC30006D75C /* Welcu_SocialTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE7BEC2F177E0BC30006D75C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE7BEC0D177E0BC30006D75C /* Welcu Social */;
+			targetProxy = CE7BEC2E177E0BC30006D75C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE7BEC1A177E0BC30006D75C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE7BEC1B177E0BC30006D75C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CE7BEC33177E0BC30006D75C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE7BEC34177E0BC30006D75C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE7BEC38177E0BC30006D75C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CE7BEC39177E0BC30006D75C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE7BEC3B177E0BC30006D75C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Welcu Social/Welcu Social-Prefix.pch";
+				INFOPLIST_FILE = "Welcu Social/Welcu Social-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CE7BEC3C177E0BC30006D75C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Welcu Social/Welcu Social-Prefix.pch";
+				INFOPLIST_FILE = "Welcu Social/Welcu Social-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CE7BEC3E177E0BC30006D75C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Welcu Social.app/Welcu Social";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Welcu Social/Welcu Social-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Welcu SocialTests/Welcu SocialTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CE7BEC3F177E0BC30006D75C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Welcu Social.app/Welcu Social";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Welcu Social/Welcu Social-Prefix.pch";
+				INFOPLIST_FILE = "Welcu SocialTests/Welcu SocialTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE7BEC09177E0BC30006D75C /* Build configuration list for PBXProject "Welcu Social" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7BEC38177E0BC30006D75C /* Debug */,
+				CE7BEC39177E0BC30006D75C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE7BEC3A177E0BC30006D75C /* Build configuration list for PBXNativeTarget "Welcu Social" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7BEC3B177E0BC30006D75C /* Debug */,
+				CE7BEC3C177E0BC30006D75C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CE7BEC3D177E0BC30006D75C /* Build configuration list for PBXNativeTarget "Welcu SocialTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7BEC3E177E0BC30006D75C /* Debug */,
+				CE7BEC3F177E0BC30006D75C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE7BEC06177E0BC30006D75C /* Project object */;
+}
