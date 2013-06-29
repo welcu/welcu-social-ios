@@ -1,7 +1,7 @@
 #!/bin/sh
 
-RESOURCES_TO_COPY=${PODS_ROOT}/resources-to-copy.txt
-touch "$RESOURCES_TO_COPY"
+RESOURCES_TO_COPY=${PODS_ROOT}/resources-to-copy-${TARGETNAME}.txt
+> "$RESOURCES_TO_COPY"
 
 install_resource()
 {
@@ -28,6 +28,7 @@ install_resource()
       ;;
   esac
 }
+install_resource 'SIAlertView/SIAlertView/SIAlertView.bundle'
 
 rsync -avr --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rm "$RESOURCES_TO_COPY"

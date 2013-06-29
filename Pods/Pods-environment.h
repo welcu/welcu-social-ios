@@ -6,17 +6,47 @@
 // project.
 
 
+// AALaunchTransition
+#define COCOAPODS_POD_AVAILABLE_AALaunchTransition
+#define COCOAPODS_VERSION_MAJOR_AALaunchTransition 0
+#define COCOAPODS_VERSION_MINOR_AALaunchTransition 1
+#define COCOAPODS_VERSION_PATCH_AALaunchTransition 3
+
 // AFNetworking
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 1
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking 1
 
+// AKSegmentedControl
+#define COCOAPODS_POD_AVAILABLE_AKSegmentedControl
+#define COCOAPODS_VERSION_MAJOR_AKSegmentedControl 1
+#define COCOAPODS_VERSION_MINOR_AKSegmentedControl 0
+#define COCOAPODS_VERSION_PATCH_AKSegmentedControl 2
+
+// ALRadial
+#define COCOAPODS_POD_AVAILABLE_ALRadial
+#define COCOAPODS_VERSION_MAJOR_ALRadial 0
+#define COCOAPODS_VERSION_MINOR_ALRadial 1
+#define COCOAPODS_VERSION_PATCH_ALRadial 0
+
+// AMAttributedHighlightLabel
+#define COCOAPODS_POD_AVAILABLE_AMAttributedHighlightLabel
+#define COCOAPODS_VERSION_MAJOR_AMAttributedHighlightLabel 0
+#define COCOAPODS_VERSION_MINOR_AMAttributedHighlightLabel 0
+#define COCOAPODS_VERSION_PATCH_AMAttributedHighlightLabel 1
+
 // CocoaLumberjack
 #define COCOAPODS_POD_AVAILABLE_CocoaLumberjack
 #define COCOAPODS_VERSION_MAJOR_CocoaLumberjack 1
 #define COCOAPODS_VERSION_MINOR_CocoaLumberjack 6
 #define COCOAPODS_VERSION_PATCH_CocoaLumberjack 2
+
+// DRKonamiCode
+#define COCOAPODS_POD_AVAILABLE_DRKonamiCode
+#define COCOAPODS_VERSION_MAJOR_DRKonamiCode 1
+#define COCOAPODS_VERSION_MINOR_DRKonamiCode 0
+#define COCOAPODS_VERSION_PATCH_DRKonamiCode 0
 
 // GoogleAnalytics-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK
@@ -25,11 +55,35 @@
 // Please contact the author.
 // Version: 2.0beta4.
 
+// JASidePanels
+#define COCOAPODS_POD_AVAILABLE_JASidePanels
+#define COCOAPODS_VERSION_MAJOR_JASidePanels 1
+#define COCOAPODS_VERSION_MINOR_JASidePanels 3
+#define COCOAPODS_VERSION_PATCH_JASidePanels 1
+
 // NewRelicAgent
 #define COCOAPODS_POD_AVAILABLE_NewRelicAgent
 #define COCOAPODS_VERSION_MAJOR_NewRelicAgent 1
 #define COCOAPODS_VERSION_MINOR_NewRelicAgent 342
 #define COCOAPODS_VERSION_PATCH_NewRelicAgent 0
+
+// ODRefreshControl
+#define COCOAPODS_POD_AVAILABLE_ODRefreshControl
+#define COCOAPODS_VERSION_MAJOR_ODRefreshControl 1
+#define COCOAPODS_VERSION_MINOR_ODRefreshControl 1
+#define COCOAPODS_VERSION_PATCH_ODRefreshControl 0
+
+// OHAttributedLabel
+#define COCOAPODS_POD_AVAILABLE_OHAttributedLabel
+#define COCOAPODS_VERSION_MAJOR_OHAttributedLabel 3
+#define COCOAPODS_VERSION_MINOR_OHAttributedLabel 4
+#define COCOAPODS_VERSION_PATCH_OHAttributedLabel 1
+
+// SIAlertView
+#define COCOAPODS_POD_AVAILABLE_SIAlertView
+#define COCOAPODS_VERSION_MAJOR_SIAlertView 1
+#define COCOAPODS_VERSION_MINOR_SIAlertView 2
+#define COCOAPODS_VERSION_PATCH_SIAlertView 0
 
 // TestFlightLogger
 #define COCOAPODS_POD_AVAILABLE_TestFlightLogger

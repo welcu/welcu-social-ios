@@ -12,10 +12,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor welcuPurple]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           UITextAttributeTextColor : [UIColor welcuPurple]
+                                                           }];
+    
+    [[UITabBar appearance] setBackgroundColor:[UIColor welcuPurple]];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setBarStyle:UIBarStyleBlackOpaque];
+    
+    [[UITableView appearance] setBackgroundColor:[UIColor welcuLightGrey]];
+    [[UITableViewHeaderFooterView appearance] setBackgroundColor:[UIColor welcuLightPurple]];
+
+    
     return YES;
 }
 

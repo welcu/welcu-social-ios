@@ -1,10 +1,22 @@
+#include "Pods-AALaunchTransition"
+#include "Pods-AFNetworking"
+#include "Pods-AKSegmentedControl"
+#include "Pods-ALRadial"
+#include "Pods-AMAttributedHighlightLabel"
+#include "Pods-CocoaLumberjack"
+#include "Pods-DRKonamiCode"
+#include "Pods-GoogleAnalytics-iOS-SDK"
+#include "Pods-JASidePanels"
+#include "Pods-NewRelicAgent"
+#include "Pods-ODRefreshControl"
+#include "Pods-OHAttributedLabel"
+#include "Pods-SIAlertView"
+#include "Pods-TestFlightLogger"
+#include "Pods-TestFlightSDK"
 ALWAYS_SEARCH_USER_PATHS = YES
-FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/NewRelicAgent/NewRelic_iOS_Agent_1.342"
+FRAMEWORK_SEARCH_PATHS =  ${PODS_NEWRELICAGENT_FRAMEWORK_SEARCH_PATHS}
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS}
-LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/GoogleAnalytics-iOS-SDK/Library" "$(PODS_ROOT)/TestFlightSDK"
-OTHER_LDFLAGS = -ObjC -lGoogleAnalytics -lTestFlight -lz -framework CFNetwork -framework CoreData -framework CoreGraphics -framework CoreTelephony -framework MobileCoreServices -framework NewRelicAgent -framework Security -framework SystemConfiguration -framework UIKit
-PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/AFNetworking" "${PODS_ROOT}/BuildHeaders/CocoaLumberjack" "${PODS_ROOT}/BuildHeaders/GoogleAnalytics-iOS-SDK" "${PODS_ROOT}/BuildHeaders/NewRelicAgent" "${PODS_ROOT}/BuildHeaders/TestFlightLogger" "${PODS_ROOT}/BuildHeaders/TestFlightSDK"
-PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
-PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/CocoaLumberjack" "${PODS_ROOT}/Headers/GoogleAnalytics-iOS-SDK" "${PODS_ROOT}/Headers/NewRelicAgent" "${PODS_ROOT}/Headers/TestFlightLogger" "${PODS_ROOT}/Headers/TestFlightSDK"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AALaunchTransition" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/AKSegmentedControl" "${PODS_ROOT}/Headers/ALRadial" "${PODS_ROOT}/Headers/AMAttributedHighlightLabel" "${PODS_ROOT}/Headers/CocoaLumberjack" "${PODS_ROOT}/Headers/DRKonamiCode" "${PODS_ROOT}/Headers/GoogleAnalytics-iOS-SDK" "${PODS_ROOT}/Headers/JASidePanels" "${PODS_ROOT}/Headers/NewRelicAgent" "${PODS_ROOT}/Headers/ODRefreshControl" "${PODS_ROOT}/Headers/OHAttributedLabel" "${PODS_ROOT}/Headers/SIAlertView" "${PODS_ROOT}/Headers/TestFlightLogger" "${PODS_ROOT}/Headers/TestFlightSDK"
+LIBRARY_SEARCH_PATHS =  ${PODS_GOOGLEANALYTICS_IOS_SDK_LIBRARY_SEARCH_PATHS} ${PODS_TESTFLIGHTSDK_LIBRARY_SEARCH_PATHS}
+OTHER_LDFLAGS = -ObjC ${PODS_AFNETWORKING_OTHER_LDFLAGS} ${PODS_ALRADIAL_OTHER_LDFLAGS} ${PODS_AMATTRIBUTEDHIGHLIGHTLABEL_OTHER_LDFLAGS} ${PODS_GOOGLEANALYTICS_IOS_SDK_OTHER_LDFLAGS} ${PODS_JASIDEPANELS_OTHER_LDFLAGS} ${PODS_NEWRELICAGENT_OTHER_LDFLAGS} ${PODS_ODREFRESHCONTROL_OTHER_LDFLAGS} ${PODS_OHATTRIBUTEDLABEL_OTHER_LDFLAGS} ${PODS_SIALERTVIEW_OTHER_LDFLAGS} ${PODS_TESTFLIGHTSDK_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}/Pods

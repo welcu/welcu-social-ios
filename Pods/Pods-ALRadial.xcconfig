@@ -1,0 +1,1 @@
+PODS_ALRADIAL_OTHER_LDFLAGS = -framework CoreGraphics -framework QuartzCore
