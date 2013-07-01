@@ -31,6 +31,12 @@
 		CE7BEC5C177E3FB00006D75C /* UIColor+WelcuColors.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC5B177E3FB00006D75C /* UIColor+WelcuColors.m */; };
 		CE8E4929177E68FE006B1874 /* WelcuEventFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4928177E68FE006B1874 /* WelcuEventFeedViewController.m */; };
 		CE8E492C177E6954006B1874 /* WelcuEventFeedViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E492B177E6954006B1874 /* WelcuEventFeedViewCell.m */; };
+		CE8E4930177F7269006B1874 /* UIImage+MaskedImages.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E492F177F7269006B1874 /* UIImage+MaskedImages.m */; };
+		CE8E4932177F8ED1006B1874 /* WelcuMenuUserProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8E4931177F8ED1006B1874 /* WelcuMenuUserProfileCell.xib */; };
+		CE8E4935177F9047006B1874 /* WelcuMenuUserProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4934177F9047006B1874 /* WelcuMenuUserProfileCell.m */; };
+		CE8E493E177F98E2006B1874 /* NSObject+ClassName.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E493D177F98E2006B1874 /* NSObject+ClassName.m */; };
+		CE8E49431780E279006B1874 /* WelcuEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8E49421780E279006B1874 /* WelcuEventCell.xib */; };
+		CE8E49461780E2AE006B1874 /* WelcuEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E49451780E2AE006B1874 /* WelcuEventCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +89,17 @@
 		CE8E4928177E68FE006B1874 /* WelcuEventFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventFeedViewController.m; sourceTree = "<group>"; };
 		CE8E492A177E6954006B1874 /* WelcuEventFeedViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventFeedViewCell.h; sourceTree = "<group>"; };
 		CE8E492B177E6954006B1874 /* WelcuEventFeedViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventFeedViewCell.m; sourceTree = "<group>"; };
+		CE8E492E177F7269006B1874 /* UIImage+MaskedImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MaskedImages.h"; sourceTree = "<group>"; };
+		CE8E492F177F7269006B1874 /* UIImage+MaskedImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MaskedImages.m"; sourceTree = "<group>"; };
+		CE8E4931177F8ED1006B1874 /* WelcuMenuUserProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcuMenuUserProfileCell.xib; sourceTree = "<group>"; };
+		CE8E4933177F9047006B1874 /* WelcuMenuUserProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuMenuUserProfileCell.h; sourceTree = "<group>"; };
+		CE8E4934177F9047006B1874 /* WelcuMenuUserProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuMenuUserProfileCell.m; sourceTree = "<group>"; };
+		CE8E493C177F98E2006B1874 /* NSObject+ClassName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ClassName.h"; sourceTree = "<group>"; };
+		CE8E493D177F98E2006B1874 /* NSObject+ClassName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ClassName.m"; sourceTree = "<group>"; };
+		CE8E493F177F99D0006B1874 /* WelcuCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuCategories.h; sourceTree = "<group>"; };
+		CE8E49421780E279006B1874 /* WelcuEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcuEventCell.xib; sourceTree = "<group>"; };
+		CE8E49441780E2AE006B1874 /* WelcuEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventCell.h; sourceTree = "<group>"; };
+		CE8E49451780E2AE006B1874 /* WelcuEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +173,8 @@
 				CE7BEC45177E0FDB0006D75C /* Models */,
 				CE7BEC47177E10110006D75C /* Views */,
 				CE7BEC46177E0FE00006D75C /* Controllers */,
+				CE8E492D177F71E0006B1874 /* Categories */,
 				CE7BEC18177E0BC30006D75C /* Supporting Files */,
-				CE7BEC5A177E3FB00006D75C /* UIColor+WelcuColors.h */,
-				CE7BEC5B177E3FB00006D75C /* UIColor+WelcuColors.m */,
 			);
 			path = "Welcu Social";
 			sourceTree = "<group>";
@@ -224,8 +240,28 @@
 				CE7BEC43177E0FD10006D75C /* iPhoneStoryboard.storyboard */,
 				CE8E492A177E6954006B1874 /* WelcuEventFeedViewCell.h */,
 				CE8E492B177E6954006B1874 /* WelcuEventFeedViewCell.m */,
+				CE8E4931177F8ED1006B1874 /* WelcuMenuUserProfileCell.xib */,
+				CE8E4933177F9047006B1874 /* WelcuMenuUserProfileCell.h */,
+				CE8E4934177F9047006B1874 /* WelcuMenuUserProfileCell.m */,
+				CE8E49421780E279006B1874 /* WelcuEventCell.xib */,
+				CE8E49441780E2AE006B1874 /* WelcuEventCell.h */,
+				CE8E49451780E2AE006B1874 /* WelcuEventCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CE8E492D177F71E0006B1874 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CE8E493F177F99D0006B1874 /* WelcuCategories.h */,
+				CE7BEC5A177E3FB00006D75C /* UIColor+WelcuColors.h */,
+				CE7BEC5B177E3FB00006D75C /* UIColor+WelcuColors.m */,
+				CE8E492E177F7269006B1874 /* UIImage+MaskedImages.h */,
+				CE8E492F177F7269006B1874 /* UIImage+MaskedImages.m */,
+				CE8E493C177F98E2006B1874 /* NSObject+ClassName.h */,
+				CE8E493D177F98E2006B1874 /* NSObject+ClassName.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,7 +354,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7BEC1C177E0BC30006D75C /* InfoPlist.strings in Resources */,
+				CE8E49431780E279006B1874 /* WelcuEventCell.xib in Resources */,
 				CE7BEC24177E0BC30006D75C /* Images.xcassets in Resources */,
+				CE8E4932177F8ED1006B1874 /* WelcuMenuUserProfileCell.xib in Resources */,
 				CE7BEC44177E0FD10006D75C /* iPhoneStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,13 +411,17 @@
 				CE7BEC4D177E11490006D75C /* WelcuMenuViewController.m in Sources */,
 				CE7BEC5C177E3FB00006D75C /* UIColor+WelcuColors.m in Sources */,
 				CE7BEC1E177E0BC30006D75C /* main.m in Sources */,
+				CE8E493E177F98E2006B1874 /* NSObject+ClassName.m in Sources */,
+				CE8E4930177F7269006B1874 /* UIImage+MaskedImages.m in Sources */,
 				CE7BEC4A177E10D30006D75C /* WelcuMainViewController.m in Sources */,
+				CE8E4935177F9047006B1874 /* WelcuMenuUserProfileCell.m in Sources */,
 				CE7BEC22177E0BC30006D75C /* WelcuAppDelegate.m in Sources */,
 				CE8E4929177E68FE006B1874 /* WelcuEventFeedViewController.m in Sources */,
 				CE7BEC56177E31D70006D75C /* WelcuEventViewController.m in Sources */,
 				CE8E492C177E6954006B1874 /* WelcuEventFeedViewCell.m in Sources */,
 				CE7BEC50177E120E0006D75C /* WelcuStartViewController.m in Sources */,
 				CE7BEC53177E121F0006D75C /* WelcuLoginViewController.m in Sources */,
+				CE8E49461780E2AE006B1874 /* WelcuEventCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

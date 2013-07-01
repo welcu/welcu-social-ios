@@ -9,7 +9,6 @@
 #import "WelcuMainViewController.h"
 
 @interface WelcuMainViewController ()
-@property (strong) UINavigationController *mainNavigation;
 @end
 
 @implementation WelcuMainViewController
@@ -17,14 +16,7 @@
 -(void) awakeFromNib
 {
     [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"WelcuMenuViewController"]];
-    
-    self.mainNavigation = [[UINavigationController alloc] init];
-    
-    [self setCenterPanel:self.mainNavigation];
-    
-    [self.mainNavigation setViewControllers:@[
-                                             [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuEventViewController"]
-                                             ]];
+    [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"WelcuEventFeedNavigationController"]];
     
 //    [self setRightPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"rightViewController"]];
 }

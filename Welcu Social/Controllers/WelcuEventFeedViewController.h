@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WelcuEventFeedViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIButton *composeButton;
+- (IBAction)startComposeAction:(id)sender;
 
 @end

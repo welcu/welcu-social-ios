@@ -7,23 +7,20 @@
 //
 
 #import "WelcuEventFeedViewController.h"
-#import "WelcuEventFeedViewCell.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import <ALRadial/ALRadialMenu.h>
 
-@interface WelcuEventFeedViewController ()
+#import "UIImage+MaskedImages.h"
+#import "WelcuEventFeedViewCell.h"
+
+@interface WelcuEventFeedViewController () <ALRadialMenuDelegate>
+
+@property (nonatomic,strong) ALRadialMenu *composeMenu;
+@property (nonatomic,assign, getter = isComposeMenuVisible) BOOL composeMenuVisible;
 
 @end
 
 @implementation WelcuEventFeedViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -34,6 +31,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.composeMenu = [[ALRadialMenu alloc] init];
+    self.composeMenu.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,7 +65,13 @@
     cell.postContentLabel.lineBreakMode = NSLineBreakByCharWrapping;
     [cell.postContentLabel setString:@"Hello #world from @twitter http://welcu.com"];
     
-    [cell.userPictureView setImageWithURL:[NSURL URLWithString:@"https://graph.facebook.com/sagmor/picture"]];
+//    [cell.userPictureView setImageWithURL:[NSURL URLWithString:@""]];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://graph.facebook.com/sagmor/picture"]];
+    
+    [cell.userPictureView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        cell.userPictureView.image = [image maskWithImage:[UIImage imageNamed:@"UserPhotoMask"]];
+    } failure:nil];
     
     return cell;
 }
@@ -121,5 +126,62 @@
 }
 
  */
+
+- (IBAction)startComposeAction:(id)sender {
+    if ([self isComposeMenuVisible]) {
+        self.composeMenuVisible = NO;
+        [self.composeMenu itemsWillDisapearIntoButton:self.composeButton];
+    } else {
+        self.composeMenuVisible = YES;
+        [self.composeMenu itemsWillAppearFromButton:self.composeButton withFrame:self.composeButton.frame inView:self.view];
+    }
+}
+
+
+# pragma mark ALRadialMenu
+
+- (NSInteger) numberOfItemsInRadialMenu:(ALRadialMenu *)radialMenu
+{
+    return 3;
+}
+
+- (NSInteger) arcSizeForRadialMenu:(ALRadialMenu *)radialMenu
+{
+    return 90;
+}
+
+- (NSInteger) arcRadiusForRadialMenu:(ALRadialMenu *)radialMenu
+{
+    return 65;
+}
+
+- (UIImage *) radialMenu:(ALRadialMenu *)radialMenu imageForIndex:(NSInteger) index
+{
+    switch (index) {
+        case 1:
+            return [UIImage imageNamed:@"ComposeImageButtonImage"];
+        case 2:
+            return [UIImage imageNamed:@"ComposeQuoteButtonImage"];
+        case 3:
+            return [UIImage imageNamed:@"ComposeButtonImage"];
+    }
+    
+    return nil;
+}
+
+- (void) radialMenu:(ALRadialMenu *)radialMenu didSelectItemAtIndex:(NSInteger) index
+{
+    [self.composeMenu itemsWillDisapearIntoButton:self.composeButton];
+}
+
+- (NSInteger) arcStartForRadialMenu:(ALRadialMenu *)radialMenu
+{
+    return 95;
+}
+
+- (float) buttonSizeForRadialMenu:(ALRadialMenu *)radialMenu
+{
+    return 40;
+}
 
 @end

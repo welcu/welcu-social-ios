@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WelcuEventViewController : UITabBarController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *composeButton;
+- (IBAction)startComposeAction:(id)sender;
 
 @end

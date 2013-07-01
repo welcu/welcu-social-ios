@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Welcu. All rights reserved.
 //
 
-#import "JASidePanelController.h"
+#import <JASidePanels/JASidePanelController.h>
 
 @interface WelcuMainViewController : JASidePanelController
 

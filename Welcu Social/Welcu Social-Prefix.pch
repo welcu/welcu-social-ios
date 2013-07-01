@@ -16,4 +16,5 @@
     #import <CocoaLumberjack/DDLog.h>
     #import "WelcuConstants.h"
     #import "UIColor+WelcuColors.h"
+    #import "WelcuCategories.h"
 #endif
