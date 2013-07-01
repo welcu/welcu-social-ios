@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A2922333221434C8C447671 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEE0432ED3E4A3F9BC588C8 /* libPods.a */; };
+		CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC11177E0BC30006D75C /* Foundation.framework */; };
+		CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */; };
+		CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC15177E0BC30006D75C /* UIKit.framework */; };
+		CE7BEC1C177E0BC30006D75C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7BEC1A177E0BC30006D75C /* InfoPlist.strings */; };
+		CE7BEC1E177E0BC30006D75C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC1D177E0BC30006D75C /* main.m */; };
+		CE7BEC22177E0BC30006D75C /* WelcuAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC21177E0BC30006D75C /* WelcuAppDelegate.m */; };
+		CE7BEC24177E0BC30006D75C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7BEC23177E0BC30006D75C /* Images.xcassets */; };
+		CE7BEC2B177E0BC30006D75C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC2A177E0BC30006D75C /* XCTest.framework */; };
+		CE7BEC2C177E0BC30006D75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC11177E0BC30006D75C /* Foundation.framework */; };
+		CE7BEC2D177E0BC30006D75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC15177E0BC30006D75C /* UIKit.framework */; };
+		CE7BEC35177E0BC30006D75C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7BEC33177E0BC30006D75C /* InfoPlist.strings */; };
+		CE7BEC37177E0BC30006D75C /* Welcu_SocialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC36177E0BC30006D75C /* Welcu_SocialTests.m */; };
+		CE7BEC42177E0BE70006D75C /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC41177E0BE70006D75C /* PassKit.framework */; };
+		CE7BEC44177E0FD10006D75C /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7BEC43177E0FD10006D75C /* iPhoneStoryboard.storyboard */; };
+		CE7BEC4A177E10D30006D75C /* WelcuMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC49177E10D30006D75C /* WelcuMainViewController.m */; };
+		CE7BEC4D177E11490006D75C /* WelcuMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC4C177E11490006D75C /* WelcuMenuViewController.m */; };
+		CE7BEC50177E120E0006D75C /* WelcuStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC4F177E120E0006D75C /* WelcuStartViewController.m */; };
+		CE7BEC53177E121F0006D75C /* WelcuLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC52177E121F0006D75C /* WelcuLoginViewController.m */; };
+		CE7BEC56177E31D70006D75C /* WelcuEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC55177E31D70006D75C /* WelcuEventViewController.m */; };
+		CE7BEC59177E3EEE0006D75C /* WelcuConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC58177E3EEE0006D75C /* WelcuConstants.m */; };
+		CE7BEC5C177E3FB00006D75C /* UIColor+WelcuColors.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC5B177E3FB00006D75C /* UIColor+WelcuColors.m */; };
+		CE8E4929177E68FE006B1874 /* WelcuEventFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4928177E68FE006B1874 /* WelcuEventFeedViewController.m */; };
+		CE8E492C177E6954006B1874 /* WelcuEventFeedViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E492B177E6954006B1874 /* WelcuEventFeedViewCell.m */; };
+		CE8E4930177F7269006B1874 /* UIImage+MaskedImages.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E492F177F7269006B1874 /* UIImage+MaskedImages.m */; };
+		CE8E4932177F8ED1006B1874 /* WelcuMenuUserProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8E4931177F8ED1006B1874 /* WelcuMenuUserProfileCell.xib */; };
+		CE8E4935177F9047006B1874 /* WelcuMenuUserProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4934177F9047006B1874 /* WelcuMenuUserProfileCell.m */; };
+		CE8E493E177F98E2006B1874 /* NSObject+ClassName.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E493D177F98E2006B1874 /* NSObject+ClassName.m */; };
+		CE8E49431780E279006B1874 /* WelcuEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8E49421780E279006B1874 /* WelcuEventCell.xib */; };
+		CE8E49461780E2AE006B1874 /* WelcuEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E49451780E2AE006B1874 /* WelcuEventCell.m */; };
+		CE8E49491781116B006B1874 /* WelcuComposePhotoCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E49481781116B006B1874 /* WelcuComposePhotoCameraViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE7BEC2E177E0BC30006D75C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE7BEC06177E0BC30006D75C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE7BEC0D177E0BC30006D75C;
+			remoteInfo = "WelcuSocial";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6CEE0432ED3E4A3F9BC588C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7077684778AA4E5B8DD7B75E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		CE7BEC0E177E0BC30006D75C /* WelcuSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WelcuSocial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7BEC11177E0BC30006D75C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE7BEC15177E0BC30006D75C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CE7BEC19177E0BC30006D75C /* WelcuSocial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WelcuSocial-Info.plist"; sourceTree = "<group>"; };
+		CE7BEC1B177E0BC30006D75C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE7BEC1D177E0BC30006D75C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE7BEC1F177E0BC30006D75C /* WelcuSocial-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WelcuSocial-Prefix.pch"; sourceTree = "<group>"; };
+		CE7BEC20177E0BC30006D75C /* WelcuAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcuAppDelegate.h; sourceTree = "<group>"; };
+		CE7BEC21177E0BC30006D75C /* WelcuAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcuAppDelegate.m; sourceTree = "<group>"; };
+		CE7BEC23177E0BC30006D75C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CE7BEC29177E0BC30006D75C /* WelcuSocialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WelcuSocialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7BEC2A177E0BC30006D75C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CE7BEC32177E0BC30006D75C /* WelcuSocialTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WelcuSocialTests-Info.plist"; sourceTree = "<group>"; };
+		CE7BEC34177E0BC30006D75C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE7BEC36177E0BC30006D75C /* Welcu_SocialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Welcu_SocialTests.m; sourceTree = "<group>"; };
+		CE7BEC40177E0BE60006D75C /* WelcuSocial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "WelcuSocial.entitlements"; sourceTree = "<group>"; };
+		CE7BEC41177E0BE70006D75C /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		CE7BEC43177E0FD10006D75C /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPhoneStoryboard.storyboard; path = ../iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
+		CE7BEC48177E10D30006D75C /* WelcuMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuMainViewController.h; sourceTree = "<group>"; };
+		CE7BEC49177E10D30006D75C /* WelcuMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuMainViewController.m; sourceTree = "<group>"; };
+		CE7BEC4B177E11490006D75C /* WelcuMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuMenuViewController.h; sourceTree = "<group>"; };
+		CE7BEC4C177E11490006D75C /* WelcuMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuMenuViewController.m; sourceTree = "<group>"; };
+		CE7BEC4E177E120E0006D75C /* WelcuStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuStartViewController.h; sourceTree = "<group>"; };
+		CE7BEC4F177E120E0006D75C /* WelcuStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuStartViewController.m; sourceTree = "<group>"; };
+		CE7BEC51177E121F0006D75C /* WelcuLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuLoginViewController.h; sourceTree = "<group>"; };
+		CE7BEC52177E121F0006D75C /* WelcuLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuLoginViewController.m; sourceTree = "<group>"; };
+		CE7BEC54177E31D70006D75C /* WelcuEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventViewController.h; sourceTree = "<group>"; };
+		CE7BEC55177E31D70006D75C /* WelcuEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventViewController.m; sourceTree = "<group>"; };
+		CE7BEC57177E3EEE0006D75C /* WelcuConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuConstants.h; sourceTree = "<group>"; };
+		CE7BEC58177E3EEE0006D75C /* WelcuConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuConstants.m; sourceTree = "<group>"; };
+		CE7BEC5A177E3FB00006D75C /* UIColor+WelcuColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+WelcuColors.h"; sourceTree = "<group>"; };
+		CE7BEC5B177E3FB00006D75C /* UIColor+WelcuColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+WelcuColors.m"; sourceTree = "<group>"; };
+		CE8E4927177E68FE006B1874 /* WelcuEventFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventFeedViewController.h; sourceTree = "<group>"; };
+		CE8E4928177E68FE006B1874 /* WelcuEventFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventFeedViewController.m; sourceTree = "<group>"; };
+		CE8E492A177E6954006B1874 /* WelcuEventFeedViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventFeedViewCell.h; sourceTree = "<group>"; };
+		CE8E492B177E6954006B1874 /* WelcuEventFeedViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventFeedViewCell.m; sourceTree = "<group>"; };
+		CE8E492E177F7269006B1874 /* UIImage+MaskedImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MaskedImages.h"; sourceTree = "<group>"; };
+		CE8E492F177F7269006B1874 /* UIImage+MaskedImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MaskedImages.m"; sourceTree = "<group>"; };
+		CE8E4931177F8ED1006B1874 /* WelcuMenuUserProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcuMenuUserProfileCell.xib; sourceTree = "<group>"; };
+		CE8E4933177F9047006B1874 /* WelcuMenuUserProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuMenuUserProfileCell.h; sourceTree = "<group>"; };
+		CE8E4934177F9047006B1874 /* WelcuMenuUserProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuMenuUserProfileCell.m; sourceTree = "<group>"; };
+		CE8E493C177F98E2006B1874 /* NSObject+ClassName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ClassName.h"; sourceTree = "<group>"; };
+		CE8E493D177F98E2006B1874 /* NSObject+ClassName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ClassName.m"; sourceTree = "<group>"; };
+		CE8E493F177F99D0006B1874 /* WelcuCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuCategories.h; sourceTree = "<group>"; };
+		CE8E49421780E279006B1874 /* WelcuEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcuEventCell.xib; sourceTree = "<group>"; };
+		CE8E49441780E2AE006B1874 /* WelcuEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventCell.h; sourceTree = "<group>"; };
+		CE8E49451780E2AE006B1874 /* WelcuEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventCell.m; sourceTree = "<group>"; };
+		CE8E49471781116B006B1874 /* WelcuComposePhotoCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuComposePhotoCameraViewController.h; sourceTree = "<group>"; };
+		CE8E49481781116B006B1874 /* WelcuComposePhotoCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuComposePhotoCameraViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE7BEC0B177E0BC30006D75C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7BEC42177E0BE70006D75C /* PassKit.framework in Frameworks */,
+				CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */,
+				CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */,
+				CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */,
+				9A2922333221434C8C447671 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE7BEC26177E0BC30006D75C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7BEC2B177E0BC30006D75C /* XCTest.framework in Frameworks */,
+				CE7BEC2D177E0BC30006D75C /* UIKit.framework in Frameworks */,
+				CE7BEC2C177E0BC30006D75C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE7BEC05177E0BC30006D75C = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC17177E0BC30006D75C /* WelcuSocial */,
+				CE7BEC30177E0BC30006D75C /* WelcuSocialTests */,
+				CE7BEC10177E0BC30006D75C /* Frameworks */,
+				CE7BEC0F177E0BC30006D75C /* Products */,
+				7077684778AA4E5B8DD7B75E /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		CE7BEC0F177E0BC30006D75C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC0E177E0BC30006D75C /* WelcuSocial.app */,
+				CE7BEC29177E0BC30006D75C /* WelcuSocialTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE7BEC10177E0BC30006D75C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC41177E0BE70006D75C /* PassKit.framework */,
+				CE7BEC11177E0BC30006D75C /* Foundation.framework */,
+				CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */,
+				CE7BEC15177E0BC30006D75C /* UIKit.framework */,
+				CE7BEC2A177E0BC30006D75C /* XCTest.framework */,
+				6CEE0432ED3E4A3F9BC588C8 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE7BEC17177E0BC30006D75C /* WelcuSocial */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC40177E0BE60006D75C /* WelcuSocial.entitlements */,
+				CE7BEC57177E3EEE0006D75C /* WelcuConstants.h */,
+				CE7BEC58177E3EEE0006D75C /* WelcuConstants.m */,
+				CE7BEC20177E0BC30006D75C /* WelcuAppDelegate.h */,
+				CE7BEC21177E0BC30006D75C /* WelcuAppDelegate.m */,
+				CE7BEC23177E0BC30006D75C /* Images.xcassets */,
+				CE7BEC45177E0FDB0006D75C /* Models */,
+				CE7BEC47177E10110006D75C /* Views */,
+				CE7BEC46177E0FE00006D75C /* Controllers */,
+				CE8E492D177F71E0006B1874 /* Categories */,
+				CE7BEC18177E0BC30006D75C /* Supporting Files */,
+			);
+			path = "WelcuSocial";
+			sourceTree = "<group>";
+		};
+		CE7BEC18177E0BC30006D75C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC19177E0BC30006D75C /* WelcuSocial-Info.plist */,
+				CE7BEC1A177E0BC30006D75C /* InfoPlist.strings */,
+				CE7BEC1D177E0BC30006D75C /* main.m */,
+				CE7BEC1F177E0BC30006D75C /* WelcuSocial-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE7BEC30177E0BC30006D75C /* WelcuSocialTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC36177E0BC30006D75C /* Welcu_SocialTests.m */,
+				CE7BEC31177E0BC30006D75C /* Supporting Files */,
+			);
+			path = "WelcuSocialTests";
+			sourceTree = "<group>";
+		};
+		CE7BEC31177E0BC30006D75C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC32177E0BC30006D75C /* WelcuSocialTests-Info.plist */,
+				CE7BEC33177E0BC30006D75C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE7BEC45177E0FDB0006D75C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE7BEC46177E0FE00006D75C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC4E177E120E0006D75C /* WelcuStartViewController.h */,
+				CE7BEC4F177E120E0006D75C /* WelcuStartViewController.m */,
+				CE7BEC51177E121F0006D75C /* WelcuLoginViewController.h */,
+				CE7BEC52177E121F0006D75C /* WelcuLoginViewController.m */,
+				CE7BEC48177E10D30006D75C /* WelcuMainViewController.h */,
+				CE7BEC49177E10D30006D75C /* WelcuMainViewController.m */,
+				CE7BEC4B177E11490006D75C /* WelcuMenuViewController.h */,
+				CE7BEC4C177E11490006D75C /* WelcuMenuViewController.m */,
+				CE7BEC54177E31D70006D75C /* WelcuEventViewController.h */,
+				CE7BEC55177E31D70006D75C /* WelcuEventViewController.m */,
+				CE8E4927177E68FE006B1874 /* WelcuEventFeedViewController.h */,
+				CE8E4928177E68FE006B1874 /* WelcuEventFeedViewController.m */,
+				CE8E49471781116B006B1874 /* WelcuComposePhotoCameraViewController.h */,
+				CE8E49481781116B006B1874 /* WelcuComposePhotoCameraViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE7BEC47177E10110006D75C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC43177E0FD10006D75C /* iPhoneStoryboard.storyboard */,
+				CE8E492A177E6954006B1874 /* WelcuEventFeedViewCell.h */,
+				CE8E492B177E6954006B1874 /* WelcuEventFeedViewCell.m */,
+				CE8E4931177F8ED1006B1874 /* WelcuMenuUserProfileCell.xib */,
+				CE8E4933177F9047006B1874 /* WelcuMenuUserProfileCell.h */,
+				CE8E4934177F9047006B1874 /* WelcuMenuUserProfileCell.m */,
+				CE8E49421780E279006B1874 /* WelcuEventCell.xib */,
+				CE8E49441780E2AE006B1874 /* WelcuEventCell.h */,
+				CE8E49451780E2AE006B1874 /* WelcuEventCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE8E492D177F71E0006B1874 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CE8E493F177F99D0006B1874 /* WelcuCategories.h */,
+				CE7BEC5A177E3FB00006D75C /* UIColor+WelcuColors.h */,
+				CE7BEC5B177E3FB00006D75C /* UIColor+WelcuColors.m */,
+				CE8E492E177F7269006B1874 /* UIImage+MaskedImages.h */,
+				CE8E492F177F7269006B1874 /* UIImage+MaskedImages.m */,
+				CE8E493C177F98E2006B1874 /* NSObject+ClassName.h */,
+				CE8E493D177F98E2006B1874 /* NSObject+ClassName.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE7BEC0D177E0BC30006D75C /* WelcuSocial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE7BEC3A177E0BC30006D75C /* Build configuration list for PBXNativeTarget "WelcuSocial" */;
+			buildPhases = (
+				854B86CF68484C1DA1B74CD1 /* Check Pods Manifest.lock */,
+				CE7BEC0A177E0BC30006D75C /* Sources */,
+				CE7BEC0B177E0BC30006D75C /* Frameworks */,
+				CE7BEC0C177E0BC30006D75C /* Resources */,
+				9CA53E26F0D240F09CC64BFD /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WelcuSocial";
+			productName = "WelcuSocial";
+			productReference = CE7BEC0E177E0BC30006D75C /* WelcuSocial.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE7BEC28177E0BC30006D75C /* WelcuSocialTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE7BEC3D177E0BC30006D75C /* Build configuration list for PBXNativeTarget "WelcuSocialTests" */;
+			buildPhases = (
+				CE7BEC25177E0BC30006D75C /* Sources */,
+				CE7BEC26177E0BC30006D75C /* Frameworks */,
+				CE7BEC27177E0BC30006D75C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE7BEC2F177E0BC30006D75C /* PBXTargetDependency */,
+			);
+			name = "WelcuSocialTests";
+			productName = "WelcuSocialTests";
+			productReference = CE7BEC29177E0BC30006D75C /* WelcuSocialTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE7BEC06177E0BC30006D75C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Welcu;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Welcu;
+				TargetAttributes = {
+					CE7BEC0D177E0BC30006D75C = {
+						DevelopmentTeam = 9L45D274LY;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Passbook = {
+								enabled = 1;
+							};
+						};
+					};
+					CE7BEC28177E0BC30006D75C = {
+						TestTargetID = CE7BEC0D177E0BC30006D75C;
+					};
+				};
+			};
+			buildConfigurationList = CE7BEC09177E0BC30006D75C /* Build configuration list for PBXProject "WelcuSocial" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CE7BEC05177E0BC30006D75C;
+			productRefGroup = CE7BEC0F177E0BC30006D75C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE7BEC0D177E0BC30006D75C /* WelcuSocial */,
+				CE7BEC28177E0BC30006D75C /* WelcuSocialTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE7BEC0C177E0BC30006D75C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7BEC1C177E0BC30006D75C /* InfoPlist.strings in Resources */,
+				CE8E49431780E279006B1874 /* WelcuEventCell.xib in Resources */,
+				CE7BEC24177E0BC30006D75C /* Images.xcassets in Resources */,
+				CE8E4932177F8ED1006B1874 /* WelcuMenuUserProfileCell.xib in Resources */,
+				CE7BEC44177E0FD10006D75C /* iPhoneStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE7BEC27177E0BC30006D75C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7BEC35177E0BC30006D75C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		854B86CF68484C1DA1B74CD1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		9CA53E26F0D240F09CC64BFD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE7BEC0A177E0BC30006D75C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7BEC59177E3EEE0006D75C /* WelcuConstants.m in Sources */,
+				CE7BEC4D177E11490006D75C /* WelcuMenuViewController.m in Sources */,
+				CE7BEC5C177E3FB00006D75C /* UIColor+WelcuColors.m in Sources */,
+				CE7BEC1E177E0BC30006D75C /* main.m in Sources */,
+				CE8E493E177F98E2006B1874 /* NSObject+ClassName.m in Sources */,
+				CE8E4930177F7269006B1874 /* UIImage+MaskedImages.m in Sources */,
+				CE7BEC4A177E10D30006D75C /* WelcuMainViewController.m in Sources */,
+				CE8E4935177F9047006B1874 /* WelcuMenuUserProfileCell.m in Sources */,
+				CE7BEC22177E0BC30006D75C /* WelcuAppDelegate.m in Sources */,
+				CE8E4929177E68FE006B1874 /* WelcuEventFeedViewController.m in Sources */,
+				CE8E49491781116B006B1874 /* WelcuComposePhotoCameraViewController.m in Sources */,
+				CE7BEC56177E31D70006D75C /* WelcuEventViewController.m in Sources */,
+				CE8E492C177E6954006B1874 /* WelcuEventFeedViewCell.m in Sources */,
+				CE7BEC50177E120E0006D75C /* WelcuStartViewController.m in Sources */,
+				CE7BEC53177E121F0006D75C /* WelcuLoginViewController.m in Sources */,
+				CE8E49461780E2AE006B1874 /* WelcuEventCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE7BEC25177E0BC30006D75C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7BEC37177E0BC30006D75C /* Welcu_SocialTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE7BEC2F177E0BC30006D75C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE7BEC0D177E0BC30006D75C /* WelcuSocial */;
+			targetProxy = CE7BEC2E177E0BC30006D75C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE7BEC1A177E0BC30006D75C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE7BEC1B177E0BC30006D75C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CE7BEC33177E0BC30006D75C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE7BEC34177E0BC30006D75C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE7BEC38177E0BC30006D75C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CE7BEC39177E0BC30006D75C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE7BEC3B177E0BC30006D75C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7077684778AA4E5B8DD7B75E /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WelcuSocial/WelcuSocial-Prefix.pch";
+				INFOPLIST_FILE = "WelcuSocial/WelcuSocial-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CE7BEC3C177E0BC30006D75C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7077684778AA4E5B8DD7B75E /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WelcuSocial/WelcuSocial-Prefix.pch";
+				INFOPLIST_FILE = "WelcuSocial/WelcuSocial-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CE7BEC3E177E0BC30006D75C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WelcuSocial.app/WelcuSocial";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WelcuSocial/WelcuSocial-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WelcuSocialTests/WelcuSocialTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CE7BEC3F177E0BC30006D75C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WelcuSocial.app/WelcuSocial";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WelcuSocial/WelcuSocial-Prefix.pch";
+				INFOPLIST_FILE = "WelcuSocialTests/WelcuSocialTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE7BEC09177E0BC30006D75C /* Build configuration list for PBXProject "WelcuSocial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7BEC38177E0BC30006D75C /* Debug */,
+				CE7BEC39177E0BC30006D75C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE7BEC3A177E0BC30006D75C /* Build configuration list for PBXNativeTarget "WelcuSocial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7BEC3B177E0BC30006D75C /* Debug */,
+				CE7BEC3C177E0BC30006D75C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE7BEC3D177E0BC30006D75C /* Build configuration list for PBXNativeTarget "WelcuSocialTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7BEC3E177E0BC30006D75C /* Debug */,
+				CE7BEC3F177E0BC30006D75C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE7BEC06177E0BC30006D75C /* Project object */;
+}
