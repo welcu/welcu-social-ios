@@ -122,6 +122,23 @@
                     <view key="view" contentMode="scaleToFill" id="x3V-qW-UMS">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPP-UK-LqB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SampleTicket" translatesAutoresizingMaskIntoConstraints="NO" id="hOq-u0-Xc0">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="900"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                        <size key="value" width="320" height="900"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -136,7 +153,7 @@
             <objects>
                 <viewController id="Zwb-4a-WM7" customClass="WelcuComposePhotoCameraViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zvn-eO-KCK">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QdL-Qe-9sq">
@@ -204,7 +221,6 @@
         <!--Table View Controller - Discover-->
         <scene sceneID="ymy-4r-hnF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o6v-tc-jJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="lgJ-vT-6Wt" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CRv-GL-qmo">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
@@ -261,6 +277,7 @@
                         <outlet property="searchDisplayController" destination="bTb-fv-Cty" id="DRW-wq-yLq"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o6v-tc-jJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="bTb-fv-Cty">
                     <connections>
                         <outlet property="delegate" destination="lgJ-vT-6Wt" id="jNB-L7-W6O"/>
@@ -399,6 +416,12 @@
                     <view key="view" contentMode="scaleToFill" id="heY-6z-nTT">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SampleEventInfo" translatesAutoresizingMaskIntoConstraints="NO" id="MIs-As-f2b">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -573,17 +596,64 @@
             </objects>
             <point key="canvasLocation" x="2540" y="1435"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Welcu Compose Controller-->
+        <scene sceneID="iIq-tq-to0">
+            <objects>
+                <navigationController storyboardIdentifier="WelcuComposeMessageViewController" definesPresentationContext="YES" id="cvF-c3-37h" customClass="WelcuComposeController" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ehX-ZT-705">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="at5-o3-F87" kind="relationship" relationship="rootViewController" id="rFT-J1-bVH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fwg-nO-ey2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3164" y="3093"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="AxY-z0-GMO">
+            <objects>
+                <viewController id="at5-o3-F87" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ikd-Wr-nR3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Compose!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CD-WD-2nk">
+                                <rect key="frame" x="122" y="166" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="qgK-dt-BzG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XIW-Q6-GjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3706" y="3089"/>
+        </scene>
+        <!--Welcu Compose Controller-->
         <scene sceneID="HbM-cY-akl">
             <objects>
-                <navigationController storyboardIdentifier="WelcuComposePhotoViewController" automaticallyAdjustsScrollViewInsets="NO" id="6ZK-i3-Lhp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="WelcuComposeImageViewController" automaticallyAdjustsScrollViewInsets="NO" id="6ZK-i3-Lhp" customClass="WelcuComposeController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8zK-FW-1dm">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8zK-FW-1dm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="TBv-1U-Lry">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Zwb-4a-WM7" kind="relationship" relationship="rootViewController" id="h4O-gB-cCQ"/>
                     </connections>
@@ -599,48 +669,11 @@
         <image name="EventImageGradient" width="1" height="400"/>
         <image name="FeedTabIcon" width="30" height="30"/>
         <image name="SampleEventImage" width="900" height="400"/>
+        <image name="SampleEventInfo" width="320" height="575"/>
+        <image name="SampleTicket" width="320" height="900"/>
         <image name="TicketsButtonImage" width="30" height="30"/>
         <image name="TicketsTabIcon" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="AMAttributedHighlightLabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AMAttributedHighlightLabel.h"/>
-        </class>
-        <class className="JASidePanelController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JASidePanelController.h"/>
-        </class>
-        <class className="WelcuComposePhotoCameraViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuComposePhotoCameraViewController.h"/>
-        </class>
-        <class className="WelcuEventFeedViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuEventFeedViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="postContentLabel" candidateClass="AMAttributedHighlightLabel"/>
-                <relationship kind="outlet" name="postDateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userPictureView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="WelcuEventFeedViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuEventFeedViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startComposeAction:"/>
-                <relationship kind="outlet" name="composeButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="WelcuLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuLoginViewController.h"/>
-        </class>
-        <class className="WelcuMainViewController" superclassName="JASidePanelController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuMainViewController.h"/>
-        </class>
-        <class className="WelcuMenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuMenuViewController.h"/>
-        </class>
-        <class className="WelcuStartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuStartViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

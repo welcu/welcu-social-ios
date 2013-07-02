@@ -12,6 +12,7 @@ pod 'ALRadial', '~> 0.1.0'
 pod 'SIAlertView', '~> 1.2'
 pod 'ODRefreshControl', '~> 1.1.0'
 pod 'AALaunchTransition', '~> 0.1.3'
+pod 'MJPopupViewController', '~> 0.4'
 
 # Analytics
 pod 'TestFlightSDK', inhibit_warnings: true

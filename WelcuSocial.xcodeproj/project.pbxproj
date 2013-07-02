@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9A2922333221434C8C447671 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEE0432ED3E4A3F9BC588C8 /* libPods.a */; };
+		CE5CA66717824333000FCD5A /* WelcuComposeController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5CA66617824333000FCD5A /* WelcuComposeController.m */; };
+		CE5CA670178378D5000FCD5A /* R1PhotoEffectsResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE5CA66C178378D4000FCD5A /* R1PhotoEffectsResources.bundle */; };
+		CE5CA671178378D5000FCD5A /* R1PhotoEffectsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5CA66D178378D4000FCD5A /* R1PhotoEffectsSDK.a */; };
+		CE5CA672178378D5000FCD5A /* VERSION in Resources */ = {isa = PBXBuildFile; fileRef = CE5CA66F178378D4000FCD5A /* VERSION */; };
 		CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC11177E0BC30006D75C /* Foundation.framework */; };
 		CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */; };
 		CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC15177E0BC30006D75C /* UIKit.framework */; };
@@ -46,14 +50,22 @@
 			containerPortal = CE7BEC06177E0BC30006D75C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CE7BEC0D177E0BC30006D75C;
-			remoteInfo = "WelcuSocial";
+			remoteInfo = WelcuSocial;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6CEE0432ED3E4A3F9BC588C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7077684778AA4E5B8DD7B75E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		CE7BEC0E177E0BC30006D75C /* WelcuSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WelcuSocial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5CA66517824333000FCD5A /* WelcuComposeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuComposeController.h; sourceTree = "<group>"; };
+		CE5CA66617824333000FCD5A /* WelcuComposeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuComposeController.m; sourceTree = "<group>"; };
+		CE5CA66A178378D4000FCD5A /* R1PhotoEffectsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R1PhotoEffectsController.h; sourceTree = "<group>"; };
+		CE5CA66B178378D4000FCD5A /* R1PhotoEffectsEditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R1PhotoEffectsEditingViewController.h; sourceTree = "<group>"; };
+		CE5CA66C178378D4000FCD5A /* R1PhotoEffectsResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = R1PhotoEffectsResources.bundle; sourceTree = "<group>"; };
+		CE5CA66D178378D4000FCD5A /* R1PhotoEffectsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = R1PhotoEffectsSDK.a; sourceTree = "<group>"; };
+		CE5CA66E178378D4000FCD5A /* R1PhotoEffectsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R1PhotoEffectsSDK.h; sourceTree = "<group>"; };
+		CE5CA66F178378D4000FCD5A /* VERSION */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
+		CE7BEC0E177E0BC30006D75C /* WelcuSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WelcuSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BEC11177E0BC30006D75C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CE7BEC15177E0BC30006D75C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -64,12 +76,12 @@
 		CE7BEC20177E0BC30006D75C /* WelcuAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcuAppDelegate.h; sourceTree = "<group>"; };
 		CE7BEC21177E0BC30006D75C /* WelcuAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcuAppDelegate.m; sourceTree = "<group>"; };
 		CE7BEC23177E0BC30006D75C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CE7BEC29177E0BC30006D75C /* WelcuSocialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WelcuSocialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7BEC29177E0BC30006D75C /* WelcuSocialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WelcuSocialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BEC2A177E0BC30006D75C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CE7BEC32177E0BC30006D75C /* WelcuSocialTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WelcuSocialTests-Info.plist"; sourceTree = "<group>"; };
 		CE7BEC34177E0BC30006D75C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE7BEC36177E0BC30006D75C /* Welcu_SocialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Welcu_SocialTests.m; sourceTree = "<group>"; };
-		CE7BEC40177E0BE60006D75C /* WelcuSocial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "WelcuSocial.entitlements"; sourceTree = "<group>"; };
+		CE7BEC40177E0BE60006D75C /* WelcuSocial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WelcuSocial.entitlements; sourceTree = "<group>"; };
 		CE7BEC41177E0BE70006D75C /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		CE7BEC43177E0FD10006D75C /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPhoneStoryboard.storyboard; path = ../iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
 		CE7BEC48177E10D30006D75C /* WelcuMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuMainViewController.h; sourceTree = "<group>"; };
@@ -113,6 +125,7 @@
 				CE7BEC42177E0BE70006D75C /* PassKit.framework in Frameworks */,
 				CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */,
 				CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */,
+				CE5CA671178378D5000FCD5A /* R1PhotoEffectsSDK.a in Frameworks */,
 				CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */,
 				9A2922333221434C8C447671 /* libPods.a in Frameworks */,
 			);
@@ -131,6 +144,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE5CA6681783786A000FCD5A /* R1PhotoEffectsSDK.framework */ = {
+			isa = PBXGroup;
+			children = (
+				CE5CA66A178378D4000FCD5A /* R1PhotoEffectsController.h */,
+				CE5CA66B178378D4000FCD5A /* R1PhotoEffectsEditingViewController.h */,
+				CE5CA66C178378D4000FCD5A /* R1PhotoEffectsResources.bundle */,
+				CE5CA66D178378D4000FCD5A /* R1PhotoEffectsSDK.a */,
+				CE5CA66E178378D4000FCD5A /* R1PhotoEffectsSDK.h */,
+				CE5CA66F178378D4000FCD5A /* VERSION */,
+			);
+			name = R1PhotoEffectsSDK.framework;
+			path = Vendor/R1PhotoEffectsSDK.framework;
+			sourceTree = "<group>";
+		};
 		CE7BEC05177E0BC30006D75C = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +181,7 @@
 		CE7BEC10177E0BC30006D75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE5CA6681783786A000FCD5A /* R1PhotoEffectsSDK.framework */,
 				CE7BEC41177E0BE70006D75C /* PassKit.framework */,
 				CE7BEC11177E0BC30006D75C /* Foundation.framework */,
 				CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */,
@@ -179,7 +207,7 @@
 				CE8E492D177F71E0006B1874 /* Categories */,
 				CE7BEC18177E0BC30006D75C /* Supporting Files */,
 			);
-			path = "WelcuSocial";
+			path = WelcuSocial;
 			sourceTree = "<group>";
 		};
 		CE7BEC18177E0BC30006D75C /* Supporting Files */ = {
@@ -199,7 +227,7 @@
 				CE7BEC36177E0BC30006D75C /* Welcu_SocialTests.m */,
 				CE7BEC31177E0BC30006D75C /* Supporting Files */,
 			);
-			path = "WelcuSocialTests";
+			path = WelcuSocialTests;
 			sourceTree = "<group>";
 		};
 		CE7BEC31177E0BC30006D75C /* Supporting Files */ = {
@@ -235,6 +263,8 @@
 				CE8E4928177E68FE006B1874 /* WelcuEventFeedViewController.m */,
 				CE8E49471781116B006B1874 /* WelcuComposePhotoCameraViewController.h */,
 				CE8E49481781116B006B1874 /* WelcuComposePhotoCameraViewController.m */,
+				CE5CA66517824333000FCD5A /* WelcuComposeController.h */,
+				CE5CA66617824333000FCD5A /* WelcuComposeController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -286,8 +316,8 @@
 			);
 			dependencies = (
 			);
-			name = "WelcuSocial";
-			productName = "WelcuSocial";
+			name = WelcuSocial;
+			productName = WelcuSocial;
 			productReference = CE7BEC0E177E0BC30006D75C /* WelcuSocial.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -304,8 +334,8 @@
 			dependencies = (
 				CE7BEC2F177E0BC30006D75C /* PBXTargetDependency */,
 			);
-			name = "WelcuSocialTests";
-			productName = "WelcuSocialTests";
+			name = WelcuSocialTests;
+			productName = WelcuSocialTests;
 			productReference = CE7BEC29177E0BC30006D75C /* WelcuSocialTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -358,6 +388,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5CA670178378D5000FCD5A /* R1PhotoEffectsResources.bundle in Resources */,
+				CE5CA672178378D5000FCD5A /* VERSION in Resources */,
 				CE7BEC1C177E0BC30006D75C /* InfoPlist.strings in Resources */,
 				CE8E49431780E279006B1874 /* WelcuEventCell.xib in Resources */,
 				CE7BEC24177E0BC30006D75C /* Images.xcassets in Resources */,
@@ -425,6 +457,7 @@
 				CE8E49491781116B006B1874 /* WelcuComposePhotoCameraViewController.m in Sources */,
 				CE7BEC56177E31D70006D75C /* WelcuEventViewController.m in Sources */,
 				CE8E492C177E6954006B1874 /* WelcuEventFeedViewCell.m in Sources */,
+				CE5CA66717824333000FCD5A /* WelcuComposeController.m in Sources */,
 				CE7BEC50177E120E0006D75C /* WelcuStartViewController.m in Sources */,
 				CE7BEC53177E121F0006D75C /* WelcuLoginViewController.m in Sources */,
 				CE8E49461780E2AE006B1874 /* WelcuEventCell.m in Sources */,
@@ -548,6 +581,10 @@
 				GCC_PREFIX_HEADER = "WelcuSocial/WelcuSocial-Prefix.pch";
 				INFOPLIST_FILE = "WelcuSocial/WelcuSocial-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Vendor/R1PhotoEffectsSDK.framework",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -564,6 +601,10 @@
 				GCC_PREFIX_HEADER = "WelcuSocial/WelcuSocial-Prefix.pch";
 				INFOPLIST_FILE = "WelcuSocial/WelcuSocial-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Vendor/R1PhotoEffectsSDK.framework",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

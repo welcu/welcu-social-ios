@@ -61,6 +61,12 @@
 #define COCOAPODS_VERSION_MINOR_JASidePanels 3
 #define COCOAPODS_VERSION_PATCH_JASidePanels 1
 
+// MJPopupViewController
+#define COCOAPODS_POD_AVAILABLE_MJPopupViewController
+#define COCOAPODS_VERSION_MAJOR_MJPopupViewController 0
+#define COCOAPODS_VERSION_MINOR_MJPopupViewController 4
+#define COCOAPODS_VERSION_PATCH_MJPopupViewController 0
+
 // NewRelicAgent
 #define COCOAPODS_POD_AVAILABLE_NewRelicAgent
 #define COCOAPODS_VERSION_MAJOR_NewRelicAgent 1

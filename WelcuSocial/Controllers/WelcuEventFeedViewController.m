@@ -8,12 +8,16 @@
 
 #import "WelcuEventFeedViewController.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import <MJPopupViewController/UIViewController+MJPopupViewController.h>
+#import <MJPopupViewController/MJPopupBackgroundView.h>
 #import <ALRadial/ALRadialMenu.h>
+#import <ODRefreshControl/ODRefreshControl.h>
 
 #import "UIImage+MaskedImages.h"
 #import "WelcuEventFeedViewCell.h"
+#import "WelcuComposeController.h"
 
-@interface WelcuEventFeedViewController () <ALRadialMenuDelegate>
+@interface WelcuEventFeedViewController () <ALRadialMenuDelegate, WelcuComposeControllerDelegate>
 
 @property (nonatomic,strong) ALRadialMenu *composeMenu;
 @property (nonatomic,assign, getter = isComposeMenuVisible) BOOL composeMenuVisible;
@@ -33,6 +37,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.composeMenu = [[ALRadialMenu alloc] init];
     self.composeMenu.delegate = self;
+    
+    ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -137,22 +143,31 @@
     }
 }
 
+# pragma mark WelcuComposeControllerDelegate
+
+- (void)composeControllerDidCancel:(WelcuComposeController *)composeController
+{
+//    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
+}
+
 
 # pragma mark ALRadialMenu
 
 - (NSInteger) numberOfItemsInRadialMenu:(ALRadialMenu *)radialMenu
 {
-    return 3;
+    return 4;
 }
 
 - (NSInteger) arcSizeForRadialMenu:(ALRadialMenu *)radialMenu
 {
-    return 90;
+    return 110;
 }
 
 - (NSInteger) arcRadiusForRadialMenu:(ALRadialMenu *)radialMenu
 {
-    return 65;
+    return 70;
 }
 
 - (UIImage *) radialMenu:(ALRadialMenu *)radialMenu imageForIndex:(NSInteger) index
@@ -163,7 +178,9 @@
         case 2:
             return [UIImage imageNamed:@"ComposeQuoteButtonImage"];
         case 3:
-            return [UIImage imageNamed:@"ComposeButtonImage"];
+            return [UIImage imageNamed:@"ComposeMessageButtonImage"];
+        case 4:
+            return [UIImage imageNamed:@"ComposeContactButtonImage"];
     }
 
     return nil;
@@ -172,11 +189,38 @@
 - (void) radialMenu:(ALRadialMenu *)radialMenu didSelectItemAtIndex:(NSInteger) index
 {
     [self.composeMenu itemsWillDisapearIntoButton:self.composeButton];
+    
+    WelcuComposeController *composeController = nil;
+    switch (index) {
+        case 1:
+            composeController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuComposeImageViewController"];
+            break;
+        case 2:
+            composeController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuComposeMessageViewController"];
+            break;
+        case 3:
+            composeController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuComposeMessageViewController"];
+            break;
+        case 4:
+            composeController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuComposeMessageViewController"];
+            break;
+
+    }
+    
+    if (composeController) {
+        composeController.composeDelegate = self;
+//        [self presentPopupViewController:composeController animationType:MJPopupViewAnimationFade];
+        
+//        NSLog(@"%@", self.mj_popupBackgroundView.subviews);
+        
+        [self presentViewController:composeController animated:YES completion:^{
+        }];
+    }
 }
 
 - (NSInteger) arcStartForRadialMenu:(ALRadialMenu *)radialMenu
 {
-    return 95;
+    return 91;
 }
 
 - (float) buttonSizeForRadialMenu:(ALRadialMenu *)radialMenu
