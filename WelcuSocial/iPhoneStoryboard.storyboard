@@ -156,9 +156,13 @@
                         <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QdL-Qe-9sq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SamplePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="QdL-Qe-9sq">
                                 <rect key="frame" x="20" y="65" width="280" height="280"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SamplePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="YY0-pd-Axi">
+                                <rect key="frame" x="227" y="423" width="73" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E97-Jf-tEO">
                                 <rect key="frame" x="227" y="423" width="73" height="62"/>
@@ -674,52 +678,11 @@
         <image name="FeedTabIcon" width="30" height="30"/>
         <image name="SampleEventImage" width="900" height="400"/>
         <image name="SampleEventInfo" width="320" height="575"/>
+        <image name="SamplePhoto" width="1000" height="1333"/>
         <image name="SampleTicket" width="320" height="900"/>
         <image name="TicketsButtonImage" width="30" height="30"/>
         <image name="TicketsTabIcon" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="AMAttributedHighlightLabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AMAttributedHighlightLabel.h"/>
-        </class>
-        <class className="JASidePanelController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JASidePanelController.h"/>
-        </class>
-        <class className="WelcuComposeController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuComposeController.h"/>
-        </class>
-        <class className="WelcuComposePhotoCameraViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuComposePhotoCameraViewController.h"/>
-        </class>
-        <class className="WelcuEventFeedViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuEventFeedViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="postContentLabel" candidateClass="AMAttributedHighlightLabel"/>
-                <relationship kind="outlet" name="postDateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userPictureView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="WelcuEventFeedViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuEventFeedViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startComposeAction:"/>
-                <relationship kind="outlet" name="composeButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="WelcuLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuLoginViewController.h"/>
-        </class>
-        <class className="WelcuMainViewController" superclassName="JASidePanelController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuMainViewController.h"/>
-        </class>
-        <class className="WelcuMenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuMenuViewController.h"/>
-        </class>
-        <class className="WelcuStartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuStartViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

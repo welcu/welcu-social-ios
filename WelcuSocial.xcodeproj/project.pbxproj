@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		9A2922333221434C8C447671 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEE0432ED3E4A3F9BC588C8 /* libPods.a */; };
 		CE5CA66717824333000FCD5A /* WelcuComposeController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5CA66617824333000FCD5A /* WelcuComposeController.m */; };
-		CE5CA670178378D5000FCD5A /* R1PhotoEffectsResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE5CA66C178378D4000FCD5A /* R1PhotoEffectsResources.bundle */; };
-		CE5CA671178378D5000FCD5A /* R1PhotoEffectsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5CA66D178378D4000FCD5A /* R1PhotoEffectsSDK.a */; };
-		CE5CA672178378D5000FCD5A /* VERSION in Resources */ = {isa = PBXBuildFile; fileRef = CE5CA66F178378D4000FCD5A /* VERSION */; };
 		CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC11177E0BC30006D75C /* Foundation.framework */; };
 		CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */; };
 		CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC15177E0BC30006D75C /* UIKit.framework */; };
@@ -59,12 +56,6 @@
 		7077684778AA4E5B8DD7B75E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		CE5CA66517824333000FCD5A /* WelcuComposeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuComposeController.h; sourceTree = "<group>"; };
 		CE5CA66617824333000FCD5A /* WelcuComposeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuComposeController.m; sourceTree = "<group>"; };
-		CE5CA66A178378D4000FCD5A /* R1PhotoEffectsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R1PhotoEffectsController.h; sourceTree = "<group>"; };
-		CE5CA66B178378D4000FCD5A /* R1PhotoEffectsEditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R1PhotoEffectsEditingViewController.h; sourceTree = "<group>"; };
-		CE5CA66C178378D4000FCD5A /* R1PhotoEffectsResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = R1PhotoEffectsResources.bundle; sourceTree = "<group>"; };
-		CE5CA66D178378D4000FCD5A /* R1PhotoEffectsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = R1PhotoEffectsSDK.a; sourceTree = "<group>"; };
-		CE5CA66E178378D4000FCD5A /* R1PhotoEffectsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R1PhotoEffectsSDK.h; sourceTree = "<group>"; };
-		CE5CA66F178378D4000FCD5A /* VERSION */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
 		CE7BEC0E177E0BC30006D75C /* WelcuSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WelcuSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BEC11177E0BC30006D75C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -125,7 +116,6 @@
 				CE7BEC42177E0BE70006D75C /* PassKit.framework in Frameworks */,
 				CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */,
 				CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */,
-				CE5CA671178378D5000FCD5A /* R1PhotoEffectsSDK.a in Frameworks */,
 				CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */,
 				9A2922333221434C8C447671 /* libPods.a in Frameworks */,
 			);
@@ -144,20 +134,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE5CA6681783786A000FCD5A /* R1PhotoEffectsSDK.framework */ = {
-			isa = PBXGroup;
-			children = (
-				CE5CA66A178378D4000FCD5A /* R1PhotoEffectsController.h */,
-				CE5CA66B178378D4000FCD5A /* R1PhotoEffectsEditingViewController.h */,
-				CE5CA66C178378D4000FCD5A /* R1PhotoEffectsResources.bundle */,
-				CE5CA66D178378D4000FCD5A /* R1PhotoEffectsSDK.a */,
-				CE5CA66E178378D4000FCD5A /* R1PhotoEffectsSDK.h */,
-				CE5CA66F178378D4000FCD5A /* VERSION */,
-			);
-			name = R1PhotoEffectsSDK.framework;
-			path = Vendor/R1PhotoEffectsSDK.framework;
-			sourceTree = "<group>";
-		};
 		CE7BEC05177E0BC30006D75C = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +157,6 @@
 		CE7BEC10177E0BC30006D75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CE5CA6681783786A000FCD5A /* R1PhotoEffectsSDK.framework */,
 				CE7BEC41177E0BE70006D75C /* PassKit.framework */,
 				CE7BEC11177E0BC30006D75C /* Foundation.framework */,
 				CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */,
@@ -388,8 +363,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE5CA670178378D5000FCD5A /* R1PhotoEffectsResources.bundle in Resources */,
-				CE5CA672178378D5000FCD5A /* VERSION in Resources */,
 				CE7BEC1C177E0BC30006D75C /* InfoPlist.strings in Resources */,
 				CE8E49431780E279006B1874 /* WelcuEventCell.xib in Resources */,
 				CE7BEC24177E0BC30006D75C /* Images.xcassets in Resources */,

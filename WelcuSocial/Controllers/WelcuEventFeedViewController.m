@@ -11,7 +11,6 @@
 #import <MJPopupViewController/UIViewController+MJPopupViewController.h>
 #import <MJPopupViewController/MJPopupBackgroundView.h>
 #import <ALRadial/ALRadialMenu.h>
-#import <ODRefreshControl/ODRefreshControl.h>
 
 #import "UIImage+MaskedImages.h"
 #import "WelcuEventFeedViewCell.h"
@@ -38,7 +37,8 @@
     self.composeMenu = [[ALRadialMenu alloc] init];
     self.composeMenu.delegate = self;
     
-    ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+//    [self.refreshControl addTarget:self action:@selector(doRefresh:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning
