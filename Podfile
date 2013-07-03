@@ -13,7 +13,7 @@ pod 'SIAlertView', '~> 1.2'
 pod 'AALaunchTransition', '~> 0.1.3'
 pod 'MJPopupViewController', '~> 0.4'
 
-# pod 'R1PhotoEffectsSDK', podspec: 'Vendor/R1PhotoEffectsSDK.podspec'
+pod 'R1PhotoEffectsSDK', podspec: 'Vendor/R1PhotoEffectsSDK.podspec'
 
 # Analytics
 pod 'TestFlightSDK', inhibit_warnings: true

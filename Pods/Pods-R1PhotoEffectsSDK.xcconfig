@@ -1,0 +1,2 @@
+PODS_R_PHOTOEFFECTSSDK_LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/R1PhotoEffectsSDK/R1PhotoEffectsSDK-ios-1.0.4 2"
+PODS_R_PHOTOEFFECTSSDK_OTHER_LDFLAGS = -lR1PhotoEffectsSDK -framework AVFoundation -framework CoreGraphics -framework CoreMedia -framework CoreTelephony -framework CoreText -framework CoreVideo -framework MobileCoreServices -framework OpenGLES -framework QuartzCore -framework StoreKit -framework SystemConfiguration -framework UIKit -weak_framework AdSupport
