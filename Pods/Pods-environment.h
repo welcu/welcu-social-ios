@@ -73,12 +73,6 @@
 #define COCOAPODS_VERSION_MINOR_NewRelicAgent 342
 #define COCOAPODS_VERSION_PATCH_NewRelicAgent 0
 
-// ODRefreshControl
-#define COCOAPODS_POD_AVAILABLE_ODRefreshControl
-#define COCOAPODS_VERSION_MAJOR_ODRefreshControl 1
-#define COCOAPODS_VERSION_MINOR_ODRefreshControl 1
-#define COCOAPODS_VERSION_PATCH_ODRefreshControl 0
-
 // OHAttributedLabel
 #define COCOAPODS_POD_AVAILABLE_OHAttributedLabel
 #define COCOAPODS_VERSION_MAJOR_OHAttributedLabel 3
