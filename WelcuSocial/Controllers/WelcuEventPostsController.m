@@ -31,7 +31,7 @@
 
 - (NSUInteger)postsCount
 {
-    return 4;
+    return 7;
 }
 
 - (WelcuPost *)postAtIndex:(NSUInteger)index

@@ -48,6 +48,10 @@
 		CE9D2FE0178739750016B8B8 /* WelcuEventPostHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D2FDA178723390016B8B8 /* WelcuEventPostHeaderView.xib */; };
 		CE9D2FE11787397A0016B8B8 /* WelcuEventPostPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D2FD8178722880016B8B8 /* WelcuEventPostPhotoCell.xib */; };
 		CE9D2FE21787397D0016B8B8 /* WelcuEventPostQuoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D2FD9178722970016B8B8 /* WelcuEventPostQuoteCell.xib */; };
+		CE9D2FE5178757E60016B8B8 /* WelcuEventHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D2FE4178757E60016B8B8 /* WelcuEventHeaderView.m */; };
+		CE9D2FE8178757F50016B8B8 /* WelcuEventStreamingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D2FE7178757F50016B8B8 /* WelcuEventStreamingView.m */; };
+		CE9D2FEA178760FD0016B8B8 /* WelcuEventHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D2FE9178760FD0016B8B8 /* WelcuEventHeaderView.xib */; };
+		CE9D2FEC178761100016B8B8 /* WelcuEventStreamingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D2FEB178761100016B8B8 /* WelcuEventStreamingView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +134,12 @@
 		CE9D2FDA178723390016B8B8 /* WelcuEventPostHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcuEventPostHeaderView.xib; sourceTree = "<group>"; };
 		CE9D2FDD178736AE0016B8B8 /* WelcuEventPostsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventPostsController.h; sourceTree = "<group>"; };
 		CE9D2FDE178736AE0016B8B8 /* WelcuEventPostsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventPostsController.m; sourceTree = "<group>"; };
+		CE9D2FE3178757E60016B8B8 /* WelcuEventHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventHeaderView.h; sourceTree = "<group>"; };
+		CE9D2FE4178757E60016B8B8 /* WelcuEventHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventHeaderView.m; sourceTree = "<group>"; };
+		CE9D2FE6178757F50016B8B8 /* WelcuEventStreamingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventStreamingView.h; sourceTree = "<group>"; };
+		CE9D2FE7178757F50016B8B8 /* WelcuEventStreamingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventStreamingView.m; sourceTree = "<group>"; };
+		CE9D2FE9178760FD0016B8B8 /* WelcuEventHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcuEventHeaderView.xib; sourceTree = "<group>"; };
+		CE9D2FEB178761100016B8B8 /* WelcuEventStreamingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcuEventStreamingView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +305,12 @@
 				CE9D2FD9178722970016B8B8 /* WelcuEventPostQuoteCell.xib */,
 				CE9D2FD217871EBB0016B8B8 /* WelcuEventPostQuoteCell.h */,
 				CE9D2FD317871EBB0016B8B8 /* WelcuEventPostQuoteCell.m */,
+				CE9D2FE9178760FD0016B8B8 /* WelcuEventHeaderView.xib */,
+				CE9D2FE3178757E60016B8B8 /* WelcuEventHeaderView.h */,
+				CE9D2FE4178757E60016B8B8 /* WelcuEventHeaderView.m */,
+				CE9D2FEB178761100016B8B8 /* WelcuEventStreamingView.xib */,
+				CE9D2FE6178757F50016B8B8 /* WelcuEventStreamingView.h */,
+				CE9D2FE7178757F50016B8B8 /* WelcuEventStreamingView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -405,10 +421,12 @@
 				CE9D2FE0178739750016B8B8 /* WelcuEventPostHeaderView.xib in Resources */,
 				CE9D2FE21787397D0016B8B8 /* WelcuEventPostQuoteCell.xib in Resources */,
 				CE7BEC1C177E0BC30006D75C /* InfoPlist.strings in Resources */,
+				CE9D2FEC178761100016B8B8 /* WelcuEventStreamingView.xib in Resources */,
 				CE8E49431780E279006B1874 /* WelcuEventCell.xib in Resources */,
 				CE7BEC24177E0BC30006D75C /* Images.xcassets in Resources */,
 				CE9D2FD7178722780016B8B8 /* WelcuEventPostTextCell.xib in Resources */,
 				CE8E4932177F8ED1006B1874 /* WelcuMenuUserProfileCell.xib in Resources */,
+				CE9D2FEA178760FD0016B8B8 /* WelcuEventHeaderView.xib in Resources */,
 				CE9D2FE11787397A0016B8B8 /* WelcuEventPostPhotoCell.xib in Resources */,
 				CE7BEC44177E0FD10006D75C /* iPhoneStoryboard.storyboard in Resources */,
 			);
@@ -463,6 +481,7 @@
 				CE7BEC59177E3EEE0006D75C /* WelcuConstants.m in Sources */,
 				CE7BEC4D177E11490006D75C /* WelcuMenuViewController.m in Sources */,
 				CE7BEC5C177E3FB00006D75C /* UIColor+WelcuColors.m in Sources */,
+				CE9D2FE8178757F50016B8B8 /* WelcuEventStreamingView.m in Sources */,
 				CE9D2FDF178736AE0016B8B8 /* WelcuEventPostsController.m in Sources */,
 				CE7BEC1E177E0BC30006D75C /* main.m in Sources */,
 				CE8E493E177F98E2006B1874 /* NSObject+ClassName.m in Sources */,
@@ -480,6 +499,7 @@
 				CE9D2FD417871EBB0016B8B8 /* WelcuEventPostQuoteCell.m in Sources */,
 				CE7BEC50177E120E0006D75C /* WelcuStartViewController.m in Sources */,
 				CE9D2FD117871EAD0016B8B8 /* WelcuEventPostTextCell.m in Sources */,
+				CE9D2FE5178757E60016B8B8 /* WelcuEventHeaderView.m in Sources */,
 				CE7BEC53177E121F0006D75C /* WelcuLoginViewController.m in Sources */,
 				CE8E49461780E2AE006B1874 /* WelcuEventCell.m in Sources */,
 			);

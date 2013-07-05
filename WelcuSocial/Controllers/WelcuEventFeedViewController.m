@@ -19,12 +19,15 @@
 #import "WelcuEventPostCell.h"
 #import "WelcuEventPostHeaderView.h"
 #import "WelcuEventPostTextCell.h"
+#import "WelcuEventHeaderView.h"
 
 @interface WelcuEventFeedViewController () <ALRadialMenuDelegate, WelcuComposeControllerDelegate>
 
 @property (nonatomic,strong) WelcuEventPostsController *postsController;
 @property (nonatomic,strong) ALRadialMenu *composeMenu;
 @property (nonatomic,assign, getter = isComposeMenuVisible) BOOL composeMenuVisible;
+
+@property (nonatomic,strong) WelcuEventHeaderView *headerView;
 
 @end
 
@@ -40,9 +43,14 @@
 
     [self.tableView registerNib:[UINib nibWithNibName:[WelcuEventPostTextCell className] bundle:nil] forCellReuseIdentifier:[WelcuEventPostTextCell className]];
     
-    
-    [self.tableView setContentInset:UIEdgeInsetsMake(120,0,0,0)];
-    
+    self.headerView = [WelcuEventHeaderView headerView];
+    self.headerView.frame = CGRectMake(0, 0, self.view.bounds.size.width, WELCU_EVENT_HEADER_MAX_HEIGHT);
+    self.headerView.event = self.event;
+    [self.view addSubview:self.headerView];
+
+//    [self.tableView setTableHeaderView:[[UIView alloc] initWithFrame:self.headerView.frame]];
+
+    [self.tableView setTableHeaderView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, WELCU_EVENT_HEADER_MAX_HEIGHT-WELCU_EVENT_HEADER_MIN_HEIGHT)]];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
 //    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
@@ -54,6 +62,11 @@
     
 //    self.refreshControl = [[UIRefreshControl alloc] init];
 //    [self.refreshControl addTarget:self action:@selector(doRefresh:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self scrollViewDidScroll:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,6 +141,14 @@
         [self.composeMenu itemsWillAppearFromButton:self.composeButton withFrame:self.composeButton.frame inView:self.view];
     }
 }
+
+# pragma mark UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.headerView setHeight:(WELCU_EVENT_HEADER_MAX_HEIGHT - scrollView.contentOffset.y)];
+}
+
 
 # pragma mark WelcuComposeControllerDelegate
 
@@ -206,7 +227,7 @@
 
 - (NSInteger) arcStartForRadialMenu:(ALRadialMenu *)radialMenu
 {
-    return 91;
+    return 180;
 }
 
 - (float) buttonSizeForRadialMenu:(ALRadialMenu *)radialMenu
