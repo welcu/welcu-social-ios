@@ -7,6 +7,7 @@
 //
 
 #import "WelcuAppDelegate.h"
+//#import <R1PhotoEffectsSDK/R1PhotoEffectsSDK.h>
 
 @implementation WelcuAppDelegate
 
@@ -20,12 +21,12 @@
 
     [[UITabBar appearance] setBackgroundColor:[UIColor welcuPurple]];
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UITabBar appearance] setBarStyle:UIBarStyleBlackOpaque];
+//    [[UITabBar appearance] setBarStyle:UIBarStyleBlackOpaque];
 
     [[UITableView appearance] setBackgroundColor:[UIColor welcuLightGrey]];
     [[UITableViewHeaderFooterView appearance] setBackgroundColor:[UIColor welcuLightPurple]];
 
-
+//    [[R1PhotoEffectsSDK sharedManager] enableWithClientID:@"30b0fc70-c499-0130-216a-22000afc0b0e"];
     return YES;
 }
 

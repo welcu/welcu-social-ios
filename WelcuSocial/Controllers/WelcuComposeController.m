@@ -20,16 +20,16 @@
 {
     [super viewDidLoad];
     
-    CGRect rect = self.view.frame;
-    rect.size.height = rect.size.height - 50;
-    rect.size.width = rect.size.width - 50;
-    
-    self.view.frame = rect;
-    
-    
-    rect = self.navigationBar.frame;
-    rect.origin.y = rect.origin.y - 10;
-    self.navigationBar.frame = rect;
+//    CGRect rect = self.view.frame;
+//    rect.size.height = rect.size.height - 50;
+//    rect.size.width = rect.size.width - 50;
+//    
+//    self.view.frame = rect;
+//    
+//    
+//    rect = self.navigationBar.frame;
+//    rect.origin.y = rect.origin.y - 10;
+//    self.navigationBar.frame = rect;
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelComposeAction:)];
     UIViewController *firstController = (UIViewController *)[self.viewControllers firstObject];

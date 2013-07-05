@@ -7,17 +7,22 @@
 //
 
 #import "WelcuEventFeedViewController.h"
-#import <AFNetworking/UIImageView+AFNetworking.h>
 #import <MJPopupViewController/UIViewController+MJPopupViewController.h>
 #import <MJPopupViewController/MJPopupBackgroundView.h>
 #import <ALRadial/ALRadialMenu.h>
 
-#import "UIImage+MaskedImages.h"
+#import "WelcuEventPostsController.h"
+
 #import "WelcuEventFeedViewCell.h"
 #import "WelcuComposeController.h"
 
+#import "WelcuEventPostCell.h"
+#import "WelcuEventPostHeaderView.h"
+#import "WelcuEventPostTextCell.h"
+
 @interface WelcuEventFeedViewController () <ALRadialMenuDelegate, WelcuComposeControllerDelegate>
 
+@property (nonatomic,strong) WelcuEventPostsController *postsController;
 @property (nonatomic,strong) ALRadialMenu *composeMenu;
 @property (nonatomic,assign, getter = isComposeMenuVisible) BOOL composeMenuVisible;
 
@@ -28,12 +33,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.postsController = [WelcuEventPostsController controllerWithEvent:self.event];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:[WelcuEventPostHeaderView className] bundle:nil] forHeaderFooterViewReuseIdentifier:[WelcuEventPostHeaderView className]];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView registerNib:[UINib nibWithNibName:[WelcuEventPostTextCell className] bundle:nil] forCellReuseIdentifier:[WelcuEventPostTextCell className]];
+    
+    
     self.composeMenu = [[ALRadialMenu alloc] init];
     self.composeMenu.delegate = self;
     
@@ -52,74 +59,45 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
+    return [self.postsController postsCount];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 4;
+    return [WelcuEventPostHeaderView rowHeightForPost:[self.postsController postAtIndex:section]];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    static NSString *CellIdentifier = @"WelcuEventFeedViewCell";
-    WelcuEventFeedViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    WelcuEventPostHeaderView *header = (WelcuEventPostHeaderView *)[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:[WelcuEventPostHeaderView className]];
+    
+    header.post = [self.postsController postAtIndex:section];
+    
+    return header;
+}
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [WelcuEventPostTextCell rowHeightForPost:[self.postsController postAtIndex:indexPath.section]];
+}
 
-    cell.postContentLabel.numberOfLines = 0;
-    cell.postContentLabel.lineBreakMode = NSLineBreakByCharWrapping;
-    [cell.postContentLabel setString:@"Hello #world from @twitter http://welcu.com"];
-
-//    [cell.userPictureView setImageWithURL:[NSURL URLWithString:@""]];
-
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://graph.facebook.com/sagmor/picture"]];
-
-    [cell.userPictureView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-        cell.userPictureView.image = [image maskWithImage:[UIImage imageNamed:@"UserPhotoMask"]];
-    } failure:nil];
-
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell <WelcuEventPostCell> *cell = [self.tableView dequeueReusableCellWithIdentifier:[WelcuEventPostTextCell className] forIndexPath:indexPath];
+    
+    cell.post = [self.postsController postAtIndex:indexPath.section];
+    
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation
