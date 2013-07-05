@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WelcuEventFeedViewController : UITableViewController
+@interface WelcuEventFeedViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 @property (strong) id event;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *composeButton;
 
 - (IBAction)startComposeAction:(id)sender;

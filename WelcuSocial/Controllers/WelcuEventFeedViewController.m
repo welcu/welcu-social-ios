@@ -41,10 +41,18 @@
     [self.tableView registerNib:[UINib nibWithNibName:[WelcuEventPostTextCell className] bundle:nil] forCellReuseIdentifier:[WelcuEventPostTextCell className]];
     
     
+    [self.tableView setContentInset:UIEdgeInsetsMake(120,0,0,0)];
+    
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+//    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+    
     self.composeMenu = [[ALRadialMenu alloc] init];
     self.composeMenu.delegate = self;
     
-    self.refreshControl = [[UIRefreshControl alloc] init];
+    
+//    self.refreshControl = [[UIRefreshControl alloc] init];
 //    [self.refreshControl addTarget:self action:@selector(doRefresh:) forControlEvents:UIControlEventValueChanged];
 }
 
