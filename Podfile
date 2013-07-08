@@ -13,6 +13,8 @@ pod 'SIAlertView', '~> 1.2'
 pod 'AALaunchTransition', '~> 0.1.3'
 pod 'MJPopupViewController', '~> 0.4'
 
+pod 'PCStackMenu', git: 'https://github.com/sagmor/StackMenu'
+
 # pod 'AviarySDK'
 # pod 'R1PhotoEffectsSDK', podspec: 'Vendor/R1PhotoEffectsSDK.podspec'
 

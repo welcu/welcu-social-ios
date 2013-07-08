@@ -11,7 +11,7 @@ PODS:
   - MJPopupViewController (0.4)
   - NewRelicAgent (1.342)
   - OHAttributedLabel (3.4.1)
-  - R1PhotoEffectsSDK (1.0.4)
+  - PCStackMenu (1.0.0)
   - SIAlertView (1.2)
   - TestFlightLogger (0.0.2):
     - CocoaLumberjack
@@ -31,14 +31,14 @@ DEPENDENCIES:
   - MJPopupViewController (~> 0.4)
   - NewRelicAgent
   - OHAttributedLabel (~> 3.4.1)
-  - R1PhotoEffectsSDK (from `Vendor/R1PhotoEffectsSDK.podspec`)
+  - PCStackMenu (from `https://github.com/sagmor/StackMenu`)
   - SIAlertView (~> 1.2)
   - TestFlightLogger
   - TestFlightSDK
 
 EXTERNAL SOURCES:
-  R1PhotoEffectsSDK:
-    :podspec: Vendor/R1PhotoEffectsSDK.podspec
+  PCStackMenu:
+    :git: https://github.com/sagmor/StackMenu
 
 SPEC CHECKSUMS:
   AALaunchTransition: 9d0e3365c15f2668fe33ad64659232dfff84e136
@@ -53,9 +53,9 @@ SPEC CHECKSUMS:
   MJPopupViewController: 4cd0badf3dae541017e0e16e2d2c7578d9224052
   NewRelicAgent: 381824a42f3590e460308992b493ec90595c28f6
   OHAttributedLabel: 770332ef810ca15c9bd4a79f300ce620bc443e9d
-  R1PhotoEffectsSDK: a7ef9f07dc58ce9e08df662a563e16e4804a2dfc
+  PCStackMenu: fe2c746ee6e2a8e238f56fa7a2f3869d934eef00
   SIAlertView: fd188f66278761f4ff069f517c3deb2be16ecdcc
   TestFlightLogger: 8d5127df30752ce74a1f5b52947f520e05cc0f42
   TestFlightSDK: f3e516c64f61abedeb26a7b184101df54df3db09
 
-COCOAPODS: 0.21.0.rc1
+COCOAPODS: 0.22.1

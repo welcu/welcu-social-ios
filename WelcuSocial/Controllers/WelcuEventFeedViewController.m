@@ -11,6 +11,8 @@
 #import <MJPopupViewController/MJPopupBackgroundView.h>
 #import <ALRadial/ALRadialMenu.h>
 
+#import <PCStackMenu/PCStackMenu.h>
+
 #import "WelcuEventPostsController.h"
 
 #import "WelcuEventFeedViewCell.h"
@@ -133,13 +135,32 @@
  */
 
 - (IBAction)startComposeAction:(id)sender {
-    if ([self isComposeMenuVisible]) {
-        self.composeMenuVisible = NO;
-        [self.composeMenu itemsWillDisapearIntoButton:self.composeButton];
-    } else {
-        self.composeMenuVisible = YES;
-        [self.composeMenu itemsWillAppearFromButton:self.composeButton withFrame:self.composeButton.frame inView:self.view];
-    }
+    UIButton *button = (UIButton *)sender;
+    
+
+    
+    [PCStackMenu showStackMenuWithTitles:@[@" ", @" ", @" ", @" "]
+                              withImages:@[
+                                           [UIImage imageNamed:@"ComposeImageButtonImage"],
+                                           [UIImage imageNamed:@"ComposeQuoteButtonImage"],
+                                           [UIImage imageNamed:@"ComposeMessageButtonImage"],
+                                           [UIImage imageNamed:@"ComposeContactButtonImage"]
+                                           ]
+                            atStartPoint:CGPointMake(button.frame.origin.x + button.frame.size.width, button.frame.origin.y)
+                                  inView:self.view
+                              itemHeight:40
+                           menuDirection:PCStackMenuDirectionClockWiseUp
+                            onSelectMenu:^(NSInteger selectedMenuIndex) {
+                                NSLog(@"menu index : %d", selectedMenuIndex);
+                            }];
+    
+//    if ([self isComposeMenuVisible]) {
+//        self.composeMenuVisible = NO;
+//        [self.composeMenu itemsWillDisapearIntoButton:self.composeButton];
+//    } else {
+//        self.composeMenuVisible = YES;
+//        [self.composeMenu itemsWillAppearFromButton:self.composeButton withFrame:self.composeButton.frame inView:self.view];
+//    }
 }
 
 # pragma mark UIScrollViewDelegate
