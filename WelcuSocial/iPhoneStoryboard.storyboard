@@ -573,10 +573,10 @@
             </objects>
             <point key="canvasLocation" x="2540" y="1435"/>
         </scene>
-        <!--Welcu Compose Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="iIq-tq-to0">
             <objects>
-                <navigationController storyboardIdentifier="WelcuComposeMessageViewController" definesPresentationContext="YES" id="cvF-c3-37h" customClass="WelcuComposeController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="WelcuComposeMessageViewController" definesPresentationContext="YES" id="cvF-c3-37h" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ehX-ZT-705">
                         <autoresizingMask key="autoresizingMask"/>
@@ -614,10 +614,10 @@
             </objects>
             <point key="canvasLocation" x="3706" y="3089"/>
         </scene>
-        <!--Welcu Compose Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="HbM-cY-akl">
             <objects>
-                <navigationController storyboardIdentifier="WelcuComposeImageViewController" automaticallyAdjustsScrollViewInsets="NO" id="6ZK-i3-Lhp" customClass="WelcuComposeController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="WelcuComposeImageViewController" automaticallyAdjustsScrollViewInsets="NO" id="6ZK-i3-Lhp" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <nil key="simulatedStatusBarMetrics"/>

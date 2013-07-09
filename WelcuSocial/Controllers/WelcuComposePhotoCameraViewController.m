@@ -51,8 +51,11 @@
 }
 
 - (IBAction)toggleFlash:(id)sender {
+
 }
+
 - (IBAction)toggleCamera:(id)sender {
+
 }
 
 //#pragma mark R1PhotoEffectsEditingViewControllerDelegate

@@ -13,20 +13,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setTintColor:[UIColor welcuPurple]];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
-                                                           UITextAttributeTextColor : [UIColor welcuPurple]
+                                                           UITextAttributeTextColor : [UIColor whiteColor]
                                                            }];
-
-    [[UITabBar appearance] setBackgroundColor:[UIColor welcuPurple]];
-    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
-//    [[UITabBar appearance] setBarStyle:UIBarStyleBlackOpaque];
+//    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
 
     [[UITableView appearance] setBackgroundColor:[UIColor welcuLightGrey]];
     [[UITableViewHeaderFooterView appearance] setBackgroundColor:[UIColor welcuLightPurple]];
 
-//    [[R1PhotoEffectsSDK sharedManager] enableWithClientID:@"30b0fc70-c499-0130-216a-22000afc0b0e"];
     return YES;
 }
 

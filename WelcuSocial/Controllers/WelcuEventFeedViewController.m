@@ -9,7 +9,6 @@
 #import "WelcuEventFeedViewController.h"
 #import <MJPopupViewController/UIViewController+MJPopupViewController.h>
 #import <MJPopupViewController/MJPopupBackgroundView.h>
-#import <ALRadial/ALRadialMenu.h>
 
 #import <PCStackMenu/PCStackMenu.h>
 
@@ -23,10 +22,9 @@
 #import "WelcuEventPostTextCell.h"
 #import "WelcuEventHeaderView.h"
 
-@interface WelcuEventFeedViewController () <ALRadialMenuDelegate, WelcuComposeControllerDelegate>
+@interface WelcuEventFeedViewController ()
 
 @property (nonatomic,strong) WelcuEventPostsController *postsController;
-@property (nonatomic,strong) ALRadialMenu *composeMenu;
 @property (nonatomic,assign, getter = isComposeMenuVisible) BOOL composeMenuVisible;
 
 @property (nonatomic,strong) WelcuEventHeaderView *headerView;
@@ -57,9 +55,6 @@
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
 //    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
-    
-    self.composeMenu = [[ALRadialMenu alloc] init];
-    self.composeMenu.delegate = self;
     
     
 //    self.refreshControl = [[UIRefreshControl alloc] init];
@@ -152,6 +147,10 @@
                            menuDirection:PCStackMenuDirectionClockWiseUp
                             onSelectMenu:^(NSInteger selectedMenuIndex) {
                                 NSLog(@"menu index : %d", selectedMenuIndex);
+                                WelcuComposeController *composeController = [WelcuComposeController composeController];
+                                composeController.event = self.event;
+                                composeController.postType = WelcuComposePlainPostType;
+                                [composeController presentComposeController];
                             }];
     
 //    if ([self isComposeMenuVisible]) {
@@ -178,82 +177,6 @@
 //    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
     [self dismissViewControllerAnimated:YES completion:^{
     }];
-}
-
-
-# pragma mark ALRadialMenu
-
-- (NSInteger) numberOfItemsInRadialMenu:(ALRadialMenu *)radialMenu
-{
-    return 4;
-}
-
-- (NSInteger) arcSizeForRadialMenu:(ALRadialMenu *)radialMenu
-{
-    return 110;
-}
-
-- (NSInteger) arcRadiusForRadialMenu:(ALRadialMenu *)radialMenu
-{
-    return 70;
-}
-
-- (UIImage *) radialMenu:(ALRadialMenu *)radialMenu imageForIndex:(NSInteger) index
-{
-    switch (index) {
-        case 1:
-            return [UIImage imageNamed:@"ComposeImageButtonImage"];
-        case 2:
-            return [UIImage imageNamed:@"ComposeQuoteButtonImage"];
-        case 3:
-            return [UIImage imageNamed:@"ComposeMessageButtonImage"];
-        case 4:
-            return [UIImage imageNamed:@"ComposeContactButtonImage"];
-    }
-
-    return nil;
-}
-
-- (void) radialMenu:(ALRadialMenu *)radialMenu didSelectItemAtIndex:(NSInteger) index
-{
-    [self.composeMenu itemsWillDisapearIntoButton:self.composeButton];
-    
-    WelcuComposeController *composeController = nil;
-    switch (index) {
-        case 1:
-            composeController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuComposeImageViewController"];
-            break;
-        case 2:
-            composeController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuComposeMessageViewController"];
-            break;
-        case 3:
-            composeController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuComposeMessageViewController"];
-            break;
-        case 4:
-            composeController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuComposeMessageViewController"];
-            break;
-
-    }
-    
-    if (composeController) {
-        composeController.composeDelegate = self;
-//        [self presentPopupViewController:composeController animationType:MJPopupViewAnimationFade];
-        
-//        NSLog(@"%@", self.mj_popupBackgroundView.subviews);
-        
-        [self presentViewController:composeController animated:YES completion:^{
-        }];
-    }
-}
-
-- (NSInteger) arcStartForRadialMenu:(ALRadialMenu *)radialMenu
-{
-    return 180;
-}
-
-- (float) buttonSizeForRadialMenu:(ALRadialMenu *)radialMenu
-{
-    return 40;
 }
 
 @end
