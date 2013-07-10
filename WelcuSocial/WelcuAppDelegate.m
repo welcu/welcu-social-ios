@@ -13,10 +13,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window.tintColor = [UIColor whiteColor];
+    
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    
     [[UINavigationBar appearance] setTitleTextAttributes:@{
-                                                           UITextAttributeTextColor : [UIColor whiteColor]
+                                                           UITextAttributeTextColor : [UIColor whiteColor],
+                                                           UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-500" size:20]
+                                                           
                                                            }];
 //    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
 

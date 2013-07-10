@@ -42,10 +42,5 @@ typedef enum {
 @property (nonatomic,strong) UIImage *postImage;
 
 -(void)presentComposeController;
--(void)dismissComposeController;
-
-- (IBAction)finishComposing:(id)sender;
-- (IBAction)dismissComposeController:(id)sender;
-
 
 @end

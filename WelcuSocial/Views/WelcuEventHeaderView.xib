@@ -25,7 +25,7 @@
                     <constraints>
                         <constraint firstAttribute="height" priority="899" constant="30" id="2VU-FW-LFb"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -61,12 +61,4 @@
         <image name="EventImageGradient" width="1" height="400"/>
         <image name="SampleEventImage" width="900" height="400"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="WelcuEventHeaderView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuEventHeaderView.h"/>
-        </class>
-    </classes>
 </document>

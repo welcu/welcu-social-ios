@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcuComposeController">
             <connections>
+                <outlet property="contentTextView" destination="bfY-Ko-gyp" id="qwt-Au-gO2"/>
                 <outlet property="navigationBar" destination="UlS-8E-sNe" id="iWX-3a-CiF"/>
                 <outlet property="toolbar" destination="e7q-SZ-Spv" id="ABz-Sc-EES"/>
                 <outlet property="view" destination="I1o-bg-7b5" id="g09-3m-KJp"/>
@@ -22,19 +23,18 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <items>
                         <navigationItem title="Welcu" id="2VN-c3-2yf">
-                            <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wJP-Nn-I6r">
-                                <connections>
-                                    <action selector="dismissComposeController:" destination="-1" id="Zm2-Zp-YOY"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem key="rightBarButtonItem" systemItem="done" id="Ksn-zq-6gc">
-                                <connections>
-                                    <action selector="finishComposing:" destination="-1" id="Ut2-bm-2Za"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wJP-Nn-I6r"/>
+                            <barButtonItem key="rightBarButtonItem" systemItem="done" id="Ksn-zq-6gc"/>
                         </navigationItem>
                     </items>
                 </navigationBar>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfY-Ko-gyp">
+                    <rect key="frame" x="0.0" y="44" width="313" height="102"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7q-SZ-Spv">
                     <rect key="frame" x="0.0" y="146" width="313" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -115,10 +115,14 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="UlS-8E-sNe" firstAttribute="trailing" secondItem="I1o-bg-7b5" secondAttribute="trailing" id="8jR-sy-kjX"/>
+                <constraint firstItem="bfY-Ko-gyp" firstAttribute="leading" secondItem="I1o-bg-7b5" secondAttribute="leading" id="A6g-kx-5VR"/>
                 <constraint firstAttribute="bottom" secondItem="e7q-SZ-Spv" secondAttribute="bottom" id="Ka6-Uj-tXa"/>
+                <constraint firstItem="bfY-Ko-gyp" firstAttribute="trailing" secondItem="I1o-bg-7b5" secondAttribute="trailing" id="Okv-As-snW"/>
+                <constraint firstItem="bfY-Ko-gyp" firstAttribute="top" secondItem="UlS-8E-sNe" secondAttribute="bottom" id="R5N-CQ-jm0"/>
                 <constraint firstItem="e7q-SZ-Spv" firstAttribute="leading" secondItem="I1o-bg-7b5" secondAttribute="leading" id="Twk-cY-zeZ"/>
                 <constraint firstItem="UlS-8E-sNe" firstAttribute="leading" secondItem="I1o-bg-7b5" secondAttribute="leading" id="n9C-aC-AQD"/>
                 <constraint firstItem="e7q-SZ-Spv" firstAttribute="trailing" secondItem="I1o-bg-7b5" secondAttribute="trailing" id="ngZ-mR-Wtv"/>
+                <constraint firstItem="e7q-SZ-Spv" firstAttribute="top" secondItem="bfY-Ko-gyp" secondAttribute="bottom" id="qld-ot-bD7"/>
                 <constraint firstItem="UlS-8E-sNe" firstAttribute="top" secondItem="I1o-bg-7b5" secondAttribute="top" id="zVd-x0-xJy"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

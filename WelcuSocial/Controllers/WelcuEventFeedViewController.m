@@ -7,6 +7,8 @@
 //
 
 #import "WelcuEventFeedViewController.h"
+#import <JASidePanels/UIViewController+JASidePanel.h>
+#import <JASidePanels/JASidePanelController.h>
 #import <MJPopupViewController/UIViewController+MJPopupViewController.h>
 #import <MJPopupViewController/MJPopupBackgroundView.h>
 
@@ -45,7 +47,6 @@
     
     self.navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, 44)];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"ClearPixel"] forBarMetrics:UIBarMetricsDefault];
-
     [self.view addSubview:self.navigationBar];
 
     self.headerView = [WelcuEventHeaderView headerView];
@@ -76,7 +77,26 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    self.navigationBar.items = self.navigationController.navigationBar.items;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (![self.navigationBar.items count]) {
+            UINavigationItem *nav = [[UINavigationItem alloc] initWithTitle:@"Event Feed"];
+            if (self.navigationItem.leftBarButtonItem) {
+                nav.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:self.navigationItem.leftBarButtonItem.image
+                                                                         style:self.navigationItem.leftBarButtonItem.style
+                                                                        target:self.navigationItem.leftBarButtonItem.target
+                                                                        action:self.navigationItem.leftBarButtonItem.action];
+            } else {
+                nav.leftBarButtonItem = [self.sidePanelController leftButtonForCenterPanel];
+            }
+            
+            nav.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:self.navigationItem.rightBarButtonItem.image
+                                                                      style:self.navigationItem.rightBarButtonItem.style
+                                                                     target:self.navigationItem.rightBarButtonItem.target
+                                                                     action:self.navigationItem.rightBarButtonItem.action];
+            
+            self.navigationBar.items = @[nav];
+        }
+    });
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -187,6 +207,8 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self.headerView setHeight:(WELCU_EVENT_HEADER_MAX_HEIGHT - scrollView.contentOffset.y)];
+    
+    // TODO: Hide navigation Bar
 }
 
 
