@@ -297,7 +297,6 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Discover" id="sBJ-Ev-1yN"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="bTb-fv-Cty" id="DRW-wq-yLq"/>
@@ -365,9 +364,9 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Event feed" id="dJo-Qn-bLg">
-                        <barButtonItem key="rightBarButtonItem" image="TicketsButtonImage" id="HKe-KP-ahu">
+                        <barButtonItem key="rightBarButtonItem" image="TicketsButtonImage" id="OqY-bA-niA">
                             <connections>
-                                <segue destination="9FZ-bZ-820" kind="push" id="IDP-gm-OEY"/>
+                                <segue destination="9FZ-bZ-820" kind="push" id="ooA-vE-6Vq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -499,6 +498,7 @@
                 <navigationController storyboardIdentifier="WelcuDiscoverNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="EFD-9a-ocJ" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gag-fx-J2v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -520,6 +520,7 @@
                     <tabBarItem key="tabBarItem" title="Feed" image="FeedTabIcon" id="xdI-Wo-obY"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="XBR-cc-5wA"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OHI-ZQ-jxO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -656,8 +657,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ohs-cu-QWo"/>
-        <segue reference="IDP-gm-OEY"/>
-        <segue reference="Oos-e7-euB"/>
+        <segue reference="85k-t6-fAX"/>
+        <segue reference="ooA-vE-6Vq"/>
+        <segue reference="8nR-zi-Tz3"/>
     </inferredMetricsTieBreakers>
 </document>

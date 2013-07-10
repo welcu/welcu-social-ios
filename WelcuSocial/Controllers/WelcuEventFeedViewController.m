@@ -26,8 +26,8 @@
 
 @property (nonatomic,strong) WelcuEventPostsController *postsController;
 @property (nonatomic,assign, getter = isComposeMenuVisible) BOOL composeMenuVisible;
-
 @property (nonatomic,strong) WelcuEventHeaderView *headerView;
+@property (nonatomic,strong)  UINavigationBar *navigationBar;
 
 @end
 
@@ -43,10 +43,16 @@
 
     [self.tableView registerNib:[UINib nibWithNibName:[WelcuEventPostTextCell className] bundle:nil] forCellReuseIdentifier:[WelcuEventPostTextCell className]];
     
+    self.navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, 44)];
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"ClearPixel"] forBarMetrics:UIBarMetricsDefault];
+
+    [self.view addSubview:self.navigationBar];
+
     self.headerView = [WelcuEventHeaderView headerView];
     self.headerView.frame = CGRectMake(0, 0, self.view.bounds.size.width, WELCU_EVENT_HEADER_MAX_HEIGHT);
     self.headerView.event = self.event;
-    [self.view addSubview:self.headerView];
+
+    [self.view insertSubview:self.headerView belowSubview:self.navigationBar];
 
 //    [self.tableView setTableHeaderView:[[UIView alloc] initWithFrame:self.headerView.frame]];
 
@@ -64,6 +70,20 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self scrollViewDidScroll:self.tableView];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    self.navigationBar.items = self.navigationController.navigationBar.items;
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+//    [self.navigationController.navigationBar setBackgroundImage:nil
+//                                                  forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning

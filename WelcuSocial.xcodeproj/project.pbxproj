@@ -78,7 +78,7 @@
 		CE7BEC1F177E0BC30006D75C /* WelcuSocial-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WelcuSocial-Prefix.pch"; sourceTree = "<group>"; };
 		CE7BEC20177E0BC30006D75C /* WelcuAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcuAppDelegate.h; sourceTree = "<group>"; };
 		CE7BEC21177E0BC30006D75C /* WelcuAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcuAppDelegate.m; sourceTree = "<group>"; };
-		CE7BEC23177E0BC30006D75C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CE7BEC23177E0BC30006D75C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Images.xcassets; sourceTree = "<group>"; };
 		CE7BEC29177E0BC30006D75C /* WelcuSocialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WelcuSocialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BEC2A177E0BC30006D75C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CE7BEC32177E0BC30006D75C /* WelcuSocialTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WelcuSocialTests-Info.plist"; sourceTree = "<group>"; };
@@ -170,6 +170,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE16DC95178CC9B000371025 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BEC23177E0BC30006D75C /* Images.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		CE7BEC05177E0BC30006D75C = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +219,7 @@
 				CE7BEC58177E3EEE0006D75C /* WelcuConstants.m */,
 				CE7BEC20177E0BC30006D75C /* WelcuAppDelegate.h */,
 				CE7BEC21177E0BC30006D75C /* WelcuAppDelegate.m */,
-				CE7BEC23177E0BC30006D75C /* Images.xcassets */,
+				CE16DC95178CC9B000371025 /* Assets */,
 				CE7BEC45177E0FDB0006D75C /* Models */,
 				CE7BEC47177E10110006D75C /* Views */,
 				CE7BEC46177E0FE00006D75C /* Controllers */,

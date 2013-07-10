@@ -23,6 +23,8 @@
     [[UITableView appearance] setBackgroundColor:[UIColor welcuLightGrey]];
     [[UITableViewHeaderFooterView appearance] setBackgroundColor:[UIColor welcuLightPurple]];
 
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     return YES;
 }
 

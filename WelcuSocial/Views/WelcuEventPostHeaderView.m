@@ -35,7 +35,7 @@ NSString const *kWelcuEventPostHeaderViewClassName = @"WelcuEventPostHeaderView"
 
 + (CGFloat)rowHeightForPost:(WelcuPost *)post
 {
-    return 51;
+    return 64;
 }
 
 @end

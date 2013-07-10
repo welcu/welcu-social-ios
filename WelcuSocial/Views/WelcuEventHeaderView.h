@@ -11,7 +11,7 @@
 @class WelcuEvent;
 @class WelcuEventHeaderView;
 
-#define WELCU_EVENT_HEADER_MAX_HEIGHT 120
+#define WELCU_EVENT_HEADER_MAX_HEIGHT 250
 #define WELCU_EVENT_HEADER_MIN_HEIGHT 30
 
 

@@ -8,19 +8,19 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="372" placeholderIntrinsicHeight="179" id="1" customClass="WelcuEventHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="359" height="162"/>
+            <rect key="frame" x="0.0" y="0.0" width="359" height="250"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleEventImage" translatesAutoresizingMaskIntoConstraints="NO" id="AVd-kg-YTU">
-                    <rect key="frame" x="0.0" y="0.0" width="359" height="162"/>
+                    <rect key="frame" x="0.0" y="0.0" width="359" height="250"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventImageGradient" translatesAutoresizingMaskIntoConstraints="NO" id="hkk-Hj-iht">
-                    <rect key="frame" x="0.0" y="0.0" width="359" height="162"/>
+                    <rect key="frame" x="0.0" y="0.0" width="359" height="250"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Americo en Vivo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmN-uk-F03">
-                    <rect key="frame" x="101" y="49" width="157" height="30"/>
+                    <rect key="frame" x="101" y="137" width="157" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" priority="899" constant="30" id="2VU-FW-LFb"/>
@@ -30,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Centro cultural Amanda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BL-rn-ZBf">
-                    <rect key="frame" x="110" y="84" width="140" height="16"/>
+                    <rect key="frame" x="110" y="172" width="140" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,4 +61,12 @@
         <image name="EventImageGradient" width="1" height="400"/>
         <image name="SampleEventImage" width="900" height="400"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="WelcuEventHeaderView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuEventHeaderView.h"/>
+        </class>
+    </classes>
 </document>
