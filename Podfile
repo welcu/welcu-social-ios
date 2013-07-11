@@ -1,6 +1,7 @@
 platform :ios, "6.0"
 
 pod 'AFNetworking', '~> 1.3.1'
+pod 'GPUImage'
 
 # UI
 pod 'JASidePanels', '~> 1.3.1'

@@ -41,11 +41,11 @@
     
     self.postsController = [WelcuEventPostsController controllerWithEvent:self.event];
     
-    [self.tableView registerNib:[UINib nibWithNibName:[WelcuEventPostHeaderView className] bundle:nil] forHeaderFooterViewReuseIdentifier:[WelcuEventPostHeaderView className]];
+    [self.tableView registerNib:[UINib nibWithNibName:@"WelcuEventPostHeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"WelcuEventPostHeaderView"];
 
-    [self.tableView registerNib:[UINib nibWithNibName:[WelcuEventPostTextCell className] bundle:nil] forCellReuseIdentifier:[WelcuEventPostTextCell className]];
+    [self.tableView registerNib:[UINib nibWithNibName:@"WelcuEventPostTextCell" bundle:nil] forCellReuseIdentifier:@"WelcuEventPostTextCell"];
     
-    self.navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, 44)];
+    self.navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 15, self.view.bounds.size.width, 44)];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"ClearPixel"] forBarMetrics:UIBarMetricsDefault];
     [self.view addSubview:self.navigationBar];
 
@@ -134,7 +134,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    WelcuEventPostHeaderView *header = (WelcuEventPostHeaderView *)[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:[WelcuEventPostHeaderView className]];
+    WelcuEventPostHeaderView *header = (WelcuEventPostHeaderView *)[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:@"WelcuEventPostHeaderView"];
     
     header.post = [self.postsController postAtIndex:section];
     
@@ -150,7 +150,7 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell <WelcuEventPostCell> *cell = [self.tableView dequeueReusableCellWithIdentifier:[WelcuEventPostTextCell className] forIndexPath:indexPath];
+    UITableViewCell <WelcuEventPostCell> *cell = [self.tableView dequeueReusableCellWithIdentifier:@"WelcuEventPostTextCell" forIndexPath:indexPath];
     
     cell.post = [self.postsController postAtIndex:indexPath.section];
     

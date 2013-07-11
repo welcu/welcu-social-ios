@@ -24,6 +24,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <segue destination="oV7-Dj-Jet" kind="modal" identifier="WelcuMainViewController" animates="NO" id="4b7-Xe-jEh"/>
                         <segue destination="a4W-2B-LsN" kind="modal" identifier="WelcuLoginViewController" animates="NO" id="3Fc-6j-IVm"/>
@@ -78,6 +79,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jw4-Ud-1SL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -248,30 +250,15 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="w7p-TO-3Zn">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="147"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="grI-vM-ecs">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="lgJ-vT-6Wt" id="bF2-8d-uA9"/>
-                                    </connections>
-                                </searchBar>
-                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qwf-Y8-DcY">
-                                    <rect key="frame" x="0.0" y="44" width="320" height="103"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </mapView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        </view>
+                        <mapView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="b9A-Iu-yho">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        </mapView>
                         <sections>
                             <tableViewSection id="0QY-L2-5Ii">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="KaE-5V-ydt" style="IBUITableViewCellStyleDefault" id="Hom-zS-TjX">
-                                        <rect key="frame" x="0.0" y="147" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="106" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -306,7 +293,6 @@
                 <searchDisplayController id="bTb-fv-Cty">
                     <connections>
                         <outlet property="delegate" destination="lgJ-vT-6Wt" id="jNB-L7-W6O"/>
-                        <outlet property="searchBar" destination="grI-vM-ecs" id="gnY-6Z-ib8"/>
                         <outlet property="searchContentsController" destination="lgJ-vT-6Wt" id="5uV-5m-sGE"/>
                         <outlet property="searchResultsDataSource" destination="lgJ-vT-6Wt" id="eEK-EM-42G"/>
                         <outlet property="searchResultsDelegate" destination="lgJ-vT-6Wt" id="pFl-c6-Cgr"/>
@@ -370,6 +356,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="composeButton" destination="cou-Cm-lof" id="oKZ-qu-X6n"/>
@@ -499,7 +486,8 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gag-fx-J2v">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="gag-fx-J2v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -540,6 +528,7 @@
                 <navigationController storyboardIdentifier="WelcuUserEventsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="h9m-Fd-1bm" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QrK-D7-aF4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -561,7 +550,9 @@
                     <tabBarItem key="tabBarItem" title="My Tickets" image="TicketsTabIcon" id="yMQ-hd-xro"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="jWE-Qw-CEu"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9nV-Lb-ezf">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="9nV-Lb-ezf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -658,7 +649,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="85k-t6-fAX"/>
-        <segue reference="ooA-vE-6Vq"/>
-        <segue reference="8nR-zi-Tz3"/>
+        <segue reference="Oos-e7-euB"/>
+        <segue reference="BB7-lJ-ohz"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -34,6 +34,7 @@
 		CE16DCC4178DDA0100371025 /* novecentowide-light-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCAC178DDA0100371025 /* novecentowide-light-webfont.ttf */; };
 		CE16DCC5178DDA0100371025 /* novecentowide-medium-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCAD178DDA0100371025 /* novecentowide-medium-webfont.ttf */; };
 		CE16DCC6178DDA0100371025 /* novecentowide-normal-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCAE178DDA0100371025 /* novecentowide-normal-webfont.ttf */; };
+		CE16DCC8178E0CA800371025 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE16DCC7178E0CA800371025 /* MapKit.framework */; };
 		CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC11177E0BC30006D75C /* Foundation.framework */; };
 		CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */; };
 		CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC15177E0BC30006D75C /* UIKit.framework */; };
@@ -116,6 +117,7 @@
 		CE16DCAC178DDA0100371025 /* novecentowide-light-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-light-webfont.ttf"; sourceTree = "<group>"; };
 		CE16DCAD178DDA0100371025 /* novecentowide-medium-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-medium-webfont.ttf"; sourceTree = "<group>"; };
 		CE16DCAE178DDA0100371025 /* novecentowide-normal-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-normal-webfont.ttf"; sourceTree = "<group>"; };
+		CE16DCC7178E0CA800371025 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CE7BEC0E177E0BC30006D75C /* WelcuSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WelcuSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BEC11177E0BC30006D75C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -197,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE16DCC8178E0CA800371025 /* MapKit.framework in Frameworks */,
 				CE7BEC42177E0BE70006D75C /* PassKit.framework in Frameworks */,
 				CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */,
 				CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */,
@@ -281,6 +284,7 @@
 		CE7BEC10177E0BC30006D75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE16DCC7178E0CA800371025 /* MapKit.framework */,
 				CE7BEC41177E0BE70006D75C /* PassKit.framework */,
 				CE7BEC11177E0BC30006D75C /* Foundation.framework */,
 				CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */,

@@ -20,7 +20,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Americo en Vivo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmN-uk-F03">
-                    <rect key="frame" x="101" y="137" width="157" height="30"/>
+                    <rect key="frame" x="98" y="165" width="163" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" priority="899" constant="30" id="2VU-FW-LFb"/>
@@ -30,34 +30,69 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Centro cultural Amanda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BL-rn-ZBf">
-                    <rect key="frame" x="110" y="172" width="140" height="16"/>
+                    <rect key="frame" x="110" y="205" width="140" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 de abril - 25 de abril" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZV-TC-MJB">
+                    <rect key="frame" x="111" y="222" width="137" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventHeaderPhotoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Y9S-Ef-n89">
+                    <rect key="frame" x="118" y="30" width="122" height="122"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="122" id="93D-tT-md7"/>
+                        <constraint firstAttribute="height" constant="122" id="XWk-dk-hHZ"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventHeaderPhotoMask" translatesAutoresizingMaskIntoConstraints="NO" id="ke3-uN-8vt">
+                    <rect key="frame" x="123" y="35" width="112" height="112"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="112" id="Kka-Ar-53e"/>
+                        <constraint firstAttribute="height" constant="112" id="dxS-h7-UFA"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="hkk-Hj-iht" secondAttribute="trailing" id="77F-eV-msC"/>
+                <constraint firstItem="sZV-TC-MJB" firstAttribute="top" secondItem="0BL-rn-ZBf" secondAttribute="bottom" constant="1" id="7ka-cg-jZy"/>
                 <constraint firstAttribute="centerX" secondItem="YmN-uk-F03" secondAttribute="centerX" id="EDS-lt-uEt"/>
                 <constraint firstItem="hkk-Hj-iht" firstAttribute="top" secondItem="1" secondAttribute="top" id="Gp8-p2-f48"/>
+                <constraint firstItem="YmN-uk-F03" firstAttribute="top" secondItem="ke3-uN-8vt" secondAttribute="bottom" constant="18" id="OTJ-xT-Bxd"/>
                 <constraint firstAttribute="centerX" secondItem="0BL-rn-ZBf" secondAttribute="centerX" id="SJN-s2-dCC"/>
                 <constraint firstItem="hkk-Hj-iht" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="TXH-0a-DYl"/>
                 <constraint firstItem="AVd-kg-YTU" firstAttribute="top" secondItem="1" secondAttribute="top" id="U7T-cl-81w"/>
                 <constraint firstAttribute="trailing" secondItem="AVd-kg-YTU" secondAttribute="trailing" id="W9a-gN-92p"/>
                 <constraint firstAttribute="bottom" secondItem="AVd-kg-YTU" secondAttribute="bottom" id="cQ8-th-SZ8"/>
-                <constraint firstItem="0BL-rn-ZBf" firstAttribute="top" secondItem="YmN-uk-F03" secondAttribute="bottom" priority="805" constant="5" id="dxP-0l-OcD"/>
+                <constraint firstItem="ke3-uN-8vt" firstAttribute="centerY" secondItem="Y9S-Ef-n89" secondAttribute="centerY" id="dmK-gW-FkK"/>
+                <constraint firstItem="0BL-rn-ZBf" firstAttribute="top" secondItem="YmN-uk-F03" secondAttribute="bottom" priority="805" constant="10" id="dxP-0l-OcD"/>
+                <constraint firstItem="ke3-uN-8vt" firstAttribute="centerX" secondItem="Y9S-Ef-n89" secondAttribute="centerX" id="fam-1V-BKY"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YmN-uk-F03" secondAttribute="bottom" constant="3" id="h6G-z0-DVY"/>
-                <constraint firstAttribute="bottom" secondItem="YmN-uk-F03" secondAttribute="bottom" priority="638" constant="83" id="kdS-cg-9Wc"/>
-                <constraint firstItem="YmN-uk-F03" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1" secondAttribute="top" constant="3" id="khK-Rm-cdq"/>
+                <constraint firstAttribute="centerX" secondItem="sZV-TC-MJB" secondAttribute="centerX" id="hgy-up-XmW"/>
+                <constraint firstAttribute="bottom" secondItem="YmN-uk-F03" secondAttribute="bottom" priority="638" constant="55" id="kdS-cg-9Wc"/>
+                <constraint firstItem="YmN-uk-F03" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1" secondAttribute="top" constant="15" id="khK-Rm-cdq"/>
                 <constraint firstItem="AVd-kg-YTU" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="pVe-QW-OiC"/>
                 <constraint firstAttribute="bottom" secondItem="hkk-Hj-iht" secondAttribute="bottom" id="sVU-Pj-MY4"/>
+                <constraint firstAttribute="centerX" secondItem="ke3-uN-8vt" secondAttribute="centerX" constant="0.5" id="uDg-HU-N8I"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="eventBackgroundView" destination="AVd-kg-YTU" id="7jx-Hj-lM7"/>
+                <outlet property="eventPhotoView" destination="ke3-uN-8vt" id="Vg4-sw-xGe"/>
+            </connections>
         </view>
     </objects>
     <resources>
+        <image name="EventHeaderPhotoBackground" width="122" height="122"/>
+        <image name="EventHeaderPhotoMask" width="114" height="114"/>
         <image name="EventImageGradient" width="1" height="400"/>
         <image name="SampleEventImage" width="900" height="400"/>
     </resources>

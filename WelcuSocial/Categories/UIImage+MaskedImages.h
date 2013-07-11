@@ -11,5 +11,6 @@
 @interface UIImage (MaskedImages)
 
 - (UIImage*) maskWithImage:(UIImage *)maskImage;
+- (UIImage*)imageByScalingAndCroppingForSize:(CGSize)targetSize;
 
 @end

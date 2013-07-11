@@ -5,6 +5,7 @@
 #include "Pods-AMAttributedHighlightLabel.xcconfig"
 #include "Pods-CocoaLumberjack.xcconfig"
 #include "Pods-DRKonamiCode.xcconfig"
+#include "Pods-GPUImage.xcconfig"
 #include "Pods-GoogleAnalytics-iOS-SDK.xcconfig"
 #include "Pods-JASidePanels.xcconfig"
 #include "Pods-MJPopupViewController.xcconfig"
@@ -16,7 +17,7 @@
 #include "Pods-TestFlightSDK.xcconfig"
 FRAMEWORK_SEARCH_PATHS =  ${PODS_NEWRELICAGENT_FRAMEWORK_SEARCH_PATHS}
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AALaunchTransition" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/AKSegmentedControl" "${PODS_ROOT}/Headers/ALRadial" "${PODS_ROOT}/Headers/AMAttributedHighlightLabel" "${PODS_ROOT}/Headers/CocoaLumberjack" "${PODS_ROOT}/Headers/DRKonamiCode" "${PODS_ROOT}/Headers/GoogleAnalytics-iOS-SDK" "${PODS_ROOT}/Headers/JASidePanels" "${PODS_ROOT}/Headers/MJPopupViewController" "${PODS_ROOT}/Headers/NewRelicAgent" "${PODS_ROOT}/Headers/OHAttributedLabel" "${PODS_ROOT}/Headers/PCStackMenu" "${PODS_ROOT}/Headers/SIAlertView" "${PODS_ROOT}/Headers/TestFlightLogger" "${PODS_ROOT}/Headers/TestFlightSDK"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AALaunchTransition" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/AKSegmentedControl" "${PODS_ROOT}/Headers/ALRadial" "${PODS_ROOT}/Headers/AMAttributedHighlightLabel" "${PODS_ROOT}/Headers/CocoaLumberjack" "${PODS_ROOT}/Headers/DRKonamiCode" "${PODS_ROOT}/Headers/GPUImage" "${PODS_ROOT}/Headers/GoogleAnalytics-iOS-SDK" "${PODS_ROOT}/Headers/JASidePanels" "${PODS_ROOT}/Headers/MJPopupViewController" "${PODS_ROOT}/Headers/NewRelicAgent" "${PODS_ROOT}/Headers/OHAttributedLabel" "${PODS_ROOT}/Headers/PCStackMenu" "${PODS_ROOT}/Headers/SIAlertView" "${PODS_ROOT}/Headers/TestFlightLogger" "${PODS_ROOT}/Headers/TestFlightSDK"
 LIBRARY_SEARCH_PATHS =  ${PODS_GOOGLEANALYTICS_IOS_SDK_LIBRARY_SEARCH_PATHS} ${PODS_TESTFLIGHTSDK_LIBRARY_SEARCH_PATHS}
-OTHER_LDFLAGS = -ObjC ${PODS_AFNETWORKING_OTHER_LDFLAGS} ${PODS_ALRADIAL_OTHER_LDFLAGS} ${PODS_AMATTRIBUTEDHIGHLIGHTLABEL_OTHER_LDFLAGS} ${PODS_GOOGLEANALYTICS_IOS_SDK_OTHER_LDFLAGS} ${PODS_JASIDEPANELS_OTHER_LDFLAGS} ${PODS_MJPOPUPVIEWCONTROLLER_OTHER_LDFLAGS} ${PODS_NEWRELICAGENT_OTHER_LDFLAGS} ${PODS_OHATTRIBUTEDLABEL_OTHER_LDFLAGS} ${PODS_SIALERTVIEW_OTHER_LDFLAGS} ${PODS_TESTFLIGHTSDK_OTHER_LDFLAGS}
+OTHER_LDFLAGS = -ObjC ${PODS_AFNETWORKING_OTHER_LDFLAGS} ${PODS_ALRADIAL_OTHER_LDFLAGS} ${PODS_AMATTRIBUTEDHIGHLIGHTLABEL_OTHER_LDFLAGS} ${PODS_GPUIMAGE_OTHER_LDFLAGS} ${PODS_GOOGLEANALYTICS_IOS_SDK_OTHER_LDFLAGS} ${PODS_JASIDEPANELS_OTHER_LDFLAGS} ${PODS_MJPOPUPVIEWCONTROLLER_OTHER_LDFLAGS} ${PODS_NEWRELICAGENT_OTHER_LDFLAGS} ${PODS_OHATTRIBUTEDLABEL_OTHER_LDFLAGS} ${PODS_SIALERTVIEW_OTHER_LDFLAGS} ${PODS_TESTFLIGHTSDK_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}/Pods

@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_DRKonamiCode 0
 #define COCOAPODS_VERSION_PATCH_DRKonamiCode 0
 
+// GPUImage
+#define COCOAPODS_POD_AVAILABLE_GPUImage
+#define COCOAPODS_VERSION_MAJOR_GPUImage 0
+#define COCOAPODS_VERSION_MINOR_GPUImage 1
+#define COCOAPODS_VERSION_PATCH_GPUImage 0
+
 // GoogleAnalytics-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK
 // This library does not follow semantic-versioning,

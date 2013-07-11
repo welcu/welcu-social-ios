@@ -11,8 +11,8 @@
 @class WelcuEvent;
 @class WelcuEventHeaderView;
 
-#define WELCU_EVENT_HEADER_MAX_HEIGHT 250
-#define WELCU_EVENT_HEADER_MIN_HEIGHT 74
+#define WELCU_EVENT_HEADER_MAX_HEIGHT 270
+#define WELCU_EVENT_HEADER_MIN_HEIGHT 80
 
 
 @protocol WelcuEventHeaderViewDelegate <NSObject>
@@ -28,6 +28,10 @@
 
 @property (nonatomic,weak) id<WelcuEventHeaderViewDelegate> delegate;
 @property (nonatomic,strong) WelcuEvent *event;
+
+@property (weak, nonatomic) IBOutlet UIImageView *eventPhotoView;
+@property (weak, nonatomic) IBOutlet UIImageView *eventBackgroundView;
+
 
 - (void)setHeight:(CGFloat)height;
 - (void)setHeight:(CGFloat)height animated:(BOOL)animated;
