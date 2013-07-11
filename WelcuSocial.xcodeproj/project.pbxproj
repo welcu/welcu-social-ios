@@ -10,31 +10,35 @@
 		9A2922333221434C8C447671 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEE0432ED3E4A3F9BC588C8 /* libPods.a */; };
 		CE16DC92178B723D00371025 /* WelcuComposeController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D303D178B5DCB0016B8B8 /* WelcuComposeController.m */; };
 		CE16DC93178B724000371025 /* WelcuComposeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D303E178B5DCB0016B8B8 /* WelcuComposeController.xib */; };
-		CE16DCAF178DDA0100371025 /* gothambold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DC97178DDA0100371025 /* gothambold.ttf */; };
-		CE16DCB0178DDA0100371025 /* gothambolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DC98178DDA0100371025 /* gothambolditalic.ttf */; };
-		CE16DCB1178DDA0100371025 /* gothambook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DC99178DDA0100371025 /* gothambook.ttf */; };
-		CE16DCB2178DDA0100371025 /* gothambookitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DC9A178DDA0100371025 /* gothambookitalic.ttf */; };
-		CE16DCB3178DDA0100371025 /* gothamlight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DC9B178DDA0100371025 /* gothamlight.ttf */; };
-		CE16DCB4178DDA0100371025 /* gothamlightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DC9C178DDA0100371025 /* gothamlightitalic.ttf */; };
-		CE16DCB5178DDA0100371025 /* gothammedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DC9D178DDA0100371025 /* gothammedium.ttf */; };
-		CE16DCB6178DDA0100371025 /* gothammediumitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DC9E178DDA0100371025 /* gothammediumitalic.ttf */; };
-		CE16DCB7178DDA0100371025 /* museosans_500_italic-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DC9F178DDA0100371025 /* museosans_500_italic-webfont.ttf */; };
-		CE16DCB8178DDA0100371025 /* museosans_500-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCA0178DDA0100371025 /* museosans_500-webfont.ttf */; };
-		CE16DCB9178DDA0100371025 /* museosans_700-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCA1178DDA0100371025 /* museosans_700-webfont.ttf */; };
-		CE16DCBA178DDA0100371025 /* museosans_900-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCA2178DDA0100371025 /* museosans_900-webfont.ttf */; };
-		CE16DCBB178DDA0100371025 /* museosans-100-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCA3178DDA0100371025 /* museosans-100-webfont.ttf */; };
-		CE16DCBC178DDA0100371025 /* museosans-100italic-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCA4178DDA0100371025 /* museosans-100italic-webfont.ttf */; };
-		CE16DCBD178DDA0100371025 /* museosans-300-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCA5178DDA0100371025 /* museosans-300-webfont.ttf */; };
-		CE16DCBE178DDA0100371025 /* museosans-300italic-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCA6178DDA0100371025 /* museosans-300italic-webfont.ttf */; };
-		CE16DCBF178DDA0100371025 /* museosans-700italic-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCA7178DDA0100371025 /* museosans-700italic-webfont.ttf */; };
-		CE16DCC0178DDA0100371025 /* museosans-900italic-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCA8178DDA0100371025 /* museosans-900italic-webfont.ttf */; };
-		CE16DCC1178DDA0100371025 /* novecentowide-bold-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCA9178DDA0100371025 /* novecentowide-bold-webfont.ttf */; };
-		CE16DCC2178DDA0100371025 /* novecentowide-book-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCAA178DDA0100371025 /* novecentowide-book-webfont.ttf */; };
-		CE16DCC3178DDA0100371025 /* novecentowide-demibold-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCAB178DDA0100371025 /* novecentowide-demibold-webfont.ttf */; };
-		CE16DCC4178DDA0100371025 /* novecentowide-light-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCAC178DDA0100371025 /* novecentowide-light-webfont.ttf */; };
-		CE16DCC5178DDA0100371025 /* novecentowide-medium-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCAD178DDA0100371025 /* novecentowide-medium-webfont.ttf */; };
-		CE16DCC6178DDA0100371025 /* novecentowide-normal-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DCAE178DDA0100371025 /* novecentowide-normal-webfont.ttf */; };
 		CE16DCC8178E0CA800371025 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE16DCC7178E0CA800371025 /* MapKit.framework */; };
+		CE16DD1D178F241000371025 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE16DD1C178F241000371025 /* libsqlite3.dylib */; };
+		CE16DD1F178F241A00371025 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE16DD1E178F241A00371025 /* Accounts.framework */; };
+		CE16DD21178F242200371025 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE16DD20178F242200371025 /* Social.framework */; };
+		CE16DD23178F242C00371025 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE16DD22178F242C00371025 /* AdSupport.framework */; };
+		CE16DD24178F258C00371025 /* MuseoSans-500.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD10178F22DB00371025 /* MuseoSans-500.ttf */; };
+		CE16DD25178F258F00371025 /* MuseoSans-700Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD13178F22DB00371025 /* MuseoSans-700Italic.ttf */; };
+		CE16DD26178F259200371025 /* GothamBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD04178F22DB00371025 /* GothamBold.ttf */; };
+		CE16DD27178F259700371025 /* GothamMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD0A178F22DB00371025 /* GothamMedium.ttf */; };
+		CE16DD28178F26C100371025 /* GothamBold-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD05178F22DB00371025 /* GothamBold-Italic.ttf */; };
+		CE16DD29178F26DA00371025 /* GothamBook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD06178F22DB00371025 /* GothamBook.ttf */; };
+		CE16DD2A178F26DA00371025 /* GothamBook-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD07178F22DB00371025 /* GothamBook-Italic.ttf */; };
+		CE16DD2B178F26DA00371025 /* GothamLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD08178F22DB00371025 /* GothamLight.ttf */; };
+		CE16DD2C178F26DA00371025 /* GothamLight-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD09178F22DB00371025 /* GothamLight-Italic.ttf */; };
+		CE16DD2D178F26DA00371025 /* GothamMedium-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD0B178F22DB00371025 /* GothamMedium-Italic.ttf */; };
+		CE16DD2E178F26DA00371025 /* MuseoSans-100.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD0C178F22DB00371025 /* MuseoSans-100.ttf */; };
+		CE16DD2F178F26DA00371025 /* MuseoSans-100Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD0D178F22DB00371025 /* MuseoSans-100Italic.ttf */; };
+		CE16DD30178F26DA00371025 /* MuseoSans-300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD0E178F22DB00371025 /* MuseoSans-300.ttf */; };
+		CE16DD31178F26DA00371025 /* MuseoSans-300Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD0F178F22DB00371025 /* MuseoSans-300Italic.ttf */; };
+		CE16DD32178F26DA00371025 /* MuseoSans-500Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD11178F22DB00371025 /* MuseoSans-500Italic.ttf */; };
+		CE16DD33178F26DA00371025 /* MuseoSans-700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD12178F22DB00371025 /* MuseoSans-700.ttf */; };
+		CE16DD34178F26DA00371025 /* MuseoSans-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD14178F22DB00371025 /* MuseoSans-900.ttf */; };
+		CE16DD35178F26DA00371025 /* MuseoSans-900Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD15178F22DB00371025 /* MuseoSans-900Italic.ttf */; };
+		CE16DD36178F26DA00371025 /* novecentowide-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD16178F22DB00371025 /* novecentowide-bold.ttf */; };
+		CE16DD37178F26DA00371025 /* novecentowide-book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD17178F22DB00371025 /* novecentowide-book.ttf */; };
+		CE16DD38178F26DA00371025 /* novecentowide-demibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD18178F22DB00371025 /* novecentowide-demibold.ttf */; };
+		CE16DD39178F26DA00371025 /* novecentowide-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD19178F22DB00371025 /* novecentowide-light.ttf */; };
+		CE16DD3A178F26DA00371025 /* novecentowide-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD1A178F22DB00371025 /* novecentowide-medium.ttf */; };
+		CE16DD3B178F26DA00371025 /* novecentowide-normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD1B178F22DB00371025 /* novecentowide-normal.ttf */; };
 		CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC11177E0BC30006D75C /* Foundation.framework */; };
 		CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */; };
 		CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC15177E0BC30006D75C /* UIKit.framework */; };
@@ -93,31 +97,35 @@
 /* Begin PBXFileReference section */
 		6CEE0432ED3E4A3F9BC588C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7077684778AA4E5B8DD7B75E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		CE16DC97178DDA0100371025 /* gothambold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothambold.ttf; sourceTree = "<group>"; };
-		CE16DC98178DDA0100371025 /* gothambolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothambolditalic.ttf; sourceTree = "<group>"; };
-		CE16DC99178DDA0100371025 /* gothambook.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothambook.ttf; sourceTree = "<group>"; };
-		CE16DC9A178DDA0100371025 /* gothambookitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothambookitalic.ttf; sourceTree = "<group>"; };
-		CE16DC9B178DDA0100371025 /* gothamlight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothamlight.ttf; sourceTree = "<group>"; };
-		CE16DC9C178DDA0100371025 /* gothamlightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothamlightitalic.ttf; sourceTree = "<group>"; };
-		CE16DC9D178DDA0100371025 /* gothammedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothammedium.ttf; sourceTree = "<group>"; };
-		CE16DC9E178DDA0100371025 /* gothammediumitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothammediumitalic.ttf; sourceTree = "<group>"; };
-		CE16DC9F178DDA0100371025 /* museosans_500_italic-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "museosans_500_italic-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCA0178DDA0100371025 /* museosans_500-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "museosans_500-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCA1178DDA0100371025 /* museosans_700-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "museosans_700-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCA2178DDA0100371025 /* museosans_900-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "museosans_900-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCA3178DDA0100371025 /* museosans-100-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "museosans-100-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCA4178DDA0100371025 /* museosans-100italic-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "museosans-100italic-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCA5178DDA0100371025 /* museosans-300-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "museosans-300-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCA6178DDA0100371025 /* museosans-300italic-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "museosans-300italic-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCA7178DDA0100371025 /* museosans-700italic-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "museosans-700italic-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCA8178DDA0100371025 /* museosans-900italic-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "museosans-900italic-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCA9178DDA0100371025 /* novecentowide-bold-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-bold-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCAA178DDA0100371025 /* novecentowide-book-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-book-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCAB178DDA0100371025 /* novecentowide-demibold-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-demibold-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCAC178DDA0100371025 /* novecentowide-light-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-light-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCAD178DDA0100371025 /* novecentowide-medium-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-medium-webfont.ttf"; sourceTree = "<group>"; };
-		CE16DCAE178DDA0100371025 /* novecentowide-normal-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-normal-webfont.ttf"; sourceTree = "<group>"; };
 		CE16DCC7178E0CA800371025 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CE16DD04178F22DB00371025 /* GothamBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamBold.ttf; sourceTree = "<group>"; };
+		CE16DD05178F22DB00371025 /* GothamBold-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamBold-Italic.ttf"; sourceTree = "<group>"; };
+		CE16DD06178F22DB00371025 /* GothamBook.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamBook.ttf; sourceTree = "<group>"; };
+		CE16DD07178F22DB00371025 /* GothamBook-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamBook-Italic.ttf"; sourceTree = "<group>"; };
+		CE16DD08178F22DB00371025 /* GothamLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamLight.ttf; sourceTree = "<group>"; };
+		CE16DD09178F22DB00371025 /* GothamLight-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamLight-Italic.ttf"; sourceTree = "<group>"; };
+		CE16DD0A178F22DB00371025 /* GothamMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamMedium.ttf; sourceTree = "<group>"; };
+		CE16DD0B178F22DB00371025 /* GothamMedium-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamMedium-Italic.ttf"; sourceTree = "<group>"; };
+		CE16DD0C178F22DB00371025 /* MuseoSans-100.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-100.ttf"; sourceTree = "<group>"; };
+		CE16DD0D178F22DB00371025 /* MuseoSans-100Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-100Italic.ttf"; sourceTree = "<group>"; };
+		CE16DD0E178F22DB00371025 /* MuseoSans-300.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-300.ttf"; sourceTree = "<group>"; };
+		CE16DD0F178F22DB00371025 /* MuseoSans-300Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-300Italic.ttf"; sourceTree = "<group>"; };
+		CE16DD10178F22DB00371025 /* MuseoSans-500.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-500.ttf"; sourceTree = "<group>"; };
+		CE16DD11178F22DB00371025 /* MuseoSans-500Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-500Italic.ttf"; sourceTree = "<group>"; };
+		CE16DD12178F22DB00371025 /* MuseoSans-700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-700.ttf"; sourceTree = "<group>"; };
+		CE16DD13178F22DB00371025 /* MuseoSans-700Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-700Italic.ttf"; sourceTree = "<group>"; };
+		CE16DD14178F22DB00371025 /* MuseoSans-900.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-900.ttf"; sourceTree = "<group>"; };
+		CE16DD15178F22DB00371025 /* MuseoSans-900Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-900Italic.ttf"; sourceTree = "<group>"; };
+		CE16DD16178F22DB00371025 /* novecentowide-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-bold.ttf"; sourceTree = "<group>"; };
+		CE16DD17178F22DB00371025 /* novecentowide-book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-book.ttf"; sourceTree = "<group>"; };
+		CE16DD18178F22DB00371025 /* novecentowide-demibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-demibold.ttf"; sourceTree = "<group>"; };
+		CE16DD19178F22DB00371025 /* novecentowide-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-light.ttf"; sourceTree = "<group>"; };
+		CE16DD1A178F22DB00371025 /* novecentowide-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-medium.ttf"; sourceTree = "<group>"; };
+		CE16DD1B178F22DB00371025 /* novecentowide-normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-normal.ttf"; sourceTree = "<group>"; };
+		CE16DD1C178F241000371025 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		CE16DD1E178F241A00371025 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		CE16DD20178F242200371025 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		CE16DD22178F242C00371025 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		CE7BEC0E177E0BC30006D75C /* WelcuSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WelcuSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BEC11177E0BC30006D75C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -199,6 +207,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE16DD23178F242C00371025 /* AdSupport.framework in Frameworks */,
+				CE16DD21178F242200371025 /* Social.framework in Frameworks */,
+				CE16DD1F178F241A00371025 /* Accounts.framework in Frameworks */,
+				CE16DD1D178F241000371025 /* libsqlite3.dylib in Frameworks */,
 				CE16DCC8178E0CA800371025 /* MapKit.framework in Frameworks */,
 				CE7BEC42177E0BE70006D75C /* PassKit.framework in Frameworks */,
 				CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */,
@@ -233,30 +245,30 @@
 		CE16DC96178DD9E100371025 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				CE16DC97178DDA0100371025 /* gothambold.ttf */,
-				CE16DC98178DDA0100371025 /* gothambolditalic.ttf */,
-				CE16DC99178DDA0100371025 /* gothambook.ttf */,
-				CE16DC9A178DDA0100371025 /* gothambookitalic.ttf */,
-				CE16DC9B178DDA0100371025 /* gothamlight.ttf */,
-				CE16DC9C178DDA0100371025 /* gothamlightitalic.ttf */,
-				CE16DC9D178DDA0100371025 /* gothammedium.ttf */,
-				CE16DC9E178DDA0100371025 /* gothammediumitalic.ttf */,
-				CE16DC9F178DDA0100371025 /* museosans_500_italic-webfont.ttf */,
-				CE16DCA0178DDA0100371025 /* museosans_500-webfont.ttf */,
-				CE16DCA1178DDA0100371025 /* museosans_700-webfont.ttf */,
-				CE16DCA2178DDA0100371025 /* museosans_900-webfont.ttf */,
-				CE16DCA3178DDA0100371025 /* museosans-100-webfont.ttf */,
-				CE16DCA4178DDA0100371025 /* museosans-100italic-webfont.ttf */,
-				CE16DCA5178DDA0100371025 /* museosans-300-webfont.ttf */,
-				CE16DCA6178DDA0100371025 /* museosans-300italic-webfont.ttf */,
-				CE16DCA7178DDA0100371025 /* museosans-700italic-webfont.ttf */,
-				CE16DCA8178DDA0100371025 /* museosans-900italic-webfont.ttf */,
-				CE16DCA9178DDA0100371025 /* novecentowide-bold-webfont.ttf */,
-				CE16DCAA178DDA0100371025 /* novecentowide-book-webfont.ttf */,
-				CE16DCAB178DDA0100371025 /* novecentowide-demibold-webfont.ttf */,
-				CE16DCAC178DDA0100371025 /* novecentowide-light-webfont.ttf */,
-				CE16DCAD178DDA0100371025 /* novecentowide-medium-webfont.ttf */,
-				CE16DCAE178DDA0100371025 /* novecentowide-normal-webfont.ttf */,
+				CE16DD04178F22DB00371025 /* GothamBold.ttf */,
+				CE16DD05178F22DB00371025 /* GothamBold-Italic.ttf */,
+				CE16DD06178F22DB00371025 /* GothamBook.ttf */,
+				CE16DD07178F22DB00371025 /* GothamBook-Italic.ttf */,
+				CE16DD08178F22DB00371025 /* GothamLight.ttf */,
+				CE16DD09178F22DB00371025 /* GothamLight-Italic.ttf */,
+				CE16DD0A178F22DB00371025 /* GothamMedium.ttf */,
+				CE16DD0B178F22DB00371025 /* GothamMedium-Italic.ttf */,
+				CE16DD0C178F22DB00371025 /* MuseoSans-100.ttf */,
+				CE16DD0D178F22DB00371025 /* MuseoSans-100Italic.ttf */,
+				CE16DD0E178F22DB00371025 /* MuseoSans-300.ttf */,
+				CE16DD0F178F22DB00371025 /* MuseoSans-300Italic.ttf */,
+				CE16DD10178F22DB00371025 /* MuseoSans-500.ttf */,
+				CE16DD11178F22DB00371025 /* MuseoSans-500Italic.ttf */,
+				CE16DD12178F22DB00371025 /* MuseoSans-700.ttf */,
+				CE16DD13178F22DB00371025 /* MuseoSans-700Italic.ttf */,
+				CE16DD14178F22DB00371025 /* MuseoSans-900.ttf */,
+				CE16DD15178F22DB00371025 /* MuseoSans-900Italic.ttf */,
+				CE16DD16178F22DB00371025 /* novecentowide-bold.ttf */,
+				CE16DD17178F22DB00371025 /* novecentowide-book.ttf */,
+				CE16DD18178F22DB00371025 /* novecentowide-demibold.ttf */,
+				CE16DD19178F22DB00371025 /* novecentowide-light.ttf */,
+				CE16DD1A178F22DB00371025 /* novecentowide-medium.ttf */,
+				CE16DD1B178F22DB00371025 /* novecentowide-normal.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -284,6 +296,10 @@
 		CE7BEC10177E0BC30006D75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE16DD22178F242C00371025 /* AdSupport.framework */,
+				CE16DD20178F242200371025 /* Social.framework */,
+				CE16DD1E178F241A00371025 /* Accounts.framework */,
+				CE16DD1C178F241000371025 /* libsqlite3.dylib */,
 				CE16DCC7178E0CA800371025 /* MapKit.framework */,
 				CE7BEC41177E0BE70006D75C /* PassKit.framework */,
 				CE7BEC11177E0BC30006D75C /* Foundation.framework */,
@@ -514,41 +530,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9D2FE0178739750016B8B8 /* WelcuEventPostHeaderView.xib in Resources */,
-				CE16DCB9178DDA0100371025 /* museosans_700-webfont.ttf in Resources */,
-				CE16DCB6178DDA0100371025 /* gothammediumitalic.ttf in Resources */,
-				CE16DCB2178DDA0100371025 /* gothambookitalic.ttf in Resources */,
-				CE16DCC3178DDA0100371025 /* novecentowide-demibold-webfont.ttf in Resources */,
+				CE16DD2D178F26DA00371025 /* GothamMedium-Italic.ttf in Resources */,
 				CE9D2FE21787397D0016B8B8 /* WelcuEventPostQuoteCell.xib in Resources */,
-				CE16DCC0178DDA0100371025 /* museosans-900italic-webfont.ttf in Resources */,
-				CE16DCC1178DDA0100371025 /* novecentowide-bold-webfont.ttf in Resources */,
-				CE16DCC6178DDA0100371025 /* novecentowide-normal-webfont.ttf in Resources */,
-				CE16DCB7178DDA0100371025 /* museosans_500_italic-webfont.ttf in Resources */,
 				CE7BEC1C177E0BC30006D75C /* InfoPlist.strings in Resources */,
-				CE16DCB1178DDA0100371025 /* gothambook.ttf in Resources */,
-				CE16DCB8178DDA0100371025 /* museosans_500-webfont.ttf in Resources */,
-				CE16DCBE178DDA0100371025 /* museosans-300italic-webfont.ttf in Resources */,
-				CE16DCB4178DDA0100371025 /* gothamlightitalic.ttf in Resources */,
+				CE16DD37178F26DA00371025 /* novecentowide-book.ttf in Resources */,
+				CE16DD2B178F26DA00371025 /* GothamLight.ttf in Resources */,
+				CE16DD2F178F26DA00371025 /* MuseoSans-100Italic.ttf in Resources */,
+				CE16DD25178F258F00371025 /* MuseoSans-700Italic.ttf in Resources */,
+				CE16DD36178F26DA00371025 /* novecentowide-bold.ttf in Resources */,
+				CE16DD35178F26DA00371025 /* MuseoSans-900Italic.ttf in Resources */,
+				CE16DD33178F26DA00371025 /* MuseoSans-700.ttf in Resources */,
+				CE16DD28178F26C100371025 /* GothamBold-Italic.ttf in Resources */,
 				CE9D2FEC178761100016B8B8 /* WelcuEventStreamingView.xib in Resources */,
-				CE16DCC2178DDA0100371025 /* novecentowide-book-webfont.ttf in Resources */,
-				CE16DCC4178DDA0100371025 /* novecentowide-light-webfont.ttf in Resources */,
-				CE16DCBC178DDA0100371025 /* museosans-100italic-webfont.ttf in Resources */,
-				CE16DCBB178DDA0100371025 /* museosans-100-webfont.ttf in Resources */,
 				CE8E49431780E279006B1874 /* WelcuEventCell.xib in Resources */,
-				CE16DCBF178DDA0100371025 /* museosans-700italic-webfont.ttf in Resources */,
+				CE16DD39178F26DA00371025 /* novecentowide-light.ttf in Resources */,
+				CE16DD24178F258C00371025 /* MuseoSans-500.ttf in Resources */,
+				CE16DD2C178F26DA00371025 /* GothamLight-Italic.ttf in Resources */,
+				CE16DD2E178F26DA00371025 /* MuseoSans-100.ttf in Resources */,
+				CE16DD3A178F26DA00371025 /* novecentowide-medium.ttf in Resources */,
 				CE16DC93178B724000371025 /* WelcuComposeController.xib in Resources */,
-				CE16DCBA178DDA0100371025 /* museosans_900-webfont.ttf in Resources */,
+				CE16DD3B178F26DA00371025 /* novecentowide-normal.ttf in Resources */,
 				CE7BEC24177E0BC30006D75C /* Images.xcassets in Resources */,
-				CE16DCC5178DDA0100371025 /* novecentowide-medium-webfont.ttf in Resources */,
-				CE16DCB0178DDA0100371025 /* gothambolditalic.ttf in Resources */,
-				CE16DCBD178DDA0100371025 /* museosans-300-webfont.ttf in Resources */,
 				CE9D2FD7178722780016B8B8 /* WelcuEventPostTextCell.xib in Resources */,
-				CE16DCAF178DDA0100371025 /* gothambold.ttf in Resources */,
-				CE16DCB3178DDA0100371025 /* gothamlight.ttf in Resources */,
+				CE16DD29178F26DA00371025 /* GothamBook.ttf in Resources */,
+				CE16DD34178F26DA00371025 /* MuseoSans-900.ttf in Resources */,
+				CE16DD32178F26DA00371025 /* MuseoSans-500Italic.ttf in Resources */,
 				CE8E4932177F8ED1006B1874 /* WelcuMenuUserProfileCell.xib in Resources */,
-				CE16DCB5178DDA0100371025 /* gothammedium.ttf in Resources */,
+				CE16DD38178F26DA00371025 /* novecentowide-demibold.ttf in Resources */,
+				CE16DD30178F26DA00371025 /* MuseoSans-300.ttf in Resources */,
+				CE16DD27178F259700371025 /* GothamMedium.ttf in Resources */,
+				CE16DD2A178F26DA00371025 /* GothamBook-Italic.ttf in Resources */,
 				CE9D2FEA178760FD0016B8B8 /* WelcuEventHeaderView.xib in Resources */,
 				CE9D2FE11787397A0016B8B8 /* WelcuEventPostPhotoCell.xib in Resources */,
 				CE7BEC44177E0FD10006D75C /* iPhoneStoryboard.storyboard in Resources */,
+				CE16DD26178F259200371025 /* GothamBold.ttf in Resources */,
+				CE16DD31178F26DA00371025 /* MuseoSans-300Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

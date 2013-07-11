@@ -48,6 +48,18 @@
 #define COCOAPODS_VERSION_MINOR_DRKonamiCode 0
 #define COCOAPODS_VERSION_PATCH_DRKonamiCode 0
 
+// Facebook-iOS-SDK
+#define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK
+#define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK 3
+#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 5
+#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK 3
+
+// FontasticIcons
+#define COCOAPODS_POD_AVAILABLE_FontasticIcons
+#define COCOAPODS_VERSION_MAJOR_FontasticIcons 0
+#define COCOAPODS_VERSION_MINOR_FontasticIcons 4
+#define COCOAPODS_VERSION_PATCH_FontasticIcons 0
+
 // GPUImage
 #define COCOAPODS_POD_AVAILABLE_GPUImage
 #define COCOAPODS_VERSION_MAJOR_GPUImage 0

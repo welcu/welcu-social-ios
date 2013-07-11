@@ -32,9 +32,24 @@
 	</array>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
+	<key>FacebookAppID</key>
+	<string>130580200330588</string>
+	<key>FacebookDisplayName</key>
+	<string>Welcu</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb130580200330588</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>museosans_500-webfont.ttf</string>
+		<string>MuseoSans-500.ttf</string>
+		<string>GothamMedium.ttf</string>
+		<string>GothamBold.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

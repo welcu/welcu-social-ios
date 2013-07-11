@@ -7,7 +7,6 @@
 //
 
 #import "WelcuAppDelegate.h"
-//#import <R1PhotoEffectsSDK/R1PhotoEffectsSDK.h>
 
 @implementation WelcuAppDelegate
 
@@ -15,20 +14,17 @@
 {
     self.window.tintColor = [UIColor whiteColor];
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
-    
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            UITextAttributeTextColor : [UIColor whiteColor],
                                                            UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-500" size:20]
                                                            
                                                            }];
-//    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
 
-    [[UITableView appearance] setBackgroundColor:[UIColor welcuLightGrey]];
-    [[UITableViewHeaderFooterView appearance] setBackgroundColor:[UIColor welcuLightPurple]];
-
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//    [[UITableView appearance] setBackgroundColor:[UIColor welcuLightGrey]];
+//    [[UITableViewHeaderFooterView appearance] setBackgroundColor:[UIColor welcuLightPurple]];
 
     return YES;
 }
