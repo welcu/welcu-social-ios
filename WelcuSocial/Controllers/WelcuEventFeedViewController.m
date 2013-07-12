@@ -14,6 +14,7 @@
 
 #import <PCStackMenu/PCStackMenu.h>
 
+#import "WelcuAccount.h"
 #import "WelcuEventPostsController.h"
 
 #import "WelcuEventFeedViewCell.h"
@@ -24,29 +25,59 @@
 #import "WelcuEventPostTextCell.h"
 #import "WelcuEventHeaderView.h"
 
-@interface WelcuEventFeedViewController ()
+NSString const * kWelcuEventPostHeaderViewClassName = @"WelcuEventPostHeaderView";
+NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
+
+@interface WelcuEventFeedViewController () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic,strong) WelcuEventPostsController *postsController;
 @property (nonatomic,assign, getter = isComposeMenuVisible) BOOL composeMenuVisible;
 @property (nonatomic,strong) WelcuEventHeaderView *headerView;
 @property (nonatomic,strong)  UINavigationBar *navigationBar;
 
+@property (nonatomic,strong) NSFetchedResultsController *fetchedResultsController;
+
+- (void)refetchData;
+
 @end
 
 @implementation WelcuEventFeedViewController
+
+- (void)refetchData {
+    [self.fetchedResultsController performSelectorOnMainThread:@selector(performFetch:)
+                                                    withObject:nil
+                                                 waitUntilDone:YES
+                                                         modes:@[ NSRunLoopCommonModes ]];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"WelcuPost"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"eventID = ?" argumentArray:@[@1]];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"postID"
+                                                                                          ascending:NO]];
+    fetchRequest.fetchLimit = 50;
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                        managedObjectContext:[[WelcuAccount currentAccount] managedObjectContext]
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:@"EventStream"];
+    self.fetchedResultsController.delegate = self;
+    [self refetchData];
+    
     self.postsController = [WelcuEventPostsController controllerWithEvent:self.event];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"WelcuEventPostHeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"WelcuEventPostHeaderView"];
+    [self.tableView registerNib:[UINib nibWithNibName:(NSString *)kWelcuEventPostHeaderViewClassName
+                                               bundle:nil] forHeaderFooterViewReuseIdentifier:(NSString *)kWelcuEventPostHeaderViewClassName];
 
-    [self.tableView registerNib:[UINib nibWithNibName:@"WelcuEventPostTextCell" bundle:nil] forCellReuseIdentifier:@"WelcuEventPostTextCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:(NSString *)kWelcuEventPostTextCellClassName
+                                               bundle:nil] forCellReuseIdentifier:(NSString *)kWelcuEventPostTextCellClassName];
     
     self.navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 15, self.view.bounds.size.width, 44)];
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"ClearPixel"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"ClearPixel"]
+                             forBarMetrics:UIBarMetricsDefault];
     [self.view addSubview:self.navigationBar];
 
     self.headerView = [WelcuEventHeaderView headerView];
@@ -134,7 +165,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    WelcuEventPostHeaderView *header = (WelcuEventPostHeaderView *)[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:@"WelcuEventPostHeaderView"];
+    WelcuEventPostHeaderView *header = (WelcuEventPostHeaderView *)[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:(NSString *)kWelcuEventPostHeaderViewClassName];
     
     header.post = [self.postsController postAtIndex:section];
     
@@ -150,7 +181,7 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell <WelcuEventPostCell> *cell = [self.tableView dequeueReusableCellWithIdentifier:@"WelcuEventPostTextCell" forIndexPath:indexPath];
+    UITableViewCell <WelcuEventPostCell> *cell = [self.tableView dequeueReusableCellWithIdentifier:(NSString *)kWelcuEventPostTextCellClassName forIndexPath:indexPath];
     
     cell.post = [self.postsController postAtIndex:indexPath.section];
     
@@ -219,6 +250,12 @@
 //    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
     [self dismissViewControllerAnimated:YES completion:^{
     }];
+}
+
+#pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView reloadData];
 }
 
 @end

@@ -72,6 +72,8 @@
 		CEBBD1FA17906D2000F3E36C /* WelcuAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD1F917906D2000F3E36C /* WelcuAccount.m */; };
 		CEBBD1FD17906EBD00F3E36C /* WelcuSocialClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD1FC17906EBD00F3E36C /* WelcuSocialClient.m */; };
 		CEBBD2001790720F00F3E36C /* WelcuSocialIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD1FF1790720F00F3E36C /* WelcuSocialIncrementalStore.m */; };
+		CEBBD20117908ED000F3E36C /* WelcuSocial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD1E717905B7200F3E36C /* WelcuSocial.xcdatamodeld */; };
+		CEBBD2061790947300F3E36C /* AFHTTPRequestOperationLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD2051790947300F3E36C /* AFHTTPRequestOperationLogger.m */; };
 		CEBD4F14178F60B100DE276E /* MuseoSans-500.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBD4F0A178F60A500DE276E /* MuseoSans-500.ttf */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +192,8 @@
 		CEBBD1FC17906EBD00F3E36C /* WelcuSocialClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuSocialClient.m; sourceTree = "<group>"; };
 		CEBBD1FE1790720F00F3E36C /* WelcuSocialIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuSocialIncrementalStore.h; sourceTree = "<group>"; };
 		CEBBD1FF1790720F00F3E36C /* WelcuSocialIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuSocialIncrementalStore.m; sourceTree = "<group>"; };
+		CEBBD2041790946D00F3E36C /* AFHTTPRequestOperationLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationLogger.h; sourceTree = "<group>"; };
+		CEBBD2051790947300F3E36C /* AFHTTPRequestOperationLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationLogger.m; sourceTree = "<group>"; };
 		CEBD4F0A178F60A500DE276E /* MuseoSans-500.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-500.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -307,6 +311,7 @@
 				CE7BEC46177E0FE00006D75C /* Controllers */,
 				CE8E492D177F71E0006B1874 /* Categories */,
 				CE7BEC18177E0BC30006D75C /* Supporting Files */,
+				CEBBD2021790942200F3E36C /* Vendor */,
 			);
 			path = WelcuSocial;
 			sourceTree = "<group>";
@@ -437,6 +442,23 @@
 				CE8E493D177F98E2006B1874 /* NSObject+ClassName.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		CEBBD2021790942200F3E36C /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBD2031790943E00F3E36C /* AFHTTPRequestOperationLogger */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		CEBBD2031790943E00F3E36C /* AFHTTPRequestOperationLogger */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBD2041790946D00F3E36C /* AFHTTPRequestOperationLogger.h */,
+				CEBBD2051790947300F3E36C /* AFHTTPRequestOperationLogger.m */,
+			);
+			name = AFHTTPRequestOperationLogger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -601,10 +623,12 @@
 				CE7BEC5C177E3FB00006D75C /* UIColor+WelcuColors.m in Sources */,
 				CE9D2FE8178757F50016B8B8 /* WelcuEventStreamingView.m in Sources */,
 				CE9D2FDF178736AE0016B8B8 /* WelcuEventPostsController.m in Sources */,
+				CEBBD20117908ED000F3E36C /* WelcuSocial.xcdatamodeld in Sources */,
 				CEBBD1EB17906D0F00F3E36C /* WelcuPost.m in Sources */,
 				CE16DC92178B723D00371025 /* WelcuComposeController.m in Sources */,
 				CEBBD1FD17906EBD00F3E36C /* WelcuSocialClient.m in Sources */,
 				CE7BEC1E177E0BC30006D75C /* main.m in Sources */,
+				CEBBD2061790947300F3E36C /* AFHTTPRequestOperationLogger.m in Sources */,
 				CE8E493E177F98E2006B1874 /* NSObject+ClassName.m in Sources */,
 				CE8E4930177F7269006B1874 /* UIImage+MaskedImages.m in Sources */,
 				CE7BEC4A177E10D30006D75C /* WelcuMainViewController.m in Sources */,

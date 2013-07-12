@@ -13,6 +13,7 @@
 #import <CocoaLumberjack/DDASLLogger.h>
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import <CocoaLumberjack/DDFileLogger.h>
+#import "AFHTTPRequestOperationLogger.h"
 
 @interface WelcuAppDelegate ()
 - (void)setupTracking;
@@ -85,6 +86,9 @@
     fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
     fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
     [DDLog addLogger:fileLogger];
+    
+    [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
+    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelWarn];
 }
 
 - (void)setupApperance
@@ -102,6 +106,10 @@
     
     //    [[UITableView appearance] setBackgroundColor:[UIColor welcuLightGrey]];
     //    [[UITableViewHeaderFooterView appearance] setBackgroundColor:[UIColor welcuLightPurple]];
+}
+
+- (NSURL *)applicationDocumentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "WelcuSocialClient.h"
 
+#import "WelcuEvent.h"
+
 @interface WelcuAccount : NSObject
 
 @property (strong) NSNumber *userID;
@@ -16,10 +18,11 @@
 @property (strong) NSString *lastName;
 @property (strong) NSString *facebookUID;
 
+@property (readonly) WelcuEvent *lastActiveEvent;
+
 + (WelcuAccount *)currentAccount;
 
 @property (readonly) NSURL *accountDocumentsDirectory;
-
 
 // Related Models Access
 @property (readonly) WelcuSocialClient *client;

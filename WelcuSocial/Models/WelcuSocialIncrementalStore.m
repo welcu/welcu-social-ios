@@ -20,7 +20,7 @@
 }
 
 + (NSManagedObjectModel *)model {
-    return [[NSManagedObjectModel alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"WelcuSocial" withExtension:@"xcdatamodeld"]];
+    return [[NSManagedObjectModel alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"WelcuSocial" withExtension:@"momd"]];
 }
 
 - (id<AFIncrementalStoreHTTPClient>)HTTPClient {

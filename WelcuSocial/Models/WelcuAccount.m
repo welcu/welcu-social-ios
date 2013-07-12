@@ -8,6 +8,7 @@
 
 #import "WelcuAccount.h"
 #import "WelcuSocialIncrementalStore.h"
+#import "WelcuAppDelegate.h"
 
 static WelcuAccount *currentAccount = nil;
 
@@ -49,12 +50,28 @@ static WelcuAccount *currentAccount = nil;
     return currentAccount;
 }
 
-#pragma mark Core Data
+- (NSURL *)accountDocumentsDirectory
+{
+    static NSURL *accountDocumentsDirectory = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        accountDocumentsDirectory = [NSURL URLWithString: [self.userID stringValue]
+                                           relativeToURL:[(WelcuAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory]];
+        NSLog(@"%@", [accountDocumentsDirectory path]);
+        
+        [[NSFileManager defaultManager] createDirectoryAtURL:accountDocumentsDirectory
+                                 withIntermediateDirectories:NO
+                                                  attributes:nil
+                                                       error:nil];
+     });
+
+    return accountDocumentsDirectory;
+}
+
+#pragma mark - Core Data
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
-
-#pragma mark - Core Data
 
 // Returns the managed object context for the application.
 // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
@@ -105,8 +122,13 @@ static WelcuAccount *currentAccount = nil;
                               };
     
     NSError *error = nil;
-    if (![incrementalStore.backingPersistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
+    if (![incrementalStore.backingPersistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                                          configuration:nil
+                                                                                    URL:storeURL
+                                                                                options:options
+                                                                                  error:&error]) {
         DDLogError(@"Unresolved error %@, %@", error, [error userInfo]);
+        [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil];
         abort();
     }
     

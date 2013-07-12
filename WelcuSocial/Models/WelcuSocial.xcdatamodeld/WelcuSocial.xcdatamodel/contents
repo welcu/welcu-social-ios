@@ -16,6 +16,7 @@
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="subContent" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WelcuEvent" inverseName="posts" inverseEntity="WelcuEvent" syncable="YES"/>
@@ -34,7 +35,7 @@
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WelcuPost" inverseName="user" inverseEntity="WelcuPost" syncable="YES"/>
     </entity>
     <elements>
-        <element name="WelcuPost" positionX="27" positionY="35" width="146" height="148"/>
+        <element name="WelcuPost" positionX="27" positionY="35" width="146" height="163"/>
         <element name="WelcuUser" positionX="270" positionY="287" width="144" height="103"/>
         <element name="WelcuEvent" positionX="270" positionY="20" width="128" height="118"/>
         <element name="WelcuTicket" positionX="484" positionY="297" width="128" height="103"/>
