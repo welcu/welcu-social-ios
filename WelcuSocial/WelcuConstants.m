@@ -8,5 +8,10 @@
 
 #import "WelcuConstants.h"
 
-int const ddLogLevel = 0;
-NSString * const kWelcuTestflightToken = @"";
+NSString * const kWelcuTestflightToken = @"5c4488fd-b302-402e-ad76-553495fec49a";
+
+#ifdef DEBUG
+int const ddLogLevel = LOG_LEVEL_VERBOSE;
+#else
+int const ddLogLevel = LOG_LEVEL_WARN;
+#endif

@@ -14,8 +14,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="0l1-4n-OtN" customClass="AMAttributedHighlightLabel">
-                        <rect key="frame" x="20" y="0.0" width="280" height="100"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="0l1-4n-OtN" customClass="AMAttributedHighlightLabel">
+                        <rect key="frame" x="72" y="10" width="238" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
@@ -23,6 +23,11 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="0l1-4n-OtN" secondAttribute="trailing" constant="10" id="hiv-m9-H4T"/>
+                <constraint firstItem="0l1-4n-OtN" firstAttribute="top" secondItem="qum-4N-Ipl" secondAttribute="top" constant="10" id="j2K-dU-9C1"/>
+                <constraint firstItem="0l1-4n-OtN" firstAttribute="leading" secondItem="qum-4N-Ipl" secondAttribute="leading" constant="72" id="pwS-j3-xXn"/>
+            </constraints>
             <connections>
                 <outlet property="postContentLabel" destination="0l1-4n-OtN" id="ZUK-T4-zCu"/>
             </connections>
@@ -31,6 +36,9 @@
     <classes>
         <class className="AMAttributedHighlightLabel" superclassName="UILabel">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AMAttributedHighlightLabel.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
         <class className="WelcuEventPostTextCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuEventPostTextCell.h"/>

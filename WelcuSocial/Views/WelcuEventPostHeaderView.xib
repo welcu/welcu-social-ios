@@ -34,16 +34,4 @@
             </connections>
         </view>
     </objects>
-    <classes>
-        <class className="UITableViewHeaderFooterView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UITableViewHeaderFooterView.h"/>
-        </class>
-        <class className="WelcuEventPostHeaderView" superclassName="UITableViewHeaderFooterView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuEventPostHeaderView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="userImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
 </document>

@@ -15,37 +15,13 @@
 		CE16DD1F178F241A00371025 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE16DD1E178F241A00371025 /* Accounts.framework */; };
 		CE16DD21178F242200371025 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE16DD20178F242200371025 /* Social.framework */; };
 		CE16DD23178F242C00371025 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE16DD22178F242C00371025 /* AdSupport.framework */; };
-		CE16DD24178F258C00371025 /* MuseoSans-500.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD10178F22DB00371025 /* MuseoSans-500.ttf */; };
-		CE16DD25178F258F00371025 /* MuseoSans-700Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD13178F22DB00371025 /* MuseoSans-700Italic.ttf */; };
-		CE16DD26178F259200371025 /* GothamBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD04178F22DB00371025 /* GothamBold.ttf */; };
-		CE16DD27178F259700371025 /* GothamMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD0A178F22DB00371025 /* GothamMedium.ttf */; };
-		CE16DD28178F26C100371025 /* GothamBold-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD05178F22DB00371025 /* GothamBold-Italic.ttf */; };
-		CE16DD29178F26DA00371025 /* GothamBook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD06178F22DB00371025 /* GothamBook.ttf */; };
-		CE16DD2A178F26DA00371025 /* GothamBook-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD07178F22DB00371025 /* GothamBook-Italic.ttf */; };
-		CE16DD2B178F26DA00371025 /* GothamLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD08178F22DB00371025 /* GothamLight.ttf */; };
-		CE16DD2C178F26DA00371025 /* GothamLight-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD09178F22DB00371025 /* GothamLight-Italic.ttf */; };
-		CE16DD2D178F26DA00371025 /* GothamMedium-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD0B178F22DB00371025 /* GothamMedium-Italic.ttf */; };
-		CE16DD2E178F26DA00371025 /* MuseoSans-100.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD0C178F22DB00371025 /* MuseoSans-100.ttf */; };
-		CE16DD2F178F26DA00371025 /* MuseoSans-100Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD0D178F22DB00371025 /* MuseoSans-100Italic.ttf */; };
-		CE16DD30178F26DA00371025 /* MuseoSans-300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD0E178F22DB00371025 /* MuseoSans-300.ttf */; };
-		CE16DD31178F26DA00371025 /* MuseoSans-300Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD0F178F22DB00371025 /* MuseoSans-300Italic.ttf */; };
-		CE16DD32178F26DA00371025 /* MuseoSans-500Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD11178F22DB00371025 /* MuseoSans-500Italic.ttf */; };
-		CE16DD33178F26DA00371025 /* MuseoSans-700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD12178F22DB00371025 /* MuseoSans-700.ttf */; };
-		CE16DD34178F26DA00371025 /* MuseoSans-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD14178F22DB00371025 /* MuseoSans-900.ttf */; };
-		CE16DD35178F26DA00371025 /* MuseoSans-900Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD15178F22DB00371025 /* MuseoSans-900Italic.ttf */; };
-		CE16DD36178F26DA00371025 /* novecentowide-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD16178F22DB00371025 /* novecentowide-bold.ttf */; };
-		CE16DD37178F26DA00371025 /* novecentowide-book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD17178F22DB00371025 /* novecentowide-book.ttf */; };
-		CE16DD38178F26DA00371025 /* novecentowide-demibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD18178F22DB00371025 /* novecentowide-demibold.ttf */; };
-		CE16DD39178F26DA00371025 /* novecentowide-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD19178F22DB00371025 /* novecentowide-light.ttf */; };
-		CE16DD3A178F26DA00371025 /* novecentowide-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD1A178F22DB00371025 /* novecentowide-medium.ttf */; };
-		CE16DD3B178F26DA00371025 /* novecentowide-normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD1B178F22DB00371025 /* novecentowide-normal.ttf */; };
+		CE16DD53178F326900371025 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD52178F326900371025 /* posts.json */; };
 		CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC11177E0BC30006D75C /* Foundation.framework */; };
 		CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */; };
 		CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC15177E0BC30006D75C /* UIKit.framework */; };
 		CE7BEC1C177E0BC30006D75C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7BEC1A177E0BC30006D75C /* InfoPlist.strings */; };
 		CE7BEC1E177E0BC30006D75C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC1D177E0BC30006D75C /* main.m */; };
 		CE7BEC22177E0BC30006D75C /* WelcuAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC21177E0BC30006D75C /* WelcuAppDelegate.m */; };
-		CE7BEC24177E0BC30006D75C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7BEC23177E0BC30006D75C /* Images.xcassets */; };
 		CE7BEC2B177E0BC30006D75C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC2A177E0BC30006D75C /* XCTest.framework */; };
 		CE7BEC2C177E0BC30006D75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC11177E0BC30006D75C /* Foundation.framework */; };
 		CE7BEC2D177E0BC30006D75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC15177E0BC30006D75C /* UIKit.framework */; };
@@ -82,6 +58,21 @@
 		CE9D2FE8178757F50016B8B8 /* WelcuEventStreamingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D2FE7178757F50016B8B8 /* WelcuEventStreamingView.m */; };
 		CE9D2FEA178760FD0016B8B8 /* WelcuEventHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D2FE9178760FD0016B8B8 /* WelcuEventHeaderView.xib */; };
 		CE9D2FEC178761100016B8B8 /* WelcuEventStreamingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D2FEB178761100016B8B8 /* WelcuEventStreamingView.xib */; };
+		CEBBD1DD178F6A1300F3E36C /* GothamBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBBD1DA178F6A1300F3E36C /* GothamBold.ttf */; };
+		CEBBD1DE178F6A1300F3E36C /* GothamLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBBD1DB178F6A1300F3E36C /* GothamLight.ttf */; };
+		CEBBD1DF178F6A1300F3E36C /* GothamMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBBD1DC178F6A1300F3E36C /* GothamMedium.ttf */; };
+		CEBBD1E2178F6A2200F3E36C /* MuseoSans-300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBBD1E0178F6A2200F3E36C /* MuseoSans-300.ttf */; };
+		CEBBD1E3178F6A2200F3E36C /* MuseoSans-700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBBD1E1178F6A2200F3E36C /* MuseoSans-700.ttf */; };
+		CEBBD1E5178F6F0500F3E36C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBBD1E4178F6F0500F3E36C /* Images.xcassets */; };
+		CEBBD1EB17906D0F00F3E36C /* WelcuPost.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD1EA17906D0F00F3E36C /* WelcuPost.m */; };
+		CEBBD1EE17906D1000F3E36C /* WelcuActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD1ED17906D1000F3E36C /* WelcuActivity.m */; };
+		CEBBD1F117906D1000F3E36C /* WelcuEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD1F017906D1000F3E36C /* WelcuEvent.m */; };
+		CEBBD1F417906D1000F3E36C /* WelcuTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD1F317906D1000F3E36C /* WelcuTicket.m */; };
+		CEBBD1F717906D1000F3E36C /* WelcuUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD1F617906D1000F3E36C /* WelcuUser.m */; };
+		CEBBD1FA17906D2000F3E36C /* WelcuAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD1F917906D2000F3E36C /* WelcuAccount.m */; };
+		CEBBD1FD17906EBD00F3E36C /* WelcuSocialClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD1FC17906EBD00F3E36C /* WelcuSocialClient.m */; };
+		CEBBD2001790720F00F3E36C /* WelcuSocialIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD1FF1790720F00F3E36C /* WelcuSocialIncrementalStore.m */; };
+		CEBD4F14178F60B100DE276E /* MuseoSans-500.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBD4F0A178F60A500DE276E /* MuseoSans-500.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,34 +89,11 @@
 		6CEE0432ED3E4A3F9BC588C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7077684778AA4E5B8DD7B75E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		CE16DCC7178E0CA800371025 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		CE16DD04178F22DB00371025 /* GothamBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamBold.ttf; sourceTree = "<group>"; };
-		CE16DD05178F22DB00371025 /* GothamBold-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamBold-Italic.ttf"; sourceTree = "<group>"; };
-		CE16DD06178F22DB00371025 /* GothamBook.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamBook.ttf; sourceTree = "<group>"; };
-		CE16DD07178F22DB00371025 /* GothamBook-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamBook-Italic.ttf"; sourceTree = "<group>"; };
-		CE16DD08178F22DB00371025 /* GothamLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamLight.ttf; sourceTree = "<group>"; };
-		CE16DD09178F22DB00371025 /* GothamLight-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamLight-Italic.ttf"; sourceTree = "<group>"; };
-		CE16DD0A178F22DB00371025 /* GothamMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamMedium.ttf; sourceTree = "<group>"; };
-		CE16DD0B178F22DB00371025 /* GothamMedium-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamMedium-Italic.ttf"; sourceTree = "<group>"; };
-		CE16DD0C178F22DB00371025 /* MuseoSans-100.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-100.ttf"; sourceTree = "<group>"; };
-		CE16DD0D178F22DB00371025 /* MuseoSans-100Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-100Italic.ttf"; sourceTree = "<group>"; };
-		CE16DD0E178F22DB00371025 /* MuseoSans-300.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-300.ttf"; sourceTree = "<group>"; };
-		CE16DD0F178F22DB00371025 /* MuseoSans-300Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-300Italic.ttf"; sourceTree = "<group>"; };
-		CE16DD10178F22DB00371025 /* MuseoSans-500.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-500.ttf"; sourceTree = "<group>"; };
-		CE16DD11178F22DB00371025 /* MuseoSans-500Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-500Italic.ttf"; sourceTree = "<group>"; };
-		CE16DD12178F22DB00371025 /* MuseoSans-700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-700.ttf"; sourceTree = "<group>"; };
-		CE16DD13178F22DB00371025 /* MuseoSans-700Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-700Italic.ttf"; sourceTree = "<group>"; };
-		CE16DD14178F22DB00371025 /* MuseoSans-900.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-900.ttf"; sourceTree = "<group>"; };
-		CE16DD15178F22DB00371025 /* MuseoSans-900Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-900Italic.ttf"; sourceTree = "<group>"; };
-		CE16DD16178F22DB00371025 /* novecentowide-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-bold.ttf"; sourceTree = "<group>"; };
-		CE16DD17178F22DB00371025 /* novecentowide-book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-book.ttf"; sourceTree = "<group>"; };
-		CE16DD18178F22DB00371025 /* novecentowide-demibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-demibold.ttf"; sourceTree = "<group>"; };
-		CE16DD19178F22DB00371025 /* novecentowide-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-light.ttf"; sourceTree = "<group>"; };
-		CE16DD1A178F22DB00371025 /* novecentowide-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-medium.ttf"; sourceTree = "<group>"; };
-		CE16DD1B178F22DB00371025 /* novecentowide-normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "novecentowide-normal.ttf"; sourceTree = "<group>"; };
 		CE16DD1C178F241000371025 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		CE16DD1E178F241A00371025 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		CE16DD20178F242200371025 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		CE16DD22178F242C00371025 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		CE16DD52178F326900371025 /* posts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
 		CE7BEC0E177E0BC30006D75C /* WelcuSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WelcuSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BEC11177E0BC30006D75C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -136,7 +104,6 @@
 		CE7BEC1F177E0BC30006D75C /* WelcuSocial-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WelcuSocial-Prefix.pch"; sourceTree = "<group>"; };
 		CE7BEC20177E0BC30006D75C /* WelcuAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcuAppDelegate.h; sourceTree = "<group>"; };
 		CE7BEC21177E0BC30006D75C /* WelcuAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcuAppDelegate.m; sourceTree = "<group>"; };
-		CE7BEC23177E0BC30006D75C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE7BEC29177E0BC30006D75C /* WelcuSocialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WelcuSocialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BEC2A177E0BC30006D75C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CE7BEC32177E0BC30006D75C /* WelcuSocialTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WelcuSocialTests-Info.plist"; sourceTree = "<group>"; };
@@ -200,6 +167,30 @@
 		CE9D303C178B5DCB0016B8B8 /* WelcuComposeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcuComposeController.h; sourceTree = "<group>"; };
 		CE9D303D178B5DCB0016B8B8 /* WelcuComposeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcuComposeController.m; sourceTree = "<group>"; };
 		CE9D303E178B5DCB0016B8B8 /* WelcuComposeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcuComposeController.xib; sourceTree = "<group>"; };
+		CEBBD1DA178F6A1300F3E36C /* GothamBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamBold.ttf; sourceTree = "<group>"; };
+		CEBBD1DB178F6A1300F3E36C /* GothamLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamLight.ttf; sourceTree = "<group>"; };
+		CEBBD1DC178F6A1300F3E36C /* GothamMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamMedium.ttf; sourceTree = "<group>"; };
+		CEBBD1E0178F6A2200F3E36C /* MuseoSans-300.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-300.ttf"; sourceTree = "<group>"; };
+		CEBBD1E1178F6A2200F3E36C /* MuseoSans-700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-700.ttf"; sourceTree = "<group>"; };
+		CEBBD1E4178F6F0500F3E36C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CEBBD1E817905B7200F3E36C /* WelcuSocial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WelcuSocial.xcdatamodel; sourceTree = "<group>"; };
+		CEBBD1E917906D0F00F3E36C /* WelcuPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuPost.h; sourceTree = "<group>"; };
+		CEBBD1EA17906D0F00F3E36C /* WelcuPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuPost.m; sourceTree = "<group>"; };
+		CEBBD1EC17906D1000F3E36C /* WelcuActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuActivity.h; sourceTree = "<group>"; };
+		CEBBD1ED17906D1000F3E36C /* WelcuActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuActivity.m; sourceTree = "<group>"; };
+		CEBBD1EF17906D1000F3E36C /* WelcuEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEvent.h; sourceTree = "<group>"; };
+		CEBBD1F017906D1000F3E36C /* WelcuEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEvent.m; sourceTree = "<group>"; };
+		CEBBD1F217906D1000F3E36C /* WelcuTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuTicket.h; sourceTree = "<group>"; };
+		CEBBD1F317906D1000F3E36C /* WelcuTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuTicket.m; sourceTree = "<group>"; };
+		CEBBD1F517906D1000F3E36C /* WelcuUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuUser.h; sourceTree = "<group>"; };
+		CEBBD1F617906D1000F3E36C /* WelcuUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuUser.m; sourceTree = "<group>"; };
+		CEBBD1F817906D2000F3E36C /* WelcuAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuAccount.h; sourceTree = "<group>"; };
+		CEBBD1F917906D2000F3E36C /* WelcuAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuAccount.m; sourceTree = "<group>"; };
+		CEBBD1FB17906EBD00F3E36C /* WelcuSocialClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuSocialClient.h; sourceTree = "<group>"; };
+		CEBBD1FC17906EBD00F3E36C /* WelcuSocialClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuSocialClient.m; sourceTree = "<group>"; };
+		CEBBD1FE1790720F00F3E36C /* WelcuSocialIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuSocialIncrementalStore.h; sourceTree = "<group>"; };
+		CEBBD1FF1790720F00F3E36C /* WelcuSocialIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuSocialIncrementalStore.m; sourceTree = "<group>"; };
+		CEBD4F0A178F60A500DE276E /* MuseoSans-500.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-500.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,8 +227,9 @@
 		CE16DC95178CC9B000371025 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CEBBD1E4178F6F0500F3E36C /* Images.xcassets */,
+				CE16DD51178F2B2A00371025 /* Mocks */,
 				CE16DC96178DD9E100371025 /* Fonts */,
-				CE7BEC23177E0BC30006D75C /* Images.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -245,32 +237,22 @@
 		CE16DC96178DD9E100371025 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				CE16DD04178F22DB00371025 /* GothamBold.ttf */,
-				CE16DD05178F22DB00371025 /* GothamBold-Italic.ttf */,
-				CE16DD06178F22DB00371025 /* GothamBook.ttf */,
-				CE16DD07178F22DB00371025 /* GothamBook-Italic.ttf */,
-				CE16DD08178F22DB00371025 /* GothamLight.ttf */,
-				CE16DD09178F22DB00371025 /* GothamLight-Italic.ttf */,
-				CE16DD0A178F22DB00371025 /* GothamMedium.ttf */,
-				CE16DD0B178F22DB00371025 /* GothamMedium-Italic.ttf */,
-				CE16DD0C178F22DB00371025 /* MuseoSans-100.ttf */,
-				CE16DD0D178F22DB00371025 /* MuseoSans-100Italic.ttf */,
-				CE16DD0E178F22DB00371025 /* MuseoSans-300.ttf */,
-				CE16DD0F178F22DB00371025 /* MuseoSans-300Italic.ttf */,
-				CE16DD10178F22DB00371025 /* MuseoSans-500.ttf */,
-				CE16DD11178F22DB00371025 /* MuseoSans-500Italic.ttf */,
-				CE16DD12178F22DB00371025 /* MuseoSans-700.ttf */,
-				CE16DD13178F22DB00371025 /* MuseoSans-700Italic.ttf */,
-				CE16DD14178F22DB00371025 /* MuseoSans-900.ttf */,
-				CE16DD15178F22DB00371025 /* MuseoSans-900Italic.ttf */,
-				CE16DD16178F22DB00371025 /* novecentowide-bold.ttf */,
-				CE16DD17178F22DB00371025 /* novecentowide-book.ttf */,
-				CE16DD18178F22DB00371025 /* novecentowide-demibold.ttf */,
-				CE16DD19178F22DB00371025 /* novecentowide-light.ttf */,
-				CE16DD1A178F22DB00371025 /* novecentowide-medium.ttf */,
-				CE16DD1B178F22DB00371025 /* novecentowide-normal.ttf */,
+				CEBBD1DB178F6A1300F3E36C /* GothamLight.ttf */,
+				CEBBD1DC178F6A1300F3E36C /* GothamMedium.ttf */,
+				CEBBD1DA178F6A1300F3E36C /* GothamBold.ttf */,
+				CEBBD1E0178F6A2200F3E36C /* MuseoSans-300.ttf */,
+				CEBD4F0A178F60A500DE276E /* MuseoSans-500.ttf */,
+				CEBBD1E1178F6A2200F3E36C /* MuseoSans-700.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CE16DD51178F2B2A00371025 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CE16DD52178F326900371025 /* posts.json */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		CE7BEC05177E0BC30006D75C = {
@@ -361,6 +343,23 @@
 		CE7BEC45177E0FDB0006D75C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CEBBD1E717905B7200F3E36C /* WelcuSocial.xcdatamodeld */,
+				CEBBD1F817906D2000F3E36C /* WelcuAccount.h */,
+				CEBBD1F917906D2000F3E36C /* WelcuAccount.m */,
+				CEBBD1FB17906EBD00F3E36C /* WelcuSocialClient.h */,
+				CEBBD1FC17906EBD00F3E36C /* WelcuSocialClient.m */,
+				CEBBD1FE1790720F00F3E36C /* WelcuSocialIncrementalStore.h */,
+				CEBBD1FF1790720F00F3E36C /* WelcuSocialIncrementalStore.m */,
+				CEBBD1F517906D1000F3E36C /* WelcuUser.h */,
+				CEBBD1F617906D1000F3E36C /* WelcuUser.m */,
+				CEBBD1F217906D1000F3E36C /* WelcuTicket.h */,
+				CEBBD1F317906D1000F3E36C /* WelcuTicket.m */,
+				CEBBD1EF17906D1000F3E36C /* WelcuEvent.h */,
+				CEBBD1F017906D1000F3E36C /* WelcuEvent.m */,
+				CEBBD1EC17906D1000F3E36C /* WelcuActivity.h */,
+				CEBBD1ED17906D1000F3E36C /* WelcuActivity.m */,
+				CEBBD1E917906D0F00F3E36C /* WelcuPost.h */,
+				CEBBD1EA17906D0F00F3E36C /* WelcuPost.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -529,42 +528,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9D2FE0178739750016B8B8 /* WelcuEventPostHeaderView.xib in Resources */,
-				CE16DD2D178F26DA00371025 /* GothamMedium-Italic.ttf in Resources */,
-				CE9D2FE21787397D0016B8B8 /* WelcuEventPostQuoteCell.xib in Resources */,
+				CEBBD1E3178F6A2200F3E36C /* MuseoSans-700.ttf in Resources */,
 				CE7BEC1C177E0BC30006D75C /* InfoPlist.strings in Resources */,
-				CE16DD37178F26DA00371025 /* novecentowide-book.ttf in Resources */,
-				CE16DD2B178F26DA00371025 /* GothamLight.ttf in Resources */,
-				CE16DD2F178F26DA00371025 /* MuseoSans-100Italic.ttf in Resources */,
-				CE16DD25178F258F00371025 /* MuseoSans-700Italic.ttf in Resources */,
-				CE16DD36178F26DA00371025 /* novecentowide-bold.ttf in Resources */,
-				CE16DD35178F26DA00371025 /* MuseoSans-900Italic.ttf in Resources */,
-				CE16DD33178F26DA00371025 /* MuseoSans-700.ttf in Resources */,
-				CE16DD28178F26C100371025 /* GothamBold-Italic.ttf in Resources */,
+				CE9D2FE0178739750016B8B8 /* WelcuEventPostHeaderView.xib in Resources */,
+				CE9D2FE21787397D0016B8B8 /* WelcuEventPostQuoteCell.xib in Resources */,
+				CEBBD1DE178F6A1300F3E36C /* GothamLight.ttf in Resources */,
 				CE9D2FEC178761100016B8B8 /* WelcuEventStreamingView.xib in Resources */,
 				CE8E49431780E279006B1874 /* WelcuEventCell.xib in Resources */,
-				CE16DD39178F26DA00371025 /* novecentowide-light.ttf in Resources */,
-				CE16DD24178F258C00371025 /* MuseoSans-500.ttf in Resources */,
-				CE16DD2C178F26DA00371025 /* GothamLight-Italic.ttf in Resources */,
-				CE16DD2E178F26DA00371025 /* MuseoSans-100.ttf in Resources */,
-				CE16DD3A178F26DA00371025 /* novecentowide-medium.ttf in Resources */,
+				CEBBD1DF178F6A1300F3E36C /* GothamMedium.ttf in Resources */,
 				CE16DC93178B724000371025 /* WelcuComposeController.xib in Resources */,
-				CE16DD3B178F26DA00371025 /* novecentowide-normal.ttf in Resources */,
-				CE7BEC24177E0BC30006D75C /* Images.xcassets in Resources */,
+				CE16DD53178F326900371025 /* posts.json in Resources */,
+				CEBD4F14178F60B100DE276E /* MuseoSans-500.ttf in Resources */,
+				CEBBD1E2178F6A2200F3E36C /* MuseoSans-300.ttf in Resources */,
 				CE9D2FD7178722780016B8B8 /* WelcuEventPostTextCell.xib in Resources */,
-				CE16DD29178F26DA00371025 /* GothamBook.ttf in Resources */,
-				CE16DD34178F26DA00371025 /* MuseoSans-900.ttf in Resources */,
-				CE16DD32178F26DA00371025 /* MuseoSans-500Italic.ttf in Resources */,
 				CE8E4932177F8ED1006B1874 /* WelcuMenuUserProfileCell.xib in Resources */,
-				CE16DD38178F26DA00371025 /* novecentowide-demibold.ttf in Resources */,
-				CE16DD30178F26DA00371025 /* MuseoSans-300.ttf in Resources */,
-				CE16DD27178F259700371025 /* GothamMedium.ttf in Resources */,
-				CE16DD2A178F26DA00371025 /* GothamBook-Italic.ttf in Resources */,
+				CEBBD1DD178F6A1300F3E36C /* GothamBold.ttf in Resources */,
+				CEBBD1E5178F6F0500F3E36C /* Images.xcassets in Resources */,
 				CE9D2FEA178760FD0016B8B8 /* WelcuEventHeaderView.xib in Resources */,
 				CE9D2FE11787397A0016B8B8 /* WelcuEventPostPhotoCell.xib in Resources */,
 				CE7BEC44177E0FD10006D75C /* iPhoneStoryboard.storyboard in Resources */,
-				CE16DD26178F259200371025 /* GothamBold.ttf in Resources */,
-				CE16DD31178F26DA00371025 /* MuseoSans-300Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,22 +601,30 @@
 				CE7BEC5C177E3FB00006D75C /* UIColor+WelcuColors.m in Sources */,
 				CE9D2FE8178757F50016B8B8 /* WelcuEventStreamingView.m in Sources */,
 				CE9D2FDF178736AE0016B8B8 /* WelcuEventPostsController.m in Sources */,
+				CEBBD1EB17906D0F00F3E36C /* WelcuPost.m in Sources */,
 				CE16DC92178B723D00371025 /* WelcuComposeController.m in Sources */,
+				CEBBD1FD17906EBD00F3E36C /* WelcuSocialClient.m in Sources */,
 				CE7BEC1E177E0BC30006D75C /* main.m in Sources */,
 				CE8E493E177F98E2006B1874 /* NSObject+ClassName.m in Sources */,
 				CE8E4930177F7269006B1874 /* UIImage+MaskedImages.m in Sources */,
 				CE7BEC4A177E10D30006D75C /* WelcuMainViewController.m in Sources */,
+				CEBBD1EE17906D1000F3E36C /* WelcuActivity.m in Sources */,
+				CEBBD1F117906D1000F3E36C /* WelcuEvent.m in Sources */,
 				CE8E4935177F9047006B1874 /* WelcuMenuUserProfileCell.m in Sources */,
 				CE7BEC22177E0BC30006D75C /* WelcuAppDelegate.m in Sources */,
 				CE9D2FCE17871E950016B8B8 /* WelcuEventPostPhotoCell.m in Sources */,
 				CE8E4929177E68FE006B1874 /* WelcuEventFeedViewController.m in Sources */,
+				CEBBD2001790720F00F3E36C /* WelcuSocialIncrementalStore.m in Sources */,
 				CE8E49491781116B006B1874 /* WelcuComposePhotoCameraViewController.m in Sources */,
+				CEBBD1F717906D1000F3E36C /* WelcuUser.m in Sources */,
 				CE7BEC56177E31D70006D75C /* WelcuEventViewController.m in Sources */,
+				CEBBD1FA17906D2000F3E36C /* WelcuAccount.m in Sources */,
 				CE9D2FCB17871E1A0016B8B8 /* WelcuEventPostHeaderView.m in Sources */,
 				CE8E492C177E6954006B1874 /* WelcuEventFeedViewCell.m in Sources */,
 				CE9D2FD417871EBB0016B8B8 /* WelcuEventPostQuoteCell.m in Sources */,
 				CE7BEC50177E120E0006D75C /* WelcuStartViewController.m in Sources */,
 				CE9D2FD117871EAD0016B8B8 /* WelcuEventPostTextCell.m in Sources */,
+				CEBBD1F417906D1000F3E36C /* WelcuTicket.m in Sources */,
 				CE9D2FE5178757E60016B8B8 /* WelcuEventHeaderView.m in Sources */,
 				CE7BEC53177E121F0006D75C /* WelcuLoginViewController.m in Sources */,
 				CE8E49461780E2AE006B1874 /* WelcuEventCell.m in Sources */,
@@ -852,6 +842,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEBBD1E717905B7200F3E36C /* WelcuSocial.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEBBD1E817905B7200F3E36C /* WelcuSocial.xcdatamodel */,
+			);
+			currentVersion = CEBBD1E817905B7200F3E36C /* WelcuSocial.xcdatamodel */;
+			path = WelcuSocial.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE7BEC06177E0BC30006D75C /* Project object */;
 }

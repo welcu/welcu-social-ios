@@ -19,6 +19,11 @@ NSString const *kWelcuEventPostHeaderViewClassName = @"WelcuEventPostHeaderView"
 # pragma mark WelcuFeedPostCell
 @synthesize post = _post;
 
+- (void)awakeFromNib
+{
+    self.userNameLabel.font = [UIFont fontWithName:@"GothamMedium" size:17];
+}
+
 - (void)setPost:(WelcuPost *)post
 {
     _post = post;

@@ -31,6 +31,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *eventPhotoView;
 @property (weak, nonatomic) IBOutlet UIImageView *eventBackgroundView;
+@property (weak, nonatomic) IBOutlet UILabel *eventNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *eventVenueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *eventDateLabel;
 
 
 - (void)setHeight:(CGFloat)height;

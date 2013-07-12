@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_AALaunchTransition 1
 #define COCOAPODS_VERSION_PATCH_AALaunchTransition 3
 
+// AFIncrementalStore
+#define COCOAPODS_POD_AVAILABLE_AFIncrementalStore
+#define COCOAPODS_VERSION_MAJOR_AFIncrementalStore 0
+#define COCOAPODS_VERSION_MINOR_AFIncrementalStore 5
+#define COCOAPODS_VERSION_PATCH_AFIncrementalStore 1
+
 // AFNetworking
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 1
@@ -73,6 +79,12 @@
 // Please contact the author.
 // Version: 2.0beta4.
 
+// InflectorKit
+#define COCOAPODS_POD_AVAILABLE_InflectorKit
+#define COCOAPODS_VERSION_MAJOR_InflectorKit 0
+#define COCOAPODS_VERSION_MINOR_InflectorKit 0
+#define COCOAPODS_VERSION_PATCH_InflectorKit 1
+
 // JASidePanels
 #define COCOAPODS_POD_AVAILABLE_JASidePanels
 #define COCOAPODS_VERSION_MAJOR_JASidePanels 1
@@ -120,4 +132,10 @@
 #define COCOAPODS_VERSION_MAJOR_TestFlightSDK 1
 #define COCOAPODS_VERSION_MINOR_TestFlightSDK 3
 #define COCOAPODS_VERSION_PATCH_TestFlightSDK 0
+
+// TransformerKit
+#define COCOAPODS_POD_AVAILABLE_TransformerKit
+#define COCOAPODS_VERSION_MAJOR_TransformerKit 0
+#define COCOAPODS_VERSION_MINOR_TransformerKit 2
+#define COCOAPODS_VERSION_PATCH_TransformerKit 4
 

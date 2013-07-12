@@ -28,6 +28,13 @@ static UINib *viewNib;
     return header;
 }
 
+- (void)awakeFromNib
+{
+    self.eventNameLabel.font = [UIFont fontWithName:@"MuseoSans-700" size:25];
+    self.eventVenueLabel.font = [UIFont fontWithName:@"MuseoSans-300" size:15];
+    self.eventDateLabel.font = [UIFont fontWithName:@"MuseoSans-300" size:15];
+}
+
 - (void)setEvent:(WelcuEvent *)event
 {
     _event = event;
@@ -47,11 +54,12 @@ static UINib *viewNib;
     blurFilter.blurPasses = 5;
 //    [filter addFilter:blurFilter];
     
-//    GPUImageHighlightShadowFilter *shadowFilter = [[GPUImageHighlightShadowFilter alloc] init];
-//    shadowFilter.highlights = 0.7;
+    GPUImageHighlightShadowFilter *shadowFilter = [[GPUImageHighlightShadowFilter alloc] init];
+    shadowFilter.highlights = 0.7;
 //    [filter addFilter:shadowFilter];
     
-    self.eventBackgroundView.image = [blurFilter imageByFilteringImage:eventBackgroundImage];
+//    self.eventBackgroundView.image = eventBackgroundImage;
+    self.eventBackgroundView.image = [shadowFilter imageByFilteringImage:[blurFilter imageByFilteringImage:eventBackgroundImage]];
 }
 
 - (void)setHeight:(CGFloat)height

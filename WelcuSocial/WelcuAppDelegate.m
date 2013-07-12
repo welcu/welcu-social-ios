@@ -7,24 +7,37 @@
 //
 
 #import "WelcuAppDelegate.h"
+#import <CoreText/CoreText.h>
+#import <TestFlightSDK/TestFlight.h>
+#import <TestFlightLogger/TestFlightLogger.h>
+#import <CocoaLumberjack/DDASLLogger.h>
+#import <CocoaLumberjack/DDTTYLogger.h>
+#import <CocoaLumberjack/DDFileLogger.h>
+
+@interface WelcuAppDelegate ()
+- (void)setupTracking;
+- (void)setupLogging;
+- (void)setupApperance;
+@end
 
 @implementation WelcuAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window.tintColor = [UIColor whiteColor];
+    [self setupTracking];
+    [self setupLogging];
+    [self setupApperance];
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{
-                                                           UITextAttributeTextColor : [UIColor whiteColor],
-                                                           UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-500" size:20]
-                                                           
-                                                           }];
-
-//    [[UITableView appearance] setBackgroundColor:[UIColor welcuLightGrey]];
-//    [[UITableViewHeaderFooterView appearance] setBackgroundColor:[UIColor welcuLightPurple]];
+//    // Log AvailableFonts
+//    for (NSString* family in [UIFont familyNames])
+//    {
+//        NSLog(@"%@", family);
+//        
+//        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+//        {
+//            NSLog(@"  %@", name);
+//        }
+//    }
 
     return YES;
 }
@@ -55,5 +68,41 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void)setupTracking
+{
+    [TestFlight takeOff:kWelcuTestflightToken];
+}
+
+- (void)setupLogging
+{
+    [DDLog addLogger:[TestFlightLogger sharedInstance]];
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+    
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+    [DDLog addLogger:fileLogger];
+}
+
+- (void)setupApperance
+{
+    self.window.tintColor = [UIColor whiteColor];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           UITextAttributeTextColor : [UIColor whiteColor],
+                                                           UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-500" size:20]
+                                                           
+                                                           }];
+    
+    //    [[UITableView appearance] setBackgroundColor:[UIColor welcuLightGrey]];
+    //    [[UITableViewHeaderFooterView appearance] setBackgroundColor:[UIColor welcuLightPurple]];
+}
+
 
 @end
