@@ -7,6 +7,9 @@
 //
 
 #import "WelcuAccount.h"
+
+#import <FacebookSDK/FacebookSDK.h>
+
 #import "WelcuSocialIncrementalStore.h"
 #import "WelcuAppDelegate.h"
 
@@ -39,17 +42,23 @@ static WelcuAccount *currentAccount = nil;
 
 + (WelcuAccount *)currentAccount
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+    if (currentAccount) {
+        return currentAccount;
+    }
+    
+    // See if the app has a valid token for the current state.
+    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+        // TODO syncronize and fetch data from facebook
         currentAccount = [[WelcuAccount alloc] initWithAttributes:@{
                                                                     @"id" : @1,
                                                                     @"first_name" : @"Seba",
                                                                     @"last_name" : @"Gamboa",
                                                                     @"facebook_uid" : @"754027414",
                                                                     }];
-    });
-    
-    return currentAccount;
+        return currentAccount;
+    } else {
+        return nil;
+    }
 }
 
 - (NSURL *)accountDocumentsDirectory

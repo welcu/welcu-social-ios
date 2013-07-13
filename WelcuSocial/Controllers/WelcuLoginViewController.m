@@ -7,6 +7,9 @@
 //
 
 #import "WelcuLoginViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
+
+#import "WelcuStartViewController.h"
 
 @interface WelcuLoginViewController ()
 
@@ -14,13 +17,14 @@
 
 @implementation WelcuLoginViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)loginFailed
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    
+}
+
+- (IBAction)loginButtonPressed:(id)sender
+{
+    [(WelcuStartViewController *)self.presentingViewController openSession];
 }
 
 - (void)viewDidLoad

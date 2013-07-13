@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WelcuStartViewController : UIViewController
-
+- (void)openSession;
 @end
