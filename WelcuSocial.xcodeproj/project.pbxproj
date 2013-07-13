@@ -50,7 +50,6 @@
 		CE9D2FD117871EAD0016B8B8 /* WelcuEventPostTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D2FD017871EAD0016B8B8 /* WelcuEventPostTextCell.m */; };
 		CE9D2FD417871EBB0016B8B8 /* WelcuEventPostQuoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D2FD317871EBB0016B8B8 /* WelcuEventPostQuoteCell.m */; };
 		CE9D2FD7178722780016B8B8 /* WelcuEventPostTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D2FD6178722780016B8B8 /* WelcuEventPostTextCell.xib */; };
-		CE9D2FDF178736AE0016B8B8 /* WelcuEventPostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D2FDE178736AE0016B8B8 /* WelcuEventPostsController.m */; };
 		CE9D2FE0178739750016B8B8 /* WelcuEventPostHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D2FDA178723390016B8B8 /* WelcuEventPostHeaderView.xib */; };
 		CE9D2FE11787397A0016B8B8 /* WelcuEventPostPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D2FD8178722880016B8B8 /* WelcuEventPostPhotoCell.xib */; };
 		CE9D2FE21787397D0016B8B8 /* WelcuEventPostQuoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D2FD9178722970016B8B8 /* WelcuEventPostQuoteCell.xib */; };
@@ -158,8 +157,6 @@
 		CE9D2FD8178722880016B8B8 /* WelcuEventPostPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcuEventPostPhotoCell.xib; sourceTree = "<group>"; };
 		CE9D2FD9178722970016B8B8 /* WelcuEventPostQuoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcuEventPostQuoteCell.xib; sourceTree = "<group>"; };
 		CE9D2FDA178723390016B8B8 /* WelcuEventPostHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcuEventPostHeaderView.xib; sourceTree = "<group>"; };
-		CE9D2FDD178736AE0016B8B8 /* WelcuEventPostsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventPostsController.h; sourceTree = "<group>"; };
-		CE9D2FDE178736AE0016B8B8 /* WelcuEventPostsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventPostsController.m; sourceTree = "<group>"; };
 		CE9D2FE3178757E60016B8B8 /* WelcuEventHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventHeaderView.h; sourceTree = "<group>"; };
 		CE9D2FE4178757E60016B8B8 /* WelcuEventHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventHeaderView.m; sourceTree = "<group>"; };
 		CE9D2FE6178757F50016B8B8 /* WelcuEventStreamingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventStreamingView.h; sourceTree = "<group>"; };
@@ -382,8 +379,6 @@
 				CE7BEC4C177E11490006D75C /* WelcuMenuViewController.m */,
 				CE7BEC54177E31D70006D75C /* WelcuEventViewController.h */,
 				CE7BEC55177E31D70006D75C /* WelcuEventViewController.m */,
-				CE9D2FDD178736AE0016B8B8 /* WelcuEventPostsController.h */,
-				CE9D2FDE178736AE0016B8B8 /* WelcuEventPostsController.m */,
 				CE8E4927177E68FE006B1874 /* WelcuEventFeedViewController.h */,
 				CE8E4928177E68FE006B1874 /* WelcuEventFeedViewController.m */,
 				CE8E49471781116B006B1874 /* WelcuComposePhotoCameraViewController.h */,
@@ -622,7 +617,6 @@
 				CE7BEC4D177E11490006D75C /* WelcuMenuViewController.m in Sources */,
 				CE7BEC5C177E3FB00006D75C /* UIColor+WelcuColors.m in Sources */,
 				CE9D2FE8178757F50016B8B8 /* WelcuEventStreamingView.m in Sources */,
-				CE9D2FDF178736AE0016B8B8 /* WelcuEventPostsController.m in Sources */,
 				CEBBD20117908ED000F3E36C /* WelcuSocial.xcdatamodeld in Sources */,
 				CEBBD1EB17906D0F00F3E36C /* WelcuPost.m in Sources */,
 				CE16DC92178B723D00371025 /* WelcuComposeController.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "WelcuEventPostTextCell.h"
+#import "WelcuPost.h"
 
 @implementation WelcuEventPostTextCell
 
@@ -39,8 +40,7 @@
     _post = post;
     
     // Set post content string
-    [self.postContentLabel setString:@"Hello #world from @twitter http://welcu.com"];
-    
+    [self.postContentLabel setString:post.content];
 }
 
 + (CGFloat)rowHeightForPost:(WelcuPost *)post

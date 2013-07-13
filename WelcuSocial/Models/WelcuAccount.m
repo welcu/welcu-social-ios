@@ -31,6 +31,8 @@ static WelcuAccount *currentAccount = nil;
         self.firstName = attributes[@"first_name"];
         self.lastName = attributes[@"last_name"];
         self.facebookUID = attributes[@"facebook_uid"];
+        
+        self.client = [[WelcuSocialClient alloc] initWithAccount:self];
     }
     return self;
 }

@@ -10,8 +10,10 @@
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
 #import "UIImage+MaskedImages.h"
+#import "WelcuPost.h"
+#import "WelcuUser.h"
 
-NSString const *kWelcuEventPostHeaderViewClassName = @"WelcuEventPostHeaderView";
+//NSString const *kWelcuEventPostHeaderViewClassName = @"WelcuEventPostHeaderView";
 
 @implementation WelcuEventPostHeaderView
 
@@ -29,10 +31,10 @@ NSString const *kWelcuEventPostHeaderViewClassName = @"WelcuEventPostHeaderView"
     _post = post;
     
     // Set post user name
-    self.userNameLabel.text = @"Seba Gamboa";
+    self.userNameLabel.text = post.user.fullName;
     
     // Load post user image
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://graph.facebook.com/sagmor/picture"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:post.user.pictureURL];
     [self.userImageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
         self.userImageView.image = [image maskWithImage:[UIImage imageNamed:@"UserPhotoMask"]];
     } failure:nil];

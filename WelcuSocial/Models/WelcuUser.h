@@ -17,6 +17,11 @@
 @property (nonatomic, retain) NSString * lastName;
 @property (nonatomic, retain) NSString * facebookUID;
 @property (nonatomic, retain) NSSet *posts;
+
+@property (nonatomic, readonly) NSString *fullName;
+@property (nonatomic, readonly) NSURL *pictureURL;
+- (NSURL *)pictureURLWithSize:(NSInteger)pixels;
+
 @end
 
 @interface WelcuUser (CoreDataGeneratedAccessors)

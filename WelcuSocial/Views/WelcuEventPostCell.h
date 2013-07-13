@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString const *kWelcuEventPostHeaderViewClassName;
-extern NSString const *kWelcuEventPostTextCellClassName;
-extern NSString const *kWelcuEventPostTextCellClassName;
-extern NSString const *kWelcuEventPostQuoteCellClassName;
+//extern NSString const *kWelcuEventPostHeaderViewClassName;
+//extern NSString const *kWelcuEventPostTextCellClassName;
+//extern NSString const *kWelcuEventPostTextCellClassName;
+//extern NSString const *kWelcuEventPostQuoteCellClassName;
 
 @class WelcuPost;
 

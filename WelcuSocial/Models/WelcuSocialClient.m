@@ -8,7 +8,10 @@
 
 #import "WelcuSocialClient.h"
 
-static NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu.com/social/v1";
+#import "WelcuEvent.h"
+
+//static NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu.com/social/v1/";
+static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.dev/social/v1/";
 
 @implementation WelcuSocialClient
 
@@ -27,26 +30,6 @@ static NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu
 
 #pragma mark - AFIncrementalStore
 
-///-----------------------
-/// @name Required Methods
-///-----------------------
-
-/**
- Returns an `NSDictionary` or an `NSArray` of `NSDictionaries` containing the representations of the resources found in a response object.
- 
- @discussion For example, if `GET /users` returned an `NSDictionary` with an array of users keyed on `"users"`, this method would return the keyed array. Conversely, if `GET /users/123` returned a dictionary with all of the atributes of the requested user, this method would simply return that dictionary.
- 
- @param entity The entity represented
- @param responseObject The response object returned from the server.
- 
- @return An `NSDictionary` with the representation or an `NSArray` of `NSDictionaries` containing the resource representations.
- */
-- (id)representationOrArrayOfRepresentationsOfEntity:(NSEntityDescription *)entity
-                                  fromResponseObject:(id)responseObject
-{
-    id r = [super representationOrArrayOfRepresentationsOfEntity:entity fromResponseObject:responseObject];
-    return r;
-}
 
 /**
  Returns an `NSDictionary` containing the representations of associated objects found within the representation of a response object, keyed by their relationship name.
@@ -63,27 +46,12 @@ static NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu
                                                            ofEntity:(NSEntityDescription *)entity
                                                        fromResponse:(NSHTTPURLResponse *)response
 {
-    id r = [super representationsForRelationshipsFromRepresentation:representation ofEntity:entity fromResponse:response];
-    return r;
-}
-
-/**
- Returns the resource identifier for the resource whose representation of an entity came from the specified HTTP response. A resource identifier is a string that uniquely identifies a particular resource among all resource types. If new attributes come back for an existing resource identifier, the managed object associated with that resource identifier will be updated, rather than a new object being created.
- 
- @discussion For example, if `GET /posts` returns a collection of posts, the resource identifier for any particular one might be its URL-safe "slug" or parameter string, or perhaps its numeric id.  For example: `/posts/123` might be a resource identifier for a particular post.
- 
- @param representation The resource representation.
- @param entity The entity for the representation.
- @param response The HTTP response for the resource request.
- 
- @return An `NSString` resource identifier for the resource.
- */
-- (NSString *)resourceIdentifierForRepresentation:(NSDictionary *)representation
-                                         ofEntity:(NSEntityDescription *)entity
-                                     fromResponse:(NSHTTPURLResponse *)response
-{
-    id r = [super resourceIdentifierForRepresentation:representation ofEntity:entity fromResponse:response];
-    return r;
+    NSDictionary *result = [super representationsForRelationshipsFromRepresentation:representation
+                                                                           ofEntity:entity
+                            
+                                                                       fromResponse:response];
+    DDLogInfo(@"representationsForRelationshipsFromRepresentation:ofEntity:fromResponse: %@", result);
+    return result;
 }
 
 /**
@@ -101,8 +69,22 @@ static NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu
                                      ofEntity:(NSEntityDescription *)entity
                                  fromResponse:(NSHTTPURLResponse *)response
 {
-    id r = [super attributesForRepresentation:representation ofEntity:entity fromResponse:response];
-    return r;
+    NSDictionary *result = nil;
+    
+    if ([[entity name] isEqualToString:@"WelcuPost"]) {
+        result = @{
+                   @"content" : representation[@"content"],
+                   };
+    } else if ([[entity name] isEqualToString:@"WelcuUser"]) {
+        result = @{
+                   @"firstName" : representation[@"first_name"],
+                   @"lastName" : representation[@"last_name"],
+                   @"facebookUID" : representation[@"facebook_uid"]
+                   };
+    }
+    
+    DDLogInfo(@"attributesForRepresentation:ofEntity:%@ fromResponse:%@", [entity name], result);
+    return result;
 }
 
 /**
@@ -118,8 +100,18 @@ static NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu
 - (NSMutableURLRequest *)requestForFetchRequest:(NSFetchRequest *)fetchRequest
                                     withContext:(NSManagedObjectContext *)context
 {
-    id r = [super requestForFetchRequest:fetchRequest withContext:context];
-    return r;
+    NSMutableURLRequest *result = nil;
+    if ([[[fetchRequest entity] name] isEqualToString:@"WelcuPost"]) {
+        WelcuEvent *event = (WelcuEvent *)[(id)[fetchRequest predicate] rightExpression];
+        result = [self requestWithMethod:@"GET"
+                                    path:[NSString stringWithFormat:@"events/%@/posts", @1]
+                              parameters:nil];
+    } else {
+        result = [super requestForFetchRequest:fetchRequest withContext:context];
+    }
+    
+    DDLogInfo(@"requestForFetchRequest:withContext: %@", result);
+    return result;
 }
 
 /**
@@ -137,8 +129,10 @@ static NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu
                        pathForObjectWithID:(NSManagedObjectID *)objectID
                                withContext:(NSManagedObjectContext *)context
 {
-    id r = [super requestWithMethod:method pathForObjectWithID:objectID withContext:context];
-    return r;
+    NSMutableURLRequest *result = [super requestWithMethod:method pathForObjectWithID:objectID withContext:context];
+    
+    DDLogInfo(@"requestForFetchRequest:withContext: %@", result);
+    return result;
 }
 
 /**
@@ -159,8 +153,13 @@ static NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu
                            forObjectWithID:(NSManagedObjectID *)objectID
                                withContext:(NSManagedObjectContext *)context
 {
-    id r = [super requestWithMethod:method pathForRelationship:relationship forObjectWithID:objectID withContext:context];
-    return r;
+    NSMutableURLRequest *result = [super requestWithMethod:method
+                                       pathForRelationship:relationship
+                                           forObjectWithID:objectID
+                                               withContext:context];
+    
+    DDLogInfo(@"requestForFetchRequest:withContext: %@", result);
+    return result;
 }
 
 ///-----------------------

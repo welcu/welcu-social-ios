@@ -15,7 +15,6 @@
 #import <PCStackMenu/PCStackMenu.h>
 
 #import "WelcuAccount.h"
-#import "WelcuEventPostsController.h"
 
 #import "WelcuEventFeedViewCell.h"
 #import "WelcuComposeController.h"
@@ -30,13 +29,13 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 @interface WelcuEventFeedViewController () <NSFetchedResultsControllerDelegate>
 
-@property (nonatomic,strong) WelcuEventPostsController *postsController;
 @property (nonatomic,assign, getter = isComposeMenuVisible) BOOL composeMenuVisible;
 @property (nonatomic,strong) WelcuEventHeaderView *headerView;
 @property (nonatomic,strong)  UINavigationBar *navigationBar;
 
 @property (nonatomic,strong) NSFetchedResultsController *fetchedResultsController;
 
+- (WelcuPost *)postAtIndex:(NSInteger)index;
 - (void)refetchData;
 
 @end
@@ -50,12 +49,17 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
                                                          modes:@[ NSRunLoopCommonModes ]];
 }
 
+- (WelcuPost *)postAtIndex:(NSInteger)index
+{
+    return [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"WelcuPost"];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"eventID = ?" argumentArray:@[@1]];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"event = nil"]; // argumentArray:@[self.event]];
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"postID"
                                                                                           ascending:NO]];
     fetchRequest.fetchLimit = 50;
@@ -66,8 +70,6 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
                                                                                    cacheName:@"EventStream"];
     self.fetchedResultsController.delegate = self;
     [self refetchData];
-    
-    self.postsController = [WelcuEventPostsController controllerWithEvent:self.event];
     
     [self.tableView registerNib:[UINib nibWithNibName:(NSString *)kWelcuEventPostHeaderViewClassName
                                                bundle:nil] forHeaderFooterViewReuseIdentifier:(NSString *)kWelcuEventPostHeaderViewClassName];
@@ -147,34 +149,32 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
-    return [self.postsController postsCount];
+    return [[[self.fetchedResultsController sections] firstObject] numberOfObjects];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return [WelcuEventPostHeaderView rowHeightForPost:[self.postsController postAtIndex:section]];
+    return [WelcuEventPostHeaderView rowHeightForPost:[self postAtIndex:section]];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     WelcuEventPostHeaderView *header = (WelcuEventPostHeaderView *)[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:(NSString *)kWelcuEventPostHeaderViewClassName];
     
-    header.post = [self.postsController postAtIndex:section];
+    header.post = [self postAtIndex:section];
     
     return header;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [WelcuEventPostTextCell rowHeightForPost:[self.postsController postAtIndex:indexPath.section]];
+    return [WelcuEventPostTextCell rowHeightForPost:[self postAtIndex:indexPath.section]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -183,7 +183,7 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
     
     UITableViewCell <WelcuEventPostCell> *cell = [self.tableView dequeueReusableCellWithIdentifier:(NSString *)kWelcuEventPostTextCellClassName forIndexPath:indexPath];
     
-    cell.post = [self.postsController postAtIndex:indexPath.section];
+    cell.post = [self postAtIndex:indexPath.section];
     
     return cell;
 }
