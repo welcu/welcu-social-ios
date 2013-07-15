@@ -8,12 +8,22 @@
 
 #import "WelcuSocialClient.h"
 
+#import "WelcuAccount.h"
 #import "WelcuEvent.h"
 
-//static NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu.com/social/v1/";
+//NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu.com/social/v1/";
 static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.dev/social/v1/";
+static NSString * const kWelcuSocialClientAPIClientId = @"APIKey";
+static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
+
+
+@interface WelcuAccount (AccessToken)
+@property (readonly) NSString *accessToken;
+@end
 
 @implementation WelcuSocialClient
+
+#pragma mark Initialization
 
 - (instancetype)initWithAccount:(WelcuAccount *)account
 {
@@ -23,13 +33,63 @@ static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.
         
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self setDefaultHeader:@"Accept" value:@"application/json"];
-        [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", @"ASDF"]];
+        [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", self.account.accessToken]];
     }
     return self;
 }
 
-#pragma mark - AFIncrementalStore
+#pragma mark Authorization
 
+
++ (void)authorizeWithFacebookAccessToken:(NSString *)accessToken
+                                 success:(void (^)(id accessTokenData))success
+                                 failure:(void (^)(NSError *error))failure
+{
+    [self authorizeWithEmail:@"facebook"
+                 andPassword:accessToken
+                     success:success
+                     failure:failure];
+}
+
++ (void)authorizeWithEmail:(NSString *)email
+               andPassword:(NSString *)password
+                   success:(void (^)(id accessTokenData))success
+                   failure:(void (^)(NSError *error))failure
+{
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:kWelcuSocialClientAPIBaseURLString]];
+    
+    [client registerHTTPOperationClass:[AFJSONRequestOperation class]];
+    [client setDefaultHeader:@"Accept" value:@"application/json"];
+    [client postPath:@"oauth/access_token"
+          parameters:@{
+                       @"client_id" : kWelcuSocialClientAPIClientId,
+                       @"client_secret" : kWelcuSocialClientAPIClientSecret,
+                       @"x_auth_user" : email,
+                       @"x_auth_password" : password
+                       }
+             success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                 success(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure(error);
+    }];
+}
+
+#pragma mark Welcu Social API
+
+- (void)fetchMe:(WelcuSocialClientResponseHandler)handler
+{
+    [self getPath:@"me"
+       parameters:nil
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
+        handler(responseObject,nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        handler(nil,error);
+    }];
+}
+
+
+#pragma mark - AFIncrementalStore
 
 /**
  Returns an `NSDictionary` containing the representations of associated objects found within the representation of a response object, keyed by their relationship name.

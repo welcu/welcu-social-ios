@@ -11,6 +11,8 @@
 
 #import "WelcuEvent.h"
 
+typedef void(^WelcuAccountAuthenticationCompletionHandler)(WelcuAccount *account, NSError *error);
+
 @interface WelcuAccount : NSObject
 
 @property (strong) NSNumber *userID;
@@ -21,13 +23,21 @@
 @property (readonly) WelcuEvent *lastActiveEvent;
 
 + (WelcuAccount *)currentAccount;
++ (void)logOut;
++ (void)authenticateWithFacebookAccessToken:(NSString *)accessToken
+                                    completionHandler:(WelcuAccountAuthenticationCompletionHandler)handler;
++ (void)authenticateWithEmail:(NSString *)email
+                            andPassword:(NSString *)password
+                                    completionHandler:(WelcuAccountAuthenticationCompletionHandler)handler;
 
-@property (readonly) NSURL *accountDocumentsDirectory;
+@property (readonly, nonatomic) NSURL *accountDocumentsDirectory;
 
 // Related Models Access
 @property (readonly) WelcuSocialClient *client;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+- (void)saveContext;
 
 @end

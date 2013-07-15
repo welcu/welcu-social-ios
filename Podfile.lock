@@ -12,6 +12,7 @@ PODS:
   - DRKonamiCode (1.0.0)
   - Facebook-iOS-SDK (3.5.3)
   - FontasticIcons (0.4.0)
+  - FXKeychain (1.3.4)
   - GoogleAnalytics-iOS-SDK (2.0beta4)
   - GPUImage (0.1.0)
   - InflectorKit (0.0.1)
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - DRKonamiCode (~> 1.0.0)
   - Facebook-iOS-SDK
   - FontasticIcons
+  - FXKeychain
   - GoogleAnalytics-iOS-SDK
   - GPUImage
   - JASidePanels (~> 1.3.1)
@@ -64,6 +66,7 @@ SPEC CHECKSUMS:
   DRKonamiCode: 593a004b44eb0239c42090d2b5e28c44300c1907
   Facebook-iOS-SDK: c11e851555d8cb8b55853ec2990b01d9e343d09e
   FontasticIcons: 384f36c84789ab8640e89ab51c97b0be59078616
+  FXKeychain: 25ce8bd340a5fb2202673e54f269f03ef3e3004a
   GoogleAnalytics-iOS-SDK: ae8e58e771b6dec84c0047154cc0e550a15e6f54
   GPUImage: 5b902c1df2afe0ac30a8e3e7379f9c0bb25c7c85
   InflectorKit: 9dccab02f95541093995adac639342c9eb9e6c12

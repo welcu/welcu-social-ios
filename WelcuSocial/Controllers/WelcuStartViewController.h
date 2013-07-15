@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface WelcuStartViewController : UIViewController
-- (void)openSession;
+
+#pragma mark View handling
+- (void)presentMainViewAnimated:(BOOL)animated;
+- (void)dissmisMainViewAnimated:(BOOL)animated;
+- (void)presentLoginViewAnimated:(BOOL)animated;
+- (void)dissmisLoginViewAnimated:(BOOL)animated;
+
 @end
