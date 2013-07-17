@@ -8,6 +8,9 @@
 
 #import "WelcuMainViewController.h"
 
+#import "WelcuAccount.h"
+#import "WelcuEventFeedViewController.h"
+
 @interface WelcuMainViewController ()
 @end
 
@@ -16,9 +19,20 @@
 -(void) awakeFromNib
 {
     [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"WelcuMenuViewController"]];
-    [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"WelcuEventFeedNavigationController"]];
-
-//    [self setRightPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"rightViewController"]];
+    
+    WelcuEvent *lastActiveEvent = [[WelcuAccount currentAccount] lastActiveEvent];
+    
+    UINavigationController *centerController;
+    
+    if (lastActiveEvent) {
+        centerController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuEventFeedNavigationController"];
+        WelcuEventFeedViewController *eventFeedController = [[centerController viewControllers] firstObject];
+        eventFeedController.event = lastActiveEvent;
+    } else {
+        centerController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuUserEventsNavigationController"];
+    }
+    
+    [self setCenterPanel:centerController];
 }
 
 - (void)viewDidLoad

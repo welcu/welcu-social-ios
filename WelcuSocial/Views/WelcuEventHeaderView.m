@@ -8,10 +8,16 @@
 
 #import "WelcuEventHeaderView.h"
 #import <GPUImage/GPUImage.h>
-
+#import <AFNetworking/UIImageView+AFNetworking.h>
+#import <AFNetworking/AFImageRequestOperation.h>
 #import "UIImage+MaskedImages.h"
+#import "WelcuEvent.h"
 
 static UINib *viewNib;
+
+@interface WelcuEventHeaderView ()
+- (void)setHeaderImage:(UIImage *)image;
+@end
 
 @implementation WelcuEventHeaderView
 
@@ -33,32 +39,47 @@ static UINib *viewNib;
     self.eventNameLabel.font = [UIFont fontWithName:@"MuseoSans-700" size:25];
     self.eventVenueLabel.font = [UIFont fontWithName:@"MuseoSans-300" size:15];
     self.eventDateLabel.font = [UIFont fontWithName:@"MuseoSans-300" size:15];
+    
+    
 }
 
 - (void)setEvent:(WelcuEvent *)event
 {
     _event = event;
     
+    [self setHeaderImage:[UIImage imageNamed:@"SampleEventImage"]];
+    
+    if (event.headerPhoto) {
+        NSURLRequest *request = [NSURLRequest requestWithURL:event.headerPhotoURL];
+        
+        [AFImageRequestOperation imageRequestOperationWithRequest:request success:^(UIImage *image) {
+            [self setHeaderImage:image];
+        }];
+    }
+}
+
+- (void)setHeaderImage:(UIImage *)image
+{
     // Generate Event photo image
-    UIImage *eventPhotoImage = [UIImage imageNamed:@"SampleEventImage"];
+    UIImage *eventPhotoImage = image;
     eventPhotoImage = [eventPhotoImage imageByScalingAndCroppingForSize:CGSizeMake(228, 228)];
     eventPhotoImage = [eventPhotoImage maskWithImage:[UIImage imageNamed:@"EventHeaderPhotoMask"]];
     self.eventPhotoView.image = eventPhotoImage;
     
     // Generate Event background image
-    UIImage *eventBackgroundImage = [UIImage imageNamed:@"SampleEventImage"];
+    UIImage *eventBackgroundImage = image;
     
-//    GPUImageFilterGroup *filter = [[GPUImageFilterGroup alloc] init];
+    //    GPUImageFilterGroup *filter = [[GPUImageFilterGroup alloc] init];
     
     GPUImageFastBlurFilter *blurFilter = [[GPUImageFastBlurFilter alloc] init];
     blurFilter.blurPasses = 5;
-//    [filter addFilter:blurFilter];
+    //    [filter addFilter:blurFilter];
     
     GPUImageHighlightShadowFilter *shadowFilter = [[GPUImageHighlightShadowFilter alloc] init];
     shadowFilter.highlights = 0.7;
-//    [filter addFilter:shadowFilter];
+    //    [filter addFilter:shadowFilter];
     
-//    self.eventBackgroundView.image = eventBackgroundImage;
+    //    self.eventBackgroundView.image = eventBackgroundImage;
     self.eventBackgroundView.image = [shadowFilter imageByFilteringImage:[blurFilter imageByFilteringImage:eventBackgroundImage]];
 }
 

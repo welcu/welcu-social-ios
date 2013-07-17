@@ -16,8 +16,19 @@
 
 @dynamic name;
 @dynamic headerPhoto;
+@dynamic startsAt;
+@dynamic endsAt;
 @dynamic posts;
 @dynamic tickets;
 @dynamic activities;
+
+- (NSURL *)headerPhotoURL
+{
+    if (self.headerPhoto) {
+        return [NSURL URLWithString:self.headerPhoto];
+    }
+    
+    return nil;
+}
 
 @end

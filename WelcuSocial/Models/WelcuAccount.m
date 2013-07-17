@@ -218,6 +218,26 @@ static WelcuAccount *currentAccount = nil;
     }];
 }
 
+- (WelcuEvent *)lastActiveEvent
+{
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"WelcuEvent"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"participating = YES"];
+    fetchRequest.sortDescriptors = @[
+                                [NSSortDescriptor sortDescriptorWithKey:@"accessedAt" ascending:NO]
+                                ];
+    fetchRequest.fetchLimit = 1;
+    
+    NSError *error = nil;
+    NSArray *results = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (error) {
+        DDLogWarn(@"%@", error);
+    }
+    
+    return [results firstObject];
+}
+
 @synthesize accountDocumentsDirectory = _accountDocumentsDirectory;
 
 - (NSURL *)accountDocumentsDirectory

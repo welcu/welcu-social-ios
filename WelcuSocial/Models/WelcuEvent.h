@@ -13,11 +13,17 @@
 
 @interface WelcuEvent : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * headerPhoto;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *headerPhoto;
+@property (nonatomic, retain) NSDate *startsAt;
+@property (nonatomic, retain) NSDate *endsAt;
+
 @property (nonatomic, retain) NSSet *posts;
 @property (nonatomic, retain) NSSet *tickets;
 @property (nonatomic, retain) NSSet *activities;
+
+@property (nonatomic, readonly) NSURL *headerPhotoURL;
+
 @end
 
 @interface WelcuEvent (CoreDataGeneratedAccessors)

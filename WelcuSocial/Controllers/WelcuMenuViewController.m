@@ -225,7 +225,7 @@ typedef enum {
             newController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuEventFeedNavigationController"];
             break;
         case WelcuMenuViewControllerUserEventsRowType:
-            newController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuEventFeedNavigationController"];
+            newController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuUserEventsNavigationController"];
             break;
         default:
             break;

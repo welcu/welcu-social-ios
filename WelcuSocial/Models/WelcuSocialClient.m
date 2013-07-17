@@ -8,6 +8,8 @@
 
 #import "WelcuSocialClient.h"
 
+#import <TransformerKit/TTTDateTransformers.h>
+
 #import "WelcuAccount.h"
 #import "WelcuEvent.h"
 
@@ -107,17 +109,19 @@ static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
                                                            ofEntity:(NSEntityDescription *)entity
                                                        fromResponse:(NSHTTPURLResponse *)response
 {
-    NSDictionary *result = [super representationsForRelationshipsFromRepresentation:representation
-                                                                           ofEntity:entity
-                            
-                                                                       fromResponse:response];
+    NSDictionary *result = nil;
+    
     if ([[entity name] isEqualToString:@"WelcuPost"]) {
         result = @{
-                   @"user" : result[@"user"],
+                   @"user" : representation[@"user"],
                    @"event" : @{
                            @"id" : representation[@"event_id"]
                            }
                    };
+    } else {
+        result = [super representationsForRelationshipsFromRepresentation:representation
+                                                                 ofEntity:entity
+                                                             fromResponse:response];
     }
     
     DDLogInfo(@"representationsForRelationshipsFromRepresentation:ofEntity:fromResponse: %@", result);
@@ -140,11 +144,21 @@ static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
                                  fromResponse:(NSHTTPURLResponse *)response
 {
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
+    NSValueTransformer *dateTransformer = [NSValueTransformer valueTransformerForName:TTTISO8601DateTransformerName];
+    
     result[@"fetchedAt"] = [NSDate date];
     
     if ([[entity name] isEqualToString:@"WelcuPost"]) {
         result[@"postID"] = representation[@"id"];
-        result[@"content"] = representation[@"content"];
+        if (representation[@"content"]) {
+            result[@"content"] = representation[@"content"];
+        }
+        if (representation[@"sub_content"]) {
+            result[@"subContent"] = representation[@"sub_content"];
+        }
+        if (representation[@"photo"]) {
+            result[@"photo"] = representation[@"photo"][@"url"];
+        }
     } else if ([[entity name] isEqualToString:@"WelcuUser"]) {
         result[@"userID"] = representation[@"id"];
         result[@"firstName"] = representation[@"first_name"];
@@ -154,6 +168,22 @@ static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
         result[@"eventID"] = representation[@"id"];
         if (representation[@"name"]) {
             result[@"name"] = representation[@"name"];
+        }
+        
+        if (representation[@"starts_at"]) {
+            result[@"startsAt"] = [dateTransformer reverseTransformedValue:representation[@"starts_at"]];
+        }
+        
+        if (representation[@"ends_at"]) {
+            result[@"endsAt"] = [dateTransformer reverseTransformedValue:representation[@"ends_at"]];
+        }
+        
+        if (representation[@"header_photo"]) {
+            result[@"headerPhoto"] = representation[@"header_photo"];
+        }
+        
+        if (YES) {
+            result[@"participating"] = @(YES);
         }
     }
     
@@ -177,9 +207,15 @@ static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
     NSMutableURLRequest *result = nil;
     if ([fetchRequest.entity.name isEqualToString:@"WelcuPost"]) {
         WelcuEvent *event = (WelcuEvent *)[(id)[fetchRequest predicate] rightExpression];
+        // fetchRequest.serverContext[@"eventID"]
+        // fetchRequest.serverContext[@"parameters"]
         result = [self requestWithMethod:@"GET"
                                     path:[NSString stringWithFormat:@"events/%@/posts", @1]
                               parameters:nil];
+    } else if ([fetchRequest.entity.name isEqualToString:@"WelcuEvent"]) {
+        result = [self requestWithMethod:@"GET"
+                                    path:@"events"
+                              parameters:fetchRequest.serverContext[@"parameters"]];
     } else {
         result = [super requestForFetchRequest:fetchRequest withContext:context];
     }
