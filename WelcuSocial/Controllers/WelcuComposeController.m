@@ -55,10 +55,11 @@ static WelcuComposeController *currentComposeController = nil;
     NSMutableArray *shareButtons = [NSMutableArray array];
     
     [self.toolbar setBarTintColor:[UIColor blackColor]];
-    [self.toolbar addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[toolbar(33)]"
-                                                                         options:NSLayoutFormatAlignAllBottom
-                                                                         metrics:nil
-                                                                           views:@{@"toolbar":self.toolbar}]];
+    [self.toolbar addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[toolbar(33)]"
+                                             options:NSLayoutFormatAlignAllBottom
+                                             metrics:nil
+                                               views:@{@"toolbar":self.toolbar}]];
     
     UIBarButtonItem *facebookShareButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ShareSwitchFacebookDisabled"]
                                                                             style:UIBarButtonItemStylePlain

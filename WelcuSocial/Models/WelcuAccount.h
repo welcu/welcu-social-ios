@@ -20,6 +20,10 @@ typedef void(^WelcuAccountAuthenticationCompletionHandler)(WelcuAccount *account
 @property (strong) NSString *lastName;
 @property (strong) NSString *facebookUID;
 
+@property (nonatomic, readonly) NSString *fullName;
+@property (nonatomic, readonly) NSURL *pictureURL;
+- (NSURL *)pictureURLWithSize:(NSInteger)pixels;
+
 @property (readonly) WelcuEvent *lastActiveEvent;
 
 + (WelcuAccount *)currentAccount;
@@ -36,7 +40,6 @@ typedef void(^WelcuAccountAuthenticationCompletionHandler)(WelcuAccount *account
 @property (readonly) WelcuSocialClient *client;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (void)saveContext;
 

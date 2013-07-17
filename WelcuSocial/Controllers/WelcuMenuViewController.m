@@ -11,6 +11,7 @@
 #import <JASidePanels/UIViewController+JASidePanel.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
+#import "WelcuAccount.h"
 #import "UIImage+MaskedImages.h"
 #import "WelcuMenuUserProfileCell.h"
 #import "WelcuEventCell.h"
@@ -25,17 +26,42 @@ typedef enum {
     WelcuMenuViewControllerUserEventsRowType
     } WelcuMenuViewControllerRowTypes;
 
-@interface WelcuMenuViewController ()
+@interface WelcuMenuViewController () <NSFetchedResultsControllerDelegate>
+
+@property (nonatomic,strong) NSFetchedResultsController *fetchedResultsController;
 
 - (WelcuMenuViewControllerRowTypes)rowTypeForIndexPath:(NSIndexPath *)indexPath;
+- (void)refetchData;
 
 @end
 
 @implementation WelcuMenuViewController
 
+- (void)refetchData {
+    [self.fetchedResultsController performSelectorOnMainThread:@selector(performFetch:)
+                                                    withObject:nil
+                                                 waitUntilDone:YES
+                                                         modes:@[ NSRunLoopCommonModes ]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"WelcuEvent"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"participating = %@ AND endsAt > %@" argumentArray:@[@(YES), [NSDate date]]];
+    fetchRequest.sortDescriptors = @[
+                                     [NSSortDescriptor sortDescriptorWithKey:@"accessedAt" ascending:NO]
+                                     ];
+    fetchRequest.fetchLimit = 9;
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                        managedObjectContext:[[WelcuAccount currentAccount] managedObjectContext]
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:@"MenuEvents"];
+    
+    self.fetchedResultsController.delegate = self;
+    [self refetchData];
 
     [self.tableView registerNib:[UINib nibWithNibName:[WelcuMenuUserProfileCell className] bundle:nil]
          forCellReuseIdentifier:[WelcuMenuUserProfileCell className]];
@@ -104,7 +130,7 @@ typedef enum {
         case 1:
             return 2;
         case 2:
-            return 3;
+            return [self.fetchedResultsController.sections[0] numberOfObjects];
         case 3:
             return 1;
     }
@@ -122,15 +148,10 @@ typedef enum {
         WelcuMenuUserProfileCell *cell =
         [tableView dequeueReusableCellWithIdentifier:[WelcuMenuUserProfileCell className]
                                         forIndexPath:indexPath];
-
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://graph.facebook.com/sagmor/picture"]];
-
-        [cell.userProfileImageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-            cell.userProfileImageView.image = [image maskWithImage:[UIImage imageNamed:@"UserPhotoMask"]];
-        } failure:nil];
-
         return cell;
     }
+    
+    WelcuEvent *event = nil;
 
     switch ([self rowTypeForIndexPath:indexPath]) {
         case WelcuMenuViewControllerUserProfileRowType:
@@ -149,8 +170,9 @@ typedef enum {
         case WelcuMenuViewControllerEventRowType:
             cell = [tableView dequeueReusableCellWithIdentifier:[WelcuEventCell className]
                                                    forIndexPath:indexPath];
+            event = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
 
-            cell.textLabel.text = @"Webprendedor 2013";
+            cell.textLabel.text = event.name;
             cell.detailTextLabel.text = @"30 de Junio 2013";
             break;
         case WelcuMenuViewControllerUserEventsRowType:
@@ -224,6 +246,11 @@ typedef enum {
 
     }
 
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 @end

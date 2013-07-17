@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3383" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="WelcuActivity" representedClassName="WelcuActivity" syncable="YES">
+        <attribute name="fetchedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WelcuEvent" inverseName="activities" inverseEntity="WelcuEvent" syncable="YES"/>
         <relationship name="tickets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WelcuTicket" inverseName="activity" inverseEntity="WelcuTicket" syncable="YES"/>
     </entity>
     <entity name="WelcuEvent" representedClassName="WelcuEvent" syncable="YES">
+        <attribute name="accessedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="endsAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="eventID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="fetchedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="headerPhoto" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="participating" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="startsAt" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WelcuActivity" inverseName="event" inverseEntity="WelcuActivity" syncable="YES"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WelcuPost" inverseName="event" inverseEntity="WelcuPost" syncable="YES"/>
         <relationship name="tickets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WelcuTicket" inverseName="event" inverseEntity="WelcuTicket" syncable="YES"/>
     </entity>
     <entity name="WelcuPost" representedClassName="WelcuPost" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fetchedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -25,20 +33,23 @@
     <entity name="WelcuTicket" representedClassName="WelcuTicket" syncable="YES">
         <attribute name="checkedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fetchedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WelcuActivity" inverseName="tickets" inverseEntity="WelcuActivity" syncable="YES"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WelcuEvent" inverseName="tickets" inverseEntity="WelcuEvent" syncable="YES"/>
     </entity>
     <entity name="WelcuUser" representedClassName="WelcuUser" syncable="YES">
         <attribute name="facebookUID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fetchedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WelcuPost" inverseName="user" inverseEntity="WelcuPost" syncable="YES"/>
     </entity>
     <elements>
-        <element name="WelcuPost" positionX="27" positionY="35" width="146" height="163"/>
-        <element name="WelcuUser" positionX="270" positionY="287" width="144" height="103"/>
-        <element name="WelcuEvent" positionX="270" positionY="20" width="128" height="118"/>
-        <element name="WelcuTicket" positionX="484" positionY="297" width="128" height="103"/>
-        <element name="WelcuActivity" positionX="468" positionY="27" width="128" height="88"/>
+        <element name="WelcuActivity" positionX="468" positionY="27" width="128" height="103"/>
+        <element name="WelcuEvent" positionX="270" positionY="20" width="128" height="208"/>
+        <element name="WelcuPost" positionX="27" positionY="35" width="146" height="178"/>
+        <element name="WelcuTicket" positionX="484" positionY="297" width="128" height="118"/>
+        <element name="WelcuUser" positionX="270" positionY="296" width="126" height="133"/>
     </elements>
 </model>

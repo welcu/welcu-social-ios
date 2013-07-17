@@ -8,6 +8,12 @@
 
 #import "WelcuMenuUserProfileCell.h"
 
+#import <AFNetworking/UIImageView+AFNetworking.h>
+
+#import "WelcuAccount.h"
+#import "UIImage+MaskedImages.h"
+
+
 @implementation WelcuMenuUserProfileCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -17,6 +23,17 @@
         // Initialization code
     }
     return self;
+}
+
+- (void)awakeFromNib
+{
+    self.userNameLabel.text = [[WelcuAccount currentAccount] fullName];
+
+    NSURLRequest *request = [NSURLRequest requestWithURL:[[WelcuAccount currentAccount] pictureURL]];
+
+    [self.userProfileImageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        self.userProfileImageView.image = [image maskWithImage:[UIImage imageNamed:@"UserPhotoMask"]];
+    } failure:nil];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

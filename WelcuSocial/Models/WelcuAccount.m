@@ -13,6 +13,8 @@
 #import "WelcuSocialIncrementalStore.h"
 #import "WelcuAppDelegate.h"
 
+#define DEFAULT_PICTURE_SIZE 52
+
 static WelcuAccount *currentAccount = nil;
 
 @interface WelcuAccount ()
@@ -20,6 +22,8 @@ static WelcuAccount *currentAccount = nil;
 @property (strong) NSString *accessToken;
 @property (strong) WelcuSocialClient *client;
 @property (strong, nonatomic) NSDictionary *attributes;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (readonly, strong, nonatomic) WelcuSocialIncrementalStore *incrementalStore;
 
 #pragma mark Account Management
 
@@ -117,9 +121,21 @@ static WelcuAccount *currentAccount = nil;
 
 + (WelcuAccount *)loadAccount
 {
+    WelcuAccount *account = [[WelcuAccount alloc] initWithAccessToken:@"access_token"];
+    [account setAttributes:@{
+                             @"id" : @1,
+                             @"first_name" : @"Seba",
+                             @"last_name" : @"Gamboa",
+                             @"facebook_uid" : @"sagmor"
+                             }];
+    
+    return account;
+ 
+    
     FXKeychain *keychain = [FXKeychain defaultKeychain];
-    if (keychain[@"accessToken"]) {
-        WelcuAccount *account = [[WelcuAccount alloc] initWithAccessToken:keychain[@"accessToken"]];
+    
+    if (keychain[@"access_token"]) {
+        WelcuAccount *account = [[WelcuAccount alloc] initWithAccessToken:keychain[@"access_token"]];
         [account setAttributes:keychain[@"user"]];
         
         return account;
@@ -146,6 +162,25 @@ static WelcuAccount *currentAccount = nil;
     }
     return self;
 }
+
+- (NSString *)fullName
+{
+    return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
+}
+
+
+- (NSURL *)pictureURL
+{
+    return [self pictureURLWithSize:DEFAULT_PICTURE_SIZE];
+}
+
+- (NSURL *)pictureURLWithSize:(NSInteger)pixels
+{
+    
+    pixels = pixels * [[UIScreen mainScreen] scale];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?height=%d&width=%d", self.facebookUID, pixels, pixels]];
+}
+
 
 + (void)authenticateWithWelcuAccessTokenData:(id)accessTokenData
                            complationHandler:(WelcuAccountAuthenticationCompletionHandler)handler
@@ -193,7 +228,7 @@ static WelcuAccount *currentAccount = nil;
     
     _accountDocumentsDirectory = [NSURL URLWithString: [self.userID stringValue]
                                        relativeToURL:[(WelcuAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory]];
-    NSLog(@"%@", [_accountDocumentsDirectory path]);
+    DDLogInfo(@"%@", [_accountDocumentsDirectory path]);
     
     [[NSFileManager defaultManager] createDirectoryAtURL:_accountDocumentsDirectory
                              withIntermediateDirectories:NO
@@ -207,6 +242,7 @@ static WelcuAccount *currentAccount = nil;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize incrementalStore = __incrementalStore;
 
 // Returns the managed object context for the application.
 // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
@@ -247,7 +283,7 @@ static WelcuAccount *currentAccount = nil;
     
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     
-    AFIncrementalStore *incrementalStore = (AFIncrementalStore *)[__persistentStoreCoordinator addPersistentStoreWithType:[WelcuSocialIncrementalStore type] configuration:nil URL:nil options:nil error:nil];
+    __incrementalStore = (WelcuSocialIncrementalStore *)[__persistentStoreCoordinator addPersistentStoreWithType:[WelcuSocialIncrementalStore type] configuration:nil URL:nil options:nil error:nil];
     
     NSURL *storeURL = [[self accountDocumentsDirectory] URLByAppendingPathComponent:@"WelcuSocial.sqlite"];
     
@@ -257,7 +293,7 @@ static WelcuAccount *currentAccount = nil;
                               };
     
     NSError *error = nil;
-    if (![incrementalStore.backingPersistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+    if (![__incrementalStore.backingPersistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
                                                                           configuration:nil
                                                                                     URL:storeURL
                                                                                 options:options

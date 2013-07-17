@@ -13,6 +13,7 @@
 
 //NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu.com/social/v1/";
 static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.dev/social/v1/";
+//static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.192.168.1.127.xip.io/social/v1/";
 static NSString * const kWelcuSocialClientAPIClientId = @"APIKey";
 static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
 
@@ -110,6 +111,15 @@ static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
                                                                            ofEntity:entity
                             
                                                                        fromResponse:response];
+    if ([[entity name] isEqualToString:@"WelcuPost"]) {
+        result = @{
+                   @"user" : result[@"user"],
+                   @"event" : @{
+                           @"id" : representation[@"event_id"]
+                           }
+                   };
+    }
+    
     DDLogInfo(@"representationsForRelationshipsFromRepresentation:ofEntity:fromResponse: %@", result);
     return result;
 }
@@ -129,18 +139,22 @@ static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
                                      ofEntity:(NSEntityDescription *)entity
                                  fromResponse:(NSHTTPURLResponse *)response
 {
-    NSDictionary *result = nil;
+    NSMutableDictionary *result = [NSMutableDictionary dictionary];
+    result[@"fetchedAt"] = [NSDate date];
     
     if ([[entity name] isEqualToString:@"WelcuPost"]) {
-        result = @{
-                   @"content" : representation[@"content"],
-                   };
+        result[@"postID"] = representation[@"id"];
+        result[@"content"] = representation[@"content"];
     } else if ([[entity name] isEqualToString:@"WelcuUser"]) {
-        result = @{
-                   @"firstName" : representation[@"first_name"],
-                   @"lastName" : representation[@"last_name"],
-                   @"facebookUID" : representation[@"facebook_uid"]
-                   };
+        result[@"userID"] = representation[@"id"];
+        result[@"firstName"] = representation[@"first_name"];
+        result[@"lastName"] = representation[@"last_name"];
+        result[@"facebookUID"] = representation[@"facebook_uid"];
+    } else if ([[entity name] isEqualToString:@"WelcuEvent"]) {
+        result[@"eventID"] = representation[@"id"];
+        if (representation[@"name"]) {
+            result[@"name"] = representation[@"name"];
+        }
     }
     
     DDLogInfo(@"attributesForRepresentation:ofEntity:%@ fromResponse:%@", [entity name], result);
@@ -161,7 +175,7 @@ static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
                                     withContext:(NSManagedObjectContext *)context
 {
     NSMutableURLRequest *result = nil;
-    if ([[[fetchRequest entity] name] isEqualToString:@"WelcuPost"]) {
+    if ([fetchRequest.entity.name isEqualToString:@"WelcuPost"]) {
         WelcuEvent *event = (WelcuEvent *)[(id)[fetchRequest predicate] rightExpression];
         result = [self requestWithMethod:@"GET"
                                     path:[NSString stringWithFormat:@"events/%@/posts", @1]
@@ -172,6 +186,14 @@ static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
     
     DDLogInfo(@"requestForFetchRequest:withContext: %@", result);
     return result;
+}
+
+- (NSString *)pathForEntity:(NSEntityDescription *)entity {
+    if ([entity.name isEqualToString:@"WelcuEvent"]) {
+        return @"events";
+    }
+    
+    return [super pathForEntity:entity];
 }
 
 /**
@@ -267,6 +289,10 @@ static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
 - (BOOL)shouldFetchRemoteAttributeValuesForObjectWithID:(NSManagedObjectID *)objectID
                                  inManagedObjectContext:(NSManagedObjectContext *)context
 {
+    if ([objectID.entity.name isEqualToString:@"WelcuEvent"]) {
+        return YES;
+    }
+    
     return NO;
 }
 
