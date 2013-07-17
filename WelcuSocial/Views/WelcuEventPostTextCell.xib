@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4457.9" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4471.1" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3697.3"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,8 +10,8 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="101" id="qum-4N-Ipl" customClass="WelcuEventPostTextCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qum-4N-Ipl" id="nWW-2o-qDG">
+                <rect key="frame" x="0.0" y="0.0" width="322" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="0l1-4n-OtN" customClass="AMAttributedHighlightLabel">
@@ -21,30 +21,15 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            </view>
+            </tableViewCellContentView>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="0l1-4n-OtN" secondAttribute="trailing" constant="10" id="hiv-m9-H4T"/>
-                <constraint firstItem="0l1-4n-OtN" firstAttribute="top" secondItem="qum-4N-Ipl" secondAttribute="top" constant="10" id="j2K-dU-9C1"/>
-                <constraint firstItem="0l1-4n-OtN" firstAttribute="leading" secondItem="qum-4N-Ipl" secondAttribute="leading" constant="72" id="pwS-j3-xXn"/>
+                <constraint firstAttribute="trailing" secondItem="0l1-4n-OtN" secondAttribute="trailing" constant="10" id="QqF-0i-Gu5"/>
+                <constraint firstItem="0l1-4n-OtN" firstAttribute="top" secondItem="qum-4N-Ipl" secondAttribute="top" constant="10" id="gud-KJ-okX"/>
+                <constraint firstItem="0l1-4n-OtN" firstAttribute="leading" secondItem="qum-4N-Ipl" secondAttribute="leading" constant="72" id="nfa-6l-a7F"/>
             </constraints>
             <connections>
                 <outlet property="postContentLabel" destination="0l1-4n-OtN" id="ZUK-T4-zCu"/>
             </connections>
         </tableViewCell>
     </objects>
-    <classes>
-        <class className="AMAttributedHighlightLabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AMAttributedHighlightLabel.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="WelcuEventPostTextCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcuEventPostTextCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="postContentLabel" candidateClass="AMAttributedHighlightLabel"/>
-            </relationships>
-        </class>
-    </classes>
 </document>

@@ -48,12 +48,15 @@ DEPENDENCIES:
   - OHAttributedLabel (~> 3.4.1)
   - PCStackMenu (from `https://github.com/sagmor/StackMenu`)
   - SIAlertView (~> 1.2)
-  - TestFlightLogger
+  - TestFlightLogger (from `git@github.com:sagmor/TestFlightLogger.git`, branch `fix-format-warning`)
   - TestFlightSDK
 
 EXTERNAL SOURCES:
   PCStackMenu:
     :git: https://github.com/sagmor/StackMenu
+  TestFlightLogger:
+    :branch: fix-format-warning
+    :git: git@github.com:sagmor/TestFlightLogger.git
 
 SPEC CHECKSUMS:
   AALaunchTransition: 9d0e3365c15f2668fe33ad64659232dfff84e136

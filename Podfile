@@ -33,4 +33,4 @@ pod 'GoogleAnalytics-iOS-SDK'
 
 # Debug and Logging
 pod 'CocoaLumberjack', '~> 1.6.2'
-pod 'TestFlightLogger'
+pod 'TestFlightLogger', git: 'git@github.com:sagmor/TestFlightLogger.git', branch: 'fix-format-warning'

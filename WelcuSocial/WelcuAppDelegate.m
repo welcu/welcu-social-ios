@@ -85,12 +85,13 @@
 
 - (void)setupTracking
 {
+//    [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
     [TestFlight takeOff:kWelcuTestflightToken];
 }
 
 - (void)setupLogging
 {
-//    [DDLog addLogger:[TestFlightLogger sharedInstance]];
+    [DDLog addLogger:[TestFlightLogger sharedInstance]];
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];

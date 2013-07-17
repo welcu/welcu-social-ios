@@ -72,7 +72,7 @@ static TestFlightLogger *sharedInstance;
     
     if (logMsg)
     {
-        TFLog(logMsg);
+        TFLog(@"%@", logMsg);
     }
 }
 
