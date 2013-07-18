@@ -218,6 +218,7 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
                                 if (selectedMenuIndex == 0) {
                                     WelcuComposePhotoController *composeController = [[WelcuComposePhotoController alloc] init];
                                     
+                                    composeController.event = self.event;
                                     [composeController presentComposeControllerOn:self];
                                 } else if (selectedMenuIndex == 1) {
                                     WelcuComposeController *composeController = [WelcuComposeController composeController];

@@ -10,8 +10,11 @@
 
 #import "WelcuComposeController.h"
 
+@class WelcuEvent;
+
 @interface WelcuComposePhotoController : NSObject
 
+@property (nonatomic,strong) WelcuEvent *event;
 @property (nonatomic, weak) id<WelcuComposeControllerDelegate> delegate;
 
 

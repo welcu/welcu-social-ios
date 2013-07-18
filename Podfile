@@ -22,8 +22,8 @@ pod 'SIAlertView', '~> 1.2'
 pod 'AALaunchTransition', '~> 0.1.3'
 pod 'MJPopupViewController', '~> 0.4'
 
-
-# pod 'AviarySDK'
+pod 'GKImagePicker'
+pod 'AviarySDK', podspec: 'Vendor/AviarySDK.podspec'
 # pod 'R1PhotoEffectsSDK', podspec: 'Vendor/R1PhotoEffectsSDK.podspec'
 
 # Analytics

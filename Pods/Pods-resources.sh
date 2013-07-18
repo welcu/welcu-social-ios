@@ -31,6 +31,7 @@ install_resource()
       ;;
   esac
 }
+install_resource 'AviarySDK/3.1.1-master-basic/AviarySDK/Resources/AviarySDKResources.bundle'
 install_resource 'Facebook-iOS-SDK/src/FacebookSDKResources.bundle'
 install_resource 'Facebook-iOS-SDK/src/FBUserSettingsViewResources.bundle'
 install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Fonts/Entypo-Social.otf'
@@ -42,6 +43,14 @@ install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Strings/Entypo
 install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Strings/FontAwesomeRegular+Deprecation.strings'
 install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Strings/FontAwesomeRegular.strings'
 install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Strings/IconicStroke.strings'
+install_resource 'GKImagePicker/GKImages/PLCameraSheetButton.png'
+install_resource 'GKImagePicker/GKImages/PLCameraSheetButton@2x.png'
+install_resource 'GKImagePicker/GKImages/PLCameraSheetButtonPressed.png'
+install_resource 'GKImagePicker/GKImages/PLCameraSheetButtonPressed@2x.png'
+install_resource 'GKImagePicker/GKImages/PLCameraSheetDoneButton.png'
+install_resource 'GKImagePicker/GKImages/PLCameraSheetDoneButton@2x.png'
+install_resource 'GKImagePicker/GKImages/PLCameraSheetDoneButtonPressed.png'
+install_resource 'GKImagePicker/GKImages/PLCameraSheetDoneButtonPressed@2x.png'
 install_resource 'SIAlertView/SIAlertView/SIAlertView.bundle'
 
 rsync -avr --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

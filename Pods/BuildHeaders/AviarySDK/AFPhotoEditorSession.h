@@ -1,0 +1,1 @@
+../../AviarySDK/3.1.1-master-basic/AviarySDK/Headers/AFPhotoEditorSession.h

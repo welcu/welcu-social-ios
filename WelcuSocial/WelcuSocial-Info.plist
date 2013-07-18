@@ -35,6 +35,8 @@
 	<string>130580200330588</string>
 	<key>FacebookDisplayName</key>
 	<string>Welcu</string>
+	<key>Aviary-API-Key</key>
+	<string>ue3xr828o4b8ju2l</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>

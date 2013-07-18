@@ -42,6 +42,12 @@
 #define COCOAPODS_VERSION_MINOR_AMAttributedHighlightLabel 0
 #define COCOAPODS_VERSION_PATCH_AMAttributedHighlightLabel 1
 
+// AviarySDK
+#define COCOAPODS_POD_AVAILABLE_AviarySDK
+#define COCOAPODS_VERSION_MAJOR_AviarySDK 3
+#define COCOAPODS_VERSION_MINOR_AviarySDK 1
+#define COCOAPODS_VERSION_PATCH_AviarySDK 1
+
 // CocoaLumberjack
 #define COCOAPODS_POD_AVAILABLE_CocoaLumberjack
 #define COCOAPODS_VERSION_MAJOR_CocoaLumberjack 1
@@ -71,6 +77,12 @@
 #define COCOAPODS_VERSION_MAJOR_FontasticIcons 0
 #define COCOAPODS_VERSION_MINOR_FontasticIcons 4
 #define COCOAPODS_VERSION_PATCH_FontasticIcons 0
+
+// GKImagePicker
+#define COCOAPODS_POD_AVAILABLE_GKImagePicker
+#define COCOAPODS_VERSION_MAJOR_GKImagePicker 0
+#define COCOAPODS_VERSION_MINOR_GKImagePicker 0
+#define COCOAPODS_VERSION_PATCH_GKImagePicker 1
 
 // GPUImage
 #define COCOAPODS_POD_AVAILABLE_GPUImage
