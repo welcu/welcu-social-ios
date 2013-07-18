@@ -17,7 +17,7 @@
 //static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.dev/social/v1/";
 static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.192.168.5.123.xip.io/social/v1/";
 static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31a-a4470d6d6bb0";
-static NSString * const kWelcuSocialClientAPIClientSecret = @"FbQciVOWVa2mKhdt8cMCAg";
+//static NSString * const kWelcuSocialClientAPIClientSecret = @"FbQciVOWVa2mKhdt8cMCAg";
 
 
 @interface WelcuAccount (AccessToken)
@@ -68,7 +68,7 @@ static NSString * const kWelcuSocialClientAPIClientSecret = @"FbQciVOWVa2mKhdt8c
     [client postPath:@"oauth/access_token"
           parameters:@{
                        @"client_id" : kWelcuSocialClientAPIClientId,
-                       @"client_secret" : kWelcuSocialClientAPIClientSecret,
+//                       @"client_secret" : kWelcuSocialClientAPIClientSecret,
                        @"x_auth_user" : email,
                        @"x_auth_password" : password
                        }
