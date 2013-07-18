@@ -18,6 +18,7 @@
 
 #import "WelcuEventFeedViewCell.h"
 #import "WelcuComposeController.h"
+#import "WelcuComposePhotoController.h"
 
 #import "WelcuEventPostCell.h"
 #import "WelcuEventPostHeaderView.h"
@@ -204,23 +205,26 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
     
 
     
-    [PCStackMenu showStackMenuWithTitles:@[@" ", @" ", @" ", @" "]
+    [PCStackMenu showStackMenuWithTitles:@[@" ", @" "]
                               withImages:@[
                                            [UIImage imageNamed:@"ComposeImageButtonImage"],
-                                           [UIImage imageNamed:@"ComposeQuoteButtonImage"],
-                                           [UIImage imageNamed:@"ComposeMessageButtonImage"],
-                                           [UIImage imageNamed:@"ComposeContactButtonImage"]
+                                           [UIImage imageNamed:@"ComposeMessageButtonImage"]
                                            ]
                             atStartPoint:CGPointMake(button.frame.origin.x + button.frame.size.width, button.frame.origin.y)
                                   inView:self.view
                               itemHeight:40
                            menuDirection:PCStackMenuDirectionClockWiseUp
                             onSelectMenu:^(NSInteger selectedMenuIndex) {
-                                NSLog(@"menu index : %d", selectedMenuIndex);
-                                WelcuComposeController *composeController = [WelcuComposeController composeController];
-                                composeController.event = self.event;
-                                composeController.postType = WelcuComposePlainPostType;
-                                [composeController presentComposeController];
+                                if (selectedMenuIndex == 0) {
+                                    WelcuComposePhotoController *composeController = [[WelcuComposePhotoController alloc] init];
+                                    
+                                    [composeController presentComposeControllerOn:self];
+                                } else if (selectedMenuIndex == 1) {
+                                    WelcuComposeController *composeController = [WelcuComposeController composeController];
+                                    composeController.event = self.event;
+                                    composeController.postType = WelcuComposePlainPostType;
+                                    [composeController presentComposeController];
+                                }
                             }];
     
 //    if ([self isComposeMenuVisible]) {

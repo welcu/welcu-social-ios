@@ -18,6 +18,7 @@
 		CE16DD53178F326900371025 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD52178F326900371025 /* posts.json */; };
 		CE71AD731794639F00598802 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE71AD721794639F00598802 /* SystemConfiguration.framework */; };
 		CE71AD761795B30200598802 /* NSFetchRequest+ServerContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CE71AD751795B30200598802 /* NSFetchRequest+ServerContext.m */; };
+		CE71ADB11797578A00598802 /* WelcuComposePhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE71ADB01797578A00598802 /* WelcuComposePhotoController.m */; };
 		CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC11177E0BC30006D75C /* Foundation.framework */; };
 		CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */; };
 		CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BEC15177E0BC30006D75C /* UIKit.framework */; };
@@ -100,6 +101,8 @@
 		CE71AD721794639F00598802 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CE71AD741795B30200598802 /* NSFetchRequest+ServerContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchRequest+ServerContext.h"; sourceTree = "<group>"; };
 		CE71AD751795B30200598802 /* NSFetchRequest+ServerContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchRequest+ServerContext.m"; sourceTree = "<group>"; };
+		CE71ADAF1797578A00598802 /* WelcuComposePhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuComposePhotoController.h; sourceTree = "<group>"; };
+		CE71ADB01797578A00598802 /* WelcuComposePhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuComposePhotoController.m; sourceTree = "<group>"; };
 		CE7BEC0E177E0BC30006D75C /* WelcuSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WelcuSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BEC11177E0BC30006D75C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE7BEC13177E0BC30006D75C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -388,6 +391,8 @@
 				CE7BEC55177E31D70006D75C /* WelcuEventViewController.m */,
 				CE8E4927177E68FE006B1874 /* WelcuEventFeedViewController.h */,
 				CE8E4928177E68FE006B1874 /* WelcuEventFeedViewController.m */,
+				CE71ADAF1797578A00598802 /* WelcuComposePhotoController.h */,
+				CE71ADB01797578A00598802 /* WelcuComposePhotoController.m */,
 				CE8E49471781116B006B1874 /* WelcuComposePhotoCameraViewController.h */,
 				CE8E49481781116B006B1874 /* WelcuComposePhotoCameraViewController.m */,
 				CE9D303E178B5DCB0016B8B8 /* WelcuComposeController.xib */,
@@ -636,6 +641,7 @@
 				CE7BEC1E177E0BC30006D75C /* main.m in Sources */,
 				CEBBD2061790947300F3E36C /* AFHTTPRequestOperationLogger.m in Sources */,
 				CE8E493E177F98E2006B1874 /* NSObject+ClassName.m in Sources */,
+				CE71ADB11797578A00598802 /* WelcuComposePhotoController.m in Sources */,
 				CE8E4930177F7269006B1874 /* UIImage+MaskedImages.m in Sources */,
 				CE7BEC4A177E10D30006D75C /* WelcuMainViewController.m in Sources */,
 				CEBBD1EE17906D1000F3E36C /* WelcuActivity.m in Sources */,

@@ -102,7 +102,7 @@
     [DDLog addLogger:fileLogger];
     
     [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
-    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelWarn];
+    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
 }
 
 - (void)setupApperance

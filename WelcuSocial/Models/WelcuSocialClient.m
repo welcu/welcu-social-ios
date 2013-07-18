@@ -14,8 +14,8 @@
 #import "WelcuEvent.h"
 
 //NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu.com/social/v1/";
-static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.dev/social/v1/";
-//static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.192.168.1.127.xip.io/social/v1/";
+//static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.dev/social/v1/";
+static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.192.168.5.123.xip.io/social/v1/";
 static NSString * const kWelcuSocialClientAPIClientId = @"APIKey";
 static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
 
@@ -150,37 +150,37 @@ static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
     
     if ([[entity name] isEqualToString:@"WelcuPost"]) {
         result[@"postID"] = representation[@"id"];
-        if (representation[@"content"]) {
+        
+        if (representation[@"content"])
             result[@"content"] = representation[@"content"];
-        }
-        if (representation[@"sub_content"]) {
+
+        if (representation[@"sub_content"])
             result[@"subContent"] = representation[@"sub_content"];
-        }
+        
         if (representation[@"photo"]) {
             result[@"photo"] = representation[@"photo"][@"url"];
         }
     } else if ([[entity name] isEqualToString:@"WelcuUser"]) {
+        
         result[@"userID"] = representation[@"id"];
         result[@"firstName"] = representation[@"first_name"];
         result[@"lastName"] = representation[@"last_name"];
         result[@"facebookUID"] = representation[@"facebook_uid"];
+        
     } else if ([[entity name] isEqualToString:@"WelcuEvent"]) {
         result[@"eventID"] = representation[@"id"];
-        if (representation[@"name"]) {
+        
+        if (representation[@"name"])
             result[@"name"] = representation[@"name"];
-        }
         
-        if (representation[@"starts_at"]) {
+        if (representation[@"starts_at"])
             result[@"startsAt"] = [dateTransformer reverseTransformedValue:representation[@"starts_at"]];
-        }
         
-        if (representation[@"ends_at"]) {
+        if (representation[@"ends_at"])
             result[@"endsAt"] = [dateTransformer reverseTransformedValue:representation[@"ends_at"]];
-        }
         
-        if (representation[@"header_photo"]) {
+        if (representation[@"header_photo"])
             result[@"headerPhoto"] = representation[@"header_photo"];
-        }
         
         if (YES) {
             result[@"participating"] = @(YES);

@@ -39,22 +39,22 @@ static UINib *viewNib;
     self.eventNameLabel.font = [UIFont fontWithName:@"MuseoSans-700" size:25];
     self.eventVenueLabel.font = [UIFont fontWithName:@"MuseoSans-300" size:15];
     self.eventDateLabel.font = [UIFont fontWithName:@"MuseoSans-300" size:15];
-    
-    
 }
 
 - (void)setEvent:(WelcuEvent *)event
 {
     _event = event;
     
-    [self setHeaderImage:[UIImage imageNamed:@"SampleEventImage"]];
+    [self setHeaderImage:[UIImage imageNamed:@"DefaultEventHeader"]];
     
     if (event.headerPhoto) {
         NSURLRequest *request = [NSURLRequest requestWithURL:event.headerPhotoURL];
         
-        [AFImageRequestOperation imageRequestOperationWithRequest:request success:^(UIImage *image) {
+        AFImageRequestOperation *headerFetch = [AFImageRequestOperation imageRequestOperationWithRequest:request success:^(UIImage *image) {
             [self setHeaderImage:image];
         }];
+        
+        [headerFetch start];
     }
 }
 
