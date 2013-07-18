@@ -85,7 +85,10 @@
 
 - (void)setupTracking
 {
-//    [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
+//#ifdef DEBUG
+//    
+//    [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] performSelector:@selector(uniqueIdentifier)]];
+//#endif
     [TestFlight takeOff:kWelcuTestflightToken];
 }
 

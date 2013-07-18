@@ -16,6 +16,8 @@
 
 @interface WelcuStartViewController ()
 
+- (void)handleAccountLogOut;
+
 @end
 
 @implementation WelcuStartViewController
@@ -67,6 +69,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleAccountLogOut) name:@"WelcuAccountLoggedOut" object:nil];
+
 	// Do any additional setup after loading the view.
 }
 
@@ -79,10 +84,15 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
+- (void)dealloc
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)handleAccountLogOut
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self presentLoginViewAnimated:YES];
 }
 
 @end

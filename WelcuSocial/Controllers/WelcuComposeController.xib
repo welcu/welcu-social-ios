@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4457.9" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4471.1" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3697.3"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcuComposeController">
             <connections>
+                <outlet property="contentPhotoView" destination="Nba-ry-3gH" id="Hzl-p5-JQ1"/>
                 <outlet property="contentTextView" destination="bfY-Ko-gyp" id="qwt-Au-gO2"/>
                 <outlet property="navigationBar" destination="UlS-8E-sNe" id="iWX-3a-CiF"/>
                 <outlet property="toolbar" destination="e7q-SZ-Spv" id="ABz-Sc-EES"/>
@@ -111,12 +112,22 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nba-ry-3gH">
+                    <rect key="frame" x="263" y="55" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="QvB-j9-F0A"/>
+                        <constraint firstAttribute="height" constant="70" id="t1P-Re-Prx"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="UlS-8E-sNe" firstAttribute="trailing" secondItem="I1o-bg-7b5" secondAttribute="trailing" id="8jR-sy-kjX"/>
                 <constraint firstItem="bfY-Ko-gyp" firstAttribute="leading" secondItem="I1o-bg-7b5" secondAttribute="leading" id="A6g-kx-5VR"/>
+                <constraint firstItem="Nba-ry-3gH" firstAttribute="top" secondItem="UlS-8E-sNe" secondAttribute="bottom" constant="11" id="DQJ-OH-mCA"/>
                 <constraint firstAttribute="bottom" secondItem="e7q-SZ-Spv" secondAttribute="bottom" id="Ka6-Uj-tXa"/>
+                <constraint firstAttribute="trailing" secondItem="Nba-ry-3gH" secondAttribute="trailing" constant="-20" id="LvT-1J-AZ7"/>
                 <constraint firstItem="bfY-Ko-gyp" firstAttribute="trailing" secondItem="I1o-bg-7b5" secondAttribute="trailing" id="Okv-As-snW"/>
                 <constraint firstItem="bfY-Ko-gyp" firstAttribute="top" secondItem="UlS-8E-sNe" secondAttribute="bottom" id="R5N-CQ-jm0"/>
                 <constraint firstItem="e7q-SZ-Spv" firstAttribute="leading" secondItem="I1o-bg-7b5" secondAttribute="leading" id="Twk-cY-zeZ"/>

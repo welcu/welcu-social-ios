@@ -213,6 +213,7 @@ typedef enum {
 
     switch ([self rowTypeForIndexPath:indexPath]) {
         case WelcuMenuViewControllerUserProfileRowType:
+            [WelcuAccount logOut];
             break;
 
         case WelcuMenuViewControllerUserTicketsRowType:

@@ -77,21 +77,25 @@ static WelcuAccount *currentAccount = nil;
 
 + (void)setCurrentAccount:(WelcuAccount *)account
 {
+    if (currentAccount == account) return;
+
     FXKeychain *keychain = [FXKeychain defaultKeychain];
     
     @synchronized(self) {
-        // Loging out
+        
+        currentAccount = account;
+
         if (account) {
             keychain[@"access_token"] = account.accessToken;
             keychain[@"user"] = account.attributes;
             
         } else {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"WelcuAccountLoggedOut" object:nil];
+            // Loging out
             keychain[@"access_token"] = nil;
             keychain[@"user"] = nil;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"WelcuAccountLoggedOut" object:nil];
         }
         
-        currentAccount = account;
     }
 }
 
@@ -121,17 +125,6 @@ static WelcuAccount *currentAccount = nil;
 
 + (WelcuAccount *)loadAccount
 {
-    WelcuAccount *account = [[WelcuAccount alloc] initWithAccessToken:@"access_token"];
-    [account setAttributes:@{
-                             @"id" : @1,
-                             @"first_name" : @"Seba",
-                             @"last_name" : @"Gamboa",
-                             @"facebook_uid" : @"sagmor"
-                             }];
-    
-    return account;
- 
-    
     FXKeychain *keychain = [FXKeychain defaultKeychain];
     
     if (keychain[@"access_token"]) {

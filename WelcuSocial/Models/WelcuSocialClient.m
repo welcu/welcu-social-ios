@@ -16,8 +16,8 @@
 //NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu.com/social/v1/";
 //static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.dev/social/v1/";
 static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.192.168.5.123.xip.io/social/v1/";
-static NSString * const kWelcuSocialClientAPIClientId = @"APIKey";
-static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
+static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31a-a4470d6d6bb0";
+static NSString * const kWelcuSocialClientAPIClientSecret = @"FbQciVOWVa2mKhdt8cMCAg";
 
 
 @interface WelcuAccount (AccessToken)
@@ -35,8 +35,10 @@ static NSString * const kWelcuSocialClientAPIClientSecret = @"APISecret";
         self.account = account;
         
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
-        [self setDefaultHeader:@"Accept" value:@"application/json"];
-        [self setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", self.account.accessToken]];
+        [self setDefaultHeader:@"Accept"
+                         value:@"application/json"];
+        [self setDefaultHeader:@"Authorization"
+                         value:[NSString stringWithFormat:@"Bearer %@", self.account.accessToken]];
     }
     return self;
 }

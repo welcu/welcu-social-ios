@@ -106,8 +106,7 @@
 
 - (IBAction)loginButtonPressed:(id)sender
 {
-//    [self facebookLoggin];
-    [self authenticateWithFacebookAccessToken:@"facebook!"];
+    [self facebookLoggin];
 }
 
 - (void)viewDidLoad

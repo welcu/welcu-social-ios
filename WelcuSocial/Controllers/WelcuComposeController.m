@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *contentPhotoView;
 
 
 - (void)toggleFacebook:(UIBarButtonItem *)sender;
@@ -51,6 +52,13 @@ static WelcuComposeController *currentComposeController = nil;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    if (self.postImage) {
+        self.contentPhotoView.image = self.postImage;
+        self.contentPhotoView.transform = CGAffineTransformMakeRotation(0.2);
+    } else {
+        [self.contentPhotoView removeFromSuperview];
+    }
     
     NSMutableArray *shareButtons = [NSMutableArray array];
     
