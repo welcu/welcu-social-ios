@@ -18,6 +18,7 @@
 @dynamic headerPhoto;
 @dynamic startsAt;
 @dynamic endsAt;
+@dynamic eventID;
 @dynamic posts;
 @dynamic tickets;
 @dynamic activities;

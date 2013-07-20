@@ -26,13 +26,14 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb130580200330588</string>
+				<string>fb132119896836620</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>0.1.0</string>
 	<key>FacebookAppID</key>
-	<string>130580200330588</string>
+	<string>132119896836620</string>
 	<key>FacebookDisplayName</key>
 	<string>Welcu</string>
 	<key>Aviary-API-Key</key>

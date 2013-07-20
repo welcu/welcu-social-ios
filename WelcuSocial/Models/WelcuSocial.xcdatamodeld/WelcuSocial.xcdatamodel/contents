@@ -16,19 +16,27 @@
         <attribute name="participating" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="startsAt" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WelcuActivity" inverseName="event" inverseEntity="WelcuActivity" syncable="YES"/>
+        <relationship name="postDrafts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WelcuPostDraft" inverseName="event" inverseEntity="WelcuPostDraft" syncable="YES"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WelcuPost" inverseName="event" inverseEntity="WelcuPost" syncable="YES"/>
         <relationship name="tickets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WelcuTicket" inverseName="event" inverseEntity="WelcuTicket" syncable="YES"/>
     </entity>
     <entity name="WelcuPost" representedClassName="WelcuPost" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fetchedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="kind" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="subContent" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WelcuEvent" inverseName="posts" inverseEntity="WelcuEvent" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WelcuUser" inverseName="posts" inverseEntity="WelcuUser" syncable="YES"/>
+    </entity>
+    <entity name="WelcuPostDraft" representedClassName="WelcuPostDraft" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="kind" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="published" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WelcuEvent" inverseName="postDrafts" inverseEntity="WelcuEvent" syncable="YES"/>
     </entity>
     <entity name="WelcuTicket" representedClassName="WelcuTicket" syncable="YES">
         <attribute name="checkedAt" optional="YES" attributeType="Date" syncable="YES"/>
@@ -47,9 +55,10 @@
     </entity>
     <elements>
         <element name="WelcuActivity" positionX="468" positionY="27" width="128" height="103"/>
-        <element name="WelcuEvent" positionX="270" positionY="20" width="128" height="208"/>
+        <element name="WelcuEvent" positionX="270" positionY="20" width="128" height="223"/>
         <element name="WelcuPost" positionX="27" positionY="35" width="146" height="178"/>
         <element name="WelcuTicket" positionX="484" positionY="297" width="128" height="118"/>
         <element name="WelcuUser" positionX="270" positionY="296" width="126" height="133"/>
+        <element name="WelcuPostDraft" positionX="-0" positionY="288" width="128" height="118"/>
     </elements>
 </model>

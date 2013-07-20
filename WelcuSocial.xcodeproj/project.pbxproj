@@ -16,6 +16,8 @@
 		CE16DD21178F242200371025 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE16DD20178F242200371025 /* Social.framework */; };
 		CE16DD23178F242C00371025 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE16DD22178F242C00371025 /* AdSupport.framework */; };
 		CE16DD53178F326900371025 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD52178F326900371025 /* posts.json */; };
+		CE51B6591799DB5600482067 /* WelcuPostDraft.m in Sources */ = {isa = PBXBuildFile; fileRef = CE51B6581799DB5600482067 /* WelcuPostDraft.m */; };
+		CE51B65C1799DDE100482067 /* WelcuPostsDraftController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE51B65B1799DDE100482067 /* WelcuPostsDraftController.m */; };
 		CE71AD731794639F00598802 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE71AD721794639F00598802 /* SystemConfiguration.framework */; };
 		CE71AD761795B30200598802 /* NSFetchRequest+ServerContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CE71AD751795B30200598802 /* NSFetchRequest+ServerContext.m */; };
 		CE71ADB11797578A00598802 /* WelcuComposePhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE71ADB01797578A00598802 /* WelcuComposePhotoController.m */; };
@@ -98,6 +100,10 @@
 		CE16DD20178F242200371025 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		CE16DD22178F242C00371025 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		CE16DD52178F326900371025 /* posts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
+		CE51B6571799DB5600482067 /* WelcuPostDraft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuPostDraft.h; sourceTree = "<group>"; };
+		CE51B6581799DB5600482067 /* WelcuPostDraft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuPostDraft.m; sourceTree = "<group>"; };
+		CE51B65A1799DDE100482067 /* WelcuPostsDraftController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuPostsDraftController.h; sourceTree = "<group>"; };
+		CE51B65B1799DDE100482067 /* WelcuPostsDraftController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuPostsDraftController.m; sourceTree = "<group>"; };
 		CE71AD721794639F00598802 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CE71AD741795B30200598802 /* NSFetchRequest+ServerContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchRequest+ServerContext.h"; sourceTree = "<group>"; };
 		CE71AD751795B30200598802 /* NSFetchRequest+ServerContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchRequest+ServerContext.m"; sourceTree = "<group>"; };
@@ -372,6 +378,8 @@
 				CEBBD1ED17906D1000F3E36C /* WelcuActivity.m */,
 				CEBBD1E917906D0F00F3E36C /* WelcuPost.h */,
 				CEBBD1EA17906D0F00F3E36C /* WelcuPost.m */,
+				CE51B6571799DB5600482067 /* WelcuPostDraft.h */,
+				CE51B6581799DB5600482067 /* WelcuPostDraft.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -398,6 +406,8 @@
 				CE9D303E178B5DCB0016B8B8 /* WelcuComposeController.xib */,
 				CE9D303C178B5DCB0016B8B8 /* WelcuComposeController.h */,
 				CE9D303D178B5DCB0016B8B8 /* WelcuComposeController.m */,
+				CE51B65A1799DDE100482067 /* WelcuPostsDraftController.h */,
+				CE51B65B1799DDE100482067 /* WelcuPostsDraftController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -640,9 +650,11 @@
 				CEBBD1FD17906EBD00F3E36C /* WelcuSocialClient.m in Sources */,
 				CE7BEC1E177E0BC30006D75C /* main.m in Sources */,
 				CEBBD2061790947300F3E36C /* AFHTTPRequestOperationLogger.m in Sources */,
+				CE51B6591799DB5600482067 /* WelcuPostDraft.m in Sources */,
 				CE8E493E177F98E2006B1874 /* NSObject+ClassName.m in Sources */,
 				CE71ADB11797578A00598802 /* WelcuComposePhotoController.m in Sources */,
 				CE8E4930177F7269006B1874 /* UIImage+MaskedImages.m in Sources */,
+				CE51B65C1799DDE100482067 /* WelcuPostsDraftController.m in Sources */,
 				CE7BEC4A177E10D30006D75C /* WelcuMainViewController.m in Sources */,
 				CEBBD1EE17906D1000F3E36C /* WelcuActivity.m in Sources */,
 				CEBBD1F117906D1000F3E36C /* WelcuEvent.m in Sources */,

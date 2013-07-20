@@ -31,6 +31,8 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
 
 -(void)presentComposeControllerOn:(UIViewController *)controller
 {
+    if (!self.event) return;
+
     self.presentingViewController = controller;
     currentComposePhotoController = self;
 

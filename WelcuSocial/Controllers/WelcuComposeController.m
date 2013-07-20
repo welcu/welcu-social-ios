@@ -7,6 +7,7 @@
 //
 
 #import "WelcuComposeController.h"
+#import "WelcuPostDraft.h"
 
 @interface WelcuComposeController ()
 
@@ -92,6 +93,8 @@ static WelcuComposeController *currentComposeController = nil;
 
 - (void)presentComposeController
 {
+    if (!self.event) return;
+
     currentComposeController = self;
     
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
@@ -133,6 +136,21 @@ static WelcuComposeController *currentComposeController = nil;
 
 - (void)done:(id)sender
 {
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+
+    attributes[@"event"] = self.event;
+    if (self.contentTextView.text) {
+        attributes[@"content"] = self.contentTextView.text;
+    }
+    
+    if (self.postImage) {
+        attributes[@"photo"] = self.postImage;
+    }
+    
+    WelcuPostDraft *post = [WelcuPostDraft postDraftWithAttributes:attributes];
+    
+    [post startUpload];
+    
     [self dismissComposeController];
 }
 - (void)cancel:(id)sender

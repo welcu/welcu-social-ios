@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *headerPhoto;
+@property (nonatomic, retain) NSNumber *eventID;
 @property (nonatomic, retain) NSDate *startsAt;
 @property (nonatomic, retain) NSDate *endsAt;
 

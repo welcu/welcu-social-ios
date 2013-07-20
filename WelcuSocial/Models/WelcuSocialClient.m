@@ -13,9 +13,9 @@
 #import "WelcuAccount.h"
 #import "WelcuEvent.h"
 
-//NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu.com/social/v1/";
+NSString * const kWelcuSocialClientAPIBaseURLString = @"https://api.welcu.com/social/v1/";
 //static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.dev/social/v1/";
-static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.192.168.5.123.xip.io/social/v1/";
+//static NSString * const kWelcuSocialClientAPIBaseURLString = @"http://api.welcu.192.168.5.123.xip.io/social/v1/";
 static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31a-a4470d6d6bb0";
 //static NSString * const kWelcuSocialClientAPIClientSecret = @"FbQciVOWVa2mKhdt8cMCAg";
 
