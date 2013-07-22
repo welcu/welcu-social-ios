@@ -45,8 +45,9 @@ static UINib *viewNib;
 {
     _event = event;
     
-    [self setHeaderImage:[UIImage imageNamed:@"DefaultEventHeader"]];
+    self.eventNameLabel.text = event.name;
     
+    [self setHeaderImage:[UIImage imageNamed:@"DefaultEventHeader"]];
     if (event.headerPhoto) {
         NSURLRequest *request = [NSURLRequest requestWithURL:event.headerPhotoURL];
         

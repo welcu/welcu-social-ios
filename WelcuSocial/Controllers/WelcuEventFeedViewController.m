@@ -30,6 +30,8 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 @interface WelcuEventFeedViewController () <NSFetchedResultsControllerDelegate>
 
+@property (nonatomic,strong) NSTimer *refetchTimer;
+
 @property (nonatomic,assign, getter = isComposeMenuVisible) BOOL composeMenuVisible;
 @property (nonatomic,strong) WelcuEventHeaderView *headerView;
 @property (nonatomic,strong)  UINavigationBar *navigationBar;
@@ -130,11 +132,20 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
             self.navigationBar.items = @[nav];
         }
     });
+    
+    self.refetchTimer = [NSTimer scheduledTimerWithTimeInterval:10
+                                                         target:self
+                                                       selector:@selector(refetchData)
+                                                       userInfo:nil
+                                                        repeats:YES];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
+    [self.refetchTimer invalidate];
+    self.refetchTimer = nil;
 //    [self.navigationController.navigationBar setBackgroundImage:nil
 //                                                  forBarMetrics:UIBarMetricsDefault];
 }
