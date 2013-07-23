@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		CE4FCDDA179F388D00DF5BE4 /* Testflight Release */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = CE4FCDDD179F388E00DF5BE4 /* Build configuration list for PBXAggregateTarget "Testflight Release" */;
+			buildPhases = (
+				CE4FCDE0179F38C400DF5BE4 /* Build Testflight Package */,
+			);
+			dependencies = (
+				CE4FCDDF179F389C00DF5BE4 /* PBXTargetDependency */,
+			);
+			name = "Testflight Release";
+			productName = "Testflight Release";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		9A2922333221434C8C447671 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEE0432ED3E4A3F9BC588C8 /* libPods.a */; };
 		CE16DC92178B723D00371025 /* WelcuComposeController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D303D178B5DCB0016B8B8 /* WelcuComposeController.m */; };
@@ -85,6 +100,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CE4FCDDE179F389C00DF5BE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE7BEC06177E0BC30006D75C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE7BEC0D177E0BC30006D75C;
+			remoteInfo = WelcuSocial;
+		};
 		CE7BEC2E177E0BC30006D75C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE7BEC06177E0BC30006D75C /* Project object */;
@@ -521,6 +543,7 @@
 				CE7BEC0B177E0BC30006D75C /* Frameworks */,
 				CE7BEC0C177E0BC30006D75C /* Resources */,
 				9CA53E26F0D240F09CC64BFD /* Copy Pods Resources */,
+				CE4FCDE1179F38FE00DF5BE4 /* Set bundle version to current git revision */,
 			);
 			buildRules = (
 			);
@@ -592,6 +615,7 @@
 			targets = (
 				CE7BEC0D177E0BC30006D75C /* WelcuSocial */,
 				CE7BEC28177E0BC30006D75C /* WelcuSocialTests */,
+				CE4FCDDA179F388D00DF5BE4 /* Testflight Release */,
 			);
 		};
 /* End PBXProject section */
@@ -663,6 +687,34 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
+		CE4FCDE0179F38C400DF5BE4 /* Build Testflight Package */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Testflight Package";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Building Testfligh distributable\"\nmkdir $BUILT_PRODUCTS_DIR/Payload\ncp -r $BUILT_PRODUCTS_DIR/WelcuSocial.app $BUILT_PRODUCTS_DIR/Payload/\nzip -y -r $BUILT_PRODUCTS_DIR/WelcuSocial.ipa $BUILT_PRODUCTS_DIR/Payload/\nrm -rf $BUILT_PRODUCTS_DIR/Payload\n";
+		};
+		CE4FCDE1179F38FE00DF5BE4 /* Set bundle version to current git revision */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set bundle version to current git revision";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$CONFIGURATION\" '==' \"Debug\" ]; then\n    REVISION=`git rev-parse --short HEAD`\n    echo \"Setting Bundle Identifer to $REVISION\"\n    /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $REVISION\" $BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -723,6 +775,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CE4FCDDF179F389C00DF5BE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE7BEC0D177E0BC30006D75C /* WelcuSocial */;
+			targetProxy = CE4FCDDE179F389C00DF5BE4 /* PBXContainerItemProxy */;
+		};
 		CE7BEC2F177E0BC30006D75C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CE7BEC0D177E0BC30006D75C /* WelcuSocial */;
@@ -750,6 +807,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CE4FCDDB179F388E00DF5BE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CE4FCDDC179F388E00DF5BE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		CE7BEC38177E0BC30006D75C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -895,6 +966,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CE4FCDDD179F388E00DF5BE4 /* Build configuration list for PBXAggregateTarget "Testflight Release" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE4FCDDB179F388E00DF5BE4 /* Debug */,
+				CE4FCDDC179F388E00DF5BE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CE7BEC09177E0BC30006D75C /* Build configuration list for PBXProject "WelcuSocial" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
