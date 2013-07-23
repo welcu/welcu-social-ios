@@ -185,7 +185,7 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
         if (representation[@"header_photo"])
             result[@"headerPhoto"] = representation[@"header_photo"];
         
-        if (YES) {
+        if (response.URL.pathComponents.count >=5 && [response.URL.pathComponents[4] isEqualToString:@"me"]) {
             result[@"participating"] = @(YES);
         }
     }
@@ -209,16 +209,52 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
 {
     NSMutableURLRequest *result = nil;
     if ([fetchRequest.entity.name isEqualToString:@"WelcuPost"]) {
-        WelcuEvent *event = (WelcuEvent *)[(id)[fetchRequest predicate] rightExpression];
-        // fetchRequest.serverContext[@"eventID"]
-        // fetchRequest.serverContext[@"parameters"]
+        // [NSPredicate predicateWithFormat:@"event = %@" argumentArray:@[self.event]];
+        WelcuEvent *event = [[(NSComparisonPredicate *)[fetchRequest predicate] rightExpression] constantValue];
         result = [self requestWithMethod:@"GET"
-                                    path:[NSString stringWithFormat:@"events/%@/posts", @1]
+                                    path:[NSString stringWithFormat:@"events/%@/posts", event.eventID]
                               parameters:nil];
     } else if ([fetchRequest.entity.name isEqualToString:@"WelcuEvent"]) {
+        if (fetchRequest.fetchLimit == 1) return nil;
+        
+        NSString *path = @"events";
+        
+        if (fetchRequest.predicate) {
+            NSArray *predicates = nil;
+            if ([fetchRequest.predicate isKindOfClass:[NSCompoundPredicate class]]) {
+                predicates = [(NSCompoundPredicate*)fetchRequest.predicate subpredicates];
+            } else {
+                predicates = @[ fetchRequest.predicate ];
+            }
+            
+            for (NSComparisonPredicate *predicate in predicates) {
+                if ([predicate.leftExpression.keyPath isEqualToString:@"participating"]) {
+                    // [NSPredicate predicateWithFormat:@"participating = %@" argumentArray:@[@(YES)]];
+                    path = [NSString stringWithFormat:@"me/%@", path];
+                } else if ([predicate.leftExpression.keyPath isEqualToString:@"endsAt"]) {
+                    switch (predicate.predicateOperatorType) {
+                        case NSGreaterThanPredicateOperatorType:
+                        case NSGreaterThanOrEqualToPredicateOperatorType:
+                            // [NSPredicate predicateWithFormat:@"endsAt >= %@" argumentArray:@[[NSDate date]]];
+                            path = [NSString stringWithFormat:@"%@/upcoming", path];
+                            break;
+                        case NSLessThanPredicateOperatorType:
+                        case NSLessThanOrEqualToPredicateOperatorType:
+                            // [NSPredicate predicateWithFormat:@"endsAt <= %@" argumentArray:@[[NSDate date]]];
+                            path = [NSString stringWithFormat:@"%@/past", path];
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                DDLogInfo(@"%@", predicate);
+            }
+            
+        }
+        
         result = [self requestWithMethod:@"GET"
-                                    path:@"events"
-                              parameters:fetchRequest.serverContext[@"parameters"]];
+                                    path:path
+                              parameters:nil];
     } else {
         result = [super requestForFetchRequest:fetchRequest withContext:context];
     }

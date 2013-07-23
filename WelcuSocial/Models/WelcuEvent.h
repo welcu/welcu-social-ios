@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSNumber *eventID;
 @property (nonatomic, retain) NSDate *startsAt;
 @property (nonatomic, retain) NSDate *endsAt;
+@property (nonatomic, retain) NSDate *accessedAt;
 
 @property (nonatomic, retain) NSSet *posts;
 @property (nonatomic, retain) NSSet *tickets;

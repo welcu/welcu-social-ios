@@ -12,6 +12,6 @@
 
 @interface WelcuEventPostTextCell : UITableViewCell <WelcuEventPostCell>
 
-@property (weak, nonatomic) IBOutlet AMAttributedHighlightLabel *postContentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *postContentLabel;
 
 @end

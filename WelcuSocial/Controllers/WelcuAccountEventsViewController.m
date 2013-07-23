@@ -32,9 +32,10 @@
     [super viewDidLoad];
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"WelcuEvent"];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"participating = %@ AND endsAt > %@" argumentArray:@[@(YES), [NSDate date]]];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"participating = %@ AND endsAt >= %@"
+                                                argumentArray:@[@(YES), [NSDate date]]];
     fetchRequest.sortDescriptors = @[
-                                     [NSSortDescriptor sortDescriptorWithKey:@"accessedAt" ascending:NO]
+                                     [NSSortDescriptor sortDescriptorWithKey:@"startsAt" ascending:YES]
                                      ];
     fetchRequest.fetchLimit = 20;
     

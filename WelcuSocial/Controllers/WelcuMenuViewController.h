@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WelcuMenuViewController : UITableViewController
+@interface WelcuMenuViewController : UIViewController
+
+@property (nonatomic,weak) IBOutlet UITableView *tableView;
 
 @end

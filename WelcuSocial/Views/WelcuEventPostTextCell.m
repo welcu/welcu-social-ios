@@ -19,9 +19,9 @@
     self.postContentLabel.font = [UIFont fontWithName:@"GothamLight" size:17];
     
     self.postContentLabel.textColor = [UIColor welcuDarkGrey];
-    self.postContentLabel.mentionTextColor =
-        self.postContentLabel.hashtagTextColor =
-        self.postContentLabel.linkTextColor = [UIColor welcuPurple];
+//    self.postContentLabel.mentionTextColor =
+//        self.postContentLabel.hashtagTextColor =
+//        self.postContentLabel.linkTextColor = [UIColor welcuPurple];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -40,7 +40,8 @@
     _post = post;
     
     // Set post content string
-    [self.postContentLabel setString:post.content];
+    self.postContentLabel.text = post.content;
+//    [self.postContentLabel setString:post.content];
 }
 
 + (CGFloat)rowHeightForPost:(WelcuPost *)post

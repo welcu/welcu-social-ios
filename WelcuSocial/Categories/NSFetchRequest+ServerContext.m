@@ -9,7 +9,7 @@
 #import "NSFetchRequest+ServerContext.h"
 #import <objc/runtime.h>
 
-static char kNSFetchRequestServerContextObjectKey;
+static char *kNSFetchRequestServerContextObjectKey;
 
 @implementation NSFetchRequest (ServerContext)
 
@@ -20,7 +20,7 @@ static char kNSFetchRequestServerContextObjectKey;
 
 - (void)setServerContext:(id)serverContext
 {
-    objc_setAssociatedObject(self, &kNSFetchRequestServerContextObjectKey, serverContext, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &kNSFetchRequestServerContextObjectKey, serverContext, OBJC_ASSOCIATION_RETAIN);
 }
 
 @end

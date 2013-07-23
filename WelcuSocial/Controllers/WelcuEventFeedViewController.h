@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WelcuEvent.h"
 
 @interface WelcuEventFeedViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
-@property (strong) id event;
+@property (strong) WelcuEvent *event;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *composeButton;

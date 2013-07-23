@@ -22,6 +22,7 @@
 @dynamic posts;
 @dynamic tickets;
 @dynamic activities;
+@dynamic accessedAt;
 
 - (NSURL *)headerPhotoURL
 {
