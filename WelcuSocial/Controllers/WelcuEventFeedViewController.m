@@ -120,6 +120,7 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    [self setNeedsStatusBarAppearanceUpdate];
     DDLogInfo(@"viewDidAppear:");
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [self scrollViewDidScroll:self.tableView];
@@ -298,6 +299,10 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 //        self.composeMenuVisible = YES;
 //        [self.composeMenu itemsWillAppearFromButton:self.composeButton withFrame:self.composeButton.frame inView:self.view];
 //    }
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 # pragma mark UIScrollViewDelegate

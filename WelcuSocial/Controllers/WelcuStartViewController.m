@@ -95,4 +95,8 @@
 //    [self presentLoginViewAnimated:YES];
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 @end

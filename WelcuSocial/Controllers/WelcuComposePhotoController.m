@@ -32,6 +32,8 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
 -(void)presentComposeControllerOn:(UIViewController *)controller
 {
     if (!self.event) return;
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 
     self.presentingViewController = controller;
     currentComposePhotoController = self;
@@ -89,6 +91,8 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
 }
 - (void)imagePickerDidCancel:(GKImagePicker *)imagePicker
 {
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     
 //    if (imagePicker == self.mainImagePicker) {
@@ -136,6 +140,7 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
 
 - (void)photoEditorCanceled:(AFPhotoEditorController *)editor
 {
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 //    [self.mainImagePicker.imagePickerController dismissViewControllerAnimated:YES completion:nil];
 }

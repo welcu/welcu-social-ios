@@ -16,17 +16,12 @@
 
 @implementation WelcuMenuUserProfileCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
 - (void)awakeFromNib
 {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.backgroundColor = [UIColor clearColor];
+    self.userNameLabel.font = [UIFont fontWithName:@"MuseoSans-700" size:18];
+    
     self.userNameLabel.text = [[WelcuAccount currentAccount] fullName];
 
     NSURLRequest *request = [NSURLRequest requestWithURL:[[WelcuAccount currentAccount] pictureURL]];
@@ -34,13 +29,6 @@
     [self.userProfileImageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
         self.userProfileImageView.image = [image maskWithImage:[UIImage imageNamed:@"UserPhotoMask"]];
     } failure:nil];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (IBAction)userSettingsSelected:(id)sender {
