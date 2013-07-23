@@ -76,7 +76,7 @@
 #define COCOAPODS_POD_AVAILABLE_FontasticIcons
 #define COCOAPODS_VERSION_MAJOR_FontasticIcons 0
 #define COCOAPODS_VERSION_MINOR_FontasticIcons 4
-#define COCOAPODS_VERSION_PATCH_FontasticIcons 0
+#define COCOAPODS_VERSION_PATCH_FontasticIcons 1
 
 // GKImagePicker
 #define COCOAPODS_POD_AVAILABLE_GKImagePicker
@@ -107,7 +107,7 @@
 #define COCOAPODS_POD_AVAILABLE_JASidePanels
 #define COCOAPODS_VERSION_MAJOR_JASidePanels 1
 #define COCOAPODS_VERSION_MINOR_JASidePanels 3
-#define COCOAPODS_VERSION_PATCH_JASidePanels 1
+#define COCOAPODS_VERSION_PATCH_JASidePanels 2
 
 // MHPrettyDate
 #define COCOAPODS_POD_AVAILABLE_MHPrettyDate
@@ -130,7 +130,7 @@
 // NewRelicAgent
 #define COCOAPODS_POD_AVAILABLE_NewRelicAgent
 #define COCOAPODS_VERSION_MAJOR_NewRelicAgent 1
-#define COCOAPODS_VERSION_MINOR_NewRelicAgent 342
+#define COCOAPODS_VERSION_MINOR_NewRelicAgent 354
 #define COCOAPODS_VERSION_PATCH_NewRelicAgent 0
 
 // OHAttributedLabel

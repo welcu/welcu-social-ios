@@ -2,7 +2,7 @@ platform :ios, "6.0"
 
 pod 'AFNetworking', '~> 1.3.1'
 pod 'AFIncrementalStore'
-pod 'NPRImageView'
+pod 'NPRImageView', podspec: 'Vendor/NPRImageView.podspec'
 
 pod 'MHPrettyDate'
 
