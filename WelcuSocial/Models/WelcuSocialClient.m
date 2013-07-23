@@ -26,7 +26,7 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
 
 @implementation WelcuSocialClient
 
-#pragma mark Initialization
+#pragma mark - Initialization
 
 - (instancetype)initWithAccount:(WelcuAccount *)account
 {
