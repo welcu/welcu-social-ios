@@ -109,11 +109,23 @@
 #define COCOAPODS_VERSION_MINOR_JASidePanels 3
 #define COCOAPODS_VERSION_PATCH_JASidePanels 1
 
+// MHPrettyDate
+#define COCOAPODS_POD_AVAILABLE_MHPrettyDate
+#define COCOAPODS_VERSION_MAJOR_MHPrettyDate 1
+#define COCOAPODS_VERSION_MINOR_MHPrettyDate 1
+#define COCOAPODS_VERSION_PATCH_MHPrettyDate 0
+
 // MJPopupViewController
 #define COCOAPODS_POD_AVAILABLE_MJPopupViewController
 #define COCOAPODS_VERSION_MAJOR_MJPopupViewController 0
 #define COCOAPODS_VERSION_MINOR_MJPopupViewController 4
 #define COCOAPODS_VERSION_PATCH_MJPopupViewController 0
+
+// NPRImageView
+#define COCOAPODS_POD_AVAILABLE_NPRImageView
+#define COCOAPODS_VERSION_MAJOR_NPRImageView 1
+#define COCOAPODS_VERSION_MINOR_NPRImageView 0
+#define COCOAPODS_VERSION_PATCH_NPRImageView 0
 
 // NewRelicAgent
 #define COCOAPODS_POD_AVAILABLE_NewRelicAgent
@@ -156,4 +168,16 @@
 #define COCOAPODS_VERSION_MAJOR_TransformerKit 0
 #define COCOAPODS_VERSION_MINOR_TransformerKit 2
 #define COCOAPODS_VERSION_PATCH_TransformerKit 4
+
+// libextobjc/EXTScope
+#define COCOAPODS_POD_AVAILABLE_libextobjc_EXTScope
+#define COCOAPODS_VERSION_MAJOR_libextobjc_EXTScope 0
+#define COCOAPODS_VERSION_MINOR_libextobjc_EXTScope 2
+#define COCOAPODS_VERSION_PATCH_libextobjc_EXTScope 5
+
+// libextobjc/RuntimeExtensions
+#define COCOAPODS_POD_AVAILABLE_libextobjc_RuntimeExtensions
+#define COCOAPODS_VERSION_MAJOR_libextobjc_RuntimeExtensions 0
+#define COCOAPODS_VERSION_MINOR_libextobjc_RuntimeExtensions 2
+#define COCOAPODS_VERSION_PATCH_libextobjc_RuntimeExtensions 5
 

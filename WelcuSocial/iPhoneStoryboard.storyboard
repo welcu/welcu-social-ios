@@ -91,7 +91,7 @@
                     <view key="view" contentMode="scaleToFill" id="Sgv-BF-RBg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -100,32 +100,22 @@
             </objects>
             <point key="canvasLocation" x="903" y="-87"/>
         </scene>
-        <!--Table View Controller - My Events-->
+        <!--Welcu Account Events View Controller - My Events-->
         <scene sceneID="4Eb-fA-0yN">
             <objects>
-                <tableViewController id="QSE-1q-8ft" sceneMemberID="viewController">
+                <tableViewController id="QSE-1q-8ft" customClass="WelcuAccountEventsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WJ0-Ce-DdM">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BiT-v1-f2w">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BiT-v1-f2w" id="Cqv-uJ-qlT">
-                                    <rect key="frame" x="0.0" y="0.0" width="289" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="BZ9-fv-NTk" kind="push" id="Ohs-cu-QWo"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="My Events" id="6VS-4R-HQ0"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <segue destination="BZ9-fv-NTk" kind="push" identifier="WelcuEventFeedViewController" id="fK1-fh-PVy"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmD-uX-ob1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -334,8 +324,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1ld-4Z-SPg">
-                                <rect key="frame" x="0.0" y="30" width="320" height="474"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1ld-4Z-SPg">
+                                <rect key="frame" x="0.0" y="60" width="320" height="444"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -368,7 +358,7 @@
                             <constraint firstItem="1ld-4Z-SPg" firstAttribute="leading" secondItem="Bzi-Z7-Fpi" secondAttribute="leading" id="6jQ-4y-CkF"/>
                             <constraint firstAttribute="trailing" secondItem="cou-Cm-lof" secondAttribute="trailing" constant="20" id="Kyx-vC-o24"/>
                             <constraint firstAttribute="bottom" secondItem="cou-Cm-lof" secondAttribute="bottom" constant="20" id="b0w-sh-gdq"/>
-                            <constraint firstItem="1ld-4Z-SPg" firstAttribute="top" secondItem="Bzi-Z7-Fpi" secondAttribute="top" constant="30" id="rZb-KQ-Bbh"/>
+                            <constraint firstItem="1ld-4Z-SPg" firstAttribute="top" secondItem="Bzi-Z7-Fpi" secondAttribute="top" constant="60" id="rZb-KQ-Bbh"/>
                             <constraint firstItem="1ld-4Z-SPg" firstAttribute="trailing" secondItem="Bzi-Z7-Fpi" secondAttribute="trailing" id="rxP-N1-8UH"/>
                             <constraint firstItem="1ld-4Z-SPg" firstAttribute="bottom" secondItem="Bzi-Z7-Fpi" secondAttribute="bottom" id="wUY-6u-QQX"/>
                         </constraints>
@@ -678,8 +668,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="85k-t6-fAX"/>
+        <segue reference="ooA-vE-6Vq"/>
+        <segue reference="fK1-fh-PVy"/>
         <segue reference="Oos-e7-euB"/>
-        <segue reference="BB7-lJ-ohz"/>
     </inferredMetricsTieBreakers>
 </document>

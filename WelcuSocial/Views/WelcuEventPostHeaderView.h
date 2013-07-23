@@ -13,5 +13,6 @@
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *userImageView;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *postDateLabel;
 
 @end

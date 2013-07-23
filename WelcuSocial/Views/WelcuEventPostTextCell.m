@@ -14,7 +14,7 @@
 - (void)awakeFromNib
 {
     self.postContentLabel.numberOfLines = 0;
-    self.postContentLabel.lineBreakMode = NSLineBreakByCharWrapping;
+    self.postContentLabel.lineBreakMode = NSLineBreakByWordWrapping;
 
     self.postContentLabel.font = [UIFont fontWithName:@"GothamLight" size:17];
     
@@ -45,7 +45,16 @@
 
 + (CGFloat)rowHeightForPost:(WelcuPost *)post
 {
-    return 100;
+    if (!post.cachedContentHeight) {
+        CGSize expectedSize = [post.content sizeWithFont:[UIFont fontWithName:@"GothamLight" size:17]
+                                       constrainedToSize:CGSizeMake(238, 10000000000)
+                                           lineBreakMode:NSLineBreakByWordWrapping];
+        
+        
+        post.cachedContentHeight = @(expectedSize.height);
+    }
+    
+    return [post.cachedContentHeight floatValue] + 20;
 }
 
 @end

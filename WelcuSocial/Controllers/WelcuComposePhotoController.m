@@ -77,6 +77,8 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
 {
     AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:image];
     
+    editorController.view.tintColor = [UIColor welcuDarkGrey];
+    
     [editorController setDelegate:self];
     
     [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];

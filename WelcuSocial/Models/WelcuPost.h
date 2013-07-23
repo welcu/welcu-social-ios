@@ -18,6 +18,8 @@
 @property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) NSString * photo;
 @property (nonatomic, retain) NSString * link;
+@property (nonatomic, retain) NSDate * createdAt;
+@property (nonatomic, retain) NSNumber *cachedContentHeight;
 @property (nonatomic, retain) WelcuEvent *event;
 @property (nonatomic, retain) WelcuUser *user;
 

@@ -152,6 +152,7 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
     
     if ([[entity name] isEqualToString:@"WelcuPost"]) {
         result[@"postID"] = representation[@"id"];
+        result[@"createdAt"] = [dateTransformer reverseTransformedValue:representation[@"created_at"]];
         
         if (representation[@"content"])
             result[@"content"] = representation[@"content"];

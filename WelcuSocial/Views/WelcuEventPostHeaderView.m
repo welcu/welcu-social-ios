@@ -8,6 +8,7 @@
 
 #import "WelcuEventPostHeaderView.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import <MHPrettyDate/MHPrettyDate.h>
 
 #import "UIImage+MaskedImages.h"
 #import "WelcuPost.h"
@@ -24,6 +25,7 @@
 - (void)awakeFromNib
 {
     self.userNameLabel.font = [UIFont fontWithName:@"GothamMedium" size:17];
+    self.postDateLabel.font = [UIFont fontWithName:@"GothamLight" size:13];
 }
 
 - (void)setPost:(WelcuPost *)post
@@ -32,7 +34,9 @@
     
     // Set post user name
     self.userNameLabel.text = post.user.fullName;
-    
+    self.postDateLabel.text = [MHPrettyDate prettyDateFromDate:post.createdAt
+                                                    withFormat:MHPrettyDateLongRelativeTime];
+
     // Load post user image
     NSURLRequest *request = [NSURLRequest requestWithURL:post.user.pictureURL];
     [self.userImageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {

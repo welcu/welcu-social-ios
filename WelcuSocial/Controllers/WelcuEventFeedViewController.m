@@ -15,6 +15,7 @@
 #import <PCStackMenu/PCStackMenu.h>
 
 #import "WelcuAccount.h"
+#import "WelcuPost.h"
 
 #import "WelcuEventFeedViewCell.h"
 #import "WelcuComposeController.h"
@@ -23,6 +24,7 @@
 #import "WelcuEventPostCell.h"
 #import "WelcuEventPostHeaderView.h"
 #import "WelcuEventPostTextCell.h"
+#import "WelcuEventPostPhotoCell.h"
 #import "WelcuEventHeaderView.h"
 
 NSString const * kWelcuEventPostHeaderViewClassName = @"WelcuEventPostHeaderView";
@@ -78,6 +80,12 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
     [self.tableView registerNib:[UINib nibWithNibName:(NSString *)kWelcuEventPostTextCellClassName
                                                bundle:nil] forCellReuseIdentifier:(NSString *)kWelcuEventPostTextCellClassName];
+
+    [self.tableView registerNib:[UINib nibWithNibName:@"WelcuEventPostPhotoCell"
+                                               bundle:nil]
+         forCellReuseIdentifier:@"WelcuEventPostPhotoCell"];
+    
+    
     
     self.navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 15, self.view.bounds.size.width, 44)];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"ClearPixel"]
@@ -105,13 +113,16 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    DDLogInfo(@"viewWillAppear:");
     [self scrollViewDidScroll:self.tableView];
-    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    DDLogInfo(@"viewDidAppear:");
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self scrollViewDidScroll:self.tableView];
     dispatch_async(dispatch_get_main_queue(), ^{
         if (![self.navigationBar.items count]) {
             UINavigationItem *nav = [[UINavigationItem alloc] initWithTitle:@"Event Feed"];
@@ -120,6 +131,13 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
                                                                          style:self.navigationItem.leftBarButtonItem.style
                                                                         target:self.navigationItem.leftBarButtonItem.target
                                                                         action:self.navigationItem.leftBarButtonItem.action];
+            } else if ([self.navigationController.viewControllers firstObject] != self) {
+                // Backbutton
+                nav.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back"
+                                                                         style:UIBarButtonItemStylePlain
+                                                                        target:self
+                                                                        action:@selector(navigationControllerBack)];
+
             } else {
                 nav.leftBarButtonItem = [self.sidePanelController leftButtonForCenterPanel];
             }
@@ -140,8 +158,22 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
                                                         repeats:YES];
 }
 
+- (void)navigationControllerBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    DDLogInfo(@"viewWillDisappear:");
+//    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillDisappear:animated];
+}
+
 - (void)viewDidDisappear:(BOOL)animated
 {
+    DDLogInfo(@"viewDidDisappear:");
+    [super viewDidDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
     [self.refetchTimer invalidate];
@@ -166,7 +198,14 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    WelcuPost *post = [self postAtIndex:section];
+    
+    if (post.photo) {
+        return 2;
+    } else {
+        return 1;
+    }
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -185,16 +224,29 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [WelcuEventPostTextCell rowHeightForPost:[self postAtIndex:indexPath.section]];
+    WelcuPost *post = [self postAtIndex:indexPath.section];
+    
+    if (post.photo && indexPath.row == 0) {
+        return [WelcuEventPostPhotoCell rowHeightForPost:post];
+    } else {
+        return [WelcuEventPostTextCell rowHeightForPost:post];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    WelcuPost *post = [self postAtIndex:indexPath.section];
     
-    UITableViewCell <WelcuEventPostCell> *cell = [self.tableView dequeueReusableCellWithIdentifier:(NSString *)kWelcuEventPostTextCellClassName forIndexPath:indexPath];
+    UITableViewCell <WelcuEventPostCell> *cell = nil;
     
-    cell.post = [self postAtIndex:indexPath.section];
+    if (post.photo && indexPath.row == 0) {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:@"WelcuEventPostPhotoCell" forIndexPath:indexPath];
+    } else {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:(NSString *)kWelcuEventPostTextCellClassName forIndexPath:indexPath];
+    }
+
+    cell.post = post;
     
     return cell;
 }

@@ -110,11 +110,13 @@
 
 - (void)setupApperance
 {
-    self.window.tintColor = [UIColor whiteColor];
+    if ([self.window respondsToSelector:@selector(setTintColor:)]) {
+        self.window.tintColor = [UIColor whiteColor];
+        [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    }
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            UITextAttributeTextColor : [UIColor whiteColor],
                                                            UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-500" size:20]

@@ -18,6 +18,7 @@
 		CE16DD53178F326900371025 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD52178F326900371025 /* posts.json */; };
 		CE51B6591799DB5600482067 /* WelcuPostDraft.m in Sources */ = {isa = PBXBuildFile; fileRef = CE51B6581799DB5600482067 /* WelcuPostDraft.m */; };
 		CE51B65C1799DDE100482067 /* WelcuPostsDraftController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE51B65B1799DDE100482067 /* WelcuPostsDraftController.m */; };
+		CE542976179DE128000E55E7 /* WelcuAccountEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE542975179DE128000E55E7 /* WelcuAccountEventsViewController.m */; };
 		CE71AD731794639F00598802 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE71AD721794639F00598802 /* SystemConfiguration.framework */; };
 		CE71AD761795B30200598802 /* NSFetchRequest+ServerContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CE71AD751795B30200598802 /* NSFetchRequest+ServerContext.m */; };
 		CE71ADB11797578A00598802 /* WelcuComposePhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE71ADB01797578A00598802 /* WelcuComposePhotoController.m */; };
@@ -104,6 +105,8 @@
 		CE51B6581799DB5600482067 /* WelcuPostDraft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuPostDraft.m; sourceTree = "<group>"; };
 		CE51B65A1799DDE100482067 /* WelcuPostsDraftController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuPostsDraftController.h; sourceTree = "<group>"; };
 		CE51B65B1799DDE100482067 /* WelcuPostsDraftController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuPostsDraftController.m; sourceTree = "<group>"; };
+		CE542974179DE128000E55E7 /* WelcuAccountEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuAccountEventsViewController.h; sourceTree = "<group>"; };
+		CE542975179DE128000E55E7 /* WelcuAccountEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuAccountEventsViewController.m; sourceTree = "<group>"; };
 		CE71AD721794639F00598802 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CE71AD741795B30200598802 /* NSFetchRequest+ServerContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchRequest+ServerContext.h"; sourceTree = "<group>"; };
 		CE71AD751795B30200598802 /* NSFetchRequest+ServerContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchRequest+ServerContext.m"; sourceTree = "<group>"; };
@@ -408,6 +411,8 @@
 				CE9D303D178B5DCB0016B8B8 /* WelcuComposeController.m */,
 				CE51B65A1799DDE100482067 /* WelcuPostsDraftController.h */,
 				CE51B65B1799DDE100482067 /* WelcuPostsDraftController.m */,
+				CE542974179DE128000E55E7 /* WelcuAccountEventsViewController.h */,
+				CE542975179DE128000E55E7 /* WelcuAccountEventsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -646,6 +651,7 @@
 				CE9D2FE8178757F50016B8B8 /* WelcuEventStreamingView.m in Sources */,
 				CEBBD20117908ED000F3E36C /* WelcuSocial.xcdatamodeld in Sources */,
 				CEBBD1EB17906D0F00F3E36C /* WelcuPost.m in Sources */,
+				CE542976179DE128000E55E7 /* WelcuAccountEventsViewController.m in Sources */,
 				CE16DC92178B723D00371025 /* WelcuComposeController.m in Sources */,
 				CEBBD1FD17906EBD00F3E36C /* WelcuSocialClient.m in Sources */,
 				CE7BEC1E177E0BC30006D75C /* main.m in Sources */,

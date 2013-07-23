@@ -21,7 +21,9 @@
         <relationship name="tickets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WelcuTicket" inverseName="event" inverseEntity="WelcuTicket" syncable="YES"/>
     </entity>
     <entity name="WelcuPost" representedClassName="WelcuPost" syncable="YES">
+        <attribute name="cachedContentHeight" optional="YES" attributeType="Float" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="fetchedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="kind" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
@@ -56,9 +58,9 @@
     <elements>
         <element name="WelcuActivity" positionX="468" positionY="27" width="128" height="103"/>
         <element name="WelcuEvent" positionX="270" positionY="20" width="128" height="223"/>
-        <element name="WelcuPost" positionX="27" positionY="35" width="146" height="178"/>
+        <element name="WelcuPost" positionX="27" positionY="35" width="146" height="208"/>
+        <element name="WelcuPostDraft" positionX="-0" positionY="288" width="128" height="118"/>
         <element name="WelcuTicket" positionX="484" positionY="297" width="128" height="118"/>
         <element name="WelcuUser" positionX="270" positionY="296" width="126" height="133"/>
-        <element name="WelcuPostDraft" positionX="-0" positionY="288" width="128" height="118"/>
     </elements>
 </model>

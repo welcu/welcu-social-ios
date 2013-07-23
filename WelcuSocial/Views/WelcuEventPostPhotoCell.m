@@ -7,8 +7,14 @@
 //
 
 #import "WelcuEventPostPhotoCell.h"
+#import "WelcuPost.h"
 
 @implementation WelcuEventPostPhotoCell
+
+- (void)awakeFromNib
+{
+
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
@@ -24,13 +30,13 @@
 {
     _post = post;
     
-    // Do something
-    
+    [self.postPhotoView setImageWithContentsOfURL:[NSURL URLWithString:post.photo]
+                                 placeholderImage:nil];
 }
 
 + (CGFloat)rowHeightForPost:(WelcuPost *)post
 {
-    return 0;
+    return 320;
 }
 
 @end

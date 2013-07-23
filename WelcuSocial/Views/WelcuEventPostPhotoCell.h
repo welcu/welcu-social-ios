@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "WelcuEventPostCell.h"
+#import <NPRImageView/NPRImageView.h>
 
 @interface WelcuEventPostPhotoCell : UITableViewCell <WelcuEventPostCell>
+
+@property (weak,nonatomic) IBOutlet NPRImageView *postPhotoView;
 
 @end

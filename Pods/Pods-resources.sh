@@ -51,6 +51,8 @@ install_resource 'GKImagePicker/GKImages/PLCameraSheetDoneButton.png'
 install_resource 'GKImagePicker/GKImages/PLCameraSheetDoneButton@2x.png'
 install_resource 'GKImagePicker/GKImages/PLCameraSheetDoneButtonPressed.png'
 install_resource 'GKImagePicker/GKImages/PLCameraSheetDoneButtonPressed@2x.png'
+install_resource 'MHPrettyDate/MHPrettyDate/en.lproj'
+install_resource 'MHPrettyDate/MHPrettyDate/nl.lproj'
 install_resource 'SIAlertView/SIAlertView/SIAlertView.bundle'
 
 rsync -avr --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

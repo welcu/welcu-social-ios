@@ -20,5 +20,7 @@
 @dynamic link;
 @dynamic event;
 @dynamic user;
+@dynamic createdAt;
+@dynamic cachedContentHeight;
 
 @end

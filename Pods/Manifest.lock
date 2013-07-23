@@ -19,8 +19,15 @@ PODS:
   - GPUImage (0.1.0)
   - InflectorKit (0.0.1)
   - JASidePanels (1.3.1)
+  - libextobjc/EXTScope (0.2.5):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.2.5)
+  - MHPrettyDate (1.1.0)
   - MJPopupViewController (0.4)
   - NewRelicAgent (1.342)
+  - NPRImageView (1.0.0):
+    - AFNetworking (~> 1.2.1)
+    - libextobjc/EXTScope (~> 0.2.5)
   - OHAttributedLabel (3.4.1)
   - PCStackMenu (1.0.0)
   - SIAlertView (1.2)
@@ -47,8 +54,10 @@ DEPENDENCIES:
   - GoogleAnalytics-iOS-SDK
   - GPUImage
   - JASidePanels (~> 1.3.1)
+  - MHPrettyDate
   - MJPopupViewController (~> 0.4)
   - NewRelicAgent
+  - NPRImageView
   - OHAttributedLabel (~> 3.4.1)
   - PCStackMenu (from `https://github.com/sagmor/StackMenu`)
   - SIAlertView (~> 1.2)
@@ -82,8 +91,11 @@ SPEC CHECKSUMS:
   GPUImage: 5b902c1df2afe0ac30a8e3e7379f9c0bb25c7c85
   InflectorKit: 9dccab02f95541093995adac639342c9eb9e6c12
   JASidePanels: bdc86395baee77fef838f5c7f3637300a7ff8c1f
+  libextobjc: 2cbc74caf8bdc74a86fdf24673f773c83424ea98
+  MHPrettyDate: 8194b2a0ba3a8c887a536f1735467f41e16e216c
   MJPopupViewController: 4cd0badf3dae541017e0e16e2d2c7578d9224052
   NewRelicAgent: 381824a42f3590e460308992b493ec90595c28f6
+  NPRImageView: 0cf7193e503bb1a87bbbb77292027bd29b94a98f
   OHAttributedLabel: 770332ef810ca15c9bd4a79f300ce620bc443e9d
   PCStackMenu: fe2c746ee6e2a8e238f56fa7a2f3869d934eef00
   SIAlertView: fd188f66278761f4ff069f517c3deb2be16ecdcc

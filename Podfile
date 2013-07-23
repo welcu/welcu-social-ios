@@ -2,7 +2,9 @@ platform :ios, "6.0"
 
 pod 'AFNetworking', '~> 1.3.1'
 pod 'AFIncrementalStore'
+pod 'NPRImageView'
 
+pod 'MHPrettyDate'
 
 pod 'Facebook-iOS-SDK'
 pod 'FXKeychain'

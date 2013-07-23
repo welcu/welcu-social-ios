@@ -49,8 +49,8 @@
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"post"] = [NSMutableDictionary dictionary];
     parameters[@"post"][@"content"] = self.content;
-    parameters[@"twitter"] = @(YES);
-    parameters[@"facebook"] = @(YES);
+//    parameters[@"twitter"] = @(YES);
+//    parameters[@"facebook"] = @(YES);
     
 //    request 
     NSURLRequest *request = [userAccount.client multipartFormRequestWithMethod:@"POST"

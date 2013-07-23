@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4457.9" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4471.1" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3697.3"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,24 +11,48 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSa-zo-mOm">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7Z-Kk-Lh2">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4rj-3v-Btb">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4rj-3v-Btb">
                     <rect key="frame" x="10" y="12" width="52" height="52"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="52" id="4UA-Rf-LAp"/>
+                        <constraint firstAttribute="height" constant="52" id="S41-Cm-8qR"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLU-tK-OfW">
-                    <rect key="frame" x="77" y="12" width="223" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLU-tK-OfW">
+                    <rect key="frame" x="70" y="21" width="86" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFi-zy-su9">
+                    <rect key="frame" x="70" y="41" width="53" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
+            <constraints>
+                <constraint firstItem="C7Z-Kk-Lh2" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="1QM-7G-be7"/>
+                <constraint firstAttribute="bottom" secondItem="C7Z-Kk-Lh2" secondAttribute="bottom" id="4KV-ax-qdB"/>
+                <constraint firstItem="wFi-zy-su9" firstAttribute="leading" secondItem="4rj-3v-Btb" secondAttribute="trailing" constant="8" id="6EY-eV-A9p"/>
+                <constraint firstItem="wFi-zy-su9" firstAttribute="top" secondItem="pLU-tK-OfW" secondAttribute="bottom" id="7ku-07-kx1"/>
+                <constraint firstItem="C7Z-Kk-Lh2" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="9gW-xR-jRH"/>
+                <constraint firstItem="pLU-tK-OfW" firstAttribute="leading" secondItem="4rj-3v-Btb" secondAttribute="trailing" constant="8" id="W7M-b3-dsW"/>
+                <constraint firstAttribute="centerY" secondItem="pLU-tK-OfW" secondAttribute="centerY" constant="1.5" id="WAe-c3-cHh"/>
+                <constraint firstItem="4rj-3v-Btb" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="eCn-Wj-e2X"/>
+                <constraint firstItem="C7Z-Kk-Lh2" firstAttribute="top" secondItem="1" secondAttribute="top" id="ezH-jW-tUs"/>
+                <constraint firstItem="4rj-3v-Btb" firstAttribute="top" secondItem="1" secondAttribute="top" constant="12" id="keV-lW-99L"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="postDateLabel" destination="wFi-zy-su9" id="iUt-Fe-GK0"/>
                 <outlet property="userImageView" destination="4rj-3v-Btb" id="aCW-lU-xv6"/>
                 <outlet property="userNameLabel" destination="pLU-tK-OfW" id="CdS-4y-grs"/>
             </connections>

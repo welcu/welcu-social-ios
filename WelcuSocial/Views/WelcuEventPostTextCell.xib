@@ -10,23 +10,24 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="101" id="qum-4N-Ipl" customClass="WelcuEventPostTextCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qum-4N-Ipl" id="nWW-2o-qDG">
+            <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qum-4N-Ipl" id="nWW-2o-qDG">
                 <rect key="frame" x="0.0" y="0.0" width="322" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="0l1-4n-OtN" customClass="AMAttributedHighlightLabel">
-                        <rect key="frame" x="72" y="10" width="238" height="21"/>
+                        <rect key="frame" x="73" y="10" width="238" height="80"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="0l1-4n-OtN" secondAttribute="bottom" constant="10" id="AvD-8V-R18"/>
+                    <constraint firstItem="0l1-4n-OtN" firstAttribute="top" secondItem="nWW-2o-qDG" secondAttribute="top" constant="10" id="bjO-e7-Qb4"/>
+                    <constraint firstAttribute="trailing" secondItem="0l1-4n-OtN" secondAttribute="trailing" constant="11" id="m0D-3G-50n"/>
+                    <constraint firstItem="0l1-4n-OtN" firstAttribute="leading" secondItem="nWW-2o-qDG" secondAttribute="leading" constant="73" id="z3f-8w-XMY"/>
+                </constraints>
             </tableViewCellContentView>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="0l1-4n-OtN" secondAttribute="trailing" constant="10" id="QqF-0i-Gu5"/>
-                <constraint firstItem="0l1-4n-OtN" firstAttribute="top" secondItem="qum-4N-Ipl" secondAttribute="top" constant="10" id="gud-KJ-okX"/>
-                <constraint firstItem="0l1-4n-OtN" firstAttribute="leading" secondItem="qum-4N-Ipl" secondAttribute="leading" constant="72" id="nfa-6l-a7F"/>
-            </constraints>
             <connections>
                 <outlet property="postContentLabel" destination="0l1-4n-OtN" id="ZUK-T4-zCu"/>
             </connections>
