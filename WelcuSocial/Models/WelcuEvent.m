@@ -23,6 +23,8 @@
 @dynamic tickets;
 @dynamic activities;
 @dynamic accessedAt;
+@dynamic venueName;
+@dynamic venueAddress;
 
 - (NSURL *)headerPhotoURL
 {

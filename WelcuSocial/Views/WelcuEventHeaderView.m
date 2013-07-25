@@ -46,6 +46,13 @@ static UINib *viewNib;
     _event = event;
     
     self.eventNameLabel.text = event.name;
+    
+    if (event.venueName) {
+        self.eventVenueLabel.text = event.venueName;
+    } else if (event.venueAddress) {
+        self.eventVenueLabel.text = event.venueAddress;
+    }
+    
     self.eventDateLabel.text = [event fromDateToDateString];
     
     [self setHeaderImage:[UIImage imageNamed:@"DefaultEventHeader"]];

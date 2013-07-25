@@ -19,7 +19,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="359" height="250"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Americo en Vivo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmN-uk-F03">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Americo en Vivo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="YmN-uk-F03">
                     <rect key="frame" x="98" y="165" width="163" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
@@ -89,6 +89,7 @@
                 <constraint firstItem="AVd-kg-YTU" firstAttribute="top" secondItem="1" secondAttribute="top" id="U7T-cl-81w"/>
                 <constraint firstAttribute="trailing" secondItem="AVd-kg-YTU" secondAttribute="trailing" id="W9a-gN-92p"/>
                 <constraint firstAttribute="bottom" secondItem="AVd-kg-YTU" secondAttribute="bottom" id="cQ8-th-SZ8"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YmN-uk-F03" secondAttribute="trailing" constant="5" id="d29-OI-3ZK"/>
                 <constraint firstItem="ke3-uN-8vt" firstAttribute="centerY" secondItem="Y9S-Ef-n89" secondAttribute="centerY" id="dmK-gW-FkK"/>
                 <constraint firstItem="0BL-rn-ZBf" firstAttribute="top" secondItem="YmN-uk-F03" secondAttribute="bottom" priority="805" constant="10" id="dxP-0l-OcD"/>
                 <constraint firstItem="ke3-uN-8vt" firstAttribute="centerX" secondItem="Y9S-Ef-n89" secondAttribute="centerX" id="fam-1V-BKY"/>
@@ -101,6 +102,7 @@
                 <constraint firstItem="AVd-kg-YTU" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="pVe-QW-OiC"/>
                 <constraint firstAttribute="bottom" secondItem="hkk-Hj-iht" secondAttribute="bottom" id="sVU-Pj-MY4"/>
                 <constraint firstAttribute="centerX" secondItem="ke3-uN-8vt" secondAttribute="centerX" constant="0.5" id="uDg-HU-N8I"/>
+                <constraint firstItem="YmN-uk-F03" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1" secondAttribute="leading" constant="5" id="vGQ-i3-wmL"/>
                 <constraint firstItem="sZV-TC-MJB" firstAttribute="leading" secondItem="Tcr-Lo-YPo" secondAttribute="trailing" constant="5" id="z5U-ec-bcf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
