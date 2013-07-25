@@ -10,14 +10,15 @@
 
 @implementation WelcuEventCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+@synthesize event = _event;
+
+- (void)setEvent:(WelcuEvent *)event
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    _event = event;
+    self.textLabel.text = event.name;
+    self.detailTextLabel.text = [event fromDateToDateString];
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

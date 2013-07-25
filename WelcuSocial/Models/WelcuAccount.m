@@ -215,7 +215,7 @@ static WelcuAccount *currentAccount = nil;
 {
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"WelcuEvent"];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"participating = YES"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"participating = YES AND accessedAt != nil"];
     fetchRequest.sortDescriptors = @[
                                 [NSSortDescriptor sortDescriptorWithKey:@"accessedAt" ascending:NO]
                                 ];
@@ -319,6 +319,13 @@ static WelcuAccount *currentAccount = nil;
     DDLogInfo(@"SQLite URL: %@", storeURL);
     
     return __persistentStoreCoordinator;
+}
+
+- (void)saveContext
+{
+    [self.managedObjectContext performBlock:^{
+        [self.managedObjectContext save:nil];
+    }];
 }
 
 

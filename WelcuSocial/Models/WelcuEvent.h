@@ -26,6 +26,10 @@
 
 @property (nonatomic, readonly) NSURL *headerPhotoURL;
 
+- (void)accessed;
+
+- (NSString *)fromDateToDateString;
+
 @end
 
 @interface WelcuEvent (CoreDataGeneratedAccessors)

@@ -41,7 +41,7 @@
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                         managedObjectContext:[[WelcuAccount currentAccount] managedObjectContext]
-                                                                          sectionNameKeyPath:nil
+                                                                          sectionNameKeyPath:@"startsAtMonth"
                                                                                    cacheName:@"MenuEvents"];
     
     self.fetchedResultsController.delegate = self;
@@ -77,23 +77,43 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [self.fetchedResultsController.sections count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.fetchedResultsController.sections firstObject] numberOfObjects];
+    return [self.fetchedResultsController.sections[section] numberOfObjects];
+}
+
+- (NSDateFormatter *)sectionTitleDateFormatter
+{
+    static NSDateFormatter *sectionTitleDateFormatter;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sectionTitleDateFormatter = [[NSDateFormatter alloc] init];
+        [sectionTitleDateFormatter setDateFormat:@"MMMM yyyy"];
+        [sectionTitleDateFormatter setTimeZone:[NSTimeZone defaultTimeZone]];
+    });
+    
+    return sectionTitleDateFormatter;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    WelcuEvent *event = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
+    
+    return [[self sectionTitleDateFormatter] stringFromDate:event.startsAt];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"WelcuEventCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    WelcuEventCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     WelcuEvent *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    cell.textLabel.text = event.name;
+    cell.event = event;
     
     return cell;
 }

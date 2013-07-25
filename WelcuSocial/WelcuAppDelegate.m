@@ -16,6 +16,8 @@
 #import <CocoaLumberjack/DDFileLogger.h>
 #import "AFHTTPRequestOperationLogger.h"
 
+#import "WelcuAccount.h"
+
 @interface WelcuAppDelegate ()
 - (void)setupTracking;
 - (void)setupLogging;
@@ -80,6 +82,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [[WelcuAccount currentAccount] saveContext];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
@@ -105,7 +108,7 @@
     [DDLog addLogger:fileLogger];
     
     [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
-    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
+    [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelWarn];
 }
 
 - (void)setupApperance

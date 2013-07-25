@@ -65,7 +65,7 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
     
     NSParameterAssert(self.event);
     
-    self.event.accessedAt = [NSDate date];
+    [self.event accessed];
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"WelcuPost"];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"event = %@" argumentArray:@[self.event]];

@@ -27,12 +27,19 @@
     return [[WelcuAccount currentAccount] client];
 }
 
-- (id)executeSaveChangesRequest:(NSSaveChangesRequest *)saveChangesRequest
-                    withContext:(NSManagedObjectContext *)context
-                          error:(NSError *__autoreleasing *)error
-{
-    // Do nothing since we are not saving data to the server from Core Data
-    return self;
-}
+//- (id)executeSaveChangesRequest:(NSSaveChangesRequest *)saveChangesRequest
+//                    withContext:(NSManagedObjectContext *)context
+//                          error:(NSError *__autoreleasing *)error
+//{
+//    NSManagedObjectContext *backingContext = [self backingManagedObjectContext];
+//    [backingContext performBlockAndWait:^{
+//        NSManagedObject *backingObject = [backingContext existingObjectWithID:updatedObject.objectID error:nil];
+//        [backingObject setValuesForKeysWithDictionary:[updatedObject dictionaryWithValuesForKeys:nil]];
+//        [backingContext save:nil];
+//    }];
+//    
+//    // Do nothing since we are not saving data to the server from Core Data
+//    return self;
+//}
 
 @end

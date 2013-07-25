@@ -46,6 +46,7 @@ static UINib *viewNib;
     _event = event;
     
     self.eventNameLabel.text = event.name;
+    self.eventDateLabel.text = [event fromDateToDateString];
     
     [self setHeaderImage:[UIImage imageNamed:@"DefaultEventHeader"]];
     if (event.headerPhoto) {

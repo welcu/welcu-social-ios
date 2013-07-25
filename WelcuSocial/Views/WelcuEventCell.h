@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WelcuEvent.h"
 
 @interface WelcuEventCell : UITableViewCell
-
+@property (nonatomic,strong) WelcuEvent *event;
 @end

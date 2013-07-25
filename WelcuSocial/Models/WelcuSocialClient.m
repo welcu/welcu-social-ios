@@ -148,8 +148,10 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
     NSValueTransformer *dateTransformer = [NSValueTransformer valueTransformerForName:TTTISO8601DateTransformerName];
     
+    // Default fetched At attribute to filter old objects
     result[@"fetchedAt"] = [NSDate date];
     
+    // Parse Post object
     if ([[entity name] isEqualToString:@"WelcuPost"]) {
         result[@"postID"] = representation[@"id"];
         result[@"createdAt"] = [dateTransformer reverseTransformedValue:representation[@"created_at"]];
@@ -163,6 +165,8 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
         if (representation[@"photo"]) {
             result[@"photo"] = representation[@"photo"][@"url"];
         }
+        
+    // Parse User object
     } else if ([[entity name] isEqualToString:@"WelcuUser"]) {
         
         result[@"userID"] = representation[@"id"];
@@ -170,22 +174,39 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
         result[@"lastName"] = representation[@"last_name"];
         result[@"facebookUID"] = representation[@"facebook_uid"];
         
+    // Parse Event Object
     } else if ([[entity name] isEqualToString:@"WelcuEvent"]) {
         result[@"eventID"] = representation[@"id"];
         
         if (representation[@"name"])
             result[@"name"] = representation[@"name"];
         
-        if (representation[@"starts_at"])
+        if (representation[@"starts_at"]) {
             result[@"startsAt"] = [dateTransformer reverseTransformedValue:representation[@"starts_at"]];
+            NSDateComponents *components = [[NSCalendar currentCalendar] components:NSMonthCalendarUnit | NSYearCalendarUnit
+                                                                           fromDate:result[@"startsAt"]];
+            
+            result[@"startsAtMonth"] = [NSString stringWithFormat:@"%d-%d", components.year, components.month ];
+        }
         
         if (representation[@"ends_at"])
             result[@"endsAt"] = [dateTransformer reverseTransformedValue:representation[@"ends_at"]];
         
         if (representation[@"header_photo"])
             result[@"headerPhoto"] = representation[@"header_photo"];
+
+        if (representation[@"venue_name"])
+            result[@"venueName"] = representation[@"venue_name"];
+
+        if (representation[@"venue_address"])
+            result[@"venueAddress"] = representation[@"venue_address"];
+
+        if (representation[@"lat"] && representation[@"lng"]) {
+            result[@"lat"] = representation[@"lat"];
+            result[@"lng"] = representation[@"lng"];
+        }
         
-        if (response.URL.pathComponents.count >=5 && [response.URL.pathComponents[4] isEqualToString:@"me"]) {
+        if (response.URL.pathComponents.count >=4 && [response.URL.pathComponents[3] isEqualToString:@"me"]) {
             result[@"participating"] = @(YES);
         }
     }
@@ -385,6 +406,19 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
                         inManagedObjectContext:(NSManagedObjectContext *)context
 {
     return NO;
+}
+
+- (NSMutableURLRequest *)requestForInsertedObject:(NSManagedObject *)insertedObject
+{
+    return nil;
+}
+- (NSMutableURLRequest *)requestForUpdatedObject:(NSManagedObject *)updatedObject
+{
+    return nil;
+}
+- (NSMutableURLRequest *)requestForDeletedObject:(NSManagedObject *)deletedObject
+{
+    return nil;
 }
 
 @end

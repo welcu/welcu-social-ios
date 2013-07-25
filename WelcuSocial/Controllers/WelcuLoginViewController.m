@@ -33,13 +33,14 @@
 
 - (void)facebookLoggin
 {
-    [FBSession openActiveSessionWithReadPermissions:nil
+    [FBSession openActiveSessionWithReadPermissions:@[@"email", @"user_location"]
                                        allowLoginUI:YES
-                                  completionHandler:
-     ^(FBSession *session,
-       FBSessionState state, NSError *error) {
-         [self facebookSessionStateChanged:session state:state error:error];
-     }];
+                                  completionHandler: ^(FBSession *session, FBSessionState state, NSError *error)
+    {
+        [self facebookSessionStateChanged:session
+                                    state:state
+                                    error:error];
+    }];
     
 }
 

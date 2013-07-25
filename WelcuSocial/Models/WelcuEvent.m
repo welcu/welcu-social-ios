@@ -33,4 +33,33 @@
     return nil;
 }
 
+- (void)accessed
+{
+    [self.managedObjectContext performBlock:^{
+        self.accessedAt = [NSDate date];
+        [self.managedObjectContext save:nil];
+    }];
+}
+
+- (NSString *)fromDateToDateString
+{
+    static NSDateFormatter *formatter;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateStyle:NSDateFormatterMediumStyle];
+        [formatter setTimeStyle:NSDateFormatterNoStyle];
+        [formatter setTimeZone:[NSTimeZone defaultTimeZone]];
+    });
+    
+    NSString *from = [formatter stringFromDate:self.startsAt];
+    NSString *to = [formatter stringFromDate:self.endsAt];
+    
+    if ([from isEqualToString:to]) {
+        return from;
+    }
+    
+    return [NSString stringWithFormat:@"%@ - %@", from, to];
+}
+
 @end
