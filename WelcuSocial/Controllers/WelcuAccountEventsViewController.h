@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WelcuAccountEventsViewController : UITableViewController
+#import "WelcuUpcomingAndPastListViewController.h"
+
+@interface WelcuAccountEventsViewController : WelcuUpcomingAndPastListViewController
 
 @end

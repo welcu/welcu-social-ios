@@ -120,6 +120,13 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
                            @"id" : representation[@"event_id"]
                            }
                    };
+    } else if ([[entity name] isEqualToString:@"WelcuTicket"]) {
+        result = @{
+                   @"event" : @{
+                           @"id" : representation[@"event_id"],
+                           @"participating" : @(YES)
+                           }
+                   };
     } else {
         result = [super representationsForRelationshipsFromRepresentation:representation
                                                                  ofEntity:entity
@@ -181,6 +188,9 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
         if (representation[@"name"])
             result[@"name"] = representation[@"name"];
         
+        if (representation[@"timezone"])
+            result[@"timezone"] = representation[@"timezone"];
+
         if (representation[@"starts_at"]) {
             result[@"startsAt"] = [dateTransformer reverseTransformedValue:representation[@"starts_at"]];
             NSDateComponents *components = [[NSCalendar currentCalendar] components:NSMonthCalendarUnit | NSYearCalendarUnit
@@ -202,13 +212,57 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
             result[@"venueAddress"] = representation[@"venue_address"];
 
         if (representation[@"lat"] && representation[@"lng"]) {
-            result[@"lat"] = representation[@"lat"];
-            result[@"lng"] = representation[@"lng"];
+            result[@"latitude"] = representation[@"lat"];
+            result[@"longitude"] = representation[@"lng"];
         }
         
-        if (response.URL.pathComponents.count >=4 && [response.URL.pathComponents[3] isEqualToString:@"me"]) {
+        if (representation[@"participating"] || (response.URL.pathComponents.count >=4 && [response.URL.pathComponents[3] isEqualToString:@"me"])) {
             result[@"participating"] = @(YES);
         }
+    } else if ([[entity name] isEqualToString:@"WelcuTicket"]) {
+        result[@"ticketID"] =representation[@"id"];
+        result[@"code"] = representation[@"code"];
+        result[@"urlString"] = representation[@"url"];
+        result[@"createdAt"] = [dateTransformer reverseTransformedValue:representation[@"created_at"]];
+        
+        if (representation[@"formatted_price"])
+            result[@"formattedPrice"] = representation[@"formatted_price"];
+        
+        
+        if (representation[@"checked_at"]) {
+            result[@"checkedAt"] = [dateTransformer reverseTransformedValue:representation[@"checked_at"]];
+        }
+
+        if (representation[@"person"]) {
+            result[@"personFirstName"] = representation[@"person"][@"first_name"];
+            result[@"personLastName"] = representation[@"person"][@"last_name"];
+            
+            if (representation[@"person"][@"email"]) {
+                result[@"personEmail"] = representation[@"person"][@"email"];
+            }
+        }
+        
+        if (representation[@"ticket"]) {
+            result[@"ticketName"] = representation[@"ticket"][@"name"];
+            
+            if (representation[@"ticket"][@"venue_name"])
+                result[@"ticketVenueName"] = representation[@"ticket"][@"venue_name"];
+            
+            if (representation[@"ticket"][@"venue_address"])
+                result[@"ticketVenueAddress"] = representation[@"ticket"][@"venue_address"];
+            
+            if (representation[@"ticket"][@"lat"] && representation[@"ticket"][@"lng"]) {
+                result[@"ticketLatitude"] = representation[@"ticket"][@"lat"];
+                result[@"ticketLongitude"] = representation[@"ticket"][@"lng"];
+            }
+            
+            if (representation[@"ticket"][@"starts_at"])
+                result[@"ticketStartsAt"] = [dateTransformer reverseTransformedValue:representation[@"ticket"][@"starts_at"]];
+            
+            if (representation[@"ticket"][@"ends_at"])
+                result[@"ticketEndsAt"] = [dateTransformer reverseTransformedValue:representation[@"ticket"][@"ends_at"]];
+        }
+
     }
     
     DDLogInfo(@"attributesForRepresentation:ofEntity:%@ fromResponse:%@", [entity name], result);
@@ -276,6 +330,48 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
         result = [self requestWithMethod:@"GET"
                                     path:path
                               parameters:nil];
+    } else if ([fetchRequest.entity.name isEqualToString:@"WelcuTicket"]) {
+        NSString *path = @"me/tickets";
+        NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+        
+        if (fetchRequest.predicate) {
+            NSArray *predicates = nil;
+            if ([fetchRequest.predicate isKindOfClass:[NSCompoundPredicate class]]) {
+                predicates = [(NSCompoundPredicate*)fetchRequest.predicate subpredicates];
+            } else {
+                predicates = @[ fetchRequest.predicate ];
+            }
+            
+            for (NSComparisonPredicate *predicate in predicates) {
+                if ([predicate.leftExpression.keyPath isEqualToString:@"event"]) {
+                    // [NSPredicate predicateWithFormat:@"participating = %@" argumentArray:@[@(YES)]];
+
+                } else if ([predicate.leftExpression.keyPath isEqualToString:@"event.endsAt"]) {
+                    switch (predicate.predicateOperatorType) {
+                        case NSGreaterThanPredicateOperatorType:
+                        case NSGreaterThanOrEqualToPredicateOperatorType:
+                            // [NSPredicate predicateWithFormat:@"endsAt >= %@" argumentArray:@[[NSDate date]]];
+                            path = [NSString stringWithFormat:@"%@/upcoming", path];
+                            break;
+                        case NSLessThanPredicateOperatorType:
+                        case NSLessThanOrEqualToPredicateOperatorType:
+                            // [NSPredicate predicateWithFormat:@"endsAt <= %@" argumentArray:@[[NSDate date]]];
+                            path = [NSString stringWithFormat:@"%@/past", path];
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                DDLogInfo(@"%@", predicate);
+            }
+            
+        }
+
+        
+        result = [self requestWithMethod:@"GET"
+                                    path:path
+                              parameters:parameters];
+        
     } else {
         result = [super requestForFetchRequest:fetchRequest withContext:context];
     }

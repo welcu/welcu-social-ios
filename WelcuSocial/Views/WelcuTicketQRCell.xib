@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4471.1" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3697.3"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WelcuTicketQRCell" rowHeight="250" id="eRO-Ic-Sjd" customClass="WelcuTicketQRCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eRO-Ic-Sjd" id="Mxs-KF-gfj">
+                <rect key="frame" x="0.0" y="0.0" width="322" height="249"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKR-1D-Ck9">
+                        <rect key="frame" x="71" y="13" width="180" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XC4345" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StE-0U-q8b">
+                                <rect key="frame" x="60" y="179" width="61" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vdO-w4-1VU">
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="37E-ot-dhM"/>
+                                    <constraint firstAttribute="width" constant="180" id="EIs-Wi-veO"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vdO-w4-1VU" firstAttribute="top" secondItem="nKR-1D-Ck9" secondAttribute="top" id="2YG-fI-tY5"/>
+                            <constraint firstItem="StE-0U-q8b" firstAttribute="top" secondItem="vdO-w4-1VU" secondAttribute="bottom" constant="-1" id="eWd-v0-JxK"/>
+                            <constraint firstAttribute="centerX" secondItem="StE-0U-q8b" secondAttribute="centerX" constant="-0.5" id="ejN-dQ-c9S"/>
+                            <constraint firstAttribute="height" constant="200" id="g04-Qv-SHa"/>
+                            <constraint firstAttribute="width" constant="180" id="gE6-og-cCO"/>
+                            <constraint firstAttribute="centerX" secondItem="vdO-w4-1VU" secondAttribute="centerX" id="qOo-po-tMl"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nº ticket: 86579778" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0a-0A-aDH">
+                        <rect key="frame" x="86" y="228" width="151" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="q0a-0A-aDH" firstAttribute="top" secondItem="nKR-1D-Ck9" secondAttribute="bottom" constant="15" id="F0K-fy-FgQ"/>
+                    <constraint firstAttribute="centerX" secondItem="q0a-0A-aDH" secondAttribute="centerX" constant="-0.5" id="PEO-bU-LAi"/>
+                    <constraint firstItem="nKR-1D-Ck9" firstAttribute="top" secondItem="Mxs-KF-gfj" secondAttribute="top" constant="13" id="XEc-5a-S0y"/>
+                    <constraint firstAttribute="centerX" secondItem="nKR-1D-Ck9" secondAttribute="centerX" id="muI-ta-xzt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="qrImageView" destination="vdO-w4-1VU" id="Ush-Ff-lqe"/>
+                <outlet property="ticketCodeLabel" destination="StE-0U-q8b" id="doh-Ab-D8B"/>
+                <outlet property="ticketNumberLabel" destination="q0a-0A-aDH" id="wdP-0e-ojg"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

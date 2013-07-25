@@ -12,52 +12,60 @@
 #import "WelcuEventFeedViewController.h"
 #import "WelcuEventCell.h"
 
-@interface WelcuAccountEventsViewController () <NSFetchedResultsControllerDelegate>
-
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@interface WelcuAccountEventsViewController ()
 
 @end
 
 @implementation WelcuAccountEventsViewController
 
-- (void)refetchData {
-    [self.fetchedResultsController performSelectorOnMainThread:@selector(performFetch:)
-                                                    withObject:nil
-                                                 waitUntilDone:YES
-                                                         modes:@[ NSRunLoopCommonModes ]];
+- (NSFetchedResultsController *)upcomingFetchedResultsController
+{
+    if (!_upcomingFetchedResultsController) {
+        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"WelcuEvent"];
+        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"participating = %@ AND endsAt >= %@"
+                                                    argumentArray:@[@(YES), [NSDate date]]];
+        fetchRequest.sortDescriptors = @[
+                                         [NSSortDescriptor sortDescriptorWithKey:@"startsAt" ascending:YES]
+                                         ];
+        fetchRequest.fetchLimit = 20;
+        
+        _upcomingFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                                managedObjectContext:[[WelcuAccount currentAccount] managedObjectContext]
+                                                                                  sectionNameKeyPath:@"startsAtMonth"
+                                                                                           cacheName:@"AccountUpcomingEvents"];
+        _upcomingFetchedResultsController.delegate = self;
+    }
+    
+    return _upcomingFetchedResultsController;
+}
+
+- (NSFetchedResultsController *)pastFetchedResultsController
+{
+    if (!_pastFetchedResultsController) {
+        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"WelcuEvent"];
+        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"participating = %@ AND endsAt <= %@"
+                                                    argumentArray:@[@(YES), [NSDate date]]];
+        fetchRequest.sortDescriptors = @[
+                                         [NSSortDescriptor sortDescriptorWithKey:@"startsAt" ascending:NO]
+                                         ];
+        fetchRequest.fetchLimit = 20;
+        
+        _pastFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                            managedObjectContext:[[WelcuAccount currentAccount] managedObjectContext]
+                                                                              sectionNameKeyPath:@"startsAtMonth"
+                                                                                       cacheName:@"AccountPastEvents"];
+        _pastFetchedResultsController.delegate = self;
+    }
+    
+    return _pastFetchedResultsController;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"WelcuEvent"];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"participating = %@ AND endsAt >= %@"
-                                                argumentArray:@[@(YES), [NSDate date]]];
-    fetchRequest.sortDescriptors = @[
-                                     [NSSortDescriptor sortDescriptorWithKey:@"startsAt" ascending:YES]
-                                     ];
-    fetchRequest.fetchLimit = 20;
-    
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                                                        managedObjectContext:[[WelcuAccount currentAccount] managedObjectContext]
-                                                                          sectionNameKeyPath:@"startsAtMonth"
-                                                                                   cacheName:@"MenuEvents"];
-    
-    self.fetchedResultsController.delegate = self;
-    [self refetchData];
-    
     [self.tableView registerNib:[UINib nibWithNibName:@"WelcuEventCell" bundle:nil]
          forCellReuseIdentifier:@"WelcuEventCell"];
-    
-    
-//    self.fetchedResultsController
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -73,18 +81,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return [self.fetchedResultsController.sections count];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.fetchedResultsController.sections[section] numberOfObjects];
-}
-
 - (NSDateFormatter *)sectionTitleDateFormatter
 {
     static NSDateFormatter *sectionTitleDateFormatter;
@@ -98,9 +94,21 @@
     return sectionTitleDateFormatter;
 }
 
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [self.currentFetchedResultsController.sections count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.currentFetchedResultsController.sections[section] numberOfObjects];
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    WelcuEvent *event = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
+    WelcuEvent *event = [self.currentFetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
     
     return [[self sectionTitleDateFormatter] stringFromDate:event.startsAt];
 }
@@ -111,7 +119,7 @@
     WelcuEventCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    WelcuEvent *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    WelcuEvent *event = [self.currentFetchedResultsController objectAtIndexPath:indexPath];
     
     cell.event = event;
     
@@ -121,7 +129,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self performSegueWithIdentifier:@"WelcuEventFeedViewController"
-                              sender:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+                              sender:[self.currentFetchedResultsController objectAtIndexPath:indexPath]];
 }
 
 /*
@@ -173,13 +181,5 @@
         controller.event = sender;
     }
 }
-
-#pragma mark - NSFetchedResultsControllerDelegate
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    [self.tableView reloadData];
-}
-
 
 @end
