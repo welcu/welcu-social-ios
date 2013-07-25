@@ -10,20 +10,18 @@
 
 @implementation WelcuTicketNameCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)awakeFromNib
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.nameLabel.font = [WelcuTicketCell boldFont];
+    self.emailLabel.font = [WelcuTicketCell lightFont];
+    self.emailLabel.textColor = [WelcuTicketCell greyColor];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+- (void)setContent
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    self.nameLabel.text = self.ticket.personFullName;
+    self.emailLabel.text = self.ticket.personEmail;
 }
 
 @end

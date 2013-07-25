@@ -30,6 +30,8 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"WelcuTicketQRCell" bundle:nil]
          forCellReuseIdentifier:@"WelcuTicketQRCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"WelcuTicketNameCell" bundle:nil]
+         forCellReuseIdentifier:@"WelcuTicketNameCell"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,13 +49,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    WelcuTicketCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WelcuTicketQRCell"];
+    WelcuTicketCell *cell = nil;
+    
+    if (indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"WelcuTicketQRCell"];
+    } else if (indexPath.row == 1) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"WelcuTicketNameCell"];
+    }
     
     cell.ticket = self.ticket;
     
@@ -63,9 +71,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) return 250;
+    if (indexPath.row == 1) return 66;
     
     return 0;
-    
 }
 
 

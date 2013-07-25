@@ -3,6 +3,7 @@ platform :ios, "6.0"
 pod 'AFNetworking', '~> 1.3.1'
 pod 'AFIncrementalStore'
 pod 'NPRImageView', podspec: 'Vendor/NPRImageView.podspec'
+pod 'iOS-QR-Code-Encoder', git: 'https://github.com/urbn/iOS-QR-Code-Encoder'
 
 pod 'MHPrettyDate'
 

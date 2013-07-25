@@ -11,4 +11,7 @@
 
 @interface WelcuTicketNameCell : WelcuTicketCell
 
+@property (nonatomic,weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic,weak) IBOutlet UILabel *emailLabel;
+
 @end

@@ -12,6 +12,8 @@
 
 @interface WelcuUpcomingAndPastListViewController ()
 
+@property (nonatomic,strong) UISegmentedControl *segmentedControl;
+
 
 @end
 
@@ -49,6 +51,21 @@
 {
     [super viewDidLoad];
     [self refetchData];
+    
+    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[
+                                                                        NSLocalizedString(@"Upcomming", nil),
+                                                                        NSLocalizedString(@"Past", nil)
+                                                                        ]];
+    [self.segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.segmentedControl setTintColor:[UIColor blackColor]];
+    self.segmentedControl.selectedSegmentIndex = self.mode;
+    
+    self.tableView.tableHeaderView = self.segmentedControl;
+}
+
+- (void)segmentedControlValueChanged:(id)sender
+{
+    self.mode = self.segmentedControl.selectedSegmentIndex;
 }
 
 - (void)didReceiveMemoryWarning

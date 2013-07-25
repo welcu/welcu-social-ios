@@ -26,6 +26,7 @@
 #import "WelcuEventPostTextCell.h"
 #import "WelcuEventPostPhotoCell.h"
 #import "WelcuEventHeaderView.h"
+#import "WelcuEventTicketsController.h"
 
 NSString const * kWelcuEventPostHeaderViewClassName = @"WelcuEventPostHeaderView";
 NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
@@ -147,10 +148,12 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
                 nav.leftBarButtonItem = [self.sidePanelController leftButtonForCenterPanel];
             }
             
-            nav.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:self.navigationItem.rightBarButtonItem.image
-                                                                      style:self.navigationItem.rightBarButtonItem.style
-                                                                     target:self.navigationItem.rightBarButtonItem.target
-                                                                     action:self.navigationItem.rightBarButtonItem.action];
+            if ([self.event.tickets count]) {
+                nav.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:self.navigationItem.rightBarButtonItem.image
+                                                                          style:self.navigationItem.rightBarButtonItem.style
+                                                                         target:self.navigationItem.rightBarButtonItem.target
+                                                                         action:self.navigationItem.rightBarButtonItem.action];
+            }
             
             self.navigationBar.items = @[nav];
         }
@@ -332,6 +335,16 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView reloadData];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"WelcuEventTicketsController"]) {
+        WelcuEventTicketsController *controller = segue.destinationViewController;
+        controller.event = self.event;
+    }
 }
 
 @end

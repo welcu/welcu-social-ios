@@ -169,6 +169,13 @@
 #define COCOAPODS_VERSION_MINOR_TransformerKit 2
 #define COCOAPODS_VERSION_PATCH_TransformerKit 4
 
+// iOS-QR-Code-Encoder
+#define COCOAPODS_POD_AVAILABLE_iOS_QR_Code_Encoder
+// This library does not follow semantic-versioning,
+// so we were not able to define version macros.
+// Please contact the author.
+// Version: 0.0.4.2.
+
 // libextobjc/EXTScope
 #define COCOAPODS_POD_AVAILABLE_libextobjc_EXTScope
 #define COCOAPODS_VERSION_MAJOR_libextobjc_EXTScope 0

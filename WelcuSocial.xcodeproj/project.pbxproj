@@ -48,6 +48,7 @@
 		CE4FCE5317A1961500DF5BE4 /* WelcuUpcomingAndPastListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4FCE5217A1961500DF5BE4 /* WelcuUpcomingAndPastListViewController.m */; };
 		CE4FCE5617A1D97900DF5BE4 /* WelcuEventTicketsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4FCE5517A1D97900DF5BE4 /* WelcuEventTicketsCell.m */; };
 		CE4FCE5817A1D98400DF5BE4 /* WelcuEventTicketsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4FCE5717A1D98400DF5BE4 /* WelcuEventTicketsCell.xib */; };
+		CE4FCE5A17A1E82A00DF5BE4 /* WelcuTicketNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4FCE5917A1E82A00DF5BE4 /* WelcuTicketNameCell.xib */; };
 		CE51B6591799DB5600482067 /* WelcuPostDraft.m in Sources */ = {isa = PBXBuildFile; fileRef = CE51B6581799DB5600482067 /* WelcuPostDraft.m */; };
 		CE51B65C1799DDE100482067 /* WelcuPostsDraftController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE51B65B1799DDE100482067 /* WelcuPostsDraftController.m */; };
 		CE542976179DE128000E55E7 /* WelcuAccountEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE542975179DE128000E55E7 /* WelcuAccountEventsViewController.m */; };
@@ -172,6 +173,7 @@
 		CE4FCE5417A1D97900DF5BE4 /* WelcuEventTicketsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventTicketsCell.h; sourceTree = "<group>"; };
 		CE4FCE5517A1D97900DF5BE4 /* WelcuEventTicketsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventTicketsCell.m; sourceTree = "<group>"; };
 		CE4FCE5717A1D98400DF5BE4 /* WelcuEventTicketsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcuEventTicketsCell.xib; sourceTree = "<group>"; };
+		CE4FCE5917A1E82A00DF5BE4 /* WelcuTicketNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcuTicketNameCell.xib; sourceTree = "<group>"; };
 		CE51B6571799DB5600482067 /* WelcuPostDraft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuPostDraft.h; sourceTree = "<group>"; };
 		CE51B6581799DB5600482067 /* WelcuPostDraft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuPostDraft.m; sourceTree = "<group>"; };
 		CE51B65A1799DDE100482067 /* WelcuPostsDraftController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuPostsDraftController.h; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				CE4FCE4C17A1821900DF5BE4 /* WelcuTicketQRCell.xib */,
 				CE4FCE3417A17EFA00DF5BE4 /* WelcuTicketNameCell.h */,
 				CE4FCE3517A17EFA00DF5BE4 /* WelcuTicketNameCell.m */,
+				CE4FCE5917A1E82A00DF5BE4 /* WelcuTicketNameCell.xib */,
 				CE4FCE3717A17F2B00DF5BE4 /* WelcuTicketContentCell.h */,
 				CE4FCE3817A17F2B00DF5BE4 /* WelcuTicketContentCell.m */,
 				CE4FCE3B17A17F6D00DF5BE4 /* WelcuTicketTypeCell.h */,
@@ -741,6 +744,7 @@
 				CEBBD1DE178F6A1300F3E36C /* GothamLight.ttf in Resources */,
 				CE9D2FEC178761100016B8B8 /* WelcuEventStreamingView.xib in Resources */,
 				CE8E49431780E279006B1874 /* WelcuEventCell.xib in Resources */,
+				CE4FCE5A17A1E82A00DF5BE4 /* WelcuTicketNameCell.xib in Resources */,
 				CEBBD1DF178F6A1300F3E36C /* GothamMedium.ttf in Resources */,
 				CE16DC93178B724000371025 /* WelcuComposeController.xib in Resources */,
 				CE16DD53178F326900371025 /* posts.json in Resources */,

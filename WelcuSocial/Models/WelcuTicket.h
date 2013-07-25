@@ -14,8 +14,16 @@
 @interface WelcuTicket : NSManagedObject
 
 @property (nonatomic, retain) NSString * code;
+@property (nonatomic, retain) NSNumber * ticketID;
 @property (nonatomic, retain) NSDate * checkedAt;
+@property (nonatomic, retain) NSString * personFirstName;
+@property (nonatomic, retain) NSString * personLastName;
+@property (nonatomic, retain) NSString * personEmail;
+
 @property (nonatomic, retain) WelcuEvent *event;
 @property (nonatomic, retain) WelcuActivity *activity;
+
+@property (nonatomic, readonly) NSString *personFullName;
+@property (nonatomic, readonly) UIImage *qrCodeImage;
 
 @end

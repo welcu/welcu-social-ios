@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4471.1" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3697.3"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WelcuTicketNameCell" rowHeight="66" id="zDM-FX-zif" customClass="WelcuTicketNameCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zDM-FX-zif" id="f6H-XH-oLR">
+                <rect key="frame" x="0.0" y="0.0" width="322" height="65"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rk-bB-yrT">
+                        <rect key="frame" x="20" y="15" width="77" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3c-Tx-Rm7">
+                        <rect key="frame" x="20" y="38" width="41" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="M3c-Tx-Rm7" firstAttribute="top" secondItem="9rk-bB-yrT" secondAttribute="bottom" constant="3" id="48a-LS-Wrc"/>
+                    <constraint firstItem="9rk-bB-yrT" firstAttribute="top" secondItem="f6H-XH-oLR" secondAttribute="top" constant="15" id="Alx-Vf-aId"/>
+                    <constraint firstItem="9rk-bB-yrT" firstAttribute="leading" secondItem="f6H-XH-oLR" secondAttribute="leading" constant="20" id="CSV-YZ-CA3"/>
+                    <constraint firstItem="M3c-Tx-Rm7" firstAttribute="leading" secondItem="f6H-XH-oLR" secondAttribute="leading" constant="20" id="U0X-dI-Z9p"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="emailLabel" destination="M3c-Tx-Rm7" id="H6J-ct-2by"/>
+                <outlet property="nameLabel" destination="9rk-bB-yrT" id="ecb-op-ITZ"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

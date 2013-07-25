@@ -20,27 +20,27 @@
 
 + (UIFont *)boldFont
 {
-    return nil;
+    return [UIFont fontWithName:@"MuseoSans-700" size:20];
 }
 
 + (UIFont *)lightFont
 {
-    return nil;
+    return [UIFont fontWithName:@"MuseoSans-300" size:15];
 }
 
 + (UIFont *)lighterFont
 {
-    return nil;
+    return [UIFont fontWithName:@"MuseoSans-300" size:10];
 }
 
 + (UIColor *)blackColor
 {
-    return nil;
+    return [UIColor blackColor];
 }
 
 + (UIColor *)greyColor
 {
-    return nil;
+    return [UIColor welcuMediumGrey];
 }
 
 - (void)setContent
