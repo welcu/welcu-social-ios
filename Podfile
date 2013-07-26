@@ -11,6 +11,7 @@ pod 'Facebook-iOS-SDK'
 pod 'FXKeychain'
 pod 'GPUImage'
 pod 'FontasticIcons'
+# pod 'CHTCollectionViewWaterfallLayout'
 
 # UI
 pod 'JASidePanels', '~> 1.3.1'

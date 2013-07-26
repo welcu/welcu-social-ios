@@ -224,6 +224,114 @@
             </objects>
             <point key="canvasLocation" x="2300" y="-306"/>
         </scene>
+        <!--Welcu Discover Events View Controller - Discover-->
+        <scene sceneID="9w2-ng-i8L">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="tRp-Gf-1r4" customClass="WelcuDiscoverEventsViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="zTy-Fp-Xoy">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ppu-0N-QLi">
+                            <size key="itemSize" width="155" height="174"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WelcuDiscoverEventCell" id="Izr-tM-irw" customClass="WelcuDiscoverEventCell">
+                                <rect key="frame" x="0.0" y="0.0" width="155" height="240"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="155" height="240"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ici-m8-WHz" customClass="NPRImageView">
+                                            <rect key="frame" x="0.0" y="0.0" width="155" height="120"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" priority="786" constant="120" id="pZU-ct-nbD"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="93" translatesAutoresizingMaskIntoConstraints="NO" id="0xD-ll-zpG">
+                                            <rect key="frame" x="5" y="125" width="93" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$55.000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5V-o9-KfT">
+                                            <rect key="frame" x="5" y="215" width="62" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ib3-Hk-hIm">
+                                            <rect key="frame" x="110" y="215" width="40" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="dYi-ZL-mAM"/>
+                                                <constraint firstAttribute="height" constant="20" id="ocD-dn-Y8w"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" title="Buy">
+                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4p-49-OU9">
+                                            <rect key="frame" x="5" y="145" width="42" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="u4p-49-OU9" secondAttribute="bottom" constant="25" id="70N-le-ikl"/>
+                                    <constraint firstItem="ici-m8-WHz" firstAttribute="trailing" secondItem="Izr-tM-irw" secondAttribute="trailing" id="ExW-Zr-7Cp"/>
+                                    <constraint firstItem="ici-m8-WHz" firstAttribute="top" secondItem="Izr-tM-irw" secondAttribute="top" id="QHD-ek-Bxm"/>
+                                    <constraint firstItem="u4p-49-OU9" firstAttribute="top" secondItem="0xD-ll-zpG" secondAttribute="bottom" id="Srl-MP-VdU"/>
+                                    <constraint firstItem="u4p-49-OU9" firstAttribute="leading" secondItem="Izr-tM-irw" secondAttribute="leading" constant="5" id="TuJ-Jf-Ogf"/>
+                                    <constraint firstAttribute="bottom" secondItem="ib3-Hk-hIm" secondAttribute="bottom" constant="5" id="YQ0-hr-51n"/>
+                                    <constraint firstItem="ib3-Hk-hIm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="u5V-o9-KfT" secondAttribute="trailing" constant="5" id="Ywm-9V-IOJ"/>
+                                    <constraint firstItem="u5V-o9-KfT" firstAttribute="leading" secondItem="Izr-tM-irw" secondAttribute="leading" constant="5" id="aPd-l6-jQ9"/>
+                                    <constraint firstAttribute="trailing" secondItem="ib3-Hk-hIm" secondAttribute="trailing" constant="5" id="d08-92-LXL"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="u4p-49-OU9" secondAttribute="trailing" constant="5" id="foi-jT-4s5"/>
+                                    <constraint firstItem="ici-m8-WHz" firstAttribute="leading" secondItem="Izr-tM-irw" secondAttribute="leading" id="hBP-cc-QJj"/>
+                                    <constraint firstItem="0xD-ll-zpG" firstAttribute="leading" secondItem="Izr-tM-irw" secondAttribute="leading" constant="5" id="iFP-c4-btc"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0xD-ll-zpG" secondAttribute="trailing" constant="5" id="w5n-Ut-ln8"/>
+                                    <constraint firstItem="0xD-ll-zpG" firstAttribute="top" secondItem="ici-m8-WHz" secondAttribute="bottom" constant="5" id="wKE-RY-Lao"/>
+                                    <constraint firstAttribute="bottom" secondItem="u5V-o9-KfT" secondAttribute="bottom" constant="5" id="xcK-4b-unf"/>
+                                </constraints>
+                                <size key="customSize" width="155" height="240"/>
+                                <connections>
+                                    <outlet property="buyButton" destination="ib3-Hk-hIm" id="61G-nz-wXw"/>
+                                    <outlet property="eventDateLabel" destination="u4p-49-OU9" id="n8f-Sb-IXj"/>
+                                    <outlet property="eventFlyerImage" destination="ici-m8-WHz" id="0YQ-bL-k7Q"/>
+                                    <outlet property="eventNameLabel" destination="0xD-ll-zpG" id="Kqd-RN-LJc"/>
+                                    <outlet property="eventPriceLabel" destination="u5V-o9-KfT" id="vpv-5e-Hw5"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="tRp-Gf-1r4" id="z7Q-iJ-32g"/>
+                            <outlet property="delegate" destination="tRp-Gf-1r4" id="C9Z-rJ-fKS"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Discover" id="4QM-a2-N0J"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9be-7o-d0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2740" y="-739"/>
+        </scene>
         <!--Welcu Event Feed View Controller - Event feed-->
         <scene sceneID="a4G-4w-1Uv">
             <objects>
@@ -397,7 +505,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="lgJ-vT-6Wt" kind="relationship" relationship="rootViewController" id="h4H-eY-RgE"/>
+                        <segue destination="tRp-Gf-1r4" kind="relationship" relationship="rootViewController" id="zJv-ag-y4r"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWQ-WG-qnm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -487,7 +595,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="c8d-po-PLf"/>
-        <segue reference="Oos-e7-euB"/>
+        <segue reference="8nR-zi-Tz3"/>
         <segue reference="85k-t6-fAX"/>
     </inferredMetricsTieBreakers>
 </document>
