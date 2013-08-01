@@ -53,7 +53,7 @@ static UINib *viewNib;
         self.eventVenueLabel.text = event.venueAddress;
     }
     
-    self.eventDateLabel.text = [event fromDateToDateString];
+    self.eventDateLabel.text = event.formattedDateRange;
     
     [self setHeaderImage:[UIImage imageNamed:@"DefaultEventHeader"]];
     if (event.headerPhoto) {

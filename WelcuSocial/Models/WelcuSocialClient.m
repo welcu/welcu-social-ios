@@ -134,11 +134,34 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
     if (representation[@"header_photo"])
         result[@"headerPhoto"] = representation[@"header_photo"];
 
-//    if (representation[@"flyer"]) {
-//        result[@"flyerURLString"] = representation[@"flyer"][@"url"];
-//        result[@"flyerHeight"] = representation[@"flyer"][@"height"];
-//        result[@"flyerWidth"] = representation[@"flyer"][@"width"];
-//    }
+    if (representation[@"flyer"]) {
+        result[@"flyerURLString"] = representation[@"flyer"][@"url"];
+        result[@"flyerHeight"] = representation[@"flyer"][@"height"];
+        result[@"flyerWidth"] = representation[@"flyer"][@"width"];
+    }
+    
+    if (representation[@"base_prices"]) {
+        NSString *currency = nil;
+        id value = nil;
+
+        if (representation[@"base_prices"][@"clp"]) {
+            currency = @"clp";
+            value = representation[@"base_prices"][@"clp"];
+        } else if (representation[@"base_prices"][@"usd"]) {
+            currency = @"usd";
+            value = representation[@"base_prices"][@"usd"];
+        } else {
+            currency = [[representation[@"base_prices"] allKeys] firstObject];
+            value = representation[@"base_prices"][currency];
+        }
+        
+        if ([value isEqual:@"free"]) {
+            result[@"basePriceCurrency"] = @"free";
+        } else if (value && currency) {
+            result[@"basePriceValue"] = value;
+            result[@"basePriceCurrency"] = currency;
+        }
+    }
 
     
     if (representation[@"venue_name"])
@@ -420,23 +443,37 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
     return nil;
 }
 
-- (NSMutableURLRequest *)requestWithMethod:(NSString *)method
-                       pathForObjectWithID:(NSManagedObjectID *)objectID
-                               withContext:(NSManagedObjectContext *)context
+- (NSString *)pathForEntity:(NSEntityDescription *)entity
 {
-    if ([objectID.entity.name isEqualToString:@"WelcuEvent"]) {
-        WelcuEvent *event = (WelcuEvent *)[context objectWithID:objectID];
-        return [self requestWithMethod:@"GET"
-                                  path:[NSString stringWithFormat:@"events/%@", event.eventID]
-                            parameters:nil];
+    if ([entity.name isEqualToString:@"WelcuEvent"]) {
+        return @"events";
     }
     
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:[NSString stringWithFormat:@"Unknown request for %@ entity with id %@", objectID.entity.name, objectID]
+                                   reason:[NSString stringWithFormat:@"Unknown path for %@ entity", entity.name]
                                  userInfo:nil];
-    
+            
     return nil;
 }
+
+//- (NSMutableURLRequest *)requestWithMethod:(NSString *)method
+//                       pathForObjectWithID:(NSManagedObjectID *)objectID
+//                               withContext:(NSManagedObjectContext *)context
+//{
+//    if ([objectID.entity.name isEqualToString:@"WelcuEvent"]) {
+//        WelcuEvent *event = (WelcuEvent *)[context objectWithID:objectID];
+//        return [self requestWithMethod:@"GET" path:path parameters:nil];
+//        return [self requestWithMethod:@"GET"
+//                                  path:[NSString stringWithFormat:@"events/%@", event.eventID]
+//                            parameters:nil];
+//    }
+//    
+//    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+//                                   reason:[NSString stringWithFormat:@"Unknown request for %@ entity with id %@", objectID.entity.name, objectID]
+//                                 userInfo:nil];
+//    
+//    return nil;
+//}
 
 /**
  Returns a URL request object with a given HTTP method for a particular relationship of a given managed object. This method is used in `AFIncrementalStore -newValueForRelationship:forObjectWithID:withContext:error:`.

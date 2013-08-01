@@ -17,7 +17,7 @@
     _event = event;
     
     self.textLabel.text = event.name;
-    self.detailTextLabel.text = [event fromDateToDateString];
+    self.detailTextLabel.text = event.formattedDateRange;
 }
 
 

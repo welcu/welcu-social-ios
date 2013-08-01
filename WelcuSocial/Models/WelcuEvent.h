@@ -30,6 +30,8 @@
 /** The event end date */
 @property (nonatomic, strong) NSDate *endsAt;
 
+@property (nonatomic, readonly) NSString *formattedDateRange;
+
 /** The event last access date, used to get the last used event on app launch */
 @property (nonatomic, strong) NSDate *accessedAt;
 
@@ -57,8 +59,6 @@
 @property (nonatomic, strong) NSSet *activities;
 
 - (void)accessed;
-
-- (NSString *)fromDateToDateString;
 
 @end
 

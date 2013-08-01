@@ -16,14 +16,16 @@
 {
     _event = event;
     self.eventNameLabel.text = event.name;
-    self.eventDateLabel.text = [event fromDateToDateString];
+    self.eventDateLabel.text = event.formattedDateRange;
 
-    if (event.headerPhotoURL) {
-        [self.eventFlyerImage setImageWithContentsOfURL:event.headerPhotoURL
+    if (event.flyerURL) {
+        [self.eventFlyerImage setImageWithContentsOfURL:event.flyerURL
                                        placeholderImage:[UIImage imageNamed:@"DefaultEventHeader"]];
     } else {
         self.eventFlyerImage.image = [UIImage imageNamed:@"DefaultEventHeader"];
     }
+    
+    self.eventPriceLabel.text = event.formattedBasePrice;
 }
 
 - (id)initWithFrame:(CGRect)frame

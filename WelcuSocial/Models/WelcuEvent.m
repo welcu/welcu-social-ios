@@ -33,7 +33,13 @@
 
 - (NSString *)formattedBasePrice
 {
-    return [NSString stringWithFormat:@"%f %@", [self.basePriceValue floatValue], self.basePriceCurrency];
+    if ([self.basePriceCurrency isEqualToString:@"free"]) {
+        return @"free";
+    } else if (self.basePriceValue && self.basePriceCurrency) {
+        return [NSString stringWithFormat:@"$ %.2f %@", [self.basePriceValue floatValue], self.basePriceCurrency];
+    } else {
+        return nil;
+    }
 }
 
 - (NSURL *)flyerURL
@@ -63,7 +69,7 @@
     }];
 }
 
-- (NSString *)fromDateToDateString
+- (NSString *)formattedDateRange
 {
     static NSDateFormatter *formatter;
     static dispatch_once_t onceToken;
