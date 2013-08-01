@@ -375,7 +375,6 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
                                      ofEntity:(NSEntityDescription *)entity
                                  fromResponse:(NSHTTPURLResponse *)response
 {
-    DDLogInfo(@"attributesForRepresentation:ofEntity:%@fromResponse:", entity.name);
     
     if ([[entity name] isEqualToString:@"WelcuPost"]) {
         return [self attributesForPostRepresentation:representation fromResponse:response];
@@ -420,15 +419,12 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
                                                              fromResponse:response];
     }
     
-    DDLogInfo(@"representationsForRelationshipsFromRepresentation:ofEntity:fromResponse: %@", result);
     return result;
 }
 
 - (NSMutableURLRequest *)requestForFetchRequest:(NSFetchRequest *)fetchRequest
                                     withContext:(NSManagedObjectContext *)context
 {
-    DDLogInfo(@"requestForFetchRequest:%@withContext:", fetchRequest.entity.name);
-
     if ([fetchRequest.entity.name isEqualToString:@"WelcuPost"]) {
         return [self requestForPostsFetchRequest:fetchRequest withContext:context];
     } else if ([fetchRequest.entity.name isEqualToString:@"WelcuEvent"]) {
@@ -456,50 +452,11 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
     return nil;
 }
 
-//- (NSMutableURLRequest *)requestWithMethod:(NSString *)method
-//                       pathForObjectWithID:(NSManagedObjectID *)objectID
-//                               withContext:(NSManagedObjectContext *)context
-//{
-//    if ([objectID.entity.name isEqualToString:@"WelcuEvent"]) {
-//        WelcuEvent *event = (WelcuEvent *)[context objectWithID:objectID];
-//        return [self requestWithMethod:@"GET" path:path parameters:nil];
-//        return [self requestWithMethod:@"GET"
-//                                  path:[NSString stringWithFormat:@"events/%@", event.eventID]
-//                            parameters:nil];
-//    }
-//    
-//    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-//                                   reason:[NSString stringWithFormat:@"Unknown request for %@ entity with id %@", objectID.entity.name, objectID]
-//                                 userInfo:nil];
-//    
-//    return nil;
-//}
-
-/**
- Returns a URL request object with a given HTTP method for a particular relationship of a given managed object. This method is used in `AFIncrementalStore -newValueForRelationship:forObjectWithID:withContext:error:`.
- 
- @discussion For example, if a `Department` managed object was attempting to fulfill a fault on the `employees` relationship, this method might return `GET /departments/sales/employees`.
- 
- @param method The HTTP method of the request.
- @param relationship The relationship of the specifified managed object
- @param objectID The object ID for the specified managed object.
- @param context The managed object context for the managed object.
- 
- @return An `NSURLRequest` object with the provided HTTP method for the resource or resoures corresponding to the relationship of the managed object.
- 
- */
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method
                        pathForRelationship:(NSRelationshipDescription *)relationship
                            forObjectWithID:(NSManagedObjectID *)objectID
                                withContext:(NSManagedObjectContext *)context
 {
-    NSMutableURLRequest *result = [super requestWithMethod:method
-                                       pathForRelationship:relationship
-                                           forObjectWithID:objectID
-                                               withContext:context];
-    
-    DDLogInfo(@"requestForFetchRequest:withContext: %@", result);
-    
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"Unknown request for %@ entity relationships with id %@", objectID.entity.name, objectID]
                                  userInfo:nil];
