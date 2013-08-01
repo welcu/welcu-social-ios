@@ -36,7 +36,10 @@
     if ([self.basePriceCurrency isEqualToString:@"free"]) {
         return @"free";
     } else if (self.basePriceValue && self.basePriceCurrency) {
-        return [NSString stringWithFormat:@"$ %.2f %@", [self.basePriceValue floatValue], self.basePriceCurrency];
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+        
+        return [NSString stringWithFormat:@"%@ %@", [numberFormatter stringFromNumber:self.basePriceValue], self.basePriceCurrency];
     } else {
         return nil;
     }
