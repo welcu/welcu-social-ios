@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Aviary-API-Key</key>
+	<string>ue3xr828o4b8ju2l</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>Welcu</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +15,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>Welcu</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -36,11 +38,7 @@
 	<string>132119896836620</string>
 	<key>FacebookDisplayName</key>
 	<string>Welcu</string>
-	<key>Aviary-API-Key</key>
-	<string>ue3xr828o4b8ju2l</string>
 	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
@@ -63,5 +61,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>

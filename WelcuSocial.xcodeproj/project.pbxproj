@@ -1113,6 +1113,7 @@
 				CE4FCDDC179F388E00DF5BE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE7BEC09177E0BC30006D75C /* Build configuration list for PBXProject "WelcuSocial" */ = {
 			isa = XCConfigurationList;

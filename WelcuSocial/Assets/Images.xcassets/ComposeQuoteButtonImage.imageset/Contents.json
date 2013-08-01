@@ -1,9 +1,20 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "3-part-vertical",
+        "center" : {
+          "mode" : "fill",
+          "height" : 1
+        },
+        "capInsets" : {
+          "top" : 15,
+          "bottom" : 15
+        }
+      },
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "quote.png"
+      "filename" : "quote.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",

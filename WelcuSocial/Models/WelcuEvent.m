@@ -15,24 +15,44 @@
 @implementation WelcuEvent
 
 @dynamic name;
-@dynamic headerPhoto;
+@dynamic eventID;
 @dynamic startsAt;
 @dynamic endsAt;
-@dynamic eventID;
+@dynamic headerPhoto;
+@dynamic flyerURLString;
+@dynamic flyerHeight;
+@dynamic flyerWidth;
 @dynamic posts;
 @dynamic tickets;
 @dynamic activities;
 @dynamic accessedAt;
 @dynamic venueName;
 @dynamic venueAddress;
+@dynamic basePriceCurrency;
+@dynamic basePriceValue;
+
+- (NSString *)formattedBasePrice
+{
+    return [NSString stringWithFormat:@"%f %@", [self.basePriceValue floatValue], self.basePriceCurrency];
+}
+
+- (NSURL *)flyerURL
+{
+    if (self.flyerURLString) {
+        return [NSURL URLWithString:self.flyerURLString];
+    } else {
+        return nil;
+    }
+}
+
 
 - (NSURL *)headerPhotoURL
 {
     if (self.headerPhoto) {
         return [NSURL URLWithString:self.headerPhoto];
+    } else {
+        return nil;
     }
-    
-    return nil;
 }
 
 - (void)accessed
