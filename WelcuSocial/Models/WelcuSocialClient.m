@@ -133,6 +133,13 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
     
     if (representation[@"header_photo"])
         result[@"headerPhoto"] = representation[@"header_photo"];
+
+//    if (representation[@"flyer"]) {
+//        result[@"flyerURLString"] = representation[@"flyer"][@"url"];
+//        result[@"flyerHeight"] = representation[@"flyer"][@"height"];
+//        result[@"flyerWidth"] = representation[@"flyer"][@"width"];
+//    }
+
     
     if (representation[@"venue_name"])
         result[@"venueName"] = representation[@"venue_name"];
@@ -345,6 +352,8 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
                                      ofEntity:(NSEntityDescription *)entity
                                  fromResponse:(NSHTTPURLResponse *)response
 {
+    DDLogInfo(@"attributesForRepresentation:ofEntity:%@fromResponse:", entity.name);
+    
     if ([[entity name] isEqualToString:@"WelcuPost"]) {
         return [self attributesForPostRepresentation:representation fromResponse:response];
     } else if ([[entity name] isEqualToString:@"WelcuUser"]) {
@@ -395,6 +404,8 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
 - (NSMutableURLRequest *)requestForFetchRequest:(NSFetchRequest *)fetchRequest
                                     withContext:(NSManagedObjectContext *)context
 {
+    DDLogInfo(@"requestForFetchRequest:%@withContext:", fetchRequest.entity.name);
+
     if ([fetchRequest.entity.name isEqualToString:@"WelcuPost"]) {
         return [self requestForPostsFetchRequest:fetchRequest withContext:context];
     } else if ([fetchRequest.entity.name isEqualToString:@"WelcuEvent"]) {
@@ -413,9 +424,12 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
                        pathForObjectWithID:(NSManagedObjectID *)objectID
                                withContext:(NSManagedObjectContext *)context
 {
-    NSMutableURLRequest *result = [super requestWithMethod:method pathForObjectWithID:objectID withContext:context];
-    
-    DDLogInfo(@"requestForFetchRequest:withContext: %@", result);
+    if ([objectID.entity.name isEqualToString:@"WelcuEvent"]) {
+        WelcuEvent *event = (WelcuEvent *)[context objectWithID:objectID];
+        return [self requestWithMethod:@"GET"
+                                  path:[NSString stringWithFormat:@"events/%@", event.eventID]
+                            parameters:nil];
+    }
     
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"Unknown request for %@ entity with id %@", objectID.entity.name, objectID]
