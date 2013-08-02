@@ -155,7 +155,9 @@
         <scene sceneID="teL-J5-8m9">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="k8A-zX-Fwa" customClass="WelcuEventTicketsController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Tickets" id="B6g-hY-8jw"/>
+                    <navigationItem key="navigationItem" title="Tickets" id="B6g-hY-8jw">
+                        <barButtonItem key="backBarButtonItem" title=" " id="RoG-V8-uyE"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GqI-j5-uHw" userLabel="First Responder" sceneMemberID="firstResponder"/>

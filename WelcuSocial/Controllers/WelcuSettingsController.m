@@ -31,6 +31,9 @@
 {
     self = [super init];
     if (!self) return nil;
+    
+    self.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationBar.translucent = NO;
 
     self.settingsController = [[IASKAppSettingsViewController alloc] init];
     self.settingsController.delegate = self;
