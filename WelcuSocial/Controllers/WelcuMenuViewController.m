@@ -12,6 +12,7 @@
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <FontasticIcons/FontasticIcons.h>
 
+#import "WelcuSettingsController.h"
 #import "WelcuAccount.h"
 #import "UIImage+MaskedImages.h"
 #import "WelcuMenuUserProfileCell.h"
@@ -43,6 +44,8 @@
     layer.frame = self.settingsButton.bounds;
     layer.iconColor = [UIColor whiteColor];
     [self.settingsButton.layer addSublayer:layer];
+    
+    [self.settingsButton addTarget:self action:@selector(showSettings:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -119,20 +122,30 @@
     }
     
     if (newController) {
-        JASidePanelController *sidePanel = self.sidePanelController;
-        
-        NSTimeInterval delayInSeconds = 0.2;
-        
-        [sidePanel setCenterPanelHidden:YES animated:YES duration:delayInSeconds];
-        
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [sidePanel setCenterPanel:newController];
-            [sidePanel showCenterPanelAnimated:YES];
-        });
-        
+        [self pressentMainController:newController];
     }
+}
 
+- (void)pressentMainController:(UIViewController *)controller
+{
+    JASidePanelController *sidePanel = self.sidePanelController;
+    
+    NSTimeInterval delayInSeconds = 0.2;
+    
+    [sidePanel setCenterPanelHidden:YES animated:YES duration:delayInSeconds];
+    
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [sidePanel setCenterPanel:controller];
+        [sidePanel showCenterPanelAnimated:YES];
+    });
+}
+
+- (void)showSettings:(id)sender
+{
+    WelcuSettingsController *settingsController = [WelcuSettingsController settingsController];
+//    [self pressentMainController:settingsController];
+    [self.sidePanelController presentViewController:settingsController animated:YES completion:nil];
 }
 
 @end

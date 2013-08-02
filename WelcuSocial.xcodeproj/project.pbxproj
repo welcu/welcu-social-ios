@@ -88,6 +88,8 @@
 		CE8E49431780E279006B1874 /* WelcuEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8E49421780E279006B1874 /* WelcuEventCell.xib */; };
 		CE8E49461780E2AE006B1874 /* WelcuEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E49451780E2AE006B1874 /* WelcuEventCell.m */; };
 		CE8E49491781116B006B1874 /* WelcuComposePhotoCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E49481781116B006B1874 /* WelcuComposePhotoCameraViewController.m */; };
+		CE99962B17AC1FB000C6653E /* WelcuSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE99962A17AC1FB000C6653E /* WelcuSettingsController.m */; };
+		CE99962D17AC216B00C6653E /* InAppSettings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE99962C17AC216B00C6653E /* InAppSettings.bundle */; };
 		CE9D2FCB17871E1A0016B8B8 /* WelcuEventPostHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D2FCA17871E1A0016B8B8 /* WelcuEventPostHeaderView.m */; };
 		CE9D2FCE17871E950016B8B8 /* WelcuEventPostPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D2FCD17871E950016B8B8 /* WelcuEventPostPhotoCell.m */; };
 		CE9D2FD117871EAD0016B8B8 /* WelcuEventPostTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D2FD017871EAD0016B8B8 /* WelcuEventPostTextCell.m */; };
@@ -246,6 +248,9 @@
 		CE8E49451780E2AE006B1874 /* WelcuEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventCell.m; sourceTree = "<group>"; };
 		CE8E49471781116B006B1874 /* WelcuComposePhotoCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuComposePhotoCameraViewController.h; sourceTree = "<group>"; };
 		CE8E49481781116B006B1874 /* WelcuComposePhotoCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuComposePhotoCameraViewController.m; sourceTree = "<group>"; };
+		CE99962917AC1FB000C6653E /* WelcuSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuSettingsController.h; sourceTree = "<group>"; };
+		CE99962A17AC1FB000C6653E /* WelcuSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuSettingsController.m; sourceTree = "<group>"; };
+		CE99962C17AC216B00C6653E /* InAppSettings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = InAppSettings.bundle; sourceTree = "<group>"; };
 		CE9D2FC917871E1A0016B8B8 /* WelcuEventPostHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventPostHeaderView.h; sourceTree = "<group>"; };
 		CE9D2FCA17871E1A0016B8B8 /* WelcuEventPostHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventPostHeaderView.m; sourceTree = "<group>"; };
 		CE9D2FCC17871E950016B8B8 /* WelcuEventPostPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventPostPhotoCell.h; sourceTree = "<group>"; };
@@ -370,6 +375,8 @@
 				CE7BEC49177E10D30006D75C /* WelcuMainViewController.m */,
 				CE7BEC4B177E11490006D75C /* WelcuMenuViewController.h */,
 				CE7BEC4C177E11490006D75C /* WelcuMenuViewController.m */,
+				CE99962917AC1FB000C6653E /* WelcuSettingsController.h */,
+				CE99962A17AC1FB000C6653E /* WelcuSettingsController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -524,6 +531,7 @@
 				CE7BEC1D177E0BC30006D75C /* main.m */,
 				CE7BEC1F177E0BC30006D75C /* WelcuSocial-Prefix.pch */,
 				CE38FB7517AC09D30062C955 /* WelcuSocial.strings */,
+				CE99962C17AC216B00C6653E /* InAppSettings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -765,6 +773,7 @@
 				CEBBD1DF178F6A1300F3E36C /* GothamMedium.ttf in Resources */,
 				CE16DC93178B724000371025 /* WelcuComposeController.xib in Resources */,
 				CE16DD53178F326900371025 /* posts.json in Resources */,
+				CE99962D17AC216B00C6653E /* InAppSettings.bundle in Resources */,
 				CE4FCE5817A1D98400DF5BE4 /* WelcuEventTicketsCell.xib in Resources */,
 				CEBD4F14178F60B100DE276E /* MuseoSans-500.ttf in Resources */,
 				CE4FCDB6179EDDDE00DF5BE4 /* WelcuMenuActionCell.xib in Resources */,
@@ -883,6 +892,7 @@
 				CE8E4935177F9047006B1874 /* WelcuMenuUserProfileCell.m in Sources */,
 				CE4FCE5017A185BC00DF5BE4 /* WelcuEventTicketsController.m in Sources */,
 				CE71AD761795B30200598802 /* NSFetchRequest+ServerContext.m in Sources */,
+				CE99962B17AC1FB000C6653E /* WelcuSettingsController.m in Sources */,
 				CE7BEC22177E0BC30006D75C /* WelcuAppDelegate.m in Sources */,
 				CE9D2FCE17871E950016B8B8 /* WelcuEventPostPhotoCell.m in Sources */,
 				CE4FCE4617A17FBB00DF5BE4 /* WelcuTicketPlaceCell.m in Sources */,

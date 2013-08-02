@@ -12,6 +12,7 @@ pod 'FXKeychain'
 pod 'GPUImage'
 pod 'FontasticIcons'
 pod 'CHTCollectionViewWaterfallLayout'
+pod 'InAppSettingsKit'
 
 # UI
 pod 'JASidePanels', '~> 1.3.1'
