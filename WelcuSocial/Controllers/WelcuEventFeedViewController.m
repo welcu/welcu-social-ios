@@ -63,11 +63,16 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 - (void)viewDidLoad
 {
+    NSParameterAssert(self.event);
+    [self.event accessed];
+
     [super viewDidLoad];
     
-    NSParameterAssert(self.event);
-    
-    [self.event accessed];
+    if ([self.event.tickets count]) {
+        self.navigationItem.rightBarButtonItem.image = [[FIFontAwesomeIcon ticketIcon] imageWithBounds:CGRectMake(0, 0, 25, 25) color:[UIColor blackColor]];
+    } else {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"WelcuPost"];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"event = %@" argumentArray:@[self.event]];
@@ -91,18 +96,12 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
                                                bundle:nil]
          forCellReuseIdentifier:@"WelcuEventPostPhotoCell"];
     
-    
-    
-    self.navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 15, self.view.bounds.size.width, 44)];
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"ClearPixel"]
-                             forBarMetrics:UIBarMetricsDefault];
-    [self.view addSubview:self.navigationBar];
-
     self.headerView = [WelcuEventHeaderView headerView];
-    self.headerView.frame = CGRectMake(0, 0, self.view.bounds.size.width, WELCU_EVENT_HEADER_MAX_HEIGHT);
+//    self.headerView.frame = CGRectMake(0, 0, self.view.bounds.size.width, WELCU_EVENT_HEADER_MAX_HEIGHT);
+    self.headerView.frame = CGRectMake(0, -64, self.view.bounds.size.width, WELCU_EVENT_HEADER_MAX_HEIGHT);
     self.headerView.event = self.event;
 
-    [self.view insertSubview:self.headerView belowSubview:self.navigationBar];
+    [self.view addSubview:self.headerView];
 
 //    [self.tableView setTableHeaderView:[[UIView alloc] initWithFrame:self.headerView.frame]];
 
@@ -121,47 +120,25 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 {
     DDLogInfo(@"viewWillAppear:");
     [self scrollViewDidScroll:self.tableView];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.translucent = YES;
+//    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
+//    self.navigationController.navigationBar.translucent = YES;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ClearPixel"]
+                                                  forBarMetrics:UIBarMetricsDefault];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [self setNeedsStatusBarAppearanceUpdate];
-    DDLogInfo(@"viewDidAppear:");
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
     [self scrollViewDidScroll:self.tableView];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (![self.navigationBar.items count]) {
-            UINavigationItem *nav = [[UINavigationItem alloc] initWithTitle:@"Event Feed"];
-            if (self.navigationItem.leftBarButtonItem) {
-                nav.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:self.navigationItem.leftBarButtonItem.image
-                                                                         style:self.navigationItem.leftBarButtonItem.style
-                                                                        target:self.navigationItem.leftBarButtonItem.target
-                                                                        action:self.navigationItem.leftBarButtonItem.action];
-            } else if ([self.navigationController.viewControllers firstObject] != self) {
-                // Backbutton
-                nav.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back"
-                                                                         style:UIBarButtonItemStylePlain
-                                                                        target:self
-                                                                        action:@selector(navigationControllerBack)];
-
-            } else {
-                nav.leftBarButtonItem = [self.sidePanelController leftButtonForCenterPanel];
-            }
-            
-            if ([self.event.tickets count]) {
-                FIIcon *icon = [FIFontAwesomeIcon ticketIcon];
-                UIImage *image = [icon imageWithBounds:CGRectMake(0, 0, 25, 25) color:[UIColor blackColor]];
-                
-                nav.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image
-                                                                          style:self.navigationItem.rightBarButtonItem.style
-                                                                         target:self.navigationItem.rightBarButtonItem.target
-                                                                         action:self.navigationItem.rightBarButtonItem.action];
-            }
-            
-            self.navigationBar.items = @[nav];
-        }
-    });
+    
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.translucent = YES;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ClearPixel"]
+                                                  forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ClearPixel"]
+//                                                  forBarMetrics:UIBarMetricsDefault];
     
     self.refetchTimer = [NSTimer scheduledTimerWithTimeInterval:10
                                                          target:self
@@ -177,16 +154,22 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    DDLogInfo(@"viewWillDisappear:");
-//    [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
+    
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController.navigationBar setBackgroundImage:nil
+                                                  forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     DDLogInfo(@"viewDidDisappear:");
-    [super viewDidDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController.navigationBar setBackgroundImage:nil
+                                                  forBarMetrics:UIBarMetricsDefault];
     
     [self.refetchTimer invalidate];
     self.refetchTimer = nil;
