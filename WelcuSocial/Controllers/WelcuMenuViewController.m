@@ -10,6 +10,7 @@
 #import <JASidePanels/JASidePanelController.h>
 #import <JASidePanels/UIViewController+JASidePanel.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import <FontasticIcons/FontasticIcons.h>
 
 #import "WelcuAccount.h"
 #import "UIImage+MaskedImages.h"
@@ -35,12 +36,13 @@
     
     [self.tableView setContentInset:UIEdgeInsetsMake(20, 0, 0, 0)];
 
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    FIIcon *icon = [FIFontAwesomeIcon cogIcon];
+    
+    FIIconLayer *layer = [FIIconLayer new];
+    layer.icon = icon;
+    layer.frame = self.settingsButton.bounds;
+    layer.iconColor = [UIColor whiteColor];
+    [self.settingsButton.layer addSublayer:layer];
 }
 
 - (void)viewWillAppear:(BOOL)animated

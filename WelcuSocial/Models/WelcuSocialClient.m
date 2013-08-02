@@ -114,6 +114,10 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
     result[@"fetchedAt"] = [NSDate date];
     result[@"eventID"] = representation[@"id"];
     
+    if (representation[@"url"]) {
+        result[@"eventURLString"] = representation[@"url"];
+    }
+    
     if (representation[@"name"])
         result[@"name"] = representation[@"name"];
     
@@ -469,6 +473,11 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
 {
     if ([objectID.entity.name isEqualToString:@"WelcuEvent"]) {
         return YES;
+        // TODO: Find way to detect if object needs to be re loaded
+//        WelcuEvent *event = (WelcuEvent *)[context objectWithID:objectID];
+//        if (!event.name) {
+//            return YES;
+//        }
     }
     
     return NO;

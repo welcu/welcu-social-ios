@@ -17,7 +17,7 @@ typedef enum {
 @interface WelcuMenuActionCell : UITableViewCell
 
 @property (nonatomic,weak) IBOutlet UILabel *menuLabel;
-@property (nonatomic,weak) IBOutlet UIImageView *iconImage;
+@property (nonatomic,weak) IBOutlet UIImageView *iconImageView;
 
 @property (nonatomic,assign) WelcuMenuActionCellType cellType;
 

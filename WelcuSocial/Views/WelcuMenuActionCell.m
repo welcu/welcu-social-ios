@@ -7,6 +7,7 @@
 //
 
 #import "WelcuMenuActionCell.h"
+#import <FontasticIcons/FontasticIcons.h>
 
 @implementation WelcuMenuActionCell
 
@@ -36,24 +37,30 @@
 
 - (void)setAttributes
 {
+    FIIcon *icon;
     switch (self.cellType) {
         case WelcuMenuActionCellMyEventsType:
             self.menuLabel.text = @"My Events";
+            icon = [FIFontAwesomeIcon calendarIcon];
             break;
         case WelcuMenuActionCellMyTicketsType:
             self.menuLabel.text = @"My Tickets";
+            icon = [FIFontAwesomeIcon ticketIcon];
             break;
         case WelcuMenuActionCellDiscoverType:
             self.menuLabel.text = @"Discover events";
+            icon = [FIFontAwesomeIcon searchIcon];
             break;
     }
     
     if (self.selected) {
         self.backgroundColor = [UIColor welcuDarkGrey];
         self.menuLabel.textColor = [UIColor welcuPurple];
+        self.iconImageView.image = [icon imageWithBounds:self.iconImageView.bounds color:[UIColor welcuPurple]];
     } else {
         self.backgroundColor = [UIColor clearColor];
         self.menuLabel.textColor = [UIColor whiteColor];
+        self.iconImageView.image = [icon imageWithBounds:self.iconImageView.bounds color:[UIColor whiteColor]];
     }
     
 }

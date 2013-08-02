@@ -7,10 +7,13 @@
 //
 
 #import "WelcuDiscoverEventsViewController.h"
+
+#import <CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.h>
+
 #import "WelcuDiscoverEventCell.h"
 #import "WelcuAccount.h"
 
-@interface WelcuDiscoverEventsViewController () <NSFetchedResultsControllerDelegate>
+@interface WelcuDiscoverEventsViewController () <NSFetchedResultsControllerDelegate,CHTCollectionViewDelegateWaterfallLayout>
 
 @property (nonatomic,strong) NSFetchedResultsController *fetchedResultsController;
 
@@ -44,6 +47,11 @@
     self.fetchedResultsController.delegate = self;
     [self refetchData];
     
+    CHTCollectionViewWaterfallLayout *waterfallLayout = (CHTCollectionViewWaterfallLayout *)self.collectionViewLayout;
+    waterfallLayout.columnCount = 2;
+    waterfallLayout.itemWidth = 145;
+    waterfallLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,15 +83,24 @@
     return cell;
 }
 
-#pragma mark - UICollectionViewDelegateFlowLayout
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return CGSizeMake(145, 230);
-}
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+//#pragma mark - UICollectionViewDelegateFlowLayout
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return [WelcuDiscoverEventCell sizeForEvent:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+//}
+//
+//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+//{
+//    return UIEdgeInsetsMake(10, 10, 10, 10);
+//}
+
+#pragma mark - CHTCollectionViewDelegateWaterfallLayout
+- (CGFloat)collectionView:(UICollectionView *)collectionView
+                   layout:(CHTCollectionViewWaterfallLayout *)collectionViewLayout
+ heightForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return UIEdgeInsetsMake(10, 10, 10, 10);
+    return [WelcuDiscoverEventCell heightForEvent:[self.fetchedResultsController objectAtIndexPath:indexPath]];
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate

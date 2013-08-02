@@ -16,6 +16,7 @@
 
 @dynamic name;
 @dynamic eventID;
+@dynamic eventURLString;
 @dynamic startsAt;
 @dynamic endsAt;
 @dynamic headerPhoto;
@@ -33,13 +34,23 @@
 
 - (NSString *)formattedBasePrice
 {
-    if ([self.basePriceCurrency isEqualToString:@"free"]) {
-        return @"free";
+    if ([self.basePriceCurrency isEqualToString:@"free"] || self.basePriceCurrency == nil) {
+        return NSLocalizedString(@"Free", nil);
     } else if (self.basePriceValue && self.basePriceCurrency) {
         NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
         [numberFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
         
-        return [NSString stringWithFormat:@"%@ %@", [numberFormatter stringFromNumber:self.basePriceValue], self.basePriceCurrency];
+        return [NSString stringWithFormat:@"%@ %@", [self.basePriceCurrency uppercaseString], [numberFormatter stringFromNumber:self.basePriceValue]];
+    } else {
+        return nil;
+    }
+}
+
+
+- (NSURL *)eventURL
+{
+    if (self.eventURLString) {
+        return [NSURL URLWithString:self.eventURLString];
     } else {
         return nil;
     }

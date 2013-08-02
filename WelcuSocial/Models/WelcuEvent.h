@@ -24,6 +24,9 @@
 /** The event UUID identifier */
 @property (nonatomic, strong) NSString *eventID;
 
+@property (nonatomic, strong) NSString *eventURLString;
+@property (nonatomic, readonly) NSURL *eventURL;
+
 /** The event start date */
 @property (nonatomic, strong) NSDate *startsAt;
 

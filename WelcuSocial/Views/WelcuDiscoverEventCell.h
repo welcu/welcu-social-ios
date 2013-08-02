@@ -15,10 +15,15 @@
 
 @property (nonatomic,strong) WelcuEvent *event;
 
-@property (nonatomic,weak) IBOutlet NPRImageView *eventFlyerImage;
+@property (nonatomic,weak) IBOutlet UIImageView *eventFlyerImage;
 @property (nonatomic,weak) IBOutlet UILabel *eventNameLabel;
 @property (nonatomic,weak) IBOutlet UILabel *eventDateLabel;
 @property (nonatomic,weak) IBOutlet UILabel *eventPriceLabel;
+
+@property (nonatomic,weak) IBOutlet NSLayoutConstraint *eventFlyerHeightConstraint;
+@property (nonatomic,weak) IBOutlet UILabel *fromLabel;
 @property (nonatomic,weak) IBOutlet UIButton *buyButton;
+
++ (CGFloat)heightForEvent:(WelcuEvent *)event;
 
 @end

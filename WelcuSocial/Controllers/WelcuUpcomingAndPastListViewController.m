@@ -53,12 +53,14 @@
     [self refetchData];
     
     self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[
-                                                                        NSLocalizedString(@"Upcomming", nil),
+                                                                        NSLocalizedString(@"Upcoming", nil),
                                                                         NSLocalizedString(@"Past", nil)
                                                                         ]];
     [self.segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
     [self.segmentedControl setTintColor:[UIColor blackColor]];
     self.segmentedControl.selectedSegmentIndex = self.mode;
+    
+    self.segmentedControl.segmentedControlStyle = UISegmentedControlStyleBezeled;
     
     self.tableView.tableHeaderView = self.segmentedControl;
 }

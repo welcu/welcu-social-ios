@@ -11,5 +11,6 @@
 @interface WelcuMenuViewController : UIViewController
 
 @property (nonatomic,weak) IBOutlet UITableView *tableView;
+@property (nonatomic,weak) IBOutlet UIButton *settingsButton;
 
 @end

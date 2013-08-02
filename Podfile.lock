@@ -9,6 +9,7 @@ PODS:
   - ALRadial (0.1.0)
   - AMAttributedHighlightLabel (0.0.1)
   - AviarySDK (3.1.1)
+  - CHTCollectionViewWaterfallLayout (0.0.1)
   - CocoaLumberjack (1.6.2)
   - DRKonamiCode (1.0.0)
   - Facebook-iOS-SDK (3.5.3)
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - ALRadial (~> 0.1.0)
   - AMAttributedHighlightLabel (~> 0.0.1)
   - AviarySDK (from `Vendor/AviarySDK.podspec`)
+  - CHTCollectionViewWaterfallLayout
   - CocoaLumberjack (~> 1.6.2)
   - DRKonamiCode (~> 1.0.0)
   - Facebook-iOS-SDK
@@ -87,6 +89,7 @@ SPEC CHECKSUMS:
   ALRadial: 266f46923c2e9de18d6436a70c43b212b081e382
   AMAttributedHighlightLabel: fe668dddfcdabb2dcc32cec46d7371bcf845897c
   AviarySDK: b5ce17afb9ebe996587e5848b31b70968bd9b430
+  CHTCollectionViewWaterfallLayout: 00a833b42559bb1f982903fa0ddea716dd823e89
   CocoaLumberjack: d73e1e317ced14ab930797dda6c17156ff17aaa1
   DRKonamiCode: 593a004b44eb0239c42090d2b5e28c44300c1907
   Facebook-iOS-SDK: c11e851555d8cb8b55853ec2990b01d9e343d09e

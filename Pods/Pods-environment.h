@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AviarySDK 1
 #define COCOAPODS_VERSION_PATCH_AviarySDK 1
 
+// CHTCollectionViewWaterfallLayout
+#define COCOAPODS_POD_AVAILABLE_CHTCollectionViewWaterfallLayout
+#define COCOAPODS_VERSION_MAJOR_CHTCollectionViewWaterfallLayout 0
+#define COCOAPODS_VERSION_MINOR_CHTCollectionViewWaterfallLayout 0
+#define COCOAPODS_VERSION_PATCH_CHTCollectionViewWaterfallLayout 1
+
 // CocoaLumberjack
 #define COCOAPODS_POD_AVAILABLE_CocoaLumberjack
 #define COCOAPODS_VERSION_MAJOR_CocoaLumberjack 1

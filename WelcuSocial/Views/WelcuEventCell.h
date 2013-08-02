@@ -10,5 +10,7 @@
 #import "WelcuEvent.h"
 
 @interface WelcuEventCell : UITableViewCell
+
 @property (nonatomic,strong) WelcuEvent *event;
+
 @end

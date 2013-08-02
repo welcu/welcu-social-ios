@@ -25,7 +25,7 @@
 {
     // #0bb475
     // 4.3, 70.6, 45.9
-    return [UIColor colorWithRed:0.329 green:0.325 blue:0.565 alpha:1];
+    return [UIColor colorWithRed:0.043 green:0.706 blue:0.459 alpha:1.000];
 }
 
 + (UIColor *)welcuDarkGreen

@@ -13,6 +13,7 @@
 #import <MJPopupViewController/MJPopupBackgroundView.h>
 
 #import <PCStackMenu/PCStackMenu.h>
+#import <FontasticIcons/FontasticIcons.h>
 
 #import "WelcuAccount.h"
 #import "WelcuPost.h"
@@ -149,7 +150,10 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
             }
             
             if ([self.event.tickets count]) {
-                nav.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:self.navigationItem.rightBarButtonItem.image
+                FIIcon *icon = [FIFontAwesomeIcon ticketIcon];
+                UIImage *image = [icon imageWithBounds:CGRectMake(0, 0, 25, 25) color:[UIColor blackColor]];
+                
+                nav.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image
                                                                           style:self.navigationItem.rightBarButtonItem.style
                                                                          target:self.navigationItem.rightBarButtonItem.target
                                                                          action:self.navigationItem.rightBarButtonItem.action];
