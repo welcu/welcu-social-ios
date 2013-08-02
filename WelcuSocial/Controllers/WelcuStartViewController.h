@@ -10,10 +10,4 @@
 
 @interface WelcuStartViewController : UIViewController
 
-#pragma mark View handling
-- (void)presentMainViewAnimated:(BOOL)animated;
-- (void)dissmisMainViewAnimated:(BOOL)animated;
-- (void)presentLoginViewAnimated:(BOOL)animated;
-- (void)dissmisLoginViewAnimated:(BOOL)animated;
-
 @end

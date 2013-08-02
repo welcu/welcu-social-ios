@@ -15,7 +15,7 @@
 
 - (void)awakeFromNib
 {
-    self.selectionStyle = UITableViewCellSelectionStyleDefault;
+//    self.selectionStyle = UITableViewCellSelectionStyleDefault;
     
     self.backgroundColor = [UIColor clearColor];
     self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.frame];
@@ -53,7 +53,10 @@
             break;
     }
     
-    if (self.selected) {
+    if (self.selectionStyle == UITableViewCellSelectionStyleNone) {
+        self.menuLabel.textColor = [UIColor welcuMediumGrey];
+        self.iconImageView.image = [icon imageWithBounds:self.iconImageView.bounds color:[UIColor welcuMediumGrey]];
+    } else if (self.selected) {
         self.backgroundColor = [UIColor welcuDarkGrey];
         self.menuLabel.textColor = [UIColor welcuPurple];
         self.iconImageView.image = [icon imageWithBounds:self.iconImageView.bounds color:[UIColor welcuPurple]];

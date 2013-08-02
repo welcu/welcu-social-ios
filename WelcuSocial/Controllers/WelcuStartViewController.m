@@ -7,16 +7,9 @@
 //
 
 #import "WelcuStartViewController.h"
-
-#import <FacebookSDK/FacebookSDK.h>
-
 #import "WelcuAccount.h"
-#import "WelcuLoginViewController.h"
-#import "WelcuMainViewController.h"
 
 @interface WelcuStartViewController ()
-
-- (void)handleAccountLogOut;
 
 @end
 
@@ -24,64 +17,17 @@
 
 #pragma mark View handling
 
-- (void)presentMainViewAnimated:(BOOL)animated
-{
-    if ([self.presentedViewController isKindOfClass:[WelcuMainViewController class]]) {
-//        WelcuMainViewController* mainViewController = (WelcuMainViewController *)self.presentedViewController;
-    } else {
-        if (self.presentedViewController) {
-            [self dismissViewControllerAnimated:animated completion:nil];
-        }
-        
-        [self performSegueWithIdentifier:@"WelcuMainViewController" sender:self];
-    }
-}
-
-- (void)dissmisMainViewAnimated:(BOOL)animated
-{
-    if ([self.presentedViewController isKindOfClass:[WelcuMainViewController class]]) {
-        [self dismissViewControllerAnimated:animated completion:nil];
-    }
-}
-
-- (void)presentLoginViewAnimated:(BOOL)animated
-{
-    if ([self.presentedViewController isKindOfClass:[WelcuLoginViewController class]]) {
-        WelcuLoginViewController* loginViewController =
-        (WelcuLoginViewController *)self.presentedViewController;
-        [loginViewController loginFailed];
-    } else {
-        if (self.presentedViewController) {
-            [self dismissViewControllerAnimated:animated completion:nil];
-        }
-        
-        [self performSegueWithIdentifier:@"WelcuLoginViewController" sender:self];
-    }
-}
-
-- (void)dissmisLoginViewAnimated:(BOOL)animated
-{
-    if ([self.presentedViewController isKindOfClass:[WelcuLoginViewController class]]) {
-        [self dismissViewControllerAnimated:animated completion:nil];
-    }
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleAccountLogOut) name:@"WelcuAccountLoggedOut" object:nil];
-
-	// Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleAccountChange) name:@"WelcuAccountSignIn" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleAccountChange) name:@"WelcuAccountSignOut" object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    if ([WelcuAccount currentAccount]) {
-        [self presentMainViewAnimated:animated];
-    } else {
-        [self presentLoginViewAnimated:animated];
-    }
+    [self performSegueWithIdentifier:@"WelcuMainViewController" sender:self];
 }
 
 - (void)dealloc
@@ -89,10 +35,9 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)handleAccountLogOut
+- (void)handleAccountChange
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-//    [self presentLoginViewAnimated:YES];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{

@@ -11,36 +11,37 @@
 
 #import "WelcuEvent.h"
 
-typedef void(^WelcuAccountAuthenticationCompletionHandler)(WelcuAccount *account, NSError *error);
-
 @interface WelcuAccount : NSObject
 
-@property (strong) NSNumber *userID;
-@property (strong) NSString *firstName;
-@property (strong) NSString *lastName;
-@property (strong) NSString *facebookUID;
-
-@property (nonatomic, readonly) NSString *fullName;
-@property (nonatomic, readonly) NSURL *pictureURL;
-- (NSURL *)pictureURLWithSize:(NSInteger)pixels;
-
-@property (readonly) WelcuEvent *lastActiveEvent;
+#pragma mark - Authentication
 
 + (WelcuAccount *)currentAccount;
-+ (void)logOut;
-+ (void)authenticateWithFacebookAccessToken:(NSString *)accessToken
-                                    completionHandler:(WelcuAccountAuthenticationCompletionHandler)handler;
-+ (void)authenticateWithEmail:(NSString *)email
-                            andPassword:(NSString *)password
-                                    completionHandler:(WelcuAccountAuthenticationCompletionHandler)handler;
+- (void)signOut;
+- (void)signIn;
 
+#pragma mark - Abstract Methods
+
+@property (strong, readonly) NSNumber *userID;
+@property (strong, readonly) NSString *firstName;
+@property (strong, readonly) NSString *lastName;
+@property (strong, readonly) NSString *facebookUID;
+@property (readonly, getter = isGuest) BOOL guest;
+- (NSURL *)pictureURLWithSize:(NSInteger)pixels;
+@property (readonly) WelcuEvent *lastActiveEvent;
 @property (readonly, nonatomic) NSURL *accountDocumentsDirectory;
 
-// Related Models Access
-@property (readonly) WelcuSocialClient *client;
+
+#pragma mark - Account Methods
+
+@property (nonatomic, readonly) WelcuSocialClient *client;
+@property (nonatomic, readonly) NSString *fullName;
+@property (nonatomic, readonly) NSURL *pictureURL;
+
+
+#pragma mark - Data methods
+
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-
 - (void)saveContext;
 
 @end

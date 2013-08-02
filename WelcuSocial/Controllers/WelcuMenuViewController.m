@@ -36,8 +36,16 @@
          forCellReuseIdentifier:@"WelcuMenuActionCell"];
     
     [self.tableView setContentInset:UIEdgeInsetsMake(20, 0, 0, 0)];
-
-    FIIcon *icon = [FIFontAwesomeIcon cogIcon];
+    
+    
+    FIIcon *icon;
+    if ([[WelcuAccount currentAccount] isGuest]) {
+        icon = [FIFontAwesomeIcon signinIcon];
+        [self.settingsButton addTarget:self action:@selector(showLogin:) forControlEvents:UIControlEventTouchUpInside];
+    } else {
+        icon = [FIFontAwesomeIcon cogIcon];
+        [self.settingsButton addTarget:self action:@selector(showSettings:) forControlEvents:UIControlEventTouchUpInside];
+    }
     
     FIIconLayer *layer = [FIIconLayer new];
     layer.icon = icon;
@@ -45,7 +53,6 @@
     layer.iconColor = [UIColor whiteColor];
     [self.settingsButton.layer addSublayer:layer];
     
-    [self.settingsButton addTarget:self action:@selector(showSettings:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -77,11 +84,17 @@
         case 1:
             cell = [tableView dequeueReusableCellWithIdentifier:@"WelcuMenuActionCell"
                                                    forIndexPath:indexPath];
+            if ([[WelcuAccount currentAccount] isGuest]) {
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
             [(WelcuMenuActionCell*)cell setCellType:WelcuMenuActionCellMyEventsType];
             break;
         case 2:
             cell = [tableView dequeueReusableCellWithIdentifier:@"WelcuMenuActionCell"
                                                    forIndexPath:indexPath];
+            if ([[WelcuAccount currentAccount] isGuest]) {
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
             [(WelcuMenuActionCell*)cell setCellType:WelcuMenuActionCellMyTicketsType];
             break;
         case 3:
@@ -111,10 +124,14 @@
     
     switch (indexPath.row) {
         case 1:
-            newController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuUserEventsNavigationController"];
+            if (![[WelcuAccount currentAccount] isGuest]) {
+                newController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuUserEventsNavigationController"];
+            }
             break;
         case 2:
-            newController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuUserTicketsNavigationController"];
+            if (![[WelcuAccount currentAccount] isGuest]) {
+                newController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuUserTicketsNavigationController"];
+            }
             break;
         case 3:
             newController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuDiscoverNavigationController"];
@@ -139,6 +156,13 @@
         [sidePanel setCenterPanel:controller];
         [sidePanel showCenterPanelAnimated:YES];
     });
+}
+
+
+- (void)showLogin:(id)sender
+{
+    UIViewController *loginController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuLoginNavigationController"];
+    [self.sidePanelController presentViewController:loginController animated:YES completion:nil];
 }
 
 - (void)showSettings:(id)sender

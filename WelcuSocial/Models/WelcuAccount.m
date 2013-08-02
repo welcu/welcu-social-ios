@@ -8,8 +8,9 @@
 
 #import "WelcuAccount.h"
 
-#import <FXKeychain/FXKeychain.h>
 
+#import "WelcuGuestAccount.h"
+#import "WelcuUserAccount.h"
 #import "WelcuSocialIncrementalStore.h"
 #import "WelcuAppDelegate.h"
 
@@ -19,236 +20,44 @@ static WelcuAccount *currentAccount = nil;
 
 @interface WelcuAccount ()
 
-@property (strong) NSString *accessToken;
-@property (strong) WelcuSocialClient *client;
-@property (strong, nonatomic) NSDictionary *attributes;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) WelcuSocialIncrementalStore *incrementalStore;
-
-#pragma mark Account Management
-
-+ (void)setCurrentAccount:(WelcuAccount *)account;
-+ (WelcuAccount *)loadAccount;
-- (void)saveAccount;
-
-- (id)initWithAccessToken:(NSString *)accessToken;
-- (id)initWithAttributes:(NSDictionary *)attributes;
-+ (void)authenticateWithWelcuAccessTokenData:(id)accessTokenData
-                           complationHandler:(WelcuAccountAuthenticationCompletionHandler)handler;
 
 @end
 
 @implementation WelcuAccount
 
-- (id)init
-{
-    return [self initWithAccessToken:nil];
-}
-
-- (id)initWithAccessToken:(NSString *)accessToken
-{
-    self = [super init];
-    if (self) {
-        self.accessToken = accessToken;
-        self.client = [[WelcuSocialClient alloc] initWithAccount:self];
-    }
-    return self;
-}
-
-#pragma mark Account Management
+#pragma mark - Authentication
 
 + (WelcuAccount *)currentAccount
 {
-    // Account already loaded
-    if (currentAccount) {
-        return currentAccount;
-    }
-    
-    // Load persisted account data
-    WelcuAccount *account = [self loadAccount];
-    if (account) {
-        [self setCurrentAccount:account];
-        return currentAccount;
-    }
-    
-    // User isn't logged in
-    return nil;
-}
-
-+ (void)setCurrentAccount:(WelcuAccount *)account
-{
-    if (currentAccount == account) return;
-
-    FXKeychain *keychain = [FXKeychain defaultKeychain];
-    
     @synchronized(self) {
-        
-        currentAccount = account;
-
-        if (account) {
-            keychain[@"access_token"] = account.accessToken;
-            keychain[@"user"] = account.attributes;
-            
-        } else {
-            // Loging out
-            keychain[@"access_token"] = nil;
-            keychain[@"user"] = nil;
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"WelcuAccountLoggedOut" object:nil];
+        if (!currentAccount) {
+            // Load persisted account data
+            WelcuUserAccount *account = [WelcuUserAccount authenticatedAccount];
+            if (account) {
+                currentAccount = account;
+            } else {
+                currentAccount = [WelcuGuestAccount guestAccount];
+            }
         }
-        
-    }
-}
-
-+ (void)logOut
-{
-    [self setCurrentAccount:nil];
-}
-
-- (NSDictionary *)attributes
-{
-    return @{
-             @"id" : self.userID,
-             @"first_name" : self.firstName,
-             @"last_name" : self.lastName,
-             @"facebook_uid" : self.facebookUID
-             };
-}
-
-- (void)setAttributes:(NSDictionary *)attributes
-{
-    // TODO
-    self.userID = attributes[@"id"];
-    self.firstName = attributes[@"first_name"];
-    self.lastName = attributes[@"last_name"];
-    self.facebookUID = attributes[@"facebook_uid"];
-}
-
-+ (WelcuAccount *)loadAccount
-{
-    FXKeychain *keychain = [FXKeychain defaultKeychain];
-    
-    if (keychain[@"access_token"]) {
-        WelcuAccount *account = [[WelcuAccount alloc] initWithAccessToken:keychain[@"access_token"]];
-        [account setAttributes:keychain[@"user"]];
-        
-        return account;
     }
     
-    return nil;
+    return currentAccount;
 }
 
-- (void)saveAccount
+- (void)signOut
 {
-    // TODO
+    if ([currentAccount isGuest]) return;
+    
+    currentAccount = [WelcuGuestAccount guestAccount];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WelcuAccountSignOut" object:nil];
 }
 
-
-
-- (id)initWithAttributes:(NSDictionary *)attributes
+- (void)signIn
 {
-    self = [self init];
-    if (self) {
-        self.userID = attributes[@"id"];
-        self.firstName = attributes[@"first_name"];
-        self.lastName = attributes[@"last_name"];
-        self.facebookUID = attributes[@"facebook_uid"];
-    }
-    return self;
-}
-
-- (NSString *)fullName
-{
-    return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
-}
-
-
-- (NSURL *)pictureURL
-{
-    return [self pictureURLWithSize:DEFAULT_PICTURE_SIZE];
-}
-
-- (NSURL *)pictureURLWithSize:(NSInteger)pixels
-{
-    
-    pixels = pixels * [[UIScreen mainScreen] scale];
-    return [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?height=%d&width=%d", self.facebookUID, pixels, pixels]];
-}
-
-
-+ (void)authenticateWithWelcuAccessTokenData:(id)accessTokenData
-                           complationHandler:(WelcuAccountAuthenticationCompletionHandler)handler
-{
-    WelcuAccount *account = [[WelcuAccount alloc] initWithAccessToken:accessTokenData[@"access_token"]];
-    
-    [account setAttributes:accessTokenData[@"user"]];
-    
-    [self setCurrentAccount:account];
-    
-    handler(account,nil);
-}
-
-
-+ (void)authenticateWithFacebookAccessToken:(NSString *)accessToken
-                                    completionHandler:(WelcuAccountAuthenticationCompletionHandler)handler
-{
-    [WelcuSocialClient authorizeWithFacebookAccessToken:accessToken success:^(id accessTokenData) {
-        [self authenticateWithWelcuAccessTokenData:accessTokenData complationHandler:handler];
-    } failure:^(NSError *error) {
-        handler(nil, error);
-    }];
-}
-
-+ (void)authenticateWithEmail:(NSString *)email
-                  andPassword:(NSString *)password
-            completionHandler:(WelcuAccountAuthenticationCompletionHandler)handler
-{
-    [WelcuSocialClient authorizeWithEmail:email andPassword:password success:^(id accessTokenData) {
-        [self authenticateWithWelcuAccessTokenData:accessTokenData
-                                               complationHandler:handler];
-        
-    } failure:^(NSError *error) {
-        handler(nil, error);
-    }];
-}
-
-- (WelcuEvent *)lastActiveEvent
-{
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"WelcuEvent"];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"participating = YES AND accessedAt != nil"];
-    fetchRequest.sortDescriptors = @[
-                                [NSSortDescriptor sortDescriptorWithKey:@"accessedAt" ascending:NO]
-                                ];
-    fetchRequest.fetchLimit = 1;
-    
-    NSError *error = nil;
-    NSArray *results = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    if (error) {
-        DDLogWarn(@"%@", error);
-    }
-    
-    return [results firstObject];
-}
-
-@synthesize accountDocumentsDirectory = _accountDocumentsDirectory;
-
-- (NSURL *)accountDocumentsDirectory
-{
-    if (_accountDocumentsDirectory) {
-        return _accountDocumentsDirectory;
-    }
-    
-    _accountDocumentsDirectory = [NSURL URLWithString: [self.userID stringValue]
-                                       relativeToURL:[(WelcuAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory]];
-    DDLogInfo(@"%@", [_accountDocumentsDirectory path]);
-    
-    [[NSFileManager defaultManager] createDirectoryAtURL:_accountDocumentsDirectory
-                             withIntermediateDirectories:NO
-                                              attributes:nil
-                                                   error:nil];
-
-    return _accountDocumentsDirectory;
+    currentAccount = self;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WelcuAccountSignIn" object:nil];
 }
 
 #pragma mark - Core Data
@@ -326,6 +135,44 @@ static WelcuAccount *currentAccount = nil;
     [self.managedObjectContext performBlock:^{
         [self.managedObjectContext save:nil];
     }];
+}
+
+#pragma mark - Abstract Methods
+
+#define ABSTRACT @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
+
+#pragma mark - Abstract Methods
+
+- (NSNumber *)userID { ABSTRACT }
+- (NSString *)firstName { ABSTRACT }
+- (NSString *)lastName { ABSTRACT }
+- (NSString *)facebookUID { ABSTRACT }
+- (BOOL)isGuest { ABSTRACT }
+- (NSURL *)pictureURLWithSize:(NSInteger)pixels { ABSTRACT }
+- (WelcuEvent *)lastActiveEvent { ABSTRACT }
+- (NSURL *)accountDocumentsDirectory { ABSTRACT }
+
+#pragma mark - Account Methods
+
+@synthesize client = _client;
+
+- (WelcuSocialClient *)client
+{
+    if (!_client) {
+        _client = [[WelcuSocialClient alloc] initWithAccount:self];
+    }
+    
+    return _client;
+}
+
+- (NSString *)fullName
+{
+    return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
+}
+
+- (NSURL *)pictureURL
+{
+    return [self pictureURLWithSize:DEFAULT_PICTURE_SIZE];
 }
 
 

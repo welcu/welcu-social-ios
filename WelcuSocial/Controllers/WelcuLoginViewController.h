@@ -11,6 +11,8 @@
 @interface WelcuLoginViewController : UIViewController
 
 - (void)loginFailed;
+
+- (IBAction)dismissLogin:(id)sender;
 - (IBAction)loginButtonPressed:(id)sender;
 
 @end

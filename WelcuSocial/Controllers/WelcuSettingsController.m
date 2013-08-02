@@ -51,7 +51,7 @@
 - (void)settingsViewController:(IASKAppSettingsViewController*)sender buttonTappedForSpecifier:(IASKSpecifier*)specifier
 {
     if ([[specifier key] isEqualToString:@"LogOut"]) {
-       [WelcuAccount logOut];
+       [[WelcuAccount currentAccount] signOut];
     }
 }
 

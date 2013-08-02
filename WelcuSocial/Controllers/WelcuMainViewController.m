@@ -19,17 +19,19 @@
 -(void) awakeFromNib
 {
     [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"WelcuMenuViewController"]];
-    
-    WelcuEvent *lastActiveEvent = [[WelcuAccount currentAccount] lastActiveEvent];
-    
     UINavigationController *centerController;
-    
-    if (lastActiveEvent) {
-        centerController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuEventFeedNavigationController"];
-        WelcuEventFeedViewController *eventFeedController = [[centerController viewControllers] firstObject];
-        eventFeedController.event = lastActiveEvent;
+
+    if ([[WelcuAccount currentAccount] isGuest]) {
+        centerController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuDiscoverNavigationController"];
     } else {
-        centerController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuUserEventsNavigationController"];
+        WelcuEvent *lastActiveEvent = [[WelcuAccount currentAccount] lastActiveEvent];
+        if (lastActiveEvent) {
+            centerController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuEventFeedNavigationController"];
+            WelcuEventFeedViewController *eventFeedController = [[centerController viewControllers] firstObject];
+            eventFeedController.event = lastActiveEvent;
+        } else {
+            centerController = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcuUserEventsNavigationController"];
+        }
     }
     
     [self setCenterPanel:centerController];

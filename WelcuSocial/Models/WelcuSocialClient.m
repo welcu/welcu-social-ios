@@ -37,8 +37,13 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self setDefaultHeader:@"Accept"
                          value:@"application/json"];
-        [self setDefaultHeader:@"Authorization"
-                         value:[NSString stringWithFormat:@"Bearer %@", self.account.accessToken]];
+        
+        // Add authentication header
+        if (![account isGuest]) {
+            [self setDefaultHeader:@"Authorization"
+                             value:[NSString stringWithFormat:@"Bearer %@", self.account.accessToken]];
+        }
+        
     }
     return self;
 }

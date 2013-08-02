@@ -30,8 +30,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <segue destination="oV7-Dj-Jet" kind="modal" identifier="WelcuMainViewController" animates="NO" id="4b7-Xe-jEh"/>
-                        <segue destination="a4W-2B-LsN" kind="modal" identifier="WelcuLoginViewController" animates="NO" id="3Fc-6j-IVm"/>
+                        <segue destination="oV7-Dj-Jet" kind="modal" identifier="WelcuMainViewController" modalTransitionStyle="crossDissolve" id="4b7-Xe-jEh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEW-1P-ejR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -47,7 +46,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ISm-bC-LI7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ray-qr-jiP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fiq-X3-WGL">
@@ -75,10 +74,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="gOE-wf-CVz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="HUt-0w-EcK">
+                            <connections>
+                                <action selector="dismissLogin:" destination="a4W-2B-LsN" id="PAo-0h-Nyk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txo-R1-PGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="-1032"/>
+            <point key="canvasLocation" x="968" y="-1032"/>
         </scene>
         <!--Welcu Main View Controller-->
         <scene sceneID="jmv-XX-9Hi">
@@ -341,7 +348,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9be-7o-d0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2740" y="-739"/>
+            <point key="canvasLocation" x="3266" y="-739"/>
         </scene>
         <!--Welcu Event Feed View Controller - Event feed-->
         <scene sceneID="a4G-4w-1Uv">
@@ -590,6 +597,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2t-Cn-7Yh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2540" y="1435"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s4U-r8-b9V">
+            <objects>
+                <navigationController storyboardIdentifier="WelcuLoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="WCj-fC-laP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Sgz-Da-at8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a4W-2B-LsN" kind="relationship" relationship="rootViewController" id="2Vk-SD-ACC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftl-oz-LWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="442" y="-1032"/>
         </scene>
     </scenes>
     <resources>

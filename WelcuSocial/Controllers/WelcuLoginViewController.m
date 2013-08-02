@@ -10,7 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 #import "WelcuAccount.h"
-#import "WelcuStartViewController.h"
+#import "WelcuUserAccount.h"
 
 @interface WelcuLoginViewController ()
 
@@ -78,32 +78,32 @@
 
 - (void)authenticateWithFacebookAccessToken:(NSString *)accessToken
 {
-    [WelcuAccount authenticateWithFacebookAccessToken:accessToken completionHandler:^(WelcuAccount *account, NSError *error) {
+    [WelcuUserAccount authenticateWithFacebookAccessToken:accessToken completionHandler:^(WelcuUserAccount *account, NSError *error) {
         
         if (error) {
             [self loginFailed];
             return;
         }
-        
-        [(WelcuStartViewController *)self.presentingViewController presentMainViewAnimated:YES];
     }];
 }
 
 - (void)authenticateWithEmail:(NSString *)email andPassword:(NSString *)password
 {
-    [WelcuAccount authenticateWithEmail:email andPassword:password completionHandler:^(WelcuAccount *account, NSError *error) {
+    [WelcuUserAccount authenticateWithEmail:email andPassword:password completionHandler:^(WelcuUserAccount *account, NSError *error) {
         
         if (error) {
             [self loginFailed];
             return;
         }
-        
-        
-        
-        [(WelcuStartViewController *)self.presentingViewController presentMainViewAnimated:YES];
+
     }];
 }
 
+
+- (IBAction)dismissLogin:(id)sender
+{
+    [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (IBAction)loginButtonPressed:(id)sender
 {
