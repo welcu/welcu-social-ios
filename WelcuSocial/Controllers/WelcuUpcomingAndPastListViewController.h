@@ -13,11 +13,12 @@ typedef enum {
     WelcuUpcomingAndPastListViewControllerModePast = 1
 } WelcuUpcomingAndPastListViewControllerMode;
 
-@interface WelcuUpcomingAndPastListViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+@interface WelcuUpcomingAndPastListViewController : UIViewController <NSFetchedResultsControllerDelegate,UITableViewDataSource,UITableViewDelegate> {
     NSFetchedResultsController *_pastFetchedResultsController;
     NSFetchedResultsController *_upcomingFetchedResultsController;
 }
 
+@property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,assign) WelcuUpcomingAndPastListViewControllerMode mode;
 @property (nonatomic,strong) NSFetchedResultsController *pastFetchedResultsController;
 @property (nonatomic,strong) NSFetchedResultsController *upcomingFetchedResultsController;

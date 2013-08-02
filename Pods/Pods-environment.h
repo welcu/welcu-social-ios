@@ -157,6 +157,12 @@
 #define COCOAPODS_VERSION_MINOR_PCStackMenu 0
 #define COCOAPODS_VERSION_PATCH_PCStackMenu 0
 
+// SDSegmentedControl
+#define COCOAPODS_POD_AVAILABLE_SDSegmentedControl
+#define COCOAPODS_VERSION_MAJOR_SDSegmentedControl 1
+#define COCOAPODS_VERSION_MINOR_SDSegmentedControl 0
+#define COCOAPODS_VERSION_PATCH_SDSegmentedControl 2
+
 // SIAlertView
 #define COCOAPODS_POD_AVAILABLE_SIAlertView
 #define COCOAPODS_VERSION_MAJOR_SIAlertView 1

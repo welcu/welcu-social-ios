@@ -8,6 +8,8 @@
 
 #import "WelcuUpcomingAndPastListViewController.h"
 
+#import <SDSegmentedControl/SDSegmentedControl.h>
+
 
 
 @interface WelcuUpcomingAndPastListViewController ()
@@ -52,17 +54,22 @@
     [super viewDidLoad];
     [self refetchData];
     
-    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[
+    self.segmentedControl = [[SDSegmentedControl alloc] initWithItems:@[
                                                                         NSLocalizedString(@"Upcoming", nil),
                                                                         NSLocalizedString(@"Past", nil)
                                                                         ]];
+    
     [self.segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
-    [self.segmentedControl setTintColor:[UIColor blackColor]];
     self.segmentedControl.selectedSegmentIndex = self.mode;
+    self.segmentedControl.frame = CGRectMake(0, 0, self.view.frame.size.width, 43);
+    [self.view addSubview:self.segmentedControl];
     
-    self.segmentedControl.segmentedControlStyle = UISegmentedControlStyleBezeled;
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 43, self.view.frame.size.width, self.view.frame.size.height-43)
+                                                  style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
-    self.tableView.tableHeaderView = self.segmentedControl;
+    [self.view addSubview:self.tableView];
 }
 
 - (void)segmentedControlValueChanged:(id)sender
