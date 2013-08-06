@@ -35,6 +35,7 @@
 		CE3D26F517B0207A00562482 /* WelcuComposeToggleSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3D26F417B0207A00562482 /* WelcuComposeToggleSwitch.m */; };
 		CE3D26F817B0268600562482 /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3D26F717B0268600562482 /* UIImage+ImageWithColor.m */; };
 		CE3D26FB17B02CC500562482 /* RetinaAwareUIGraphicsBeginImageContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3D26FA17B02CC500562482 /* RetinaAwareUIGraphicsBeginImageContext.m */; };
+		CE3D26FE17B196CC00562482 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3D26FD17B196CC00562482 /* Crashlytics.framework */; };
 		CE4FCDB6179EDDDE00DF5BE4 /* WelcuMenuActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4FCDB5179EDDDE00DF5BE4 /* WelcuMenuActionCell.xib */; };
 		CE4FCE2A17A1797700DF5BE4 /* WelcuAccountTicketsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4FCE2917A1797700DF5BE4 /* WelcuAccountTicketsListController.m */; };
 		CE4FCE2E17A17DDA00DF5BE4 /* WelcuTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4FCE2C17A17DDA00DF5BE4 /* WelcuTicketViewController.m */; };
@@ -161,6 +162,7 @@
 		CE3D26F717B0268600562482 /* UIImage+ImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithColor.m"; sourceTree = "<group>"; };
 		CE3D26F917B02CC500562482 /* RetinaAwareUIGraphicsBeginImageContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetinaAwareUIGraphicsBeginImageContext.h; sourceTree = "<group>"; };
 		CE3D26FA17B02CC500562482 /* RetinaAwareUIGraphicsBeginImageContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetinaAwareUIGraphicsBeginImageContext.m; sourceTree = "<group>"; };
+		CE3D26FD17B196CC00562482 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		CE4FCDB5179EDDDE00DF5BE4 /* WelcuMenuActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcuMenuActionCell.xib; sourceTree = "<group>"; };
 		CE4FCE2817A1797700DF5BE4 /* WelcuAccountTicketsListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuAccountTicketsListController.h; sourceTree = "<group>"; };
 		CE4FCE2917A1797700DF5BE4 /* WelcuAccountTicketsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuAccountTicketsListController.m; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				CE7BEC14177E0BC30006D75C /* CoreGraphics.framework in Frameworks */,
 				CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */,
 				CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */,
+				CE3D26FE17B196CC00562482 /* Crashlytics.framework in Frameworks */,
 				9A2922333221434C8C447671 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +506,7 @@
 		CE7BEC10177E0BC30006D75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE3D26FD17B196CC00562482 /* Crashlytics.framework */,
 				CE71AD721794639F00598802 /* SystemConfiguration.framework */,
 				CE16DD22178F242C00371025 /* AdSupport.framework */,
 				CE16DD20178F242200371025 /* Social.framework */,
@@ -703,6 +707,7 @@
 				CE7BEC0C177E0BC30006D75C /* Resources */,
 				9CA53E26F0D240F09CC64BFD /* Copy Pods Resources */,
 				CE4FCDE1179F38FE00DF5BE4 /* Set bundle version to current git revision */,
+				CE3D26FC17B195F500562482 /* Crashlytics Run */,
 			);
 			buildRules = (
 			);
@@ -851,6 +856,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		CE3D26FC17B195F500562482 /* Crashlytics Run */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Crashlytics Run";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run c5652397b5498498ae5b6c0024cdb4a2ee1c84b7";
 		};
 		CE4FCDE0179F38C400DF5BE4 /* Build Testflight Package */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1093,6 +1112,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sagmor/Development/Welcu/WelcuSocial,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WelcuSocial/WelcuSocial-Prefix.pch";
 				INFOPLIST_FILE = "WelcuSocial/WelcuSocial-Info.plist";
@@ -1110,6 +1133,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sagmor/Development/Welcu/WelcuSocial,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WelcuSocial/WelcuSocial-Prefix.pch";
 				INFOPLIST_FILE = "WelcuSocial/WelcuSocial-Info.plist";
