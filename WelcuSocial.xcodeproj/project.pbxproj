@@ -32,6 +32,9 @@
 		CE16DD23178F242C00371025 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE16DD22178F242C00371025 /* AdSupport.framework */; };
 		CE16DD53178F326900371025 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE16DD52178F326900371025 /* posts.json */; };
 		CE38FB7317AC09D30062C955 /* WelcuSocial.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE38FB7517AC09D30062C955 /* WelcuSocial.strings */; };
+		CE3D26F517B0207A00562482 /* WelcuComposeToggleSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3D26F417B0207A00562482 /* WelcuComposeToggleSwitch.m */; };
+		CE3D26F817B0268600562482 /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3D26F717B0268600562482 /* UIImage+ImageWithColor.m */; };
+		CE3D26FB17B02CC500562482 /* RetinaAwareUIGraphicsBeginImageContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3D26FA17B02CC500562482 /* RetinaAwareUIGraphicsBeginImageContext.m */; };
 		CE4FCDB6179EDDDE00DF5BE4 /* WelcuMenuActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4FCDB5179EDDDE00DF5BE4 /* WelcuMenuActionCell.xib */; };
 		CE4FCE2A17A1797700DF5BE4 /* WelcuAccountTicketsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4FCE2917A1797700DF5BE4 /* WelcuAccountTicketsListController.m */; };
 		CE4FCE2E17A17DDA00DF5BE4 /* WelcuTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4FCE2C17A17DDA00DF5BE4 /* WelcuTicketViewController.m */; };
@@ -152,6 +155,12 @@
 		CE38FB7417AC09D30062C955 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WelcuSocial.strings; sourceTree = "<group>"; };
 		CE38FB7617AC09F30062C955 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/WelcuSocial.strings; sourceTree = "<group>"; };
 		CE38FB7717AC0A4A0062C955 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE3D26F317B0207A00562482 /* WelcuComposeToggleSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuComposeToggleSwitch.h; sourceTree = "<group>"; };
+		CE3D26F417B0207A00562482 /* WelcuComposeToggleSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuComposeToggleSwitch.m; sourceTree = "<group>"; };
+		CE3D26F617B0268600562482 /* UIImage+ImageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithColor.h"; sourceTree = "<group>"; };
+		CE3D26F717B0268600562482 /* UIImage+ImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithColor.m"; sourceTree = "<group>"; };
+		CE3D26F917B02CC500562482 /* RetinaAwareUIGraphicsBeginImageContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetinaAwareUIGraphicsBeginImageContext.h; sourceTree = "<group>"; };
+		CE3D26FA17B02CC500562482 /* RetinaAwareUIGraphicsBeginImageContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetinaAwareUIGraphicsBeginImageContext.m; sourceTree = "<group>"; };
 		CE4FCDB5179EDDDE00DF5BE4 /* WelcuMenuActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcuMenuActionCell.xib; sourceTree = "<group>"; };
 		CE4FCE2817A1797700DF5BE4 /* WelcuAccountTicketsListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuAccountTicketsListController.h; sourceTree = "<group>"; };
 		CE4FCE2917A1797700DF5BE4 /* WelcuAccountTicketsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuAccountTicketsListController.m; sourceTree = "<group>"; };
@@ -638,6 +647,8 @@
 				CE9D2FE7178757F50016B8B8 /* WelcuEventStreamingView.m */,
 				CE4FCE5B17A2EE0600DF5BE4 /* WelcuDiscoverEventCell.h */,
 				CE4FCE5C17A2EE0600DF5BE4 /* WelcuDiscoverEventCell.m */,
+				CE3D26F317B0207A00562482 /* WelcuComposeToggleSwitch.h */,
+				CE3D26F417B0207A00562482 /* WelcuComposeToggleSwitch.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -650,10 +661,14 @@
 				CE7BEC5B177E3FB00006D75C /* UIColor+WelcuColors.m */,
 				CE8E492E177F7269006B1874 /* UIImage+MaskedImages.h */,
 				CE8E492F177F7269006B1874 /* UIImage+MaskedImages.m */,
+				CE3D26F617B0268600562482 /* UIImage+ImageWithColor.h */,
+				CE3D26F717B0268600562482 /* UIImage+ImageWithColor.m */,
 				CE8E493C177F98E2006B1874 /* NSObject+ClassName.h */,
 				CE8E493D177F98E2006B1874 /* NSObject+ClassName.m */,
 				CE71AD741795B30200598802 /* NSFetchRequest+ServerContext.h */,
 				CE71AD751795B30200598802 /* NSFetchRequest+ServerContext.m */,
+				CE3D26F917B02CC500562482 /* RetinaAwareUIGraphicsBeginImageContext.h */,
+				CE3D26FA17B02CC500562482 /* RetinaAwareUIGraphicsBeginImageContext.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -892,17 +907,20 @@
 				CE51B6591799DB5600482067 /* WelcuPostDraft.m in Sources */,
 				CE8E493E177F98E2006B1874 /* NSObject+ClassName.m in Sources */,
 				CE71ADB11797578A00598802 /* WelcuComposePhotoController.m in Sources */,
+				CE3D26FB17B02CC500562482 /* RetinaAwareUIGraphicsBeginImageContext.m in Sources */,
 				CE4FCE4B17A1804800DF5BE4 /* WelcuTicketCell.m in Sources */,
 				CE8E4930177F7269006B1874 /* UIImage+MaskedImages.m in Sources */,
 				CE51B65C1799DDE100482067 /* WelcuPostsDraftController.m in Sources */,
 				CE4FCE6017A2F1C000DF5BE4 /* WelcuDiscoverEventsViewController.m in Sources */,
 				CE7BEC4A177E10D30006D75C /* WelcuMainViewController.m in Sources */,
+				CE3D26F817B0268600562482 /* UIImage+ImageWithColor.m in Sources */,
 				CEBBD1EE17906D1000F3E36C /* WelcuActivity.m in Sources */,
 				CEBBD1F117906D1000F3E36C /* WelcuEvent.m in Sources */,
 				CE8E4935177F9047006B1874 /* WelcuMenuUserProfileCell.m in Sources */,
 				CE4FCE5017A185BC00DF5BE4 /* WelcuEventTicketsController.m in Sources */,
 				CE71AD761795B30200598802 /* NSFetchRequest+ServerContext.m in Sources */,
 				CE99962B17AC1FB000C6653E /* WelcuSettingsController.m in Sources */,
+				CE3D26F517B0207A00562482 /* WelcuComposeToggleSwitch.m in Sources */,
 				CE7BEC22177E0BC30006D75C /* WelcuAppDelegate.m in Sources */,
 				CE9D2FCE17871E950016B8B8 /* WelcuEventPostPhotoCell.m in Sources */,
 				CE99963317AC344600C6653E /* WelcuUserAccount.m in Sources */,

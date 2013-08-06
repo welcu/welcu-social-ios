@@ -12,7 +12,7 @@
 @class WelcuEventHeaderView;
 
 #define WELCU_EVENT_HEADER_MAX_HEIGHT 276
-#define WELCU_EVENT_HEADER_MIN_HEIGHT 80
+#define WELCU_EVENT_HEADER_MIN_HEIGHT 100
 
 
 @protocol WelcuEventHeaderViewDelegate <NSObject>

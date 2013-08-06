@@ -97,13 +97,9 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
          forCellReuseIdentifier:@"WelcuEventPostPhotoCell"];
     
     self.headerView = [WelcuEventHeaderView headerView];
-//    self.headerView.frame = CGRectMake(0, 0, self.view.bounds.size.width, WELCU_EVENT_HEADER_MAX_HEIGHT);
     self.headerView.frame = CGRectMake(0, -64, self.view.bounds.size.width, WELCU_EVENT_HEADER_MAX_HEIGHT);
     self.headerView.event = self.event;
-
     [self.view addSubview:self.headerView];
-
-//    [self.tableView setTableHeaderView:[[UIView alloc] initWithFrame:self.headerView.frame]];
 
     [self.tableView setTableHeaderView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, WELCU_EVENT_HEADER_MAX_HEIGHT-WELCU_EVENT_HEADER_MIN_HEIGHT)]];
     

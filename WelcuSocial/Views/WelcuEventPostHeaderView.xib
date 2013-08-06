@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4471.1" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4488.1" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3697.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -17,7 +17,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4rj-3v-Btb">
-                    <rect key="frame" x="10" y="12" width="52" height="52"/>
+                    <rect key="frame" x="10" y="6" width="52" height="52"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="52" id="4UA-Rf-LAp"/>
@@ -25,13 +25,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLU-tK-OfW">
-                    <rect key="frame" x="70" y="21" width="86" height="20"/>
+                    <rect key="frame" x="70" y="20" width="86" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFi-zy-su9">
-                    <rect key="frame" x="70" y="41" width="53" height="14"/>
+                    <rect key="frame" x="70" y="41" width="55" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,7 +48,7 @@
                 <constraint firstAttribute="centerY" secondItem="pLU-tK-OfW" secondAttribute="centerY" constant="1.5" id="WAe-c3-cHh"/>
                 <constraint firstItem="4rj-3v-Btb" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="eCn-Wj-e2X"/>
                 <constraint firstItem="C7Z-Kk-Lh2" firstAttribute="top" secondItem="1" secondAttribute="top" id="ezH-jW-tUs"/>
-                <constraint firstItem="4rj-3v-Btb" firstAttribute="top" secondItem="1" secondAttribute="top" constant="12" id="keV-lW-99L"/>
+                <constraint firstItem="4rj-3v-Btb" firstAttribute="top" secondItem="1" secondAttribute="top" constant="6" id="keV-lW-99L"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

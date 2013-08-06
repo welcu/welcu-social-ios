@@ -18,6 +18,8 @@
 @property (nonatomic, retain) NSString * kind;
 @property (nonatomic, retain) NSNumber * published;
 @property (nonatomic, retain) WelcuEvent *event;
+@property (nonatomic, retain) NSNumber * facebookEnabled;
+@property (nonatomic, retain) NSNumber * twitterEnabled;
 
 @property (readonly, getter = isUploading) BOOL uploading;
 

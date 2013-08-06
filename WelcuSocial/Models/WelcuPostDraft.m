@@ -8,7 +8,7 @@
 
 #import "WelcuPostDraft.h"
 #import "WelcuEvent.h"
-#import "WelcuAccount.h"
+#import "WelcuUserAccount.h"
 
 
 @implementation WelcuPostDraft
@@ -18,6 +18,9 @@
 @dynamic kind;
 @dynamic published;
 @dynamic event;
+@dynamic facebookEnabled;
+@dynamic twitterEnabled;
+
 
 @synthesize uploading = _uploading;
 
@@ -32,6 +35,8 @@
     
     draft.event = event;
     draft.content = attributes[@"content"];
+    draft.facebookEnabled = attributes[@"facebook"];
+    draft.twitterEnabled = attributes[@"twitter"];
     if (attributes[@"photo"]) {
         draft.photo = UIImagePNGRepresentation(attributes[@"photo"]);
     }
@@ -44,13 +49,13 @@
     if ([self isUploading]) return;
     _uploading = YES;
     
-    WelcuAccount *userAccount = [WelcuAccount currentAccount];
+    WelcuUserAccount *userAccount = (WelcuUserAccount *)[WelcuAccount currentAccount];
     
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"post"] = [NSMutableDictionary dictionary];
     parameters[@"post"][@"content"] = self.content;
-//    parameters[@"twitter"] = @(YES);
-//    parameters[@"facebook"] = @(YES);
+    parameters[@"twitter"] = self.twitterEnabled;
+    parameters[@"facebook"] = self.facebookEnabled;
     
 //    request 
     NSURLRequest *request = [userAccount.client multipartFormRequestWithMethod:@"POST"

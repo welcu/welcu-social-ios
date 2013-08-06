@@ -9,65 +9,64 @@
 #import "WelcuUserAccount.h"
 
 #import <FXKeychain/FXKeychain.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 #import "WelcuAppDelegate.h"
 
 @interface WelcuUserAccount ()
 
 @property (strong) NSString *accessToken;
-@property (strong, nonatomic) NSDictionary *attributes;
-
-@property (strong) NSNumber *userID;
-@property (strong) NSString *firstName;
-@property (strong) NSString *lastName;
-@property (strong) NSString *facebookUID;
-
+@property (strong, nonatomic) NSMutableDictionary *attributes;
 @end
 
 @implementation WelcuUserAccount
 
 #pragma mark - Account Methods
 
-@synthesize userID = _userID;
-@synthesize firstName = _firstName;
-@synthesize lastName = _lastName;
-@synthesize facebookUID = _facebookUID;
+@synthesize attributes = _attributes;
 
 - (id)initWithAccessToken:(NSString *)accessToken
 {
     self = [super init];
     if (self) {
         self.accessToken = accessToken;
+        
+        // Handle Facebook session
+        [FBSession.activeSession openWithCompletionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+            
+        }];
     }
     return self;
 }
 
-
-- (NSDictionary *)attributes
+- (NSString *)userID
 {
-    return @{
-             @"id" : self.userID,
-             @"first_name" : self.firstName,
-             @"last_name" : self.lastName,
-             @"facebook_uid" : self.facebookUID
-             };
+    return self.attributes[@"id"];
 }
 
-- (void)setAttributes:(NSDictionary *)attributes
+- (NSString *)firstName
 {
-    // TODO
-    self.userID = attributes[@"id"];
-    self.firstName = attributes[@"first_name"];
-    self.lastName = attributes[@"last_name"];
-    self.facebookUID = attributes[@"facebook_uid"];
+    return self.attributes[@"first_name"];
 }
 
+- (NSString *)lastName
+{
+    return self.attributes[@"last_name"];
+}
+
+- (NSString *)facebookUID
+{
+    return self.attributes[@"facebook_uid"];
+}
 
 - (NSURL *)pictureURLWithSize:(NSInteger)pixels
 {
+    if (self.facebookUID) {
+        pixels = pixels * [[UIScreen mainScreen] scale];
+        return [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?height=%d&width=%d", self.facebookUID, pixels, pixels]];
+    }
     
-    pixels = pixels * [[UIScreen mainScreen] scale];
-    return [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?height=%d&width=%d", self.facebookUID, pixels, pixels]];
+    return nil;
 }
 
 
@@ -124,7 +123,7 @@
     
     if (keychain[@"access_token"]) {
         WelcuUserAccount *account = [[WelcuUserAccount alloc] initWithAccessToken:keychain[@"access_token"]];
-        [account setAttributes:keychain[@"user"]];
+        [account setAttributes:[keychain[@"user"] mutableCopy]];
         
         return account;
     }
@@ -187,5 +186,97 @@
         handler(nil, error);
     }];
 }
+
+#pragma mark - Sharing
+
+#define FacebookEnabledKey @"FacebookEnabledKey"
+- (BOOL)isFacebookEnabled
+{
+    if (![self isFacebookAuthorized]) {
+        return NO;
+    }
+    
+    if (self.attributes[FacebookEnabledKey]) {
+        return [self.attributes[FacebookEnabledKey] boolValue];
+    }
+    
+    return YES;
+}
+
+- (void)setFacebookEnabled:(BOOL)facebookEnabled
+{
+    self.attributes[FacebookEnabledKey] = @(facebookEnabled);
+}
+
+- (BOOL)isFacebookAuthorized
+{
+    return [FBSession.activeSession.accessTokenData.permissions indexOfObject:@"publish_actions"] != NSNotFound;
+}
+
+- (void)authorizeFacebookWithCompletionHandler:(WelcuUserAuthorizationHandler)completionHandler
+{
+    if ([self isFacebookAuthorized]) {
+        completionHandler(YES,nil);
+    } else {
+        // Request Facebook write permission
+        [[FBSession activeSession] requestNewPublishPermissions:@[@"publish_actions"]
+                                                defaultAudience:FBSessionDefaultAudienceEveryone
+                                              completionHandler:^(FBSession *session, NSError *error)
+         {
+             if (error) {
+                 completionHandler(NO, error);
+             } else {
+                 // TODO: Save the info on the account object
+                 completionHandler(YES, nil);
+             }
+         }];
+    }
+}
+
+#define TwitterEnabledKey @"TwitterEnabledKey"
+- (BOOL)isTwitterEnabled
+{
+    if (![self isTwitterAuthorized]) {
+        return NO;
+    }
+    
+    if (self.attributes[TwitterEnabledKey]) {
+        return [self.attributes[TwitterEnabledKey] boolValue];
+    }
+    
+    return YES;
+}
+
+- (void)setTwitterEnabled:(BOOL)twitterEnabled
+{
+    self.attributes[TwitterEnabledKey] = @(twitterEnabled);
+}
+
+- (BOOL)isTwitterAuthorized
+{
+    return NO;
+}
+
+
+- (void)authorizeTwitterWithCompletionHandler:(WelcuUserAuthorizationHandler)completionHandler
+{
+    if ([self isTwitterAuthorized]) {
+        completionHandler(YES,nil);
+    } else {
+        ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+        ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+        
+        [[[ACAccountStore alloc] init] requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
+            if (error) {
+                completionHandler(NO,error);
+            } else {
+                completionHandler(NO,nil);
+                // TODO: Save the info on the account object
+                NSLog(@"Accounts %@", accountStore.accounts);
+            }
+        }];
+    }
+}
+
 
 @end

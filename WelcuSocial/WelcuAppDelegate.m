@@ -126,6 +126,11 @@
                                                            
                                                            }];
     
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{
+                                                           UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-300" size:15]
+                                                           }
+                                                forState:UIControlStateNormal];
+    
     //    [[UITableView appearance] setBackgroundColor:[UIColor welcuLightGrey]];
     //    [[UITableViewHeaderFooterView appearance] setBackgroundColor:[UIColor welcuLightPurple]];
 }

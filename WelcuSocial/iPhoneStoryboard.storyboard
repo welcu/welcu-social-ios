@@ -296,7 +296,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1ld-4Z-SPg">
-                                <rect key="frame" x="0.0" y="60" width="320" height="444"/>
+                                <rect key="frame" x="0.0" y="36" width="320" height="468"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -329,7 +329,7 @@
                             <constraint firstItem="1ld-4Z-SPg" firstAttribute="leading" secondItem="Bzi-Z7-Fpi" secondAttribute="leading" id="6jQ-4y-CkF"/>
                             <constraint firstAttribute="trailing" secondItem="cou-Cm-lof" secondAttribute="trailing" constant="20" id="Kyx-vC-o24"/>
                             <constraint firstAttribute="bottom" secondItem="cou-Cm-lof" secondAttribute="bottom" constant="20" id="b0w-sh-gdq"/>
-                            <constraint firstItem="1ld-4Z-SPg" firstAttribute="top" secondItem="Bzi-Z7-Fpi" secondAttribute="top" constant="60" id="rZb-KQ-Bbh"/>
+                            <constraint firstItem="1ld-4Z-SPg" firstAttribute="top" secondItem="Bzi-Z7-Fpi" secondAttribute="top" constant="36" id="rZb-KQ-Bbh"/>
                             <constraint firstItem="1ld-4Z-SPg" firstAttribute="trailing" secondItem="Bzi-Z7-Fpi" secondAttribute="trailing" id="rxP-N1-8UH"/>
                             <constraint firstItem="1ld-4Z-SPg" firstAttribute="bottom" secondItem="Bzi-Z7-Fpi" secondAttribute="bottom" id="wUY-6u-QQX"/>
                         </constraints>
@@ -408,7 +408,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBO-Nu-rth">
-                                <rect key="frame" x="25" y="513" width="30" height="30"/>
+                                <rect key="frame" x="190" y="513" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="eQW-It-UB7"/>
@@ -426,12 +426,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="UBO-Nu-rth" secondAttribute="trailing" constant="100" id="33h-PN-XWp"/>
                             <constraint firstItem="Xao-G4-ktv" firstAttribute="trailing" secondItem="jLz-6g-0l6" secondAttribute="trailing" id="AVU-KX-I9h"/>
                             <constraint firstItem="Xao-G4-ktv" firstAttribute="top" secondItem="jLz-6g-0l6" secondAttribute="top" constant="20" id="EMI-16-u90"/>
                             <constraint firstAttribute="bottom" secondItem="Xao-G4-ktv" secondAttribute="bottom" id="SWh-TF-cBB"/>
                             <constraint firstAttribute="bottom" secondItem="UBO-Nu-rth" secondAttribute="bottom" constant="25" id="VJK-DF-bTY"/>
                             <constraint firstItem="Xao-G4-ktv" firstAttribute="leading" secondItem="jLz-6g-0l6" secondAttribute="leading" id="Y4m-y9-dZR"/>
-                            <constraint firstItem="UBO-Nu-rth" firstAttribute="leading" secondItem="jLz-6g-0l6" secondAttribute="leading" constant="25" id="s0D-C4-BGP"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -564,7 +564,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cUM-KW-3Bd"/>
-        <segue reference="CyE-WU-om2"/>
+        <segue reference="eGo-X1-pCV"/>
+        <segue reference="85k-t6-fAX"/>
     </inferredMetricsTieBreakers>
 </document>

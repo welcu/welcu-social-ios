@@ -20,31 +20,28 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Americo en Vivo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="YmN-uk-F03">
-                    <rect key="frame" x="98" y="165" width="163" height="30"/>
+                    <rect key="frame" x="10" y="169" width="339" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" priority="899" constant="30" id="2VU-FW-LFb"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Centro cultural Amanda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BL-rn-ZBf">
-                    <rect key="frame" x="110" y="205" width="140" height="16"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Centro cultural Amanda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BL-rn-ZBf">
+                    <rect key="frame" x="108" y="205" width="143" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="22 de abril - 25 de abril" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZV-TC-MJB">
-                    <rect key="frame" x="111" y="222" width="137" height="16"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 de abril - 25 de abril" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZV-TC-MJB">
+                    <rect key="frame" x="110" y="222" width="140" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventHeaderPhotoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Y9S-Ef-n89">
-                    <rect key="frame" x="118" y="30" width="122" height="122"/>
+                    <rect key="frame" x="118" y="34" width="122" height="122"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="122" id="93D-tT-md7"/>
@@ -52,23 +49,23 @@
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventHeaderPhotoMask" translatesAutoresizingMaskIntoConstraints="NO" id="ke3-uN-8vt">
-                    <rect key="frame" x="123" y="35" width="112" height="112"/>
+                    <rect key="frame" x="123" y="39" width="112" height="112"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="112" id="Kka-Ar-53e"/>
                         <constraint firstAttribute="height" constant="112" id="dxS-h7-UFA"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="MapPinIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nMz-IO-2Xj">
-                    <rect key="frame" x="95" y="205" width="10" height="16"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MapPinIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nMz-IO-2Xj">
+                    <rect key="frame" x="93" y="205" width="10" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="5Hb-2e-nJg"/>
                         <constraint firstAttribute="width" constant="10" id="RVT-C9-AsW"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ClockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Tcr-Lo-YPo">
-                    <rect key="frame" x="90" y="222" width="16" height="16"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Tcr-Lo-YPo">
+                    <rect key="frame" x="89" y="222" width="16" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="16" id="EIN-nQ-pHZ"/>
@@ -89,7 +86,7 @@
                 <constraint firstItem="AVd-kg-YTU" firstAttribute="top" secondItem="1" secondAttribute="top" id="U7T-cl-81w"/>
                 <constraint firstAttribute="trailing" secondItem="AVd-kg-YTU" secondAttribute="trailing" id="W9a-gN-92p"/>
                 <constraint firstAttribute="bottom" secondItem="AVd-kg-YTU" secondAttribute="bottom" id="cQ8-th-SZ8"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YmN-uk-F03" secondAttribute="trailing" constant="5" id="d29-OI-3ZK"/>
+                <constraint firstAttribute="trailing" secondItem="YmN-uk-F03" secondAttribute="trailing" constant="10" id="d29-OI-3ZK"/>
                 <constraint firstItem="ke3-uN-8vt" firstAttribute="centerY" secondItem="Y9S-Ef-n89" secondAttribute="centerY" id="dmK-gW-FkK"/>
                 <constraint firstItem="0BL-rn-ZBf" firstAttribute="top" secondItem="YmN-uk-F03" secondAttribute="bottom" priority="805" constant="10" id="dxP-0l-OcD"/>
                 <constraint firstItem="ke3-uN-8vt" firstAttribute="centerX" secondItem="Y9S-Ef-n89" secondAttribute="centerX" id="fam-1V-BKY"/>
@@ -98,11 +95,11 @@
                 <constraint firstAttribute="centerX" secondItem="sZV-TC-MJB" secondAttribute="centerX" id="hgy-up-XmW"/>
                 <constraint firstItem="nMz-IO-2Xj" firstAttribute="centerY" secondItem="0BL-rn-ZBf" secondAttribute="centerY" id="j1c-h3-BJG"/>
                 <constraint firstAttribute="bottom" secondItem="YmN-uk-F03" secondAttribute="bottom" priority="638" constant="55" id="kdS-cg-9Wc"/>
-                <constraint firstItem="YmN-uk-F03" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1" secondAttribute="top" constant="15" id="khK-Rm-cdq"/>
+                <constraint firstItem="YmN-uk-F03" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1" secondAttribute="top" constant="65" id="khK-Rm-cdq"/>
                 <constraint firstItem="AVd-kg-YTU" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="pVe-QW-OiC"/>
                 <constraint firstAttribute="bottom" secondItem="hkk-Hj-iht" secondAttribute="bottom" id="sVU-Pj-MY4"/>
                 <constraint firstAttribute="centerX" secondItem="ke3-uN-8vt" secondAttribute="centerX" constant="0.5" id="uDg-HU-N8I"/>
-                <constraint firstItem="YmN-uk-F03" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1" secondAttribute="leading" constant="5" id="vGQ-i3-wmL"/>
+                <constraint firstItem="YmN-uk-F03" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="vGQ-i3-wmL"/>
                 <constraint firstItem="sZV-TC-MJB" firstAttribute="leading" secondItem="Tcr-Lo-YPo" secondAttribute="trailing" constant="5" id="z5U-ec-bcf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -121,6 +118,6 @@
         <image name="EventHeaderPhotoMask" width="114" height="114"/>
         <image name="EventImageGradient" width="1" height="400"/>
         <image name="MapPinIcon" width="10" height="16"/>
-        <image name="SampleEventImage" width="900" height="400"/>
+        <image name="SampleEventImage" width="50" height="50"/>
     </resources>
 </document>

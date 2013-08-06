@@ -12,6 +12,8 @@
 
 typedef void(^WelcuAccountAuthenticationCompletionHandler)(WelcuUserAccount *account, NSError *error);
 
+typedef void(^WelcuUserAuthorizationHandler)(BOOL granted, NSError *error);
+
 @interface WelcuUserAccount : WelcuAccount
 
 #pragma mark - Authentication
@@ -23,5 +25,15 @@ typedef void(^WelcuAccountAuthenticationCompletionHandler)(WelcuUserAccount *acc
                   andPassword:(NSString *)password
             completionHandler:(WelcuAccountAuthenticationCompletionHandler)handler;
 
+
+#pragma mark - Sharing
+
+@property (assign,getter=isFacebookEnabled) BOOL facebookEnabled;
+@property (readonly,getter=isFacebookAuthorized) BOOL facebookAuthorized;
+- (void)authorizeFacebookWithCompletionHandler:(WelcuUserAuthorizationHandler)completionHandler;
+
+@property (assign,getter=isTwitterEnabled) BOOL twitterEnabled;
+@property (readonly,getter=isTwitterAuthorized) BOOL twitterAuthorized;
+- (void)authorizeTwitterWithCompletionHandler:(WelcuUserAuthorizationHandler)completionHandler;
 
 @end

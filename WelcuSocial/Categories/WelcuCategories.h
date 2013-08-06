@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 #import "UIColor+WelcuColors.h"
-#import "UIColor+WelcuColors.h"
 #import "NSObject+ClassName.h"
 #import "NSFetchRequest+ServerContext.h"
+
+#import "UIImage+MaskedImages.h"
+#import "UIImage+ImageWithColor.h"
