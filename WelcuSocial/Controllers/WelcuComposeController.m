@@ -78,10 +78,8 @@ static WelcuComposeController *currentComposeController = nil;
         self.contentPhotoView.transform = CGAffineTransformMakeRotation(0.2);
     } else {
         self.contentPhotoView.hidden = YES;
-//        [self.contentPhotoView removeFromSuperview];
+        // [self.contentPhotoView removeFromSuperview];
     }
-    
-    
     
     [[self.navigationBar.items[0] rightBarButtonItem] setTitleTextAttributes:@{
                                                                               UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-700" size:17],

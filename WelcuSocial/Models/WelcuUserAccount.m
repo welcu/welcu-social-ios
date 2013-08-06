@@ -12,6 +12,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 #import "WelcuAppDelegate.h"
+#import "WelcuGuestAccount.h"
 
 @interface WelcuUserAccount ()
 
@@ -107,10 +108,21 @@
                                         relativeToURL:[(WelcuAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory]];
     DDLogInfo(@"%@", [_accountDocumentsDirectory path]);
     
-    [[NSFileManager defaultManager] createDirectoryAtURL:_accountDocumentsDirectory
-                             withIntermediateDirectories:NO
-                                              attributes:nil
-                                                   error:nil];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:_accountDocumentsDirectory.path]) {
+        if ([fileManager fileExistsAtPath:[[WelcuGuestAccount guestDocumentsDirectory] path]]) {
+            // Move content from guest user
+            [fileManager moveItemAtURL:[WelcuGuestAccount guestDocumentsDirectory]
+                                 toURL:_accountDocumentsDirectory
+                                 error:nil];
+        } else {
+            [[NSFileManager defaultManager] createDirectoryAtURL:_accountDocumentsDirectory
+                                     withIntermediateDirectories:NO
+                                                      attributes:nil
+                                                           error:nil];
+        }
+    }
     
     return _accountDocumentsDirectory;
 }
@@ -149,6 +161,8 @@
     keychain[@"user"] = nil;
 
     [super signOut];
+    
+    [[NSFileManager defaultManager] removeItemAtURL:self.accountDocumentsDirectory error:nil];
 }
 
 + (void)authenticateWithWelcuAccessTokenData:(id)accessTokenData
