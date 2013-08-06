@@ -15,6 +15,7 @@
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import <CocoaLumberjack/DDFileLogger.h>
 #import "AFHTTPRequestOperationLogger.h"
+#import <SDSegmentedControl/SDSegmentedControl.h>
 
 #import "WelcuAccount.h"
 
@@ -122,17 +123,18 @@
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            UITextAttributeTextColor : [UIColor whiteColor],
-                                                           UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-500" size:20]
-                                                           
+                                                           UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-500"
+                                                                                                 size:20]
                                                            }];
     
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{
-                                                           UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-300" size:15]
+                                                           UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-300"
+                                                                                                 size:15]
                                                            }
                                                 forState:UIControlStateNormal];
     
-    //    [[UITableView appearance] setBackgroundColor:[UIColor welcuLightGrey]];
-    //    [[UITableViewHeaderFooterView appearance] setBackgroundColor:[UIColor welcuLightPurple]];
+    [[SDSegmentView appearance] setItemFont:[UIFont fontWithName:@"MuseoSans-500"
+                                                            size:12]];
 }
 
 - (NSURL *)applicationDocumentsDirectory {

@@ -16,4 +16,6 @@
 + (NSURL *)guestDocumentsDirectory;
 + (NSURL *)guestPictureURLWithSize:(NSInteger)pixels;
 
++ (void)removeGuestDirectoryIfPressent;
+
 @end

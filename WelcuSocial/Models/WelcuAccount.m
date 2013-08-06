@@ -37,6 +37,9 @@ static WelcuAccount *currentAccount = nil;
             WelcuUserAccount *account = [WelcuUserAccount authenticatedAccount];
             if (account) {
                 currentAccount = account;
+                
+                // Remove stale guest account data
+                [WelcuGuestAccount removeGuestDirectoryIfPressent];
             } else {
                 currentAccount = [WelcuGuestAccount guestAccount];
             }

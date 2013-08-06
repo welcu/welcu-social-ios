@@ -8,6 +8,7 @@
 
 #import "WelcuLoginViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <FontasticIcons/FontasticIcons.h>
 
 #import "WelcuAccount.h"
 #import "WelcuUserAccount.h"
@@ -113,7 +114,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    self.facebookSignInButton.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 0, self.facebookSignInButton.frame.size.width-45);
+    [self.facebookSignInButton setImage:[[FIFontAwesomeIcon facebookIcon] imageWithBounds:CGRectMake(0, 0, 25, 25)
+                                                                                    color:[UIColor whiteColor]]
+                               forState:UIControlStateNormal];
+//    self.facebookSignInButton.imageView.image = [[FIFontAwesomeIcon facebookIcon] imageWithBounds:CGRectMake(0, 0, 30, 30) color:[UIColor whiteColor]];
 }
 
 - (void)didReceiveMemoryWarning

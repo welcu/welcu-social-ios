@@ -22,15 +22,23 @@
 
 + (NSURL *)guestPictureURLWithSize:(NSInteger)pixels
 {
-//    FIIcon *icon = [FIFontAwesomeIcon userIcon];
-//    return [icon imageWithBounds:CGRectMake(0, 0, pixels, pixels) color:[UIColor whiteColor]];
-    return nil;
+    pixels = pixels * [[UIScreen mainScreen] scale];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"https://assets.welcu.com/images/accounts/avatar/social-%dpx.png", pixels]];
 }
-
 
 + (WelcuGuestAccount *)guestAccount
 {
     return [[WelcuGuestAccount alloc] init];
+}
+
++ (void)removeGuestDirectoryIfPressent
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if ([fileManager fileExistsAtPath:[[self guestDocumentsDirectory] path]]) {
+        [fileManager removeItemAtURL:[self guestDocumentsDirectory]
+                               error:nil];
+    }
 }
 
 - (id)init

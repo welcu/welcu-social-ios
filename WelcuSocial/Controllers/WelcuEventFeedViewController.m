@@ -69,7 +69,7 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
     [super viewDidLoad];
     
     if ([self.event.tickets count]) {
-        self.navigationItem.rightBarButtonItem.image = [[FIFontAwesomeIcon ticketIcon] imageWithBounds:CGRectMake(0, 0, 25, 25) color:[UIColor blackColor]];
+        self.navigationItem.rightBarButtonItem.image = [[FIFontAwesomeIcon ticketIcon] imageWithBounds:CGRectMake(0, 0, 22, 22) color:[UIColor blackColor]];
     } else {
         self.navigationItem.rightBarButtonItem = nil;
     }
@@ -95,21 +95,22 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"WelcuEventPostPhotoCell"
                                                bundle:nil]
          forCellReuseIdentifier:@"WelcuEventPostPhotoCell"];
+
+    [self.tableView setTableHeaderView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, WELCU_EVENT_HEADER_DEFAULT_HEIGHT-WELCU_EVENT_HEADER_MIN_HEIGHT)]];
+
     
     self.headerView = [WelcuEventHeaderView headerView];
-    self.headerView.frame = CGRectMake(0, -64, self.view.bounds.size.width, WELCU_EVENT_HEADER_MAX_HEIGHT);
+    self.headerView.frame = CGRectMake(0, -WELCU_EVENT_HEADER_MIN_HEIGHT, self.view.bounds.size.width, WELCU_EVENT_HEADER_DEFAULT_HEIGHT);
     self.headerView.event = self.event;
-    [self.view addSubview:self.headerView];
+    
+    // Hack to get the table view scroller gesture
+    for (id recognizer in self.tableView.gestureRecognizers) {
+        if ([recognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+            self.headerView.gestureRecognizers = @[ recognizer ];
+        }
+    }
 
-    [self.tableView setTableHeaderView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, WELCU_EVENT_HEADER_MAX_HEIGHT-WELCU_EVENT_HEADER_MIN_HEIGHT)]];
-    
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-//    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:refreshControl];
-    
-    
-//    self.refreshControl = [[UIRefreshControl alloc] init];
-//    [self.refreshControl addTarget:self action:@selector(doRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:self.headerView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -299,9 +300,7 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    [self.headerView setHeight:(WELCU_EVENT_HEADER_MAX_HEIGHT - scrollView.contentOffset.y)];
-    
-    // TODO: Hide navigation Bar
+    [self.headerView setHeight:(WELCU_EVENT_HEADER_DEFAULT_HEIGHT - scrollView.contentOffset.y)];
 }
 
 

@@ -61,4 +61,14 @@
     return [UIColor colorWithWhite:0.60 alpha:1];
 }
 
++ (UIColor *)facebookBlue
+{
+    return [UIColor colorWithRed:0.298 green:0.400 blue:0.643 alpha:1.000];
+}
+
++ (UIColor *)twitterBlue
+{
+    return [UIColor colorWithRed:0.000 green:0.675 blue:0.929 alpha:1.000];
+}
+
 @end

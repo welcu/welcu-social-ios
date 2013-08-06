@@ -10,6 +10,8 @@
 
 @interface WelcuLoginViewController : UIViewController
 
+@property (weak,nonatomic) IBOutlet UIButton *facebookSignInButton;
+
 - (void)loginFailed;
 
 - (IBAction)dismissLogin:(id)sender;

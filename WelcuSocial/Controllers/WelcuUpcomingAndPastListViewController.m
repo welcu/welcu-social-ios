@@ -53,7 +53,7 @@
 {
     [super viewDidLoad];
     [self refetchData];
-    
+        
     self.segmentedControl = [[SDSegmentedControl alloc] initWithItems:@[
                                                                         NSLocalizedString(@"Upcoming", nil),
                                                                         NSLocalizedString(@"Past", nil)

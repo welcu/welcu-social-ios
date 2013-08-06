@@ -33,9 +33,11 @@
         self.accessToken = accessToken;
         
         // Handle Facebook session
-        [FBSession.activeSession openWithCompletionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-            
-        }];
+        if (![FBSession.activeSession isOpen]) {
+            [FBSession.activeSession openWithCompletionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                
+            }];
+        }
     }
     return self;
 }
@@ -65,9 +67,9 @@
     if (self.facebookUID) {
         pixels = pixels * [[UIScreen mainScreen] scale];
         return [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?height=%d&width=%d", self.facebookUID, pixels, pixels]];
+    } else {
+        return [WelcuGuestAccount guestPictureURLWithSize:pixels];
     }
-    
-    return nil;
 }
 
 
@@ -112,8 +114,8 @@
     
     if (![fileManager fileExistsAtPath:_accountDocumentsDirectory.path]) {
         if ([fileManager fileExistsAtPath:[[WelcuGuestAccount guestDocumentsDirectory] path]]) {
-            // Move content from guest user
-            [fileManager moveItemAtURL:[WelcuGuestAccount guestDocumentsDirectory]
+            // Copy content from guest user
+            [fileManager copyItemAtURL:[WelcuGuestAccount guestDocumentsDirectory]
                                  toURL:_accountDocumentsDirectory
                                  error:nil];
         } else {

@@ -100,7 +100,7 @@ static UINib *viewNib;
 - (void)setHeight:(CGFloat)height animated:(BOOL)animated
 {
     CGRect frame = self.frame;
-    frame.size.height = MAX(WELCU_EVENT_HEADER_MIN_HEIGHT, MIN(WELCU_EVENT_HEADER_MAX_HEIGHT, height));;
+    frame.size.height = MAX(WELCU_EVENT_HEADER_MIN_HEIGHT,height);
     self.frame = frame;
 }
 
