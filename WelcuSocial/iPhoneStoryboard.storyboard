@@ -126,7 +126,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Events" id="Tja-dN-XyS"/>
+                    <navigationItem key="navigationItem" title="My Events" id="Tja-dN-XyS">
+                        <barButtonItem key="backBarButtonItem" title=" " id="TgE-B3-JN7"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="BZ9-fv-NTk" kind="push" identifier="WelcuEventFeedViewController" id="CyE-WU-om2"/>
                     </connections>
@@ -289,7 +291,7 @@
             </objects>
             <point key="canvasLocation" x="3266" y="-739"/>
         </scene>
-        <!--Welcu Event Feed View Controller-->
+        <!--Welcu Event Feed View Controller -    -->
         <scene sceneID="a4G-4w-1Uv">
             <objects>
                 <viewController id="BZ9-fv-NTk" customClass="WelcuEventFeedViewController" sceneMemberID="viewController">
@@ -341,8 +343,8 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="dJo-Qn-bLg">
-                        <barButtonItem key="backBarButtonItem" title=" " id="gcJ-oG-ISK"/>
+                    <navigationItem key="navigationItem" title="   " id="dJo-Qn-bLg">
+                        <barButtonItem key="backBarButtonItem" title="   " id="gcJ-oG-ISK"/>
                         <barButtonItem key="rightBarButtonItem" image="TicketsButtonImage" id="OqY-bA-niA">
                             <connections>
                                 <segue destination="k8A-zX-Fwa" kind="push" identifier="WelcuEventTicketsController" id="eGo-X1-pCV"/>
@@ -572,6 +574,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="eGo-X1-pCV"/>
-        <segue reference="85k-t6-fAX"/>
+        <segue reference="CyE-WU-om2"/>
     </inferredMetricsTieBreakers>
 </document>
