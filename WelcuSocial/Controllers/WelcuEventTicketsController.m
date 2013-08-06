@@ -27,12 +27,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     self.tickets = [self.event.tickets allObjects];
+    
+    if ([self.tickets count] == 1) {
+        self.title = NSLocalizedString(@"Ticket", nil);
+    } else {
+        self.title = [NSString stringWithFormat:NSLocalizedString(@"%d Tickets",nil), [self.tickets count]];
+    }
+    
+    
     
     WelcuTicket *ticket = [self.tickets firstObject];
     

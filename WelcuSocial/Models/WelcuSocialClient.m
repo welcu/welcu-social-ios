@@ -476,15 +476,6 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
 - (BOOL)shouldFetchRemoteAttributeValuesForObjectWithID:(NSManagedObjectID *)objectID
                                  inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    if ([objectID.entity.name isEqualToString:@"WelcuEvent"]) {
-        return YES;
-        // TODO: Find way to detect if object needs to be re loaded
-//        WelcuEvent *event = (WelcuEvent *)[context objectWithID:objectID];
-//        if (!event.name) {
-//            return YES;
-//        }
-    }
-    
     return NO;
 }
 
