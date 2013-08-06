@@ -416,12 +416,9 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
                            }
                    };
     } else if ([[entity name] isEqualToString:@"WelcuTicket"]) {
-        result = @{
-                   @"event" : @{
-                           @"id" : representation[@"event_id"],
-                           @"participating" : @(YES)
-                           }
-                   };
+        NSMutableDictionary *eventRepresentation = [representation[@"event"] mutableCopy];
+        eventRepresentation[@"participating"] = @(YES);
+        result = @{ @"event" : eventRepresentation };
     } else {
         result = [super representationsForRelationshipsFromRepresentation:representation
                                                                  ofEntity:entity
