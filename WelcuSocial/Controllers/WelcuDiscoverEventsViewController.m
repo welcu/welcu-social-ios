@@ -13,6 +13,9 @@
 #import "WelcuDiscoverEventCell.h"
 #import "WelcuAccount.h"
 
+#import "WelcuIcon.h"
+
+
 @interface WelcuDiscoverEventsViewController () <NSFetchedResultsControllerDelegate,CHTCollectionViewDelegateWaterfallLayout>
 
 @property (nonatomic,strong) NSFetchedResultsController *fetchedResultsController;
@@ -51,6 +54,11 @@
     waterfallLayout.columnCount = 2;
     waterfallLayout.itemWidth = 145;
     waterfallLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    
+    FIIconView *logotypeView = [[FIIconView alloc] initWithFrame:CGRectMake(0, 0, 90, 33)];
+    logotypeView.icon = [WelcuIcon welcuLogotypeIcon];
+    logotypeView.iconColor = [UIColor whiteColor];
+    self.navigationItem.titleView = logotypeView;
     
 }
 
