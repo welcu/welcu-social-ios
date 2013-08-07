@@ -9,8 +9,9 @@
 #import "WelcuComposePhotoController.h"
 
 #import <GKImagePicker/GKImagePicker.h>
-#import <AviarySDK/AFPhotoEditorController.h>
 
+#import <AFPhotoEditorController.h>
+#import <AFPhotoEditorCustomization.h>
 
 @interface WelcuComposePhotoController () <UINavigationControllerDelegate,GKImagePickerDelegate,AFPhotoEditorControllerDelegate>
 
@@ -77,17 +78,10 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
 #pragma mark - GKImagePickerDelegate
 - (void)imagePicker:(GKImagePicker *)imagePicker pickedImage:(UIImage *)image
 {
-    AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:image];
-    
-    editorController.view.tintColor = [UIColor welcuDarkGrey];
-    
-    [editorController setDelegate:self];
-    
     [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
-
-    
-    [self.presentingViewController presentViewController:editorController animated:YES completion:nil];
-
+    [self.presentingViewController presentViewController:[self aviaryPhotoEditorControllerWithOmage:image]
+                                                animated:YES
+                                              completion:nil];
 }
 - (void)imagePickerDidCancel:(GKImagePicker *)imagePicker
 {
@@ -126,6 +120,20 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
 //}
 
 #pragma mark - AFPhotoEditorControllerDelegate
+- (AFPhotoEditorController *)aviaryPhotoEditorControllerWithOmage:(UIImage *)image
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [AFPhotoEditorCustomization setToolOrder:@[kAFEnhance, kAFEffects, kAFStickers, kAFFrames, kAFRedeye]];
+    });
+    
+    AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:image];
+//    editorController.view.tintColor = [UIColor welcuDarkGrey];
+    
+    [editorController setDelegate:self];
+    
+    return editorController;
+}
 
 - (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
 {

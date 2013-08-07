@@ -8,7 +8,6 @@ PODS:
   - AKSegmentedControl (1.0.2)
   - ALRadial (0.1.0)
   - AMAttributedHighlightLabel (0.0.1)
-  - AviarySDK (3.1.1)
   - CHTCollectionViewWaterfallLayout (0.0.1)
   - CocoaLumberjack (1.6.2)
   - DRKonamiCode (1.0.0)
@@ -49,7 +48,6 @@ DEPENDENCIES:
   - AKSegmentedControl (~> 1.0.2)
   - ALRadial (~> 0.1.0)
   - AMAttributedHighlightLabel (~> 0.0.1)
-  - AviarySDK (from `Vendor/AviarySDK.podspec`)
   - CHTCollectionViewWaterfallLayout
   - CocoaLumberjack (~> 1.6.2)
   - DRKonamiCode (~> 1.0.0)
@@ -75,8 +73,6 @@ DEPENDENCIES:
   - TTSwitch (~> 0.0.5)
 
 EXTERNAL SOURCES:
-  AviarySDK:
-    :podspec: Vendor/AviarySDK.podspec
   iOS-QR-Code-Encoder:
     :git: https://github.com/urbn/iOS-QR-Code-Encoder
   NPRImageView:
@@ -94,7 +90,6 @@ SPEC CHECKSUMS:
   AKSegmentedControl: 200a37463b1d4320d433d55c8008d95549159a25
   ALRadial: 266f46923c2e9de18d6436a70c43b212b081e382
   AMAttributedHighlightLabel: fe668dddfcdabb2dcc32cec46d7371bcf845897c
-  AviarySDK: b5ce17afb9ebe996587e5848b31b70968bd9b430
   CHTCollectionViewWaterfallLayout: 00a833b42559bb1f982903fa0ddea716dd823e89
   CocoaLumberjack: d73e1e317ced14ab930797dda6c17156ff17aaa1
   DRKonamiCode: 593a004b44eb0239c42090d2b5e28c44300c1907

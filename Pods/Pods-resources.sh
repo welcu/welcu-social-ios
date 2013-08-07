@@ -35,7 +35,6 @@ install_resource()
       ;;
   esac
 }
-install_resource 'AviarySDK/3.1.1-master-basic/AviarySDK/Resources/AviarySDKResources.bundle'
 install_resource 'Facebook-iOS-SDK/src/FacebookSDKResources.bundle'
 install_resource 'Facebook-iOS-SDK/src/FBUserSettingsViewResources.bundle'
 install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Fonts/Entypo-Social.otf'

@@ -111,6 +111,9 @@
 		CE9D2FE8178757F50016B8B8 /* WelcuEventStreamingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D2FE7178757F50016B8B8 /* WelcuEventStreamingView.m */; };
 		CE9D2FEA178760FD0016B8B8 /* WelcuEventHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D2FE9178760FD0016B8B8 /* WelcuEventHeaderView.xib */; };
 		CE9D2FEC178761100016B8B8 /* WelcuEventStreamingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D2FEB178761100016B8B8 /* WelcuEventStreamingView.xib */; };
+		CEA1F85C17B29DB100AE6311 /* libAviarySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1F85B17B29DB100AE6311 /* libAviarySDK.a */; };
+		CEA1F85F17B29F6600AE6311 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1F85E17B29F6600AE6311 /* StoreKit.framework */; };
+		CEA1F86117B2A05C00AE6311 /* AviarySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CEA1F86017B2A05C00AE6311 /* AviarySDKResources.bundle */; };
 		CEBBD1DD178F6A1300F3E36C /* GothamBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBBD1DA178F6A1300F3E36C /* GothamBold.ttf */; };
 		CEBBD1DE178F6A1300F3E36C /* GothamLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBBD1DB178F6A1300F3E36C /* GothamLight.ttf */; };
 		CEBBD1DF178F6A1300F3E36C /* GothamMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBBD1DC178F6A1300F3E36C /* GothamMedium.ttf */; };
@@ -297,6 +300,11 @@
 		CE9D303C178B5DCB0016B8B8 /* WelcuComposeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcuComposeController.h; sourceTree = "<group>"; };
 		CE9D303D178B5DCB0016B8B8 /* WelcuComposeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcuComposeController.m; sourceTree = "<group>"; };
 		CE9D303E178B5DCB0016B8B8 /* WelcuComposeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcuComposeController.xib; sourceTree = "<group>"; };
+		CEA1F85917B29CEF00AE6311 /* AviarySDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AviarySDK; sourceTree = "<group>"; };
+		CEA1F85B17B29DB100AE6311 /* libAviarySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAviarySDK.a; path = AviarySDK/libAviarySDK.a; sourceTree = "<group>"; };
+		CEA1F85D17B29DB100AE6311 /* libAviarySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAviarySDK.a; path = AviarySDK/libAviarySDK.a; sourceTree = "<group>"; };
+		CEA1F85E17B29F6600AE6311 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		CEA1F86017B2A05C00AE6311 /* AviarySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AviarySDKResources.bundle; path = ../../AviarySDK/Resources/AviarySDKResources.bundle; sourceTree = "<group>"; };
 		CEBBD1DA178F6A1300F3E36C /* GothamBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamBold.ttf; sourceTree = "<group>"; };
 		CEBBD1DB178F6A1300F3E36C /* GothamLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamLight.ttf; sourceTree = "<group>"; };
 		CEBBD1DC178F6A1300F3E36C /* GothamMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamMedium.ttf; sourceTree = "<group>"; };
@@ -330,6 +338,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA1F85F17B29F6600AE6311 /* StoreKit.framework in Frameworks */,
 				CE71AD731794639F00598802 /* SystemConfiguration.framework in Frameworks */,
 				CE16DD23178F242C00371025 /* AdSupport.framework in Frameworks */,
 				CE16DD21178F242200371025 /* Social.framework in Frameworks */,
@@ -341,6 +350,7 @@
 				CE7BEC16177E0BC30006D75C /* UIKit.framework in Frameworks */,
 				CE7BEC12177E0BC30006D75C /* Foundation.framework in Frameworks */,
 				CE3D26FE17B196CC00562482 /* Crashlytics.framework in Frameworks */,
+				CEA1F85C17B29DB100AE6311 /* libAviarySDK.a in Frameworks */,
 				9A2922333221434C8C447671 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				CEBBD1E4178F6F0500F3E36C /* Images.xcassets */,
+				CEA1F86017B2A05C00AE6311 /* AviarySDKResources.bundle */,
 				CE16DD51178F2B2A00371025 /* Mocks */,
 				CE16DC96178DD9E100371025 /* Fonts */,
 			);
@@ -517,6 +528,10 @@
 		CE7BEC10177E0BC30006D75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEA1F85E17B29F6600AE6311 /* StoreKit.framework */,
+				CEA1F85D17B29DB100AE6311 /* libAviarySDK.a */,
+				CEA1F85B17B29DB100AE6311 /* libAviarySDK.a */,
+				CEA1F85917B29CEF00AE6311 /* AviarySDK */,
 				CE3D26FD17B196CC00562482 /* Crashlytics.framework */,
 				CE71AD721794639F00598802 /* SystemConfiguration.framework */,
 				CE16DD22178F242C00371025 /* AdSupport.framework */,
@@ -801,6 +816,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA1F86117B2A05C00AE6311 /* AviarySDKResources.bundle in Resources */,
 				CEBBD1E3178F6A2200F3E36C /* MuseoSans-700.ttf in Resources */,
 				CE7BEC1C177E0BC30006D75C /* InfoPlist.strings in Resources */,
 				CE9D2FE0178739750016B8B8 /* WelcuEventPostHeaderView.xib in Resources */,
@@ -1128,13 +1144,53 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/sagmor/Development/Welcu/WelcuSocial,
+					"${SRCROOT}",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WelcuSocial/WelcuSocial-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AALaunchTransition\"",
+					"\"${PODS_ROOT}/Headers/AFIncrementalStore\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/AKSegmentedControl\"",
+					"\"${PODS_ROOT}/Headers/ALRadial\"",
+					"\"${PODS_ROOT}/Headers/AMAttributedHighlightLabel\"",
+					"\"${PODS_ROOT}/Headers/CHTCollectionViewWaterfallLayout\"",
+					"\"${PODS_ROOT}/Headers/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/DRKonamiCode\"",
+					"\"${PODS_ROOT}/Headers/FXKeychain\"",
+					"\"${PODS_ROOT}/Headers/Facebook-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Facebook-iOS-SDK/FacebookSDK\"",
+					"\"${PODS_ROOT}/Headers/FontasticIcons\"",
+					"\"${PODS_ROOT}/Headers/GKImagePicker\"",
+					"\"${PODS_ROOT}/Headers/GPUImage\"",
+					"\"${PODS_ROOT}/Headers/GoogleAnalytics-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/InAppSettingsKit\"",
+					"\"${PODS_ROOT}/Headers/InflectorKit\"",
+					"\"${PODS_ROOT}/Headers/JASidePanels\"",
+					"\"${PODS_ROOT}/Headers/MHPrettyDate\"",
+					"\"${PODS_ROOT}/Headers/MJPopupViewController\"",
+					"\"${PODS_ROOT}/Headers/NPRImageView\"",
+					"\"${PODS_ROOT}/Headers/NewRelicAgent\"",
+					"\"${PODS_ROOT}/Headers/OHAttributedLabel\"",
+					"\"${PODS_ROOT}/Headers/PCStackMenu\"",
+					"\"${PODS_ROOT}/Headers/SDSegmentedControl\"",
+					"\"${PODS_ROOT}/Headers/SIAlertView\"",
+					"\"${PODS_ROOT}/Headers/TTSwitch\"",
+					"\"${PODS_ROOT}/Headers/TestFlightLogger\"",
+					"\"${PODS_ROOT}/Headers/TestFlightSDK\"",
+					"\"${PODS_ROOT}/Headers/TransformerKit\"",
+					"\"${PODS_ROOT}/Headers/iOS-QR-Code-Encoder\"",
+					"\"${PODS_ROOT}/Headers/libextobjc\"",
+					"${SRCROOT}/AviarySDK/Headers",
+				);
 				INFOPLIST_FILE = "WelcuSocial/WelcuSocial-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sagmor/Development/Welcu/WelcuSocial/AviarySDK,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1149,13 +1205,53 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/sagmor/Development/Welcu/WelcuSocial,
+					"${SRCROOT}",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WelcuSocial/WelcuSocial-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AALaunchTransition\"",
+					"\"${PODS_ROOT}/Headers/AFIncrementalStore\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/AKSegmentedControl\"",
+					"\"${PODS_ROOT}/Headers/ALRadial\"",
+					"\"${PODS_ROOT}/Headers/AMAttributedHighlightLabel\"",
+					"\"${PODS_ROOT}/Headers/CHTCollectionViewWaterfallLayout\"",
+					"\"${PODS_ROOT}/Headers/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/DRKonamiCode\"",
+					"\"${PODS_ROOT}/Headers/FXKeychain\"",
+					"\"${PODS_ROOT}/Headers/Facebook-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Facebook-iOS-SDK/FacebookSDK\"",
+					"\"${PODS_ROOT}/Headers/FontasticIcons\"",
+					"\"${PODS_ROOT}/Headers/GKImagePicker\"",
+					"\"${PODS_ROOT}/Headers/GPUImage\"",
+					"\"${PODS_ROOT}/Headers/GoogleAnalytics-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/InAppSettingsKit\"",
+					"\"${PODS_ROOT}/Headers/InflectorKit\"",
+					"\"${PODS_ROOT}/Headers/JASidePanels\"",
+					"\"${PODS_ROOT}/Headers/MHPrettyDate\"",
+					"\"${PODS_ROOT}/Headers/MJPopupViewController\"",
+					"\"${PODS_ROOT}/Headers/NPRImageView\"",
+					"\"${PODS_ROOT}/Headers/NewRelicAgent\"",
+					"\"${PODS_ROOT}/Headers/OHAttributedLabel\"",
+					"\"${PODS_ROOT}/Headers/PCStackMenu\"",
+					"\"${PODS_ROOT}/Headers/SDSegmentedControl\"",
+					"\"${PODS_ROOT}/Headers/SIAlertView\"",
+					"\"${PODS_ROOT}/Headers/TTSwitch\"",
+					"\"${PODS_ROOT}/Headers/TestFlightLogger\"",
+					"\"${PODS_ROOT}/Headers/TestFlightSDK\"",
+					"\"${PODS_ROOT}/Headers/TransformerKit\"",
+					"\"${PODS_ROOT}/Headers/iOS-QR-Code-Encoder\"",
+					"\"${PODS_ROOT}/Headers/libextobjc\"",
+					"${SRCROOT}/AviarySDK/Headers",
+				);
 				INFOPLIST_FILE = "WelcuSocial/WelcuSocial-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sagmor/Development/Welcu/WelcuSocial/AviarySDK,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
