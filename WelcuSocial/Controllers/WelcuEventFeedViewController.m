@@ -22,6 +22,8 @@
 #import "WelcuComposeController.h"
 #import "WelcuComposePhotoController.h"
 
+#import "WelcuEventPostsDataSource.h"
+
 #import "WelcuEventPostCell.h"
 #import "WelcuEventPostHeaderView.h"
 #import "WelcuEventPostTextCell.h"
@@ -32,7 +34,7 @@
 NSString const * kWelcuEventPostHeaderViewClassName = @"WelcuEventPostHeaderView";
 NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
-@interface WelcuEventFeedViewController () <NSFetchedResultsControllerDelegate>
+@interface WelcuEventFeedViewController () <WelcuDataSourceDelegate>
 
 @property (nonatomic,strong) NSTimer *refetchTimer;
 
@@ -40,26 +42,11 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 @property (nonatomic,strong) WelcuEventHeaderView *headerView;
 @property (nonatomic,strong)  UINavigationBar *navigationBar;
 
-@property (nonatomic,strong) NSFetchedResultsController *fetchedResultsController;
-
-- (WelcuPost *)postAtIndex:(NSInteger)index;
-- (void)refetchData;
+@property (nonatomic,strong) WelcuEventPostsDataSource *postsDataSource;
 
 @end
 
 @implementation WelcuEventFeedViewController
-
-- (void)refetchData {
-    [self.fetchedResultsController performSelectorOnMainThread:@selector(performFetch:)
-                                                    withObject:nil
-                                                 waitUntilDone:YES
-                                                         modes:@[ NSRunLoopCommonModes ]];
-}
-
-- (WelcuPost *)postAtIndex:(NSInteger)index
-{
-    return [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-}
 
 - (void)viewDidLoad
 {
@@ -74,17 +61,12 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
         self.navigationItem.rightBarButtonItem = nil;
     }
     
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"WelcuPost"];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"event = %@" argumentArray:@[self.event]];
-    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
-    fetchRequest.fetchLimit = 50;
-    
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                                                        managedObjectContext:[[WelcuAccount currentAccount] managedObjectContext]
-                                                                          sectionNameKeyPath:nil
-                                                                                   cacheName:@"EventStream"];
-    self.fetchedResultsController.delegate = self;
-    [self refetchData];
+    self.postsDataSource = [[WelcuEventPostsDataSource alloc] initWithDelegate:self];
+    self.postsDataSource.event = self.event;
+    self.postsDataSource.indexPathTransform = ^(NSIndexPath *indexPath){
+        return [NSIndexPath indexPathForRow:indexPath.section inSection:0];
+    };
+    [self.postsDataSource fetchData];
     
     [self.tableView registerNib:[UINib nibWithNibName:(NSString *)kWelcuEventPostHeaderViewClassName
                                                bundle:nil] forHeaderFooterViewReuseIdentifier:(NSString *)kWelcuEventPostHeaderViewClassName];
@@ -138,8 +120,8 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 //                                                  forBarMetrics:UIBarMetricsDefault];
     
     self.refetchTimer = [NSTimer scheduledTimerWithTimeInterval:10
-                                                         target:self
-                                                       selector:@selector(refetchData)
+                                                         target:self.postsDataSource
+                                                       selector:@selector(fetchData)
                                                        userInfo:nil
                                                         repeats:YES];
 }
@@ -184,13 +166,13 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[[self.fetchedResultsController sections] firstObject] numberOfObjects];
+    return [self.postsDataSource numberOfObjectsAtSection:0];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    WelcuPost *post = [self postAtIndex:section];
+    WelcuPost *post = [self.postsDataSource postAtIndex:section];
     
     if (post.photo) {
         return 2;
@@ -202,21 +184,21 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return [WelcuEventPostHeaderView rowHeightForPost:[self postAtIndex:section]];
+    return [WelcuEventPostHeaderView rowHeightForPost:[self.postsDataSource postAtIndex:section]];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     WelcuEventPostHeaderView *header = (WelcuEventPostHeaderView *)[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:(NSString *)kWelcuEventPostHeaderViewClassName];
     
-    header.post = [self postAtIndex:section];
+    header.post = [self.postsDataSource postAtIndex:section];
     
     return header;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WelcuPost *post = [self postAtIndex:indexPath.section];
+    WelcuPost *post = [self.postsDataSource postAtIndex:indexPath.section];
     
     if (post.photo && indexPath.row == 0) {
         return [WelcuEventPostPhotoCell rowHeightForPost:post];
@@ -228,7 +210,7 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WelcuPost *post = [self postAtIndex:indexPath.section];
+    WelcuPost *post = [self.postsDataSource postAtIndex:indexPath.section];
     
     UITableViewCell <WelcuEventPostCell> *cell = nil;
     
@@ -313,9 +295,9 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
     }];
 }
 
-#pragma mark - NSFetchedResultsControllerDelegate
+#pragma mark - WelcuDataSourceDelegate
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+- (void)dataSourceDidChangeContent:(WelcuAbstractDataSource *)dataSource {
     [self.tableView reloadData];
 }
 

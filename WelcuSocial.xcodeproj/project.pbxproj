@@ -86,6 +86,9 @@
 		CE7BEC56177E31D70006D75C /* WelcuEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC55177E31D70006D75C /* WelcuEventViewController.m */; };
 		CE7BEC59177E3EEE0006D75C /* WelcuConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC58177E3EEE0006D75C /* WelcuConstants.m */; };
 		CE7BEC5C177E3FB00006D75C /* UIColor+WelcuColors.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7BEC5B177E3FB00006D75C /* UIColor+WelcuColors.m */; };
+		CE7E0D3017B5447E00C62880 /* WelcuEventPostsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7E0D2F17B5447E00C62880 /* WelcuEventPostsDataSource.m */; };
+		CE7E0D3317B5449A00C62880 /* WelcuPostDraftsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7E0D3217B5449A00C62880 /* WelcuPostDraftsDataSource.m */; };
+		CE7E0D3617B544B900C62880 /* WelcuAbstractDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7E0D3517B544B900C62880 /* WelcuAbstractDataSource.m */; };
 		CE8E4929177E68FE006B1874 /* WelcuEventFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4928177E68FE006B1874 /* WelcuEventFeedViewController.m */; };
 		CE8E492C177E6954006B1874 /* WelcuEventFeedViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E492B177E6954006B1874 /* WelcuEventFeedViewCell.m */; };
 		CE8E4930177F7269006B1874 /* UIImage+MaskedImages.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8E492F177F7269006B1874 /* UIImage+MaskedImages.m */; };
@@ -254,6 +257,12 @@
 		CE7BEC58177E3EEE0006D75C /* WelcuConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuConstants.m; sourceTree = "<group>"; };
 		CE7BEC5A177E3FB00006D75C /* UIColor+WelcuColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+WelcuColors.h"; sourceTree = "<group>"; };
 		CE7BEC5B177E3FB00006D75C /* UIColor+WelcuColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+WelcuColors.m"; sourceTree = "<group>"; };
+		CE7E0D2E17B5447E00C62880 /* WelcuEventPostsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventPostsDataSource.h; sourceTree = "<group>"; };
+		CE7E0D2F17B5447E00C62880 /* WelcuEventPostsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventPostsDataSource.m; sourceTree = "<group>"; };
+		CE7E0D3117B5449A00C62880 /* WelcuPostDraftsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuPostDraftsDataSource.h; sourceTree = "<group>"; };
+		CE7E0D3217B5449A00C62880 /* WelcuPostDraftsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuPostDraftsDataSource.m; sourceTree = "<group>"; };
+		CE7E0D3417B544B900C62880 /* WelcuAbstractDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuAbstractDataSource.h; sourceTree = "<group>"; };
+		CE7E0D3517B544B900C62880 /* WelcuAbstractDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuAbstractDataSource.m; sourceTree = "<group>"; };
 		CE8E4927177E68FE006B1874 /* WelcuEventFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventFeedViewController.h; sourceTree = "<group>"; };
 		CE8E4928177E68FE006B1874 /* WelcuEventFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcuEventFeedViewController.m; sourceTree = "<group>"; };
 		CE8E492A177E6954006B1874 /* WelcuEventFeedViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcuEventFeedViewCell.h; sourceTree = "<group>"; };
@@ -602,7 +611,8 @@
 		CE7BEC45177E0FDB0006D75C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CEBBD1E717905B7200F3E36C /* WelcuSocial.xcdatamodeld */,
+				CE7E0D3817B547D900C62880 /* Core Data */,
+				CE7E0D3717B547CA00C62880 /* Data Sources */,
 				CEBBD1F817906D2000F3E36C /* WelcuAccount.h */,
 				CEBBD1F917906D2000F3E36C /* WelcuAccount.m */,
 				CE99962E17AC332800C6653E /* WelcuGuestAccount.h */,
@@ -613,18 +623,6 @@
 				CEBBD1FC17906EBD00F3E36C /* WelcuSocialClient.m */,
 				CEBBD1FE1790720F00F3E36C /* WelcuSocialIncrementalStore.h */,
 				CEBBD1FF1790720F00F3E36C /* WelcuSocialIncrementalStore.m */,
-				CEBBD1F517906D1000F3E36C /* WelcuUser.h */,
-				CEBBD1F617906D1000F3E36C /* WelcuUser.m */,
-				CEBBD1F217906D1000F3E36C /* WelcuTicket.h */,
-				CEBBD1F317906D1000F3E36C /* WelcuTicket.m */,
-				CEBBD1EF17906D1000F3E36C /* WelcuEvent.h */,
-				CEBBD1F017906D1000F3E36C /* WelcuEvent.m */,
-				CEBBD1EC17906D1000F3E36C /* WelcuActivity.h */,
-				CEBBD1ED17906D1000F3E36C /* WelcuActivity.m */,
-				CEBBD1E917906D0F00F3E36C /* WelcuPost.h */,
-				CEBBD1EA17906D0F00F3E36C /* WelcuPost.m */,
-				CE51B6571799DB5600482067 /* WelcuPostDraft.h */,
-				CE51B6581799DB5600482067 /* WelcuPostDraft.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -681,6 +679,39 @@
 				CE3D26F417B0207A00562482 /* WelcuComposeToggleSwitch.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CE7E0D3717B547CA00C62880 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CE7E0D3417B544B900C62880 /* WelcuAbstractDataSource.h */,
+				CE7E0D3517B544B900C62880 /* WelcuAbstractDataSource.m */,
+				CE7E0D2E17B5447E00C62880 /* WelcuEventPostsDataSource.h */,
+				CE7E0D2F17B5447E00C62880 /* WelcuEventPostsDataSource.m */,
+				CE7E0D3117B5449A00C62880 /* WelcuPostDraftsDataSource.h */,
+				CE7E0D3217B5449A00C62880 /* WelcuPostDraftsDataSource.m */,
+			);
+			name = "Data Sources";
+			sourceTree = "<group>";
+		};
+		CE7E0D3817B547D900C62880 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBD1E717905B7200F3E36C /* WelcuSocial.xcdatamodeld */,
+				CEBBD1F517906D1000F3E36C /* WelcuUser.h */,
+				CEBBD1F617906D1000F3E36C /* WelcuUser.m */,
+				CEBBD1F217906D1000F3E36C /* WelcuTicket.h */,
+				CEBBD1F317906D1000F3E36C /* WelcuTicket.m */,
+				CEBBD1EF17906D1000F3E36C /* WelcuEvent.h */,
+				CEBBD1F017906D1000F3E36C /* WelcuEvent.m */,
+				CEBBD1EC17906D1000F3E36C /* WelcuActivity.h */,
+				CEBBD1ED17906D1000F3E36C /* WelcuActivity.m */,
+				CEBBD1E917906D0F00F3E36C /* WelcuPost.h */,
+				CEBBD1EA17906D0F00F3E36C /* WelcuPost.m */,
+				CE51B6571799DB5600482067 /* WelcuPostDraft.h */,
+				CE51B6581799DB5600482067 /* WelcuPostDraft.m */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 		CE8E492D177F71E0006B1874 /* Categories */ = {
@@ -976,8 +1007,10 @@
 				CE3D270B17B1AF6200562482 /* WelcuIcon.m in Sources */,
 				CE8E4929177E68FE006B1874 /* WelcuEventFeedViewController.m in Sources */,
 				CEBBD2001790720F00F3E36C /* WelcuSocialIncrementalStore.m in Sources */,
+				CE7E0D3617B544B900C62880 /* WelcuAbstractDataSource.m in Sources */,
 				CE8E49491781116B006B1874 /* WelcuComposePhotoCameraViewController.m in Sources */,
 				CE4FCE2A17A1797700DF5BE4 /* WelcuAccountTicketsListController.m in Sources */,
+				CE7E0D3317B5449A00C62880 /* WelcuPostDraftsDataSource.m in Sources */,
 				CEBBD1F717906D1000F3E36C /* WelcuUser.m in Sources */,
 				CE4FCE3317A17EEA00DF5BE4 /* WelcuTicketQRCell.m in Sources */,
 				CE7BEC56177E31D70006D75C /* WelcuEventViewController.m in Sources */,
@@ -994,6 +1027,7 @@
 				CE4FCE4317A17FA500DF5BE4 /* WelcuTicketDateTimeCell.m in Sources */,
 				CEBBD1F417906D1000F3E36C /* WelcuTicket.m in Sources */,
 				CE9D2FE5178757E60016B8B8 /* WelcuEventHeaderView.m in Sources */,
+				CE7E0D3017B5447E00C62880 /* WelcuEventPostsDataSource.m in Sources */,
 				CE7BEC53177E121F0006D75C /* WelcuLoginViewController.m in Sources */,
 				CE54297B179EDB60000E55E7 /* WelcuMenuActionCell.m in Sources */,
 				CE8E49461780E2AE006B1874 /* WelcuEventCell.m in Sources */,
