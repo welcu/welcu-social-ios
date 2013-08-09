@@ -437,6 +437,8 @@ static NSString * const kWelcuSocialClientAPIClientId = @"daace30d-bc2b-4e0b-a31
         return [self requestForEventsFetchRequest:fetchRequest withContext:context];
     } else if ([fetchRequest.entity.name isEqualToString:@"WelcuTicket"]) {
         return [self requestForTicketsFetchRequest:fetchRequest withContext:context];
+    } else if ([fetchRequest.entity.name isEqualToString:@"WelcuPostDraft"]) {
+        return nil;
     }
     
     @throw [NSException exceptionWithName:NSInternalInconsistencyException

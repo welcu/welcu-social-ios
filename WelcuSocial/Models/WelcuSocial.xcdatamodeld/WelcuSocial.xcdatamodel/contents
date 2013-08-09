@@ -40,6 +40,7 @@
     </entity>
     <entity name="WelcuPostDraft" representedClassName="WelcuPostDraft" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="facebookEnabled" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="kind" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
@@ -78,7 +79,7 @@
     <elements>
         <element name="WelcuEvent" positionX="270" positionY="20" width="128" height="388"/>
         <element name="WelcuPost" positionX="18" positionY="287" width="146" height="208"/>
-        <element name="WelcuPostDraft" positionX="18" positionY="72" width="128" height="148"/>
+        <element name="WelcuPostDraft" positionX="18" positionY="72" width="128" height="163"/>
         <element name="WelcuTicket" positionX="502" positionY="297" width="128" height="313"/>
         <element name="WelcuUser" positionX="-189" positionY="297" width="126" height="133"/>
     </elements>

@@ -17,6 +17,7 @@
 #import "UIImage+MaskedImages.h"
 #import "WelcuMenuUserProfileCell.h"
 #import "WelcuMenuActionCell.h"
+#import "WelcuFooterView.h"
 
 @interface WelcuMenuViewController ()
 
@@ -37,6 +38,9 @@
     
     [self.tableView setContentInset:UIEdgeInsetsMake(20, 0, 0, 0)];
     
+    self.tableView.tableFooterView = [WelcuFooterView footerWithFrame:CGRectMake(0, 0, self.view.frame.size.width-40, 200)
+                                                                color:[UIColor welcuDarkGrey]
+                                                                 text:nil];
     
     FIIcon *icon;
     if ([[WelcuAccount currentAccount] isGuest]) {

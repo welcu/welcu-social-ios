@@ -23,12 +23,15 @@
 #import "WelcuComposePhotoController.h"
 
 #import "WelcuEventPostsDataSource.h"
+#import "WelcuEventPostDraftsDataSource.h"
 
+#import "WelcuPostDraftCell.h"
 #import "WelcuEventPostCell.h"
 #import "WelcuEventPostHeaderView.h"
 #import "WelcuEventPostTextCell.h"
 #import "WelcuEventPostPhotoCell.h"
 #import "WelcuEventHeaderView.h"
+#import "WelcuFooterView.h"
 #import "WelcuEventTicketsController.h"
 
 NSString const * kWelcuEventPostHeaderViewClassName = @"WelcuEventPostHeaderView";
@@ -43,6 +46,7 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 @property (nonatomic,strong)  UINavigationBar *navigationBar;
 
 @property (nonatomic,strong) WelcuEventPostsDataSource *postsDataSource;
+@property (nonatomic,strong) WelcuEventPostDraftsDataSource *postDraftsDataSource;
 
 @end
 
@@ -64,9 +68,16 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
     self.postsDataSource = [[WelcuEventPostsDataSource alloc] initWithDelegate:self];
     self.postsDataSource.event = self.event;
     self.postsDataSource.indexPathTransform = ^(NSIndexPath *indexPath){
-        return [NSIndexPath indexPathForRow:indexPath.section inSection:0];
+        return [NSIndexPath indexPathForRow:indexPath.section-1 inSection:0];
     };
     [self.postsDataSource fetchData];
+    
+    self.postDraftsDataSource = [[WelcuEventPostDraftsDataSource alloc] initWithDelegate:self];
+    self.postDraftsDataSource.event = self.event;
+    [self.postDraftsDataSource fetchData];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"WelcuPostDraftCell"
+                                               bundle:nil] forHeaderFooterViewReuseIdentifier:@"WelcuPostDraftCell"];
     
     [self.tableView registerNib:[UINib nibWithNibName:(NSString *)kWelcuEventPostHeaderViewClassName
                                                bundle:nil] forHeaderFooterViewReuseIdentifier:(NSString *)kWelcuEventPostHeaderViewClassName];
@@ -93,6 +104,11 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
     }
 
     [self.view addSubview:self.headerView];
+    
+    
+    self.tableView.tableFooterView = [WelcuFooterView footerWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)
+                                                         color:[UIColor welcuDarkGrey]
+                                                          text:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -166,39 +182,48 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.postsDataSource numberOfObjectsAtSection:0];
+    return [self.postsDataSource numberOfObjectsAtSection:0]+1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    WelcuPost *post = [self.postsDataSource postAtIndex:section];
-    
-    if (post.photo) {
-        return 2;
+    if (section == 0) {
+        return [self.postDraftsDataSource numberOfObjectsAtSection:0];
     } else {
-        return 1;
+        WelcuPost *post = [self.postsDataSource postAtIndex:section-1];
+        
+        if (post.photo) {
+            return 2;
+        } else {
+            return 1;
+        }
     }
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return [WelcuEventPostHeaderView rowHeightForPost:[self.postsDataSource postAtIndex:section]];
+    if (section == 0) return 0;
+    
+    return [WelcuEventPostHeaderView rowHeightForPost:[self.postsDataSource postAtIndex:section-1]];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    if (section == 0) return nil;
+    
     WelcuEventPostHeaderView *header = (WelcuEventPostHeaderView *)[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:(NSString *)kWelcuEventPostHeaderViewClassName];
     
-    header.post = [self.postsDataSource postAtIndex:section];
+    header.post = [self.postsDataSource postAtIndex:section-1];
     
     return header;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WelcuPost *post = [self.postsDataSource postAtIndex:indexPath.section];
+    if (indexPath.section == 0) return 44;
+    
+    WelcuPost *post = [self.postsDataSource postAtIndex:indexPath.section-1];
     
     if (post.photo && indexPath.row == 0) {
         return [WelcuEventPostPhotoCell rowHeightForPost:post];
@@ -210,32 +235,29 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WelcuPost *post = [self.postsDataSource postAtIndex:indexPath.section];
-    
-    UITableViewCell <WelcuEventPostCell> *cell = nil;
-    
-    if (post.photo && indexPath.row == 0) {
-        cell = [self.tableView dequeueReusableCellWithIdentifier:@"WelcuEventPostPhotoCell" forIndexPath:indexPath];
+    if (indexPath.section == 0) {
+        WelcuPostDraftCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"WelcuPostDraftCell" forIndexPath:indexPath];
+        
+        cell.postDraft = [self.postsDataSource objectAtIndexPath:indexPath];
+        
+        return cell;
     } else {
-        cell = [self.tableView dequeueReusableCellWithIdentifier:(NSString *)kWelcuEventPostTextCellClassName forIndexPath:indexPath];
+        WelcuPost *post = [self.postsDataSource postAtIndex:indexPath.section-1];
+        
+        UITableViewCell <WelcuEventPostCell> *cell = nil;
+        
+        if (post.photo && indexPath.row == 0) {
+            cell = [self.tableView dequeueReusableCellWithIdentifier:@"WelcuEventPostPhotoCell" forIndexPath:indexPath];
+        } else {
+            cell = [self.tableView dequeueReusableCellWithIdentifier:(NSString *)kWelcuEventPostTextCellClassName forIndexPath:indexPath];
+        }
+        
+        cell.post = post;
+        
+        return cell;
     }
-
-    cell.post = post;
     
-    return cell;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 - (IBAction)startComposeAction:(id)sender {
     UIButton *button = (UIButton *)sender;
@@ -264,14 +286,6 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
                                     [composeController presentComposeController];
                                 }
                             }];
-    
-//    if ([self isComposeMenuVisible]) {
-//        self.composeMenuVisible = NO;
-//        [self.composeMenu itemsWillDisapearIntoButton:self.composeButton];
-//    } else {
-//        self.composeMenuVisible = YES;
-//        [self.composeMenu itemsWillAppearFromButton:self.composeButton withFrame:self.composeButton.frame inView:self.view];
-//    }
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
@@ -288,6 +302,14 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 # pragma mark WelcuComposeControllerDelegate
 
+-(void)composeController:(WelcuComposeController *)controller didFinishedComposingPost:(id)post
+{
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                          atScrollPosition:UITableViewScrollPositionTop
+                                  animated:YES];
+    [self.postDraftsDataSource fetchData];
+}
+
 - (void)composeControllerDidCancel:(WelcuComposeController *)composeController
 {
 //    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
@@ -298,7 +320,11 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 #pragma mark - WelcuDataSourceDelegate
 
 - (void)dataSourceDidChangeContent:(WelcuAbstractDataSource *)dataSource {
-    [self.tableView reloadData];
+    if (dataSource == self.postDraftsDataSource) {
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationTop];
+    } else {
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - Navigation
