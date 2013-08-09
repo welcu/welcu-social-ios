@@ -73,9 +73,10 @@
 
 - (void)taped:(id)sender
 {
-    if (self.event.eventURL) {
-         [[UIApplication sharedApplication] openURL:self.event.eventURL];
-    }
+    [self.delegate discoverEventCellWasSelected:self];
+//    if (self.event.eventURL) {
+//         [[UIApplication sharedApplication] openURL:self.event.eventURL];
+//    }
 }
 
 - (void)setEvent:(WelcuEvent *)event

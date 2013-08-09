@@ -164,6 +164,7 @@ static WelcuComposeController *currentComposeController = nil;
     [post startUpload];
     
     [self dismissComposeController];
+    [self.delegate composeController:self didFinishedComposingPost:post];
 }
 - (void)cancel:(id)sender
 {

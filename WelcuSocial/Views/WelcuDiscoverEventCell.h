@@ -11,9 +11,18 @@
 
 #import "WelcuEvent.h"
 
+@class WelcuDiscoverEventCell;
+
+@protocol WelcuDiscoverEventCellDelegate <NSObject>
+
+- (void)discoverEventCellWasSelected:(WelcuDiscoverEventCell *)cell;
+
+@end
+
 @interface WelcuDiscoverEventCell : UICollectionViewCell
 
 @property (nonatomic,strong) WelcuEvent *event;
+@property (nonatomic,weak) id<WelcuDiscoverEventCellDelegate> delegate;
 
 @property (nonatomic,weak) IBOutlet UIImageView *eventFlyerImage;
 @property (nonatomic,weak) IBOutlet UILabel *eventNameLabel;

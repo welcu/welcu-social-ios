@@ -37,7 +37,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"WelcuMenuActionCell" bundle:nil]
          forCellReuseIdentifier:@"WelcuMenuActionCell"];
     
-    [self.tableView setContentInset:UIEdgeInsetsMake(20, 0, 0, 50)];
+//    [self.tableView setContentInset:UIEdgeInsetsMake(20, 0, 0, 50)];
     
     self.tableView.tableFooterView = [WelcuFooterView footerWithFrame:CGRectMake(0, 0, self.view.frame.size.width-40, 200)
                                                                 color:[UIColor welcuDarkGrey]

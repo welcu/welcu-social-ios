@@ -20,9 +20,12 @@
 @dynamic event;
 @dynamic facebookEnabled;
 @dynamic twitterEnabled;
+@dynamic createdAt;
 
 
+@synthesize progressDelegate;
 @synthesize uploading = _uploading;
+@synthesize progress = _progress;
 
 + (WelcuPostDraft *)postDraftWithAttributes:(NSDictionary *)attributes
 {
@@ -33,6 +36,8 @@
     WelcuPostDraft *draft = [NSEntityDescription insertNewObjectForEntityForName:@"WelcuPostDraft"
                                                           inManagedObjectContext:event.managedObjectContext];
     
+    draft.progress = 0;
+    draft.createdAt = [NSDate date];
     draft.event = event;
     draft.content = attributes[@"content"];
     draft.facebookEnabled = attributes[@"facebook"];
@@ -40,6 +45,8 @@
     if (attributes[@"photo"]) {
         draft.photo = UIImagePNGRepresentation(attributes[@"photo"]);
     }
+    
+    [event.managedObjectContext save:nil];
     
     return draft;
 }
@@ -72,15 +79,19 @@
     }];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        self.published = @(YES);
+//        self.published = @(YES);
         _uploading = NO;
+        self.progress = 1;
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         _uploading = NO;
+        self.progress =  0;
     }];
     
     [operation setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
-        DDLogInfo(@"Uploading %lld/%lld", totalBytesWritten, totalBytesExpectedToWrite);
+        self.progress = 1.0*totalBytesWritten/totalBytesExpectedToWrite;
+        [self.progressDelegate postDraft:self uploadProgressedTo:self.progress];
+        DDLogInfo(@"Progress %f", self.progress);
     }];
     
     [operation start];

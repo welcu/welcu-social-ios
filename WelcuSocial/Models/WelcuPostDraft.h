@@ -10,6 +10,13 @@
 #import <CoreData/CoreData.h>
 
 @class WelcuEvent;
+@class WelcuPostDraft;
+
+@protocol WelcuPostDraftProgressDelegate <NSObject>
+
+- (void)postDraft:(WelcuPostDraft *)postDraft uploadProgressedTo:(CGFloat)progress;
+
+@end
 
 @interface WelcuPostDraft : NSManagedObject
 
@@ -20,7 +27,10 @@
 @property (nonatomic, retain) WelcuEvent *event;
 @property (nonatomic, retain) NSNumber * facebookEnabled;
 @property (nonatomic, retain) NSNumber * twitterEnabled;
+@property (nonatomic, retain) NSDate * createdAt;
 
+@property (nonatomic, weak) id<WelcuPostDraftProgressDelegate> progressDelegate;
+@property (nonatomic, assign) CGFloat progress;
 @property (readonly, getter = isUploading) BOOL uploading;
 
 + (WelcuPostDraft *)postDraftWithAttributes:(NSDictionary *)atributes;

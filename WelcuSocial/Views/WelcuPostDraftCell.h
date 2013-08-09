@@ -14,4 +14,9 @@
 
 @property (nonatomic,strong) WelcuPostDraft *postDraft;
 
+@property (nonatomic,weak) IBOutlet UIProgressView *progressView;
+@property (nonatomic,weak) IBOutlet UILabel *statusLabel;
+@property (nonatomic,weak) IBOutlet UIButton *retryButton;
+@property (nonatomic,weak) IBOutlet UIImageView *photoImageView;
+
 @end

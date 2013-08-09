@@ -324,7 +324,6 @@
 		CE9D303E178B5DCB0016B8B8 /* WelcuComposeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcuComposeController.xib; sourceTree = "<group>"; };
 		CEA1F85917B29CEF00AE6311 /* AviarySDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AviarySDK; sourceTree = "<group>"; };
 		CEA1F85B17B29DB100AE6311 /* libAviarySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAviarySDK.a; path = AviarySDK/libAviarySDK.a; sourceTree = "<group>"; };
-		CEA1F85D17B29DB100AE6311 /* libAviarySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAviarySDK.a; path = AviarySDK/libAviarySDK.a; sourceTree = "<group>"; };
 		CEA1F85E17B29F6600AE6311 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		CEA1F86017B2A05C00AE6311 /* AviarySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AviarySDKResources.bundle; path = ../../AviarySDK/Resources/AviarySDKResources.bundle; sourceTree = "<group>"; };
 		CEBBD1DA178F6A1300F3E36C /* GothamBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamBold.ttf; sourceTree = "<group>"; };
@@ -554,7 +553,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA1F85E17B29F6600AE6311 /* StoreKit.framework */,
-				CEA1F85D17B29DB100AE6311 /* libAviarySDK.a */,
 				CEA1F85B17B29DB100AE6311 /* libAviarySDK.a */,
 				CEA1F85917B29CEF00AE6311 /* AviarySDK */,
 				CE3D26FD17B196CC00562482 /* Crashlytics.framework */,

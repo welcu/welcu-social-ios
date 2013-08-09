@@ -37,7 +37,7 @@
 NSString const * kWelcuEventPostHeaderViewClassName = @"WelcuEventPostHeaderView";
 NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
-@interface WelcuEventFeedViewController () <WelcuDataSourceDelegate>
+@interface WelcuEventFeedViewController () <WelcuDataSourceDelegate, WelcuComposeControllerDelegate>
 
 @property (nonatomic,strong) NSTimer *refetchTimer;
 
@@ -77,13 +77,15 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
     [self.postDraftsDataSource fetchData];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"WelcuPostDraftCell"
-                                               bundle:nil] forHeaderFooterViewReuseIdentifier:@"WelcuPostDraftCell"];
+                                               bundle:nil]
+         forCellReuseIdentifier:@"WelcuPostDraftCell"];
     
     [self.tableView registerNib:[UINib nibWithNibName:(NSString *)kWelcuEventPostHeaderViewClassName
                                                bundle:nil] forHeaderFooterViewReuseIdentifier:(NSString *)kWelcuEventPostHeaderViewClassName];
 
     [self.tableView registerNib:[UINib nibWithNibName:(NSString *)kWelcuEventPostTextCellClassName
-                                               bundle:nil] forCellReuseIdentifier:(NSString *)kWelcuEventPostTextCellClassName];
+                                               bundle:nil]
+         forCellReuseIdentifier:(NSString *)kWelcuEventPostTextCellClassName];
 
     [self.tableView registerNib:[UINib nibWithNibName:@"WelcuEventPostPhotoCell"
                                                bundle:nil]
@@ -238,7 +240,7 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
     if (indexPath.section == 0) {
         WelcuPostDraftCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"WelcuPostDraftCell" forIndexPath:indexPath];
         
-        cell.postDraft = [self.postsDataSource objectAtIndexPath:indexPath];
+        cell.postDraft = [self.postDraftsDataSource objectAtIndexPath:indexPath];
         
         return cell;
     } else {
@@ -278,10 +280,12 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
                                     WelcuComposePhotoController *composeController = [[WelcuComposePhotoController alloc] init];
                                     
                                     composeController.event = self.event;
+                                    composeController.delegate = self;
                                     [composeController presentComposeControllerOn:self];
                                 } else if (selectedMenuIndex == 1) {
                                     WelcuComposeController *composeController = [WelcuComposeController composeController];
                                     composeController.event = self.event;
+                                    composeController.delegate = self;
                                     composeController.postType = WelcuComposePlainPostType;
                                     [composeController presentComposeController];
                                 }
@@ -302,26 +306,25 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
 
 # pragma mark WelcuComposeControllerDelegate
 
--(void)composeController:(WelcuComposeController *)controller didFinishedComposingPost:(id)post
+-(void)composeController:(WelcuComposeController *)controller didFinishedComposingPost:(WelcuPostDraft *)postDraft
 {
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
-                          atScrollPosition:UITableViewScrollPositionTop
-                                  animated:YES];
-    [self.postDraftsDataSource fetchData];
+//    [self.postDraftsDataSource fetchData];
+    [self.tableView setContentOffset:CGPointMake(0,0) animated:YES];
 }
 
 - (void)composeControllerDidCancel:(WelcuComposeController *)composeController
 {
 //    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
-    [self dismissViewControllerAnimated:YES completion:^{
-    }];
+//    [self dismissViewControllerAnimated:YES completion:^{
+//    }];
 }
 
 #pragma mark - WelcuDataSourceDelegate
 
 - (void)dataSourceDidChangeContent:(WelcuAbstractDataSource *)dataSource {
     if (dataSource == self.postDraftsDataSource) {
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationTop];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                      withRowAnimation:UITableViewRowAnimationNone];
     } else {
         [self.tableView reloadData];
     }

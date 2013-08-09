@@ -10,6 +10,7 @@
 
 @class WelcuEvent;
 @class WelcuComposeController;
+@class WelcuPostDraft;
 
 typedef enum {
     WelcuComposePlainPostType,
@@ -23,7 +24,7 @@ typedef enum {
 
 @required
 
--(void)composeController:(WelcuComposeController *)controller didFinishedComposingPost:(id)post;
+-(void)composeController:(WelcuComposeController *)controller didFinishedComposingPost:(WelcuPostDraft *)postDraft;
 
 @optional
 

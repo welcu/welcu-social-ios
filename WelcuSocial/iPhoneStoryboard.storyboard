@@ -286,6 +286,9 @@
                     <navigationItem key="navigationItem" title="Discover" id="4QM-a2-N0J"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <segue destination="BZ9-fv-NTk" kind="push" identifier="WelcuEventFeedViewController" id="sCL-Ns-ftc"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9be-7o-d0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -555,6 +558,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="eGo-X1-pCV"/>
-        <segue reference="CyE-WU-om2"/>
+        <segue reference="sCL-Ns-ftc"/>
     </inferredMetricsTieBreakers>
 </document>

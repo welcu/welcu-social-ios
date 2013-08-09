@@ -14,9 +14,9 @@
 #import "WelcuAccount.h"
 
 #import "WelcuIcon.h"
+#import "WelcuEventFeedViewController.h"
 
-
-@interface WelcuDiscoverEventsViewController () <NSFetchedResultsControllerDelegate,CHTCollectionViewDelegateWaterfallLayout>
+@interface WelcuDiscoverEventsViewController () <NSFetchedResultsControllerDelegate,CHTCollectionViewDelegateWaterfallLayout, WelcuDiscoverEventCellDelegate>
 
 @property (nonatomic,strong) NSFetchedResultsController *fetchedResultsController;
 
@@ -50,10 +50,13 @@
     self.fetchedResultsController.delegate = self;
     [self refetchData];
     
-    CHTCollectionViewWaterfallLayout *waterfallLayout = (CHTCollectionViewWaterfallLayout *)self.collectionViewLayout;
+    CHTCollectionViewWaterfallLayout *waterfallLayout = [[CHTCollectionViewWaterfallLayout alloc] init];
+    waterfallLayout.delegate = self;
     waterfallLayout.columnCount = 2;
     waterfallLayout.itemWidth = 145;
     waterfallLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    
+    self.collectionView.collectionViewLayout = waterfallLayout;
     
     FIIconView *logotypeView = [[FIIconView alloc] initWithFrame:CGRectMake(0, 0, 90, 33)];
     logotypeView.icon = [WelcuIcon welcuLogotypeIcon];
@@ -87,10 +90,10 @@
                                                                                   forIndexPath:indexPath];
     
     cell.event = event;
+    cell.delegate = self;
     
     return cell;
 }
-
 
 //#pragma mark - UICollectionViewDelegateFlowLayout
 //- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -118,5 +121,20 @@
     [self.collectionView reloadData];
 }
 
+#pragma mark - WelcuDiscoverEventCellDelegate
+
+- (void)discoverEventCellWasSelected:(WelcuDiscoverEventCell *)cell
+{
+    [self performSegueWithIdentifier:@"WelcuEventFeedViewController" sender:cell];
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"WelcuEventFeedViewController"]) {
+        WelcuEventFeedViewController *controller = segue.destinationViewController;
+        controller.event = [sender event];
+    }
+}
 
 @end

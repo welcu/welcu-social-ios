@@ -141,6 +141,7 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
     
     WelcuComposeController *composeController = [WelcuComposeController composeController];
     composeController.event = self.event;
+    composeController.delegate = self.delegate;
     composeController.postType = WelcuComposePhotoPostType;
     composeController.postImage = image;
     [composeController presentComposeController];
