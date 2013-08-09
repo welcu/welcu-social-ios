@@ -76,7 +76,7 @@ NSString const * kWelcuEventPostTextCellClassName = @"WelcuEventPostTextCell";
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"WelcuPost"];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"event = %@" argumentArray:@[self.event]];
-    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"postID" ascending:NO]];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
     fetchRequest.fetchLimit = 50;
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest

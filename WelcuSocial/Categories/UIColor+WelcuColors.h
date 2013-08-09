@@ -11,7 +11,7 @@
 @interface UIColor (WelcuColors)
 
 
-/** Welcu purple blue color (#) */
+/** Welcu purple blue color (#54558E) */
 + (UIColor *)welcuPurple;
 
 /** Welcu purple blue color (#) */

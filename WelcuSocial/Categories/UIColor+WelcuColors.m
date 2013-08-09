@@ -12,7 +12,7 @@
 
 + (UIColor *)welcuPurple
 {
-    return [UIColor colorWithRed:0.329 green:0.325 blue:0.565 alpha:1];
+    return [UIColor colorWithRed:0.329 green:0.333 blue:0.557 alpha:1.000];
 }
 
 + (UIColor *)welcuLightPurple
