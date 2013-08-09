@@ -12,6 +12,7 @@
 @interface WelcuIconButton : UIButton
 
 @property (nonatomic,strong) FIIcon *icon;
+@property (nonatomic,strong) UIColor *color;
 
 - (id)initWithFrame:(CGRect)frame icon:(FIIcon *)icon;
 - (id)initWithFrame:(CGRect)frame icon:(FIIcon *)icon color:(UIColor *)color;

@@ -12,6 +12,7 @@
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <FontasticIcons/FontasticIcons.h>
 
+#import "WelcuIconButton.h"
 #import "WelcuSettingsController.h"
 #import "WelcuAccount.h"
 #import "UIImage+MaskedImages.h"
@@ -36,27 +37,40 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"WelcuMenuActionCell" bundle:nil]
          forCellReuseIdentifier:@"WelcuMenuActionCell"];
     
-    [self.tableView setContentInset:UIEdgeInsetsMake(20, 0, 0, 0)];
+    [self.tableView setContentInset:UIEdgeInsetsMake(20, 0, 0, 50)];
     
     self.tableView.tableFooterView = [WelcuFooterView footerWithFrame:CGRectMake(0, 0, self.view.frame.size.width-40, 200)
                                                                 color:[UIColor welcuDarkGrey]
                                                                  text:nil];
     
-    FIIcon *icon;
+    FIIcon *settingsIcon;
+    SEL settingsSelector;
     if ([[WelcuAccount currentAccount] isGuest]) {
-        icon = [FIFontAwesomeIcon signinIcon];
-        [self.settingsButton addTarget:self action:@selector(showLogin:) forControlEvents:UIControlEventTouchUpInside];
+        settingsIcon = [FIFontAwesomeIcon signinIcon];
+        settingsSelector = @selector(showLogin:);
     } else {
-        icon = [FIFontAwesomeIcon cogIcon];
-        [self.settingsButton addTarget:self action:@selector(showSettings:) forControlEvents:UIControlEventTouchUpInside];
+        settingsIcon = [FIFontAwesomeIcon cogIcon];
+        settingsSelector = @selector(showSettings:);
     }
     
-    FIIconLayer *layer = [FIIconLayer new];
-    layer.icon = icon;
-    layer.frame = self.settingsButton.bounds;
-    layer.iconColor = [UIColor whiteColor];
-    [self.settingsButton.layer addSublayer:layer];
+    WelcuIconButton *settingsButton = [[WelcuIconButton alloc] initWithFrame:CGRectMake(15,self.view.frame.size.height-50,35,35)
+                                                                        icon:settingsIcon
+                                                                       color:[UIColor welcuLightGrey]];
+    [settingsButton addTarget:self
+                       action:settingsSelector
+             forControlEvents:UIControlEventTouchUpInside];
+
+    [self.view addSubview:settingsButton];
     
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-10-[settingsButton]"
+//                                                                      options:0
+//                                                                      metrics:nil
+//                                                                        views:NSDictionaryOfVariableBindings(settingsButton)]];
+//
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[settingsButton]-10-|"
+//                                                                      options:0
+//                                                                      metrics:nil
+//                                                                        views:NSDictionaryOfVariableBindings(settingsButton)]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

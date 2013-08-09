@@ -24,9 +24,19 @@
 
 - (id)initWithFrame:(CGRect)frame icon:(FIIcon *)icon color:(UIColor *)color
 {
-    self = [super initWithFrame:frame];
+    CGFloat size = frame.size.height;
+    self = [super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, size, size)];
     if (self) {
+        self.layer.cornerRadius = size/2;
+        self.layer.borderWidth = 2;
+        self.layer.borderColor = color.CGColor;
+        
+        self.color = color;
         self.icon = icon;
+        [self setImage:[icon imageWithBounds:CGRectMake(0, 0, size-10, size-10)
+                                            color:color]
+              forState:UIControlStateNormal];
+        
     }
     return self;
 }
