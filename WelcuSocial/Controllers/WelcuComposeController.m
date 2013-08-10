@@ -89,7 +89,9 @@ static WelcuComposeController *currentComposeController = nil;
     
     [self.toolbar setItems:self.shareButtons];
     
-    self.contentTextView.tintColor = [UIColor blackColor];
+    if ([self.contentTextView respondsToSelector:@selector(tintColor)]) {
+        self.contentTextView.tintColor = [UIColor blackColor];
+    }
 }
 
 - (NSArray *)shareButtons

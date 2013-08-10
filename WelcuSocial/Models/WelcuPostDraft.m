@@ -79,7 +79,7 @@
     }];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-//        self.published = @(YES);
+        self.published = @(YES);
         _uploading = NO;
         self.progress = 1;
         
