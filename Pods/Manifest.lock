@@ -31,7 +31,7 @@ PODS:
     - libextobjc/EXTScope (~> 0.2.5)
   - OHAttributedLabel (3.4.1)
   - PCStackMenu (1.0.0)
-  - R1PhotoEffectsSDK (1.0.8)
+  - R1PhotoEffectsSDK (1.0.9)
   - SDSegmentedControl (1.0.2)
   - SIAlertView (1.2)
   - TestFlightLogger (0.0.2):
@@ -113,7 +113,7 @@ SPEC CHECKSUMS:
   NPRImageView: b1b1f050a85069a45d3b18c4f47556f4cc2d7864
   OHAttributedLabel: 770332ef810ca15c9bd4a79f300ce620bc443e9d
   PCStackMenu: fe2c746ee6e2a8e238f56fa7a2f3869d934eef00
-  R1PhotoEffectsSDK: 593f7755bf6424addf1fb2d8a3b830fd3ceccd10
+  R1PhotoEffectsSDK: a740cd59cf5b83f22ff4e5aec2495fe7627010a2
   SDSegmentedControl: 165956a426f1fd7ff1eb486c4931241f12e0867e
   SIAlertView: fd188f66278761f4ff069f517c3deb2be16ecdcc
   TestFlightLogger: 8d5127df30752ce74a1f5b52947f520e05cc0f42

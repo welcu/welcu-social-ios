@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                = "R1PhotoEffectsSDK"
-  s.version             = "1.0.8"
+  s.version             = "1.0.9"
   s.summary             = "RadiumOne Photo Effects"
   s.homepage            = "http://radiumone.com/photoeffects/"
   # s.license             = { :type => "Commercial", :file => "LICENSE" }
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
                           "StoreKit"
   s.weak_frameworks     = "AdSupport"
   s.libraries           = 'R1PhotoEffectsSDK'
-  s.resources           = 'R1PhotoEffectsSDK.bundle'
+  s.resources           = 'R1PhotoEffectsResources.bundle'
   s.xcconfig  =  { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/R1PhotoEffectsSDK"' }
   s.prepare_command = <<-CMD
     mv R1PhotoEffectsSDK/* ./

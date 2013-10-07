@@ -16,6 +16,7 @@
 #import <CocoaLumberjack/DDFileLogger.h>
 #import "AFHTTPRequestOperationLogger.h"
 #import <SDSegmentedControl/SDSegmentedControl.h>
+#import <R1PhotoEffectsSDK/R1PhotoEffectsSDK.h>
 
 #import "WelcuAccount.h"
 
@@ -89,11 +90,8 @@
 
 - (void)setupTracking
 {
-//#ifdef DEBUG
-//    
-//    [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] performSelector:@selector(uniqueIdentifier)]];
-//#endif
     [TestFlight takeOff:kWelcuTestflightToken];
+    [[R1PhotoEffectsSDK sharedManager] enableWithClientID:@"30b0fc70-c499-0130-216a-22000afc0b0e"];
 }
 
 - (void)setupLogging
@@ -135,6 +133,20 @@
     
     [[SDSegmentView appearance] setItemFont:[UIFont fontWithName:@"MuseoSans-500"
                                                             size:12]];
+
+
+    // Radium One Customizations
+    static const NSUInteger R1CropModeSquare = 0;
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:R1CropModeSquare] forKey:@"R1ExclusiveCropMode"];
+
+    static const NSUInteger R1TabEffects = 0;
+    static const NSUInteger R1TabBorders = 1;
+    static const NSUInteger R1TabStickers = 2;
+    static const NSUInteger R1TabText = 3;
+    static const NSUInteger R1TabDraw = 4;
+
+    NSArray *customTabs = @[@(R1TabEffects), @(R1TabBorders), @(R1TabStickers), @(R1TabText), @(R1TabDraw)];
+    [[NSUserDefaults standardUserDefaults] setObject:customTabs forKey:@"R1TabSetupList"];
 }
 
 - (NSURL *)applicationDocumentsDirectory {

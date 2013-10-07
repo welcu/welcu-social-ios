@@ -8,16 +8,14 @@
 
 #import "WelcuComposePhotoController.h"
 
-#import <GKImagePicker/GKImagePicker.h>
-
 #import <R1PhotoEffectsSDK/R1PhotoEffectsSDK.h>
 
 
 
-@interface WelcuComposePhotoController () <UINavigationControllerDelegate,GKImagePickerDelegate,R1PhotoEffectsEditingViewControllerDelegate>
+@interface WelcuComposePhotoController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate,R1PhotoEffectsEditingViewControllerDelegate>
 
 @property (weak, nonatomic) UIViewController *presentingViewController;
-@property (strong, nonatomic) GKImagePicker *mainImagePicker;
+@property (strong, nonatomic) UIImagePickerController *mainImagePicker;
 
 @end
 
@@ -46,58 +44,79 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
         self.mainImagePicker = [self buildLibraryImagePicker];
     }
     
-    [self.presentingViewController presentViewController:self.mainImagePicker.imagePickerController animated:YES completion:nil];
+    [self.presentingViewController presentViewController:self.mainImagePicker animated:YES completion:nil];
 }
 
-- (GKImagePicker *)buildBasePicker
+- (UIImagePickerController *)buildBasePicker
 {
-    GKImagePicker *picker = [[GKImagePicker alloc] init];
-    picker.cropSize = CGSizeMake(300, 300);
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
-    picker.imagePickerController.mediaTypes = @[ (NSString *)kUTTypeImage ];
-//    picker.imagePickerController.allowsEditing = NO;
+    picker.mediaTypes = @[ (NSString *)kUTTypeImage ];
+    picker.allowsEditing = NO;
     
     return picker;
 }
 
-- (GKImagePicker *)buildCameraPicker
+- (UIImagePickerController *)buildCameraPicker
 {
-    GKImagePicker *cameraPicker = [self buildBasePicker];
-    cameraPicker.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    UIImagePickerController *cameraPicker = [self buildBasePicker];
+    cameraPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
     return cameraPicker;
 }
 
-- (GKImagePicker *)buildLibraryImagePicker
+- (UIImagePickerController *)buildLibraryImagePicker
 {
-    GKImagePicker *imagePicker = [self buildBasePicker];
-    imagePicker.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    UIImagePickerController *imagePicker = [self buildBasePicker];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
     return imagePicker;
 }
 
-#pragma mark - GKImagePickerDelegate
-- (void)imagePicker:(GKImagePicker *)imagePicker pickedImage:(UIImage *)image
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
 
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    UIViewController *photoEditorController = [[R1PhotoEffectsSDK sharedManager] photoEffectsControllerForImage:image
+                                                                                                       delegate:self
+                                                                                                    cropSupport:YES];
+
+    [self.presentingViewController presentViewController:photoEditorController
+                                                animated:YES
+                                              completion:nil];
+
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 }
-- (void)imagePickerDidCancel:(GKImagePicker *)imagePicker
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    
-//    if (imagePicker == self.mainImagePicker) {
-//        currentComposePhotoController = nil;
-//        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-//    } else {
-//        [self.mainImagePicker.imagePickerController dismissViewControllerAnimated:YES completion:nil];
-//    }
 }
 
 #pragma mark - R1PhotoEffectsEditingViewControllerDelegate
 
+- (void)photoEffectsEditingViewController:(R1PhotoEffectsEditingViewController *)controller
+                       didFinishWithImage:(UIImage *)image
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+
+    WelcuComposeController *composeController = [WelcuComposeController composeController];
+    composeController.event = self.event;
+    composeController.delegate = self.delegate;
+    composeController.postType = WelcuComposePhotoPostType;
+    composeController.postImage = image;
+    [composeController presentComposeController];
+}
+
+- (void)photoEffectsEditingViewControllerDidCancel:(R1PhotoEffectsEditingViewController *)controller
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 @end

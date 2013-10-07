@@ -98,7 +98,7 @@ static WelcuComposeController *currentComposeController = nil;
 {
     NSMutableArray *shareButtons = [NSMutableArray array];
     [shareButtons addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]];
-    [shareButtons addObject:[[UIBarButtonItem alloc] initWithCustomView:self.twitterToggleSwitch]];
+//    [shareButtons addObject:[[UIBarButtonItem alloc] initWithCustomView:self.twitterToggleSwitch]];
     [shareButtons addObject:[[UIBarButtonItem alloc] initWithCustomView:self.facebookToggleSwitch]];
     
     return shareButtons;
