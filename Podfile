@@ -20,6 +20,7 @@ pod 'AMAttributedHighlightLabel', '~> 0.0.1'
 pod 'PCStackMenu', git: 'https://github.com/sagmor/StackMenu'
 pod 'SDSegmentedControl', '~> 1.0.2'
 pod 'TTSwitch', '~> 0.0.5'
+pod 'TSMiniWebBrowser', '~> 1.0.1'
 
 pod 'OHAttributedLabel', '~> 3.4.1'
 pod 'AKSegmentedControl', '~> 1.0.2'

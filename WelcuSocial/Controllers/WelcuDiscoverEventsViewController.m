@@ -9,6 +9,7 @@
 #import "WelcuDiscoverEventsViewController.h"
 
 #import <CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.h>
+#import <TSMiniWebBrowser/TSMiniWebBrowser.h>
 
 #import "WelcuDiscoverEventCell.h"
 #import "WelcuAccount.h"
@@ -125,7 +126,13 @@
 
 - (void)discoverEventCellWasSelected:(WelcuDiscoverEventCell *)cell
 {
-    [self performSegueWithIdentifier:@"WelcuEventFeedViewController" sender:cell];
+    TSMiniWebBrowser *webBrowser = [[TSMiniWebBrowser alloc] initWithUrl:cell.event.eventURL];
+    webBrowser.mode = TSMiniWebBrowserModeNavigation;
+    webBrowser.showActionButton = YES;
+    webBrowser.showReloadButton = YES;
+    webBrowser.barStyle = UIBarStyleBlack;
+    
+    [self.navigationController pushViewController:webBrowser animated:YES];
 }
 
 #pragma mark - Navigation

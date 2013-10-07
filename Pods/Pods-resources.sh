@@ -61,6 +61,13 @@ install_resource "GKImagePicker/GKImages/PLCameraSheetDoneButtonPressed@2x.png"
 install_resource "MHPrettyDate/MHPrettyDate/en.lproj"
 install_resource "MHPrettyDate/MHPrettyDate/nl.lproj"
 install_resource "SIAlertView/SIAlertView/SIAlertView.bundle"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/images/back_icon.png"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/images/back_icon@2x.png"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/images/forward_icon.png"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/images/forward_icon@2x.png"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/images/reload_icon.png"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/images/reload_icon@2x.png"
+install_resource "TSMiniWebBrowser/TSMiniWebBrowser/TSMiniWebBrowser.xib"
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then
