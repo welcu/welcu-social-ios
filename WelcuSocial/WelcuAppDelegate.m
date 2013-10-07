@@ -136,12 +136,12 @@
 
 
     // Radium One Customizations
-    static const NSUInteger R1CropModeSquare = 0;
+    static const NSUInteger R1CropModeSquare = 1;
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:R1CropModeSquare] forKey:@"R1ExclusiveCropMode"];
 
-    static const NSUInteger R1TabEffects = 0;
-    static const NSUInteger R1TabBorders = 1;
-    static const NSUInteger R1TabStickers = 2;
+    static const NSUInteger R1TabStickers = 0;
+    static const NSUInteger R1TabEffects = 1;
+    static const NSUInteger R1TabBorders = 2;
     static const NSUInteger R1TabText = 3;
     static const NSUInteger R1TabDraw = 4;
 

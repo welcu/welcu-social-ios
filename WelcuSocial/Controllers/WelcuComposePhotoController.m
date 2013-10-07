@@ -103,6 +103,7 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
                        didFinishWithImage:(UIImage *)image
 {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 
     WelcuComposeController *composeController = [WelcuComposeController composeController];
     composeController.event = self.event;
