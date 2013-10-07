@@ -1,0 +1,70 @@
+/* 
+  R1EffectsSDK.strings
+  R1PhotoEffectsSDK
+
+  Created by Drew Colace on 8/29/13.
+  Copyright (c) 2013 RadiumOne, Inc. All rights reserved.
+*/
+
+// Navigation Button Titles
+"CropDone" = "Suiv.";
+"EffectsDone" = "Suiv.";
+"Next" = "Suiv.";
+"Done" = "Terminé";
+"Cancel" = "Annuler";
+
+// Crop Screen Title
+"Crop" = "Recadrer";
+
+//Crop Preset Titles
+"NoCrop" = "Normal";
+"SquareCrop" = "Carré";
+"CustomCrop" = "Special";
+"2x3" = "2x3";
+"3x5" = "3x5";
+"3x2" = "3x2";
+"5x3" = "5x3";
+
+// Active Effect Titles
+"Stickers" = "Stickers";
+"Filters" = "Filtres";
+"Borders" = "Bords";
+"Text" = "Texte";
+"Draw" = "Pinceau";
+
+// Loading Prompt
+"LoadingEffects" = "Chargement";
+
+// Pop-up Alert Text
+"Alert" = "Alerte";
+"OK" = "OK";
+"Error" = "Erreur";
+
+"ClearDrawTitle" = "Tout Effacer?";
+"ClearDrawMsg" = "Voulez-vous effacer tout votre dessin?";
+"ClearDrawYes" = "Effacer Dessin";
+
+"PriceUnavail" = "Prix indisponible";
+"PurchaseProblem" = "Une erreur s'est produite durant l'achat.";
+"RestoreError" = "Une erreur s'est produite durant la restauration d'achat.";
+"PayentProblem" = "Nous ne sommes pas en mesure de traiter votre paiement";
+
+// Effect Pack Downlad Status
+"Waiting" = "Merci de patienter...";
+
+// Effect Pack Store Button Labels
+"Free" = "Gratuit";
+"Download" = "TELECHARGER";
+"Installing" = "INSTALLER";
+
+// Effect Pack Store Title
+"DownloadPack" = "Télégargement de Pack";
+
+// Effect Pack Store Page Restore button title
+"Restore" = "Restauration d'Achat";
+
+// 'None' border selection
+"NoBorder" = "Normal";
+
+// 'None' filter selection
+"NoFilter" = "Normal";

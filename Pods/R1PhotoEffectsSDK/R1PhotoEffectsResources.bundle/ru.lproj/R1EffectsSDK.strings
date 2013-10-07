@@ -1,0 +1,70 @@
+/* 
+  R1EffectsSDK.strings
+  R1PhotoEffectsSDK
+
+  Created by Drew Colace on 8/29/13.
+  Copyright (c) 2013 RadiumOne, Inc. All rights reserved.
+*/
+
+// Navigation Button Titles
+"CropDone" = "Далее";
+"EffectsDone" = "Далее";
+"Next" = "Далее";
+"Done" = "Готово";
+"Cancel" = "Отмена";
+
+// Crop Screen Title
+"Crop" = "Обрезка";
+
+//Crop Preset Titles
+"NoCrop" = "Обычная";
+"SquareCrop" = "Квадрат";
+"CustomCrop" = "Пользовательская";
+"2x3" = "2x3";
+"3x5" = "3x5";
+"3x2" = "3x2";
+"5x3" = "5x3";
+
+// Active Effect Titles
+"Stickers" = "Наклейки";
+"Filters" = "Фильтры";
+"Borders" = "Границы";
+"Text" = "Текст";
+"Draw" = "Рисунок";
+
+// Loading Prompt
+"LoadingEffects" = "Загрузка";
+
+// Pop-up Alert Text
+"Alert" = "Уведомление";
+"OK" = "OK";
+"Error" = "Error";
+
+"ClearDrawTitle" = "Clear Drawing?";
+"ClearDrawMsg" = "Do you really want to clear all your drawing from the image?";
+"ClearDrawYes" = "Clear Drawing";
+
+"PriceUnavail" = "Product pricing is unavailable";
+"PurchaseProblem" = "A purchasing error occured.";
+"RestoreError" = "Error restoring purchases";
+"PayentProblem" = "Не удалось обработать ваш платеж";
+
+// Effect Pack Downlad Status
+"Waiting" = "Waiting...";
+
+// Effect Pack Store Button Labels
+"Free" = "Free";
+"Download" = "DOWNLOAD";
+"Installing" = "INSTALLING";
+
+// Effect Pack Store Title
+"DownloadPack" = "Download Pack";
+
+// Effect Pack Store Page Restore button title
+"Restore" = "Restore Purchases";
+
+// 'None' border selection
+"NoBorder" = "Normal";
+
+// 'None' filter selection
+"NoFilter" = "Normal";

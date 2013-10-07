@@ -1,0 +1,1 @@
+../../R1PhotoEffectsSDK/R1PhotoEffectsController.h

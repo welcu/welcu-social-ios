@@ -10,10 +10,11 @@
 
 #import <GKImagePicker/GKImagePicker.h>
 
-#import <AFPhotoEditorController.h>
-#import <AFPhotoEditorCustomization.h>
+#import <R1PhotoEffectsSDK/R1PhotoEffectsSDK.h>
 
-@interface WelcuComposePhotoController () <UINavigationControllerDelegate,GKImagePickerDelegate,AFPhotoEditorControllerDelegate>
+
+
+@interface WelcuComposePhotoController () <UINavigationControllerDelegate,GKImagePickerDelegate,R1PhotoEffectsEditingViewControllerDelegate>
 
 @property (weak, nonatomic) UIViewController *presentingViewController;
 @property (strong, nonatomic) GKImagePicker *mainImagePicker;
@@ -79,9 +80,7 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
 - (void)imagePicker:(GKImagePicker *)imagePicker pickedImage:(UIImage *)image
 {
     [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
-    [self.presentingViewController presentViewController:[self aviaryPhotoEditorControllerWithOmage:image]
-                                                animated:YES
-                                              completion:nil];
+
 }
 - (void)imagePickerDidCancel:(GKImagePicker *)imagePicker
 {
@@ -97,62 +96,7 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
 //    }
 }
 
-
-//#pragma mark - UIImagePickerControllerDelegate
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-//{
-//    AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:info[UIImagePickerControllerOriginalImage]];
-//    
-//    [editorController setDelegate:self];
-//    
-//    [self.mainImagePicker.imagePickerController presentViewController:editorController animated:YES completion:nil];
-//
-//}
-//
-//- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-//{
-//    if (picker == self.mainImagePicker.imagePickerController) {
-//        currentComposePhotoController = nil;
-//        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-//    } else {
-//        [self.mainImagePicker.imagePickerController dismissViewControllerAnimated:YES completion:nil];
-//    }
-//}
-
-#pragma mark - AFPhotoEditorControllerDelegate
-- (AFPhotoEditorController *)aviaryPhotoEditorControllerWithOmage:(UIImage *)image
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [AFPhotoEditorCustomization setToolOrder:@[kAFEnhance, kAFEffects, kAFStickers, kAFFrames, kAFRedeye]];
-    });
-    
-    AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:image];
-//    editorController.view.tintColor = [UIColor welcuDarkGrey];
-    
-    [editorController setDelegate:self];
-    
-    return editorController;
-}
-
-- (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
-{
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    
-    WelcuComposeController *composeController = [WelcuComposeController composeController];
-    composeController.event = self.event;
-    composeController.delegate = self.delegate;
-    composeController.postType = WelcuComposePhotoPostType;
-    composeController.postImage = image;
-    [composeController presentComposeController];
-}
-
-- (void)photoEditorCanceled:(AFPhotoEditorController *)editor
-{
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-//    [self.mainImagePicker.imagePickerController dismissViewControllerAnimated:YES completion:nil];
-}
+#pragma mark - R1PhotoEffectsEditingViewControllerDelegate
 
 
 

@@ -82,8 +82,8 @@ static WelcuComposeController *currentComposeController = nil;
     }
     
     [[self.navigationBar.items[0] rightBarButtonItem] setTitleTextAttributes:@{
-                                                                              UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-700" size:17],
-                                                                              UITextAttributeTextColor : [UIColor welcuGreen]
+                                                                              NSFontAttributeName : [UIFont fontWithName:@"MuseoSans-700" size:17],
+                                                                              NSForegroundColorAttributeName : [UIColor welcuGreen]
                                                                               }
                                                                     forState:UIControlStateNormal];
     

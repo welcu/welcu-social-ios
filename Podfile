@@ -9,7 +9,7 @@ pod 'MHPrettyDate'
 
 pod 'Facebook-iOS-SDK'
 pod 'FXKeychain'
-pod 'GPUImage'
+# pod 'GPUImage'
 pod 'FontasticIcons'
 pod 'CHTCollectionViewWaterfallLayout'
 pod 'InAppSettingsKit'
@@ -31,7 +31,7 @@ pod 'MJPopupViewController', '~> 0.4'
 
 pod 'GKImagePicker'
 # pod 'AviarySDK', podspec: 'Vendor/AviarySDK.podspec'
-# pod 'R1PhotoEffectsSDK', podspec: 'Vendor/R1PhotoEffectsSDK.podspec'
+pod 'R1PhotoEffectsSDK', podspec: 'Vendor/R1PhotoEffectsSDK.podspec'
 
 # Analytics
 pod 'TestFlightSDK', inhibit_warnings: true

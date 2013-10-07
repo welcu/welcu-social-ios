@@ -1,0 +1,70 @@
+/* 
+  R1EffectsSDK.strings
+  R1PhotoEffectsSDK
+
+  Created by Drew Colace on 8/29/13.
+  Copyright (c) 2013 RadiumOne, Inc. All rights reserved.
+*/
+
+// Navigation Button Titles
+"CropDone" = "Avanti";
+"EffectsDone" = "Avanti";
+"Next" = "Avanti";
+"Done" = "Fatto";
+"Cancel" = "Annulla";
+
+// Crop Screen Title
+"Crop" = "Ritaglia";
+
+//Crop Preset Titles
+"NoCrop" = "Normale";
+"SquareCrop" = "Quadrato";
+"CustomCrop" = "Personalizzata";
+"2x3" = "2x3";
+"3x5" = "3x5";
+"3x2" = "3x2";
+"5x3" = "5x3";
+
+// Active Effect Titles
+"Stickers" = "Sticker";
+"Filters" = "Filtri";
+"Borders" = "Bordi";
+"Text" = "Testo";
+"Draw" = "Disegna";
+
+// Loading Prompt
+"LoadingEffects" = "Caricamento";
+
+// Pop-up Alert Text
+"Alert" = "Avviso";
+"OK" = "OK";
+"Error" = "Error";
+
+"ClearDrawTitle" = "Clear Drawing?";
+"ClearDrawMsg" = "Do you really want to clear all your drawing from the image?";
+"ClearDrawYes" = "Clear Drawing";
+
+"PriceUnavail" = "Product pricing is unavailable";
+"PurchaseProblem" = "A purchasing error occured.";
+"RestoreError" = "Error restoring purchases";
+"PayentProblem" = "Non è stato possibile elaborare il pagamento";
+
+// Effect Pack Downlad Status
+"Waiting" = "Waiting...";
+
+// Effect Pack Store Button Labels
+"Free" = "Free";
+"Download" = "DOWNLOAD";
+"Installing" = "INSTALLING";
+
+// Effect Pack Store Title
+"DownloadPack" = "Download Pack";
+
+// Effect Pack Store Page Restore button title
+"Restore" = "Restore Purchases";
+
+// 'None' border selection
+"NoBorder" = "Normal";
+
+// 'None' filter selection
+"NoFilter" = "Normal";

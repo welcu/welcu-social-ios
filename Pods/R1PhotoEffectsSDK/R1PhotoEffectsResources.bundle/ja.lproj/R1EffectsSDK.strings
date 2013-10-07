@@ -1,0 +1,70 @@
+/* 
+  R1EffectsSDK.strings
+  R1PhotoEffectsSDK
+
+  Created by Drew Colace on 8/29/13.
+  Copyright (c) 2013 RadiumOne, Inc. All rights reserved.
+*/
+
+// Navigation Button Titles
+"CropDone" = "次へ";
+"EffectsDone" = "次へ";
+"Next" = "次へ";
+"Done" = "完了";
+"Cancel" = "キャンセル";
+
+// Crop Screen Title
+"Crop" = "トリミング";
+
+//Crop Preset Titles
+"NoCrop" = "標準";
+"SquareCrop" = "四角形";
+"CustomCrop" = "カスタム";
+"2x3" = "2x3";
+"3x5" = "3x5";
+"3x2" = "3x2";
+"5x3" = "5x3";
+
+// Active Effect Titles
+"Stickers" = "ステッカー";
+"Filters" = "フィルター";
+"Borders" = "ボーダー";
+"Text" = "テキスト";
+"Draw" = "ドロー";
+
+// Loading Prompt
+"LoadingEffects" = "読み込み中";
+
+// Pop-up Alert Text
+"Alert" = "アラート";
+"OK" = "ＯＫ";
+"Error" = "Error";
+
+"ClearDrawTitle" = "Clear Drawing?";
+"ClearDrawMsg" = "Do you really want to clear all your drawing from the image?";
+"ClearDrawYes" = "Clear Drawing";
+
+"PriceUnavail" = "Product pricing is unavailable";
+"PurchaseProblem" = "A purchasing error occured.";
+"RestoreError" = "Error restoring purchases";
+"PayentProblem" = "お支払いを処理できません";
+
+// Effect Pack Downlad Status
+"Waiting" = "Waiting...";
+
+// Effect Pack Store Button Labels
+"Free" = "Free";
+"Download" = "DOWNLOAD";
+"Installing" = "INSTALLING";
+
+// Effect Pack Store Title
+"DownloadPack" = "Download Pack";
+
+// Effect Pack Store Page Restore button title
+"Restore" = "Restore Purchases";
+
+// 'None' border selection
+"NoBorder" = "Normal";
+
+// 'None' filter selection
+"NoFilter" = "Normal";

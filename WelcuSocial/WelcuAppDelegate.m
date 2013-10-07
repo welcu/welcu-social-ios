@@ -7,7 +7,6 @@
 //
 
 #import "WelcuAppDelegate.h"
-#import <Crashlytics/Crashlytics.h>
 #import <CoreText/CoreText.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <TestFlightSDK/TestFlight.h>
@@ -95,7 +94,6 @@
 //    [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] performSelector:@selector(uniqueIdentifier)]];
 //#endif
     [TestFlight takeOff:kWelcuTestflightToken];
-    [Crashlytics startWithAPIKey:@"c5652397b5498498ae5b6c0024cdb4a2ee1c84b7"];
 }
 
 - (void)setupLogging

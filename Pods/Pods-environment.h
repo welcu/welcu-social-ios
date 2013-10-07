@@ -84,12 +84,6 @@
 #define COCOAPODS_VERSION_MINOR_GKImagePicker 0
 #define COCOAPODS_VERSION_PATCH_GKImagePicker 1
 
-// GPUImage
-#define COCOAPODS_POD_AVAILABLE_GPUImage
-#define COCOAPODS_VERSION_MAJOR_GPUImage 0
-#define COCOAPODS_VERSION_MINOR_GPUImage 1
-#define COCOAPODS_VERSION_PATCH_GPUImage 0
-
 // GoogleAnalytics-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK
 // This library does not follow semantic-versioning,
@@ -150,6 +144,12 @@
 #define COCOAPODS_VERSION_MAJOR_PCStackMenu 1
 #define COCOAPODS_VERSION_MINOR_PCStackMenu 0
 #define COCOAPODS_VERSION_PATCH_PCStackMenu 0
+
+// R1PhotoEffectsSDK
+#define COCOAPODS_POD_AVAILABLE_R1PhotoEffectsSDK
+#define COCOAPODS_VERSION_MAJOR_R1PhotoEffectsSDK 1
+#define COCOAPODS_VERSION_MINOR_R1PhotoEffectsSDK 0
+#define COCOAPODS_VERSION_PATCH_R1PhotoEffectsSDK 8
 
 // SDSegmentedControl
 #define COCOAPODS_POD_AVAILABLE_SDSegmentedControl

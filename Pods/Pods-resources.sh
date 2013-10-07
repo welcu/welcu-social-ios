@@ -18,16 +18,20 @@ install_resource()
     *.framework)
       echo "mkdir -p ${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
       mkdir -p "${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
-      echo "cp -fpR ${PODS_ROOT}/$1 ${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
-      cp -fpR "${PODS_ROOT}/$1" "${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
+      echo "rsync -av ${PODS_ROOT}/$1 ${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
+      rsync -av "${PODS_ROOT}/$1" "${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
       ;;
     *.xcdatamodel)
-      echo xcrun momc "${PODS_ROOT}/$1" ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcdatamodel`.mom
-      xcrun momc "${PODS_ROOT}/$1" ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcdatamodel`.mom
+      echo "xcrun momc \"${PODS_ROOT}/$1\" \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1"`.mom\""
+      xcrun momc "${PODS_ROOT}/$1" "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcdatamodel`.mom"
       ;;
     *.xcdatamodeld)
-      echo  xcrun momc "${PODS_ROOT}/$1" ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcdatamodeld`.momd
-      xcrun momc "${PODS_ROOT}/$1" ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcdatamodeld`.momd
+      echo "xcrun momc \"${PODS_ROOT}/$1\" \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcdatamodeld`.momd\""
+      xcrun momc "${PODS_ROOT}/$1" "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcdatamodeld`.momd"
+      ;;
+    /*)
+      echo "$1"
+      echo "$1" >> "$RESOURCES_TO_COPY"
       ;;
     *)
       echo "${PODS_ROOT}/$1"
@@ -35,28 +39,31 @@ install_resource()
       ;;
   esac
 }
-install_resource 'Facebook-iOS-SDK/src/FacebookSDKResources.bundle'
-install_resource 'Facebook-iOS-SDK/src/FBUserSettingsViewResources.bundle'
-install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Fonts/Entypo-Social.otf'
-install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Fonts/Entypo.otf'
-install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Fonts/fontawesome.ttf'
-install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Fonts/iconic.otf'
-install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Strings/Entypo.strings'
-install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Strings/EntypoSocial.strings'
-install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Strings/FontAwesomeRegular+Deprecation.strings'
-install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Strings/FontAwesomeRegular.strings'
-install_resource 'FontasticIcons/FontasticIcons/Sources/Resources/Strings/IconicStroke.strings'
-install_resource 'GKImagePicker/GKImages/PLCameraSheetButton.png'
-install_resource 'GKImagePicker/GKImages/PLCameraSheetButton@2x.png'
-install_resource 'GKImagePicker/GKImages/PLCameraSheetButtonPressed.png'
-install_resource 'GKImagePicker/GKImages/PLCameraSheetButtonPressed@2x.png'
-install_resource 'GKImagePicker/GKImages/PLCameraSheetDoneButton.png'
-install_resource 'GKImagePicker/GKImages/PLCameraSheetDoneButton@2x.png'
-install_resource 'GKImagePicker/GKImages/PLCameraSheetDoneButtonPressed.png'
-install_resource 'GKImagePicker/GKImages/PLCameraSheetDoneButtonPressed@2x.png'
-install_resource 'MHPrettyDate/MHPrettyDate/en.lproj'
-install_resource 'MHPrettyDate/MHPrettyDate/nl.lproj'
-install_resource 'SIAlertView/SIAlertView/SIAlertView.bundle'
+install_resource "Facebook-iOS-SDK/src/FacebookSDKResources.bundle"
+install_resource "Facebook-iOS-SDK/src/FBUserSettingsViewResources.bundle"
+install_resource "FontasticIcons/FontasticIcons/Sources/Resources/Fonts/Entypo-Social.otf"
+install_resource "FontasticIcons/FontasticIcons/Sources/Resources/Fonts/Entypo.otf"
+install_resource "FontasticIcons/FontasticIcons/Sources/Resources/Fonts/fontawesome.ttf"
+install_resource "FontasticIcons/FontasticIcons/Sources/Resources/Fonts/iconic.otf"
+install_resource "FontasticIcons/FontasticIcons/Sources/Resources/Strings/Entypo.strings"
+install_resource "FontasticIcons/FontasticIcons/Sources/Resources/Strings/EntypoSocial.strings"
+install_resource "FontasticIcons/FontasticIcons/Sources/Resources/Strings/FontAwesomeRegular+Deprecation.strings"
+install_resource "FontasticIcons/FontasticIcons/Sources/Resources/Strings/FontAwesomeRegular.strings"
+install_resource "FontasticIcons/FontasticIcons/Sources/Resources/Strings/IconicStroke.strings"
+install_resource "GKImagePicker/GKImages/PLCameraSheetButton.png"
+install_resource "GKImagePicker/GKImages/PLCameraSheetButton@2x.png"
+install_resource "GKImagePicker/GKImages/PLCameraSheetButtonPressed.png"
+install_resource "GKImagePicker/GKImages/PLCameraSheetButtonPressed@2x.png"
+install_resource "GKImagePicker/GKImages/PLCameraSheetDoneButton.png"
+install_resource "GKImagePicker/GKImages/PLCameraSheetDoneButton@2x.png"
+install_resource "GKImagePicker/GKImages/PLCameraSheetDoneButtonPressed.png"
+install_resource "GKImagePicker/GKImages/PLCameraSheetDoneButtonPressed@2x.png"
+install_resource "MHPrettyDate/MHPrettyDate/en.lproj"
+install_resource "MHPrettyDate/MHPrettyDate/nl.lproj"
+install_resource "SIAlertView/SIAlertView/SIAlertView.bundle"
 
-rsync -avr --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+if [[ "${ACTION}" == "install" ]]; then
+  rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${INSTALL_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+fi
 rm -f "$RESOURCES_TO_COPY"

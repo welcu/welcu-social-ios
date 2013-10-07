@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>625EE529-0A64-415D-8223-71C8B9B1C873</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WelcuSocial</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5EF839B1-94A9-466F-99E6-4E44A92E9558</key>
+		<string>ssh://github.com/welcu/welcu-social-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WelcuSocial.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5EF839B1-94A9-466F-99E6-4E44A92E9558</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/welcu/welcu-social-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5EF839B1-94A9-466F-99E6-4E44A92E9558</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5EF839B1-94A9-466F-99E6-4E44A92E9558</string>
+			<key>IDESourceControlWCCName</key>
+			<string>welcu-social-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>

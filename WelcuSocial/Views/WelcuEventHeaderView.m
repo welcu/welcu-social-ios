@@ -7,7 +7,7 @@
 //
 
 #import "WelcuEventHeaderView.h"
-#import <GPUImage/GPUImage.h>
+#import "GPUImage.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <AFNetworking/AFImageRequestOperation.h>
 #import "UIImage+MaskedImages.h"
