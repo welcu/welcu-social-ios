@@ -78,11 +78,11 @@
 #define COCOAPODS_VERSION_MINOR_FontasticIcons 4
 #define COCOAPODS_VERSION_PATCH_FontasticIcons 1
 
-// GKImagePicker
-#define COCOAPODS_POD_AVAILABLE_GKImagePicker
-#define COCOAPODS_VERSION_MAJOR_GKImagePicker 0
-#define COCOAPODS_VERSION_MINOR_GKImagePicker 0
-#define COCOAPODS_VERSION_PATCH_GKImagePicker 1
+// GCBActionSheet
+#define COCOAPODS_POD_AVAILABLE_GCBActionSheet
+#define COCOAPODS_VERSION_MAJOR_GCBActionSheet 1
+#define COCOAPODS_VERSION_MINOR_GCBActionSheet 0
+#define COCOAPODS_VERSION_PATCH_GCBActionSheet 0
 
 // GoogleAnalytics-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK

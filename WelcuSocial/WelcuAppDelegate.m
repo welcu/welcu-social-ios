@@ -120,13 +120,13 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
-                                                           UITextAttributeTextColor : [UIColor whiteColor],
-                                                           UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-500"
+                                                           NSForegroundColorAttributeName : [UIColor whiteColor],
+                                                           NSFontAttributeName : [UIFont fontWithName:@"MuseoSans-500"
                                                                                                  size:20]
                                                            }];
     
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{
-                                                           UITextAttributeFont : [UIFont fontWithName:@"MuseoSans-300"
+                                                           NSFontAttributeName : [UIFont fontWithName:@"MuseoSans-300"
                                                                                                  size:15]
                                                            }
                                                 forState:UIControlStateNormal];
@@ -136,6 +136,10 @@
 
 
     // Radium One Customizations
+//    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:R1CropModeSquare] forKey:@"R1ExclusiveCropMode"];
+//    NSArray *customTabs = @[R1TabEffects, R1TabBorders, R1TabStickers, R1TabText, R1TabDraw];
+//    [[NSUserDefaults standardUserDefaults] setObject:customTabs forKey:@"R1TabSetupList"];
+
     static const NSUInteger R1CropModeSquare = 1;
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:R1CropModeSquare] forKey:@"R1ExclusiveCropMode"];
 
@@ -144,6 +148,7 @@
     static const NSUInteger R1TabBorders = 2;
     static const NSUInteger R1TabText = 3;
     static const NSUInteger R1TabDraw = 4;
+    
 
     NSArray *customTabs = @[@(R1TabEffects), @(R1TabBorders), @(R1TabStickers), @(R1TabText), @(R1TabDraw)];
     [[NSUserDefaults standardUserDefaults] setObject:customTabs forKey:@"R1TabSetupList"];

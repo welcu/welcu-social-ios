@@ -9,6 +9,7 @@
 #import "WelcuComposePhotoController.h"
 
 #import <R1PhotoEffectsSDK/R1PhotoEffectsSDK.h>
+#import <GCBActionSheet/GCBActionSheet.h>
 
 
 
@@ -32,19 +33,40 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
 -(void)presentComposeControllerOn:(UIViewController *)controller
 {
     if (!self.event) return;
-    
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 
     self.presentingViewController = controller;
     currentComposePhotoController = self;
 
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        self.mainImagePicker = [self buildCameraPicker];
+        GCBActionSheet *selector = [[GCBActionSheet alloc] init];
+        // selector.title = @"Select "
+        [selector addCancelButtonWithTitle:@"Take Photo" handler:^{
+            [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+            self.mainImagePicker = [self buildCameraPicker];
+            [self.presentingViewController presentViewController:self.mainImagePicker
+                                                        animated:YES
+                                                      completion:nil];
+        }];
+
+        [selector addCancelButtonWithTitle:@"Choose from Library" handler:^{
+            [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+            self.mainImagePicker = [self buildLibraryImagePicker];
+            [self.presentingViewController presentViewController:self.mainImagePicker
+                                                        animated:YES
+                                                      completion:nil];
+        }];
+
+        [selector addCancelButtonWithTitle:@"Cancel" handler:^{
+            currentComposePhotoController = nil;
+        }];
+
+        [selector showInView:self.presentingViewController.view];
+
     } else {
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
         self.mainImagePicker = [self buildLibraryImagePicker];
+        [self.presentingViewController presentViewController:self.mainImagePicker animated:YES completion:nil];
     }
-    
-    [self.presentingViewController presentViewController:self.mainImagePicker animated:YES completion:nil];
 }
 
 - (UIImagePickerController *)buildBasePicker
@@ -87,8 +109,8 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
                                                 animated:YES
                                               completion:nil];
 
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
@@ -103,14 +125,17 @@ static WelcuComposePhotoController *currentComposePhotoController = nil;
                        didFinishWithImage:(UIImage *)image
 {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-
     WelcuComposeController *composeController = [WelcuComposeController composeController];
     composeController.event = self.event;
     composeController.delegate = self.delegate;
     composeController.postType = WelcuComposePhotoPostType;
     composeController.postImage = image;
+
     [composeController presentComposeController];
+
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    }];
 }
 
 - (void)photoEffectsEditingViewControllerDidCancel:(R1PhotoEffectsEditingViewController *)controller

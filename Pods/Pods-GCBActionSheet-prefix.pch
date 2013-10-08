@@ -3,3 +3,7 @@
 #endif
 
 #import "Pods-environment.h"
+#ifdef __OBJC__
+  #import <UIKit/UIKit.h>
+#endif /* __OBJC__ */
+

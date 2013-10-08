@@ -1,1 +1,0 @@
-../../GKImagePicker/GKClasses/GKCropBorderView.h

@@ -1,1 +1,0 @@
-../../GKImagePicker/GKClasses/GKResizeableCropOverlayView.h
